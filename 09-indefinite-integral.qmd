@@ -1,0 +1,465 @@
+# האינטגרל הלא-מסוים
+
+## הגדרת האינטגרל הלא-מסוים
+
+האינטגרל הוא פעולה הפוכה לגזירה.
+
+### אינטגרל לא מסוים
+
+פונקציה $F(x)$ תיקרא פונקציה קדומה של $f(x)$ אם $F'(x) = f(x)$.
+
+דוגמאות:
+
+- $x^2$ היא הנגזרת של $\frac{x^3}{3}$, לכן $\frac{x^3}{3}$ היא הקדומה של $x^2$.
+
+- $\sin(x)$ היא קדומה של $\cos(x)$.
+
+- $\cos(x)$ היא קדומה של $-\sin(x)$.
+
+אם $F(x)$ היא פונקציה קדומה של $f(x)$, אז נסמן:
+
+$$\int f(x)dx = F(x) + C$$
+
+<!-- בדיקה: מתחת לאינטגרל כתוב "פונקציה קדומה של f(x)", ומתחת ל-C כתוב "C∈R, הקבוע של האינטגרציה" -->
+
+## אינטגרלים מיידיים
+
+### פונקציות אלמנטריות ונגזרותיהן
+
+| $F(x)$       | $F'(x)$                  |
+|--------------|--------------------------|
+| $x^n$        | $n \cdot x^{n-1}$        |
+| $x^a$        | $a \cdot x^{a-1}$        |
+| $e^x$        | $e^x$                    |
+| $a^x$        | $\ln(a) \cdot a^x$       |
+| $\sin x$     | $\cos x$                 |
+| $\cos x$     | $-\sin x$                |
+| $\tan x$     | $\frac{1}{\cos^2(x)}$    |
+| $\ln x$      | $\frac{1}{x}$            |
+| $\arctan(x)$ | $\frac{1}{1+x^2}$        |
+| $\arcsin(x)$ | $\frac{1}{\sqrt{1-x^2}}$ |
+| $\sqrt{x}$   | $\frac{1}{2\sqrt{x}}$    |
+
+### אינטגרלים מיידיים
+
+$$\int x^n dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$
+
+$$\int \frac{1}{x} dx = \ln(x) + C$$
+
+$$\int x^a dx = \frac{x^{a+1}}{a+1} + C \quad (a \neq -1)$$
+
+$$\int a^x dx = \frac{a^x}{\ln(a)} + C$$
+
+$$\int \sin(x)dx = -\cos(x) + C$$
+
+$$\int \cos(x)dx = \sin(x) + C$$
+
+$$\int \frac{1}{\cos^2 x} dx = \tan(x) + C$$
+
+$$\int \frac{1}{\sqrt{1-x^2}} dx = \arcsin(x) + C$$
+
+$$\int -\frac{1}{\sqrt{1-x^2}} dx = \arccos(x) + C$$
+
+$$\int \frac{1}{1+x^2} dx = \arctan(x) + C$$
+
+### טענה (סכום)
+
+אם $F(x)$ קדומה של $f(x)$, ואם $G(x)$ קדומה של $g(x)$, כלומר $G'(x) = g(x)$, $F'(x) = f(x)$
+
+אז $F+G$ הקדומה של $f+g$ $\leftarrow$ $(F+G)' = F' + G' = f + g$
+
+לכן הקדומה של $f+g$:
+
+$$\int (f(x) + g(x))dx = \int f(x)dx + \int g(x)dx$$
+
+<!-- בדיקה: מתחת לאיבר הראשון באגף ימין כתוב F(x), ומתחת לשני G(x) -->
+
+דוגמא:
+
+$$\int \left(e^x + \cos x + \frac{1}{1+x^2}\right)dx = \int e^x dx + \int \cos dx + \int \frac{1}{1+x^2} dx = e^x + \sin(x) + \arctan(x) + C$$
+
+### טענה (כפל בקבוע)
+
+$$\int \alpha \cdot f(x)dx = \alpha \cdot \int f(x)dx$$
+
+נובע מכלל הגזירה:
+
+$$(\alpha \cdot F)' = \alpha \cdot F'$$
+
+<!-- בדיקה: מתחת ל-F' כתוב f -->
+
+דוגמא:
+
+$$\int (4x - 2x^5 + 2^x)dx = 4 \cdot \frac{x^2}{2} - 2 \cdot \frac{x^6}{6} + \frac{2^x}{\ln(2)} + C$$
+
+## אינטגרציה בחלקים
+
+### שיטת האינטגרציה בחלקים
+
+ניזכר כי:
+
+$$(f \cdot g)' = f' \cdot g + g' \cdot f$$
+
+מכאן נובע כי:
+
+$$\int (f' \cdot g + f \cdot g')dx = f \cdot g$$
+
+נפתח את אגף שמאל:
+
+$$\int f'(x)g(x)dx + \int f(x)g'(x)dx$$
+
+לכן:
+
+$$\int f'(x) \cdot g(x)dx = f(x) \cdot g(x) - \int f(x) \cdot g'(x)dx$$
+
+<!-- בדיקה: מתחת לאגף שמאל כתוב "איטגרל שרצה לחשב", מתחת ל-f(x)g(x) כתוב "פונקציה", ומתחת לאינטגרל הימני כתוב "אינטגרל אחר שרצה שיהיה פשוט יותר" -->
+
+דוגמאות:
+
+(1) נסמן: $g(x) = x$, $f(x) = e^x$
+
+$$\int x \cdot e^x dx = e^x \cdot x - \int e^x dx = x \cdot e^x - e^x + C$$
+
+<!-- בדיקה: מתחת לאגף שמאל x מסומן g ו-e^x מסומן f; מתחת לאיבר הראשון e^x מסומן f ו-x מסומן g; מתחת לאינטגרל e^x מסומן g'·f -->
+
+(2) נסמן: $g(x) = x^2$, $f(x) = -\cos(x)$
+
+$$\int x^2 \cdot \sin(x)dx = f(x)g(x) - \int g'(x) \cdot f(x)dx = -\cos(x) \cdot x^2 - \int 2x \cdot (\cos x)dx =$$
+
+$$= -\cos(x)x^2 + 2\int x \cdot \cos(x)dx = -\cos(x)x^2 + 2[x\sin(x) - \int 1 \cdot \sin(x)dx] =$$
+
+$$= -x^2 \cdot \cos(x) + 2 \cdot x \cdot \sin(x) + 2 \cdot \cos(x) + C$$
+
+<!-- בדיקה: בשורה ראשונה x^2 מסומן g ו-sin(x) מסומן f; בשורה שנייה x מסומן g ו-cos(x) מסומן f; ובתוך הסוגריים sin(x) מסומן g'·f -->
+
+(3) נסמן: $g(x) = \ln(x)$, $f(x) = x$
+
+$$\int \ln(x)dx = \int 1 \cdot \ln(x)dx = x \cdot \ln(x) - \int x \cdot \frac{1}{x}dx = x\ln(x) - \int 1 dx = x\ln(x) - x + C$$
+
+<!-- בדיקה: מתחת לסימונים: 1 מסומן f', ln(x) מסומן g, x·ln(x) מסומן f·g, ו-x·(1/x) מסומן f·g' -->
+
+## החלפת משתנה אינטגרציה — שיטת ההצבה
+
+### שיטת ההצבה / כלל השרשרת מאחורה
+
+אם ל-$f(x)$ יש קדומה $F(x)$, כלומר $\int f(x)dx = F(x)$,
+
+אז
+
+$$\int g'(x) \cdot f(g(x))dx = F(g(x))$$
+
+$$\Downarrow$$
+
+$$F(g(x))' = g'(x) \cdot F'(g(x)) = g'(x) \cdot f(g(x))$$
+
+דוגמאות:
+
+(1) נסמן: $F(x) = -\cos x$, $g'(x) = 2x$, $g(x) = x^2$, $f(x) = \sin(x)$
+
+$$\int x \cdot \sin(x^2)dx = \frac{1}{2}\int g'(x) \cdot f(g(x))dx = \frac{1}{2}F(g(x)) = -\frac{1}{2} \cdot \cos(x^2) + C$$
+
+<!-- בדיקה: מתחת לאגף שמאל x מסומן f ו-sin(x^2) מסומן g -->
+
+(2) נסמן: $F(x) = e^x$, $g'(x) = 3x^2$, $g(x) = x^3$, $f(x) = e^x$
+
+$$\int x^2 \cdot e^{x^3}dx = \frac{1}{3} \cdot \int g'(x) \cdot f(g(x))dx = F(g(x)) = \frac{1}{3} \cdot e^{g(x)} = \frac{1}{3} \cdot e^{x^3} + C$$
+
+<!-- מקור: הרצאה 23 -->
+
+
+
+### שיטת ההצבה: חזרה והרחבה
+
+אם ל-$f(x)$ יש קדומה $F(x)$, כלומר $\int f(x)dx = F(x)$,
+
+אז
+
+$$\int g'(x) \cdot f(g(x))dx = F(g(x))$$
+
+$$F(g(x))' = g'(x) \cdot F'(g(x)) = g'(x) \cdot f(g(x))$$
+
+דוגמאות:
+
+1)  נסמן: $F(x) = -\cos x \;,\; g'(x) = 2x \;,\; g(x) = x^2 \;,\; f(x) = \sin(x)$
+
+$$\int x \cdot \underbrace{\sin(x^2)}_{f} \, \underbrace{}_{g} dx = \frac{1}{2}\int g'(x) \cdot f(g(x))dx = \frac{1}{2}F(g(x)) = \boxed{-\frac{1}{2}\cos(x^2) + C}$$
+
+2)  נסמן: $F(x) = e^x \;,\; g'(x) = 3x^2 \;,\; g(x) = x^3 \;,\; f(x) = e^x$
+
+$$\int x^2 \cdot e^{x^3}dx = \frac{1}{3} \cdot \int g'(x) \cdot f(g(x))dx = F(g(x)) = \frac{1}{3} \cdot e^{g(x)} = \boxed{\frac{1}{3} \cdot e^{x^3} + C}$$
+
+### שיטה ראשונה
+
+נרצה לבצע חילוף משתנה, כלומר נרצה להציב $u = h(x)$ (חצי קימור),
+
+כשעוברים ממשתנה $x$ למשתנה אחר $u$, בחישוב אינטגרל, נעשה: $du = h'(x)dx$
+
+דוגמאות:
+
+1)  $$\int x^2 \cdot \sin(x^3)dx = \int \frac{1}{3} \cdot \sin(u)du = \frac{1}{3} \cdot (-\cos(u)) = \boxed{-\frac{1}{3}\cos(x^3) + C}$$
+
+נוסה להציב $u = x^3$, $du = 3x^2 dx \rightarrow \frac{1}{3}du = x^2 dx$
+
+2)  $$\int \frac{x}{1+x^2}dx = \int \frac{1}{2} \cdot \frac{1}{1+u}du = \frac{1}{2}\int \frac{1}{1+u}du = \frac{1}{2}\ln(1+u) = \boxed{\frac{1}{2}\ln(1+x^2) + C}$$
+
+נוסה להציב $u = x^2$, $du = 2x dx$
+
+3)  ניסיון 1: $$\int \tan(x)dx = \int \frac{\sin(x)}{\cos(x)}dx = \int -\frac{du}{u} = -\int \frac{1}{u}du = -\ln(u) = \boxed{-\ln(\cos(x)) + C}$$
+
+נוסה להציב $u = \cos(x)$, $du = -\sin(x)dx$
+
+ניסיון 2: $$\int \tan(x)dx = \int \frac{\sin(x)}{\cos(x)}dx = \int \frac{u}{\cos(x)} \frac{du}{\cos(x)} = \int \frac{udu}{(\sqrt{1-u^2})^2} = \int \frac{u}{1-u^2}du =$$
+
+נוסה להציב $u = \sin(x)$, $du = \cos(x)dx \rightarrow \frac{du}{\cos(x)} = dx$
+
+$\cos(x) = \sqrt{1-u^2}$
+
+$$= \int \frac{dt}{-2t} = -\frac{1}{2}\ln(1-u^2) = -\frac{1}{2}\ln(1-u^2) = -\frac{1}{2}\ln(\cos^2(x)) = \boxed{-\ln(\cos(x)) + C}$$
+
+נוסה להציב $t = 1-u^2$, $-2udu = dt$
+
+4)  $$\int \cos(x)\sin(x)dx = -\int udu = -\frac{u^2}{2} = \boxed{-\frac{\cos^2(x)}{2} + C}$$
+
+נוסה להציב $u = \cos(x)$, $du = -\sin(x)dx$
+
+5)  ניסיון 1: $$\int \cos^2(x) \cdot \sin^3(x) = -\int u^2 \cdot (1-u^2)du = -\left(\frac{u^3}{3} - \frac{u^5}{5}\right) = \boxed{-\left(\frac{\cos^3(x)}{3} - \frac{\cos^5(x)}{5}\right) + C}$$
+
+נוסה להציב $u = \cos(x)$, $du = -\sin(x)dx$
+
+ניסיון 2: $$\int \cos^2(x) \cdot \sin^3(x) = \int \sqrt{1-u^2} \cdot u^3 du = \ldots$$ אפשר?
+
+נוסה להציב $u = \sin(x)$, $du = \cos(x)dx$
+
+## הצבות חשובות: $a\sin x$ באינטגרל של $\sqrt{a^2-x^2}$
+
+### שיטה שנייה
+
+נרצה לבצע חילוף משתנה, כלומר נרצה להציב $x = g(t)$ (חצי קימור),
+
+כשעוברים ממשתנה $x$ למשתנה אחר $t$, בחישוב אינטגרל, נעשה: $dx = g'(t)dt$
+
+דוגמאות:
+
+1)  $$\int \frac{1}{x^2\sqrt{1-x^2}}dx = \int \frac{\cos(t)dt}{\sin^2(t)\cos(t)} = \int \frac{dt}{\sin^2(t)} = -\cot(t) = -\frac{\cos(t)}{\sin(t)} = \boxed{-\frac{\sqrt{1-x^2}}{x} + C}$$
+
+נוסה להציב $x = \sin(t)$, $dx = \cos(t)dt$ , $\sqrt{1-x^2} = \cos(t)$
+
+$\cot(x) = \frac{\cos(x)}{\sin(x)}$
+
+$[\cot(x)]' = \frac{-1}{\sin^2(x)}$
+
+2)  $$\int \frac{1}{\sqrt{8-x^2}}dx = \int \frac{1}{\sqrt{8} \cdot \sqrt{1-\frac{x^2}{8}}}dx = \frac{1}{\sqrt{8}}\int \frac{1}{\sqrt{1-\frac{x^2}{8}}}dx = \frac{1}{\sqrt{8}}\int \frac{1}{\sqrt{1-\left(\frac{x}{\sqrt{8}}\right)^2}}dx =$$
+
+$$= \frac{1}{\sqrt{8}}\int \frac{\sqrt{8}}{\sqrt{1-t^2}}dt = \arcsin(t) = \boxed{\arcsin\left(\frac{x}{\sqrt{8}}\right) + C}$$
+
+נוסה להציב $t = \frac{x}{\sqrt{8}}$, $dt = \frac{dx}{\sqrt{8}}$
+
+3)  $$\int \frac{x^5}{\sqrt{1+x^2}}dx = \int \frac{\tan^5(t)}{\frac{1}{\cos(t)}} \cdot \frac{1}{\cos^2(t)}dt = \int \frac{\sin^5(t)}{\cos^5(t)} \cdot \frac{\cos(t)}{\cos^2(t)}dt = \int \frac{\sin^5(t)}{\cos^6(t)}dt =$$
+
+נוסה להציב $x = \tan(t)$, $dx = \frac{1}{\cos^2(t)}dt$
+
+זהות טריגונומטרית:
+
+$1 + \tan^2(t) = \left(\frac{1}{\cos^2(t)}\right)^2$
+
+$\sqrt{1+\tan^2(t)} = \frac{1}{\cos(t)}$
+
+נוסה להציב $u = \cos(t)$, $du = -\sin(t)dt$
+
+$$= -\int \frac{\sin^4(u)}{\cos^6(u)}du = -\int \frac{(1-u^2)^2}{u^6}du = -\int \frac{1-2u^2+u^4}{u^6}du = -\int \left(\frac{1}{u^6} - 2 \cdot \frac{1}{u^4} + \frac{1}{u^2}\right)du =$$
+
+$\sin^4(t) = (\sin^2(t))^2 = (1-u^2)^2$
+
+$$= \frac{u^{-5}}{-5} - 2 \cdot \frac{u^{-3}}{-3} + \frac{u^{-1}}{-1} = \ldots$$ נשאיר את הציבור בהמשך
+
+<!-- מקור: הרצאה 24 -->
+
+## הצבת ויירשטראס (ההצבה האוניברסלית $t=\tan(x/2)$)
+
+
+
+### הצבת ויירשטראס
+
+עזרת לחשב אינטגרלים שיש בהם $\sin(x), \cos(x)$: $u = \tan(\frac{x}{2})$
+
+$$du = \frac{1}{\cos^2(\frac{x}{2})} \cdot \frac{1}{2} dx$$
+
+$$dx = 2 \cdot \cos^2(\frac{x}{2}) du = 2 \cdot \frac{1}{1 + \tan^2(\frac{x}{2})} du \quad \longrightarrow \quad dx = \frac{2}{1 + u^2} du$$
+
+$$\left[ 1 + \tan^2(y) = \frac{1}{\cos^2(y)} \longrightarrow \cos^2(y) = \frac{1}{1 + \tan^2(y)} \right]$$
+
+מזהויות של $\cos(x), \sin(x)$ של זווית כפולה, מקבלים:
+
+$$\cos(x) = \frac{1 - u^2}{1 + u^2} \quad , \quad \sin(x) = \frac{2u}{1 + u^2}$$
+
+דוגמא:
+
+$$\int \frac{1}{\sin x} dx = \int \frac{1}{(\frac{2u}{1 + u^2})} \cdot \frac{2}{1 + u^2} du = \int \frac{1}{u} du = \ln(u) + C = \ln(\tan(\frac{x}{2})) + C$$
+
+## אינטגרציה של פונקציות רציונליות
+
+### אינטגרלים של פונקציות רציונליות
+
+אם
+
+$$\int \frac{p(x)}{q(x)} dx$$
+
+ואם $\deg(p) > \deg(q)$ (המעלה של $p(x)$), אז נבצע קודם כל חילוק ארוך של $p(x)$ ב-$q(x)$.
+
+דוגמא: חשבו:
+
+$$\int \frac{x^5 + 3x^4 + 2x}{x^2 + 1} dx$$
+
+כאשר $p(x) = x^5 + 3x^4 + 2x$ ו-$q(x) = x^2 + 1$.
+
+נעשה חילוק ארוך:
+
+החילוק הארוך נותן:
+
+$$\frac{x^5 + 3x^4 + 2x}{x^2 + 1} = x^3 + 3x^2 - x - 3 + \frac{3x + 3}{x^2 + 1}$$
+
+קיבלנו:
+
+$$x^5 + 3x^4 + 2x = (x^2 + 1)(x^3 + 3x^2 - x - 3) + (3x + 3)$$
+
+כאשר $p(x) = x^5 + 3x^4 + 2x$, $q(x) = x^2 + 1$, פתרון חילוק ארוך $= x^3 + 3x^2 - x - 3$, ושארית $= 3x + 3$.
+
+לכן:
+
+$$\int \frac{p(x)}{q(x)} dx = \int \frac{q(x)(x^3 + 3x^2 - x - 3) + 3x + 3}{q(x)} dx = \int x^3 + 3x^2 - x - 3 + \int \frac{3x + 3}{x^2 + 1} dx =$$
+
+$$= \frac{x^4}{4} + x^3 - \frac{x^2}{2} - 3x + \int \frac{3x}{x^2 + 1} dx + \int \frac{3}{x^2 + 1} dx \quad =\!*$$
+
+כאשר $\int \frac{3}{x^2 + 1} dx = 3 \arctan(x)$.
+
+$$\int \frac{x}{x^2 + 1} dx = \int \frac{\frac{1}{2}}{u} du = \frac{1}{2} \ln(x^2 + 1)$$
+
+$$\left[ x^2 + 1 = u \ , \ 2x dx = du \right]$$
+
+$$*=\ \frac{x^4}{4} + x^3 - \frac{x^2}{2} - 3x + 3 \cdot \frac{1}{2} \ln(x^2 + 1) + 3 \cdot \arctan(x) + C$$
+
+### אינטגרלים מסוימים
+
+במצב של $\int \frac{p(x)}{q(x)} dx$ אם $\deg(q) = 1$ או $\deg(p) < 1$
+
+כלומר:
+
+$$\int \frac{A \cdot x + B}{x^2 + 1} dx = \int \frac{A}{2} \cdot \frac{2x}{x^2 + 1} + \frac{B}{x^2 + 1} dx = \frac{A}{2} \cdot \ln(x^2 + 1) + B \cdot \arctan(x)$$
+
+דוגמא:
+
+$$\int \frac{2x + 4}{3x^2 + 5} dx = \frac{1}{5} \int \frac{2x + 4}{\frac{3x^2}{5} + 1} dx = \frac{1}{5} \cdot \int \frac{(2 \cdot \frac{\sqrt{5}}{\sqrt{3}} u + 4)}{u^2 + 1} du = \int \frac{\square \cdot u + \square}{u^2 + 1} du$$
+
+$$\left[ x = \frac{\sqrt{5}}{\sqrt{3}} u \longrightarrow \frac{3x}{\sqrt{5}} = u \longrightarrow \frac{\sqrt{3}}{\sqrt{5}} dx = du \right]$$
+
+<!-- בדיקה: בהצבה כתוב x=√5/√3·u אך השורה הבאה מציגה 3x/√5=u ו-√3/√5 dx=du; הועתק כפי שמופיע במקור -->
+
+### שיטת ההשלמה לריבוע
+
+נרצה להגיע ל: $\int \frac{1}{\square^2 + 1} dx$
+
+דוגמא:
+
+$$\int \frac{1}{x^2 + x + 1} dx = \int \frac{dx}{(x + \frac{1}{2})^2 - \frac{1}{4} + 1} = \int \frac{dx}{(x + \frac{1}{2})^2 + \frac{3}{4}} = \int \frac{du}{u^2 + \frac{3}{4}} = \ldots$$
+
+$$\left[ x^2 + 2 \cdot \frac{1}{2} x = (x + \frac{1}{2})^2 - \frac{1}{4} \right] \quad \text{(נשלים לריבוע)}$$
+
+$$\left[ u = x + \frac{1}{2} \ , \ du = dx \right] \quad \text{(נציב)}$$
+
+(\*) הפולינומים מהצורות: $x \ , \ x + b \ , \ ax + b \ , \ x^2 + b \ , \ ax^2 + b \ , \ x^2 + x + b$ לא מתחלקים באף פולינום אחר, ולכן הם נקראים פולינומים אי פריקים.
+
+### שיטת הפירוק לאברים חלקים
+
+דוגמא: חשבו:
+
+$$\int \frac{dx}{1 - x^2}$$
+
+נרצה להגיע ל:
+
+$$\frac{1}{1 - x^2} = \frac{1}{(1 - x)(1 + x)} = \frac{A}{1 - x} + \frac{B}{1 + x}$$
+
+כאשר במונה $A$ קטן ממעלה 1 (מעלה: 1) ובמונה $B$ קטן ממעלה 1 (מעלה: 1).
+
+מציאת הקבועים $A, B$:
+
+$$\frac{1}{(1 - x)(1 + x)} = \frac{A}{1 - x} + \frac{B}{1 + x}$$
+
+נעשה מכנה משותף
+
+$$\frac{1}{(1 - x)(1 + x)} \overset{?}{=} \frac{A(1 + x) + B(1 - x)}{(1 - x)(1 + x)}$$
+
+$$A(1 + x) + B(1 - x) = A + B + (A - B)x = 1$$
+
+כאשר $A + B = 1$ ו-$(A - B) = 0$.
+
+נרצה:
+
+$$\begin{cases} A + B = 1 \\ A - B = 0 \end{cases}$$
+
+$$A = \frac{1}{2}, B = \frac{1}{2}$$
+
+קיבלנו:
+
+$$\frac{1}{1 - x^2} = \frac{1}{2(1 - x)} + \frac{1}{2(1 + x)}$$
+
+$$\int \frac{dx}{1 - x^2} = \int \frac{1}{2(1 - x)} + \int \frac{1}{2(1 + x)} = \frac{1}{2} \cdot \frac{\ln(1 - x)}{(-1)} + \frac{1}{2} \cdot \ln(1 + x) + C$$
+
+### דוגמאות נוספות
+
+$$1) \quad \frac{1}{x \cdot (x - 2)^2} = \frac{A}{x} + \frac{B}{x - 2} + \frac{C}{(x - 2)^2}$$
+
+$$2) \quad \frac{3x^2 + 5}{(x - 2)^2 \cdot (x + 3)^3} = \frac{A}{x - 2} + \frac{B}{(x - 2)^2} + \frac{C}{x + 3} + \frac{D}{(x + 3)^2} + \frac{E}{(x + 3)^3}$$
+
+$$3) \quad \frac{1}{x^3 + x} = \frac{1}{x \cdot (x^2 + 1)} = \frac{A}{x} + \frac{B + C \cdot x}{x^2 + 1}$$
+
+כאשר ב-3) $x$ אי-פריק ו-$(x^2 + 1)$ אי-פריק, והמונה $B + C \cdot x$ קטן ממעלה 2.
+
+<!-- מקור: הרצאה 25 -->
+
+דוגמאות נוספות:
+
+1)  $$\frac{1}{x \cdot (x-2)^2} = \frac{A}{x} + \frac{B}{x-2} + \frac{C}{(x-2)^2}$$
+
+2)  $$\frac{3x^2+5}{(x-2)^2 \cdot (x+3)^3} = \frac{A}{x-2} + \frac{B}{(x-2)^2} + \frac{C}{x+3} + \frac{D}{(x+3)^2} + \frac{E}{(x+3)^3}$$
+
+3)  $$\frac{1}{x^3+x} = \frac{1}{x \cdot (x^2+1)} = \frac{A}{x} + \frac{B+C \cdot x}{x^2+1}$$
+
+כאשר $x^2+1$ הוא אי-פריק, והמונה $B+C \cdot x$ הוא מדרגה קטנה ב-2.
+
+4)  $$\int \frac{1}{x^4-1}\,dx =$$
+
+$$x^4-1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)$$
+
+כאשר $x^2+1$ אי-פריק.
+
+$$\frac{1}{x^4-1} = \frac{1}{(x-1)(x+1)(x^2+1)} = \frac{A}{x-1} + \frac{B}{x+1} + \frac{C \cdot x+D}{x^2+1} =$$
+
+(פירוק לשברים חלקיים, מכנה משותף)
+
+$$= \frac{A(x+1)(x^2+1) + B(x-1)(x^2+1) + (C \cdot x+D)(x-1)(x+1)}{(x-1)(x+1)(x^2+1)}$$
+
+### שיטה ראשונה- פישוט המונה
+
+$$A(x^3+x+x^2+1) + B(x^3+x-x^2-1) + C \cdot x^3 - C \cdot x + Dx^2 - D =$$
+
+$$= x^3(A+B+C) + x^2(A-B+D) + x(A+B-C) + (A-B-D)$$
+
+נרצה: $$\begin{cases} A+B+C = 0 \rightarrow B = -A \\ A-B+D = 0 \rightarrow A+A+D = 0 \rightarrow D = -2A \\ A+B-C = 0 \rightarrow 2 \cdot C = 0 \rightarrow C = 0 \\ A-B-D = 1 \rightarrow A+A+D = 1 \rightarrow 2A+2A = 1 \rightarrow A = \frac{1}{4} \end{cases}$$
+
+$$\frac{1}{x^4-1} = \frac{\frac{1}{4}}{x-1} - \frac{\frac{1}{4}}{x+1} - \frac{\frac{1}{2}}{x^2+1} \rightarrow \int \frac{1}{x^4-1}\,dx = \int \frac{\frac{1}{4}}{x-1} - \int \frac{\frac{1}{4}}{x+1} - \int \frac{\frac{1}{2}}{x^2+1}$$
+
+$$\int \frac{1}{x^4-1}\,dx = \frac{1}{4}\ln(x-1) - \frac{1}{4}\ln(x+1) - \frac{1}{2}\arctan(x) + C$$
+
+### שיטה שנייה- הצבות
+
+$$A(x+1)(x^2+1) + B(x-1)(x^2+1) + (C \cdot x+D)(x-1)(x+1) = 1$$
+
+(נרצה)
+
+$$x=1: \quad A \cdot 2 \cdot 2 = 1 \rightarrow A = \frac{1}{4}$$
+
+$$x=-1: \quad B \cdot (-2) \cdot 2 = 1 \rightarrow B = -\frac{1}{4}$$
+
+$$x=0: \quad A \cdot 1 + B(-1) + (C \cdot 0+D)(-1) = 1 \rightarrow D = -\frac{1}{2}$$
+
+$$x=2: \quad 15A + 10B + (2C+D) \cdot 3 = 1 \rightarrow C = \frac{5}{24}$$

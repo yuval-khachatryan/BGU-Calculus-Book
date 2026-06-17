@@ -1,0 +1,66 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "חשבון אינפיניטסימלי 1 — הנדסת מכונות"
+  subtitle: "טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה"
+  author: "יובל חצ׳טריאן-רזיאל"
+  output-file: "Book_Draft"
+  search: true
+  reader-mode: true
+  chapters:
+    - index.qmd
+    - 01-basic-concepts.qmd
+    - 02-sequences.qmd
+    - 03-functions-intro.qmd
+    - 04-function-limits.qmd
+    - 05-continuity.qmd
+    - 06-derivative.qmd
+    - 07-derivative-applications.qmd
+    - 08-higher-derivatives.qmd
+    - 09-indefinite-integral.qmd
+    - 10-definite-integral.qmd
+    - 11-improper-integral.qmd
+
+lang: he
+dir: rtl
+number-sections: false
+
+crossref:
+  chapters: false
+  def-title: "הגדרה"
+  exm-title: "דוגמה"
+  thm-title: "משפט"
+  prp-title: "טענה"
+
+language:
+  crossref-prp-prefix: "טענה"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-title: "תוכן העניינים"
+    toc-expand: true
+    code-fold: true
+    include-in-header: _styles.html
+  pdf:
+    pdf-engine: xelatex
+    keep-tex: true
+    mainfont: Arial
+    sansfont: Arial
+    monofont: "Courier New"
+    mathfont: "XITSMath-Regular.otf"
+    code-overflow: wrap
+    geometry:
+      - margin=2.5cm
+    header-includes:
+      - \usepackage{chngcntr}
+      - \AtBeginDocument{\ifcsname c@theorem\endcsname\counterwithout{theorem}{section}\renewcommand{\thetheorem}{\arabic{theorem}}\fi}
+      - \AtBeginDocument{\ifcsname c@proposition\endcsname\counterwithout{proposition}{section}\renewcommand{\theproposition}{\arabic{proposition}}\fi}
+      - \AtBeginDocument{\ifcsname c@definition\endcsname\counterwithout{definition}{section}\renewcommand{\thedefinition}{\arabic{definition}}\fi}
+      - \AtBeginDocument{\ifcsname c@example\endcsname\counterwithout{example}{section}\renewcommand{\theexample}{\arabic{example}}\fi}
+
+jupyter: python3

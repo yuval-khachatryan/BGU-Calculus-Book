@@ -1,0 +1,478 @@
+# מושגי יסוד
+
+## קבוצות: איברים והכלה
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## פעולות על קבוצות: איחוד, חיתוך והפרש
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## הקבוצה הריקה
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## מערכות מספרים: $\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}$
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## אי-רציונליות; $\sqrt{2}$ כדוגמה
+
+
+
+### הוכחות
+
+::: {#prp-sqrt2-irrational .proposition}
+$$.\sqrt{2} \notin \mathbb{Q}$$
+:::
+
+**הוכחה:** נניח בשלילה כי $\sqrt{2} \in \mathbb{Q}$.
+
+הסכם נסכום מהגדרת המספרים הרציונליים. <!-- בדיקה: שורה בכתב יד, קריאה משוערת -->
+
+לכן קיימים $m,n \in \mathbb{Z}$, $n \neq 0$ עבורם $$.\sqrt{2} = \frac{m}{n}$$
+
+(מבלי הגבלת הכלליות נצמצם את השבר) <!-- בדיקה: הערה בכתב יד "ללא הגבלת..." -->
+
+נעלה בריבוע את שני האגפים: $$.2 = \frac{m^2}{n^2}$$
+
+נכפול ב-$n^2$: $$2 \cdot n^2 = m^2 \quad (*)$$
+
+האגף השמאלי שלם וזוגי.
+
+לכן גם $m^2$ זוגי, ולכן $m$ זוגי.
+
+לכן קיים $k \in \mathbb{Z}$ עבורו: $$.m = 2 \cdot k$$
+
+נציב חזרה ב-$(*)$: $$2 \cdot n^2 = (2 \cdot k)^2$$ $$2 \cdot n^2 = 4k^2$$ $$.n^2 = 2 \cdot k^2$$
+
+לכן $n^2$ זוגי ואז $n$ זוגי.
+
+קיבלנו כי $m,n$ זוגיים, בסתירה לכך ש-$\frac{m}{n}$ הוא שבר מצומצם.
+
+ולכן הראנו: $\sqrt{2} \notin \mathbb{Q}$.
+
+## תכונות הסדר על הממשיים
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## קטעים
+
+::: {.todo}
+תוכן בהכנה — להשלמה.
+:::
+
+## ערך מוחלט
+
+### ערך מוחלט
+
+::: {#def-absolute-value .definition}
+לכל מספר $x$ ממשי, הערך המוחלט של $x$ מסומן ומוגדר ע"י: $$|x| =
+\begin{cases}
+x & : x \geq 0 \\
+-x & : x < 0
+\end{cases}$$
+:::
+
+::: {#exm-abs-values .example}
+$$|5| = 5, \quad |-3| = 3$$
+:::
+
+ערך מוחלט של $x$ זה המרחק של $x$ מ-$0$, ולכן אין שלילי במרחק.
+
+::::: {#exm-abs-distance .example}
+$$|-3| = |3| = 3$$
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+# number line
+ax.axhline(0, color="black", lw=1.2, zorder=1)
+for x in [-3, 0, 3]:
+    ax.plot([x], [0], "o", color="black", ms=6, zorder=3)
+    ax.annotate("", xy=(x, 0.03), xytext=(x, -0.03))
+ax.text(-3, -0.22, r"$-3$", ha="center", va="top", fontsize=12)
+ax.text(0, -0.22, r"$0$", ha="center", va="top", fontsize=12)
+ax.text(3, -0.22, r"$3$", ha="center", va="top", fontsize=12)
+
+# distance arcs (both sides)
+th = np.linspace(0, np.pi, 100)
+for (a, b) in [(-3, 0), (0, 3)]:
+    cx = (a + b) / 2.0
+    r = (b - a) / 2.0
+    ax.plot(cx + r * np.cos(th), 0.35 * np.sin(th), color="C0", lw=1.6)
+    ax.text(cx, 0.45, r"$3$", ha="center", va="bottom", fontsize=12, color="C0")
+
+ax.set_xlim(-4.5, 4.5)
+ax.set_ylim(-0.6, 0.8)
+ax.axis("off")
+
+fig.savefig("c01_fig01.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig01.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: ציר מספרים עם הנקודות $-3$, $0$, $3$ וקשתות "מרחק 3" משני הצדדים.
+:::
+
+::: {.content-visible when-format="html"}
+![ציר מספרים עם הנקודות $-3$, $0$, $3$ וקשתות "מרחק 3" משני הצדדים.](c01_fig01.png){#fig-c01_fig01 width="62%" fig-align="center"}
+:::
+:::::
+
+לכן המרחק בין שני מספרים $a,b \in R$ הוא: $|a-b| = |b-a|$.
+
+::: {#exm-abs-no-solution .example}
+$$|x| = -2$$ ל-$x$ חיובי או אפס ולכן אין פתרון.
+:::
+
+::::: {#exm-abs-open-interval .example}
+$$|x| < 1$$ הקטע הפתוח: $\{x \mid -1 < x < 1\} = (-1,1)$
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+ax.axhline(0, color="black", lw=1.2, zorder=1)
+
+# open interval (-1, 1): highlight segment
+ax.plot([-1, 1], [0, 0], color="C0", lw=4, solid_capstyle="butt", zorder=2)
+
+# open circles at -1 and 1
+for x in [-1, 1]:
+    ax.plot([x], [0], "o", ms=9, markerfacecolor="white",
+            markeredgecolor="C0", markeredgewidth=1.8, zorder=3)
+ax.plot([0], [0], "o", color="black", ms=4, zorder=3)
+
+ax.text(-1, -0.18, r"$-1$", ha="center", va="top", fontsize=12)
+ax.text(0, -0.18, r"$0$", ha="center", va="top", fontsize=12)
+ax.text(1, -0.18, r"$1$", ha="center", va="top", fontsize=12)
+
+ax.set_xlim(-2.2, 2.2)
+ax.set_ylim(-0.5, 0.5)
+ax.axis("off")
+
+fig.savefig("c01_fig02.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig02.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: ציר מספרים עם נקודות פתוחות ב-$-1$ וב-$1$, והקטע הפתוח ביניהן.
+:::
+
+::: {.content-visible when-format="html"}
+![ציר מספרים עם נקודות פתוחות ב-$-1$ וב-$1$, והקטע הפתוח ביניהן.](c01_fig02.png){#fig-c01_fig02 width="62%" fig-align="center"}
+:::
+:::::
+
+::::: {#exm-abs-closed-interval .example}
+$$|x| \leq 1$$ הקטע הסגור: $\{x \mid -1 \leq x \leq 1\} = [-1,1]$
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+ax.axhline(0, color="black", lw=1.2, zorder=1)
+
+# closed interval [-1, 1]: highlight segment
+ax.plot([-1, 1], [0, 0], color="C0", lw=4, solid_capstyle="butt", zorder=2)
+
+# closed (filled) circles at -1 and 1
+for x in [-1, 1]:
+    ax.plot([x], [0], "o", ms=9, markerfacecolor="C0",
+            markeredgecolor="C0", markeredgewidth=1.8, zorder=3)
+ax.plot([0], [0], "o", color="black", ms=4, zorder=3)
+
+ax.text(-1, -0.18, r"$-1$", ha="center", va="top", fontsize=12)
+ax.text(0, -0.18, r"$0$", ha="center", va="top", fontsize=12)
+ax.text(1, -0.18, r"$1$", ha="center", va="top", fontsize=12)
+
+ax.set_xlim(-2.2, 2.2)
+ax.set_ylim(-0.5, 0.5)
+ax.axis("off")
+
+fig.savefig("c01_fig03.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig03.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: ציר מספרים עם נקודות סגורות ב-$-1$ וב-$1$, והקטע הסגור ביניהן.
+:::
+
+::: {.content-visible when-format="html"}
+![ציר מספרים עם נקודות סגורות ב-$-1$ וב-$1$, והקטע הסגור ביניהן.](c01_fig03.png){#fig-c01_fig03 width="62%" fig-align="center"}
+:::
+:::::
+
+::::: {#exm-abs-greater .example}
+$$|x| > 3$$ $$\{x \mid x > 3 \cup x < -3\} = (3,\infty) \cup (-\infty,-3)$$
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+ax.axhline(0, color="black", lw=1.2, zorder=1)
+
+# outer rays: x < -3 and x > 3
+ax.plot([-3, -5], [0, 0], color="C0", lw=4, solid_capstyle="butt", zorder=2)
+ax.plot([3, 5], [0, 0], color="C0", lw=4, solid_capstyle="butt", zorder=2)
+
+# arrowheads on the rays
+ax.annotate("", xy=(-5.4, 0), xytext=(-5, 0),
+            arrowprops=dict(arrowstyle="-|>", color="C0", lw=1.6))
+ax.annotate("", xy=(5.4, 0), xytext=(5, 0),
+            arrowprops=dict(arrowstyle="-|>", color="C0", lw=1.6))
+
+# open circles at -3 and 3
+for x in [-3, 3]:
+    ax.plot([x], [0], "o", ms=9, markerfacecolor="white",
+            markeredgecolor="C0", markeredgewidth=1.8, zorder=3)
+ax.plot([0], [0], "o", color="black", ms=4, zorder=3)
+
+ax.text(-3, -0.18, r"$-3$", ha="center", va="top", fontsize=12)
+ax.text(0, -0.18, r"$0$", ha="center", va="top", fontsize=12)
+ax.text(3, -0.18, r"$3$", ha="center", va="top", fontsize=12)
+
+ax.set_xlim(-6, 6)
+ax.set_ylim(-0.5, 0.5)
+ax.axis("off")
+
+fig.savefig("c01_fig04.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig04.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: ציר מספרים עם נקודות פתוחות ב-$-3$ וב-$3$, והקרניים החיצוניות מסומנות.
+:::
+
+::: {.content-visible when-format="html"}
+![ציר מספרים עם נקודות פתוחות ב-$-3$ וב-$3$, והקרניים החיצוניות מסומנות.](c01_fig04.png){#fig-c01_fig04 width="62%" fig-align="center"}
+:::
+:::::
+
+### אי שוויון המשולש
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+O = np.array([0.0, 0.0])
+x = np.array([3.0, 0.5])
+y = np.array([1.0, 2.0])
+
+# vector x from origin
+ax.annotate("", xy=O + x, xytext=O,
+            arrowprops=dict(arrowstyle="-|>", color="C0", lw=2))
+# vector y starting at tip of x (tip-to-tail)
+ax.annotate("", xy=O + x + y, xytext=O + x,
+            arrowprops=dict(arrowstyle="-|>", color="C1", lw=2))
+# resultant x+y from origin
+ax.annotate("", xy=O + x + y, xytext=O,
+            arrowprops=dict(arrowstyle="-|>", color="C2", lw=2))
+
+ax.text(*(O + x / 2 + np.array([0.0, -0.35])), r"$x$",
+        color="C0", fontsize=13, ha="center")
+ax.text(*(O + x + y / 2 + np.array([0.25, 0.0])), r"$y$",
+        color="C1", fontsize=13, ha="left")
+ax.text(*(O + (x + y) / 2 + np.array([-0.35, 0.25])), r"$x+y$",
+        color="C2", fontsize=13, ha="right")
+
+ax.set_xlim(-0.5, 4.5)
+ax.set_ylim(-0.7, 3.0)
+ax.set_aspect("equal")
+ax.axis("off")
+
+fig.savefig("c01_fig05.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig05.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: סקיצת משולש וקטורים — וקטור $x$, וקטור $y$ והווקטור $x+y$, להמחשת אי-שוויון המשולש.
+:::
+
+::: {.content-visible when-format="html"}
+![סקיצת משולש וקטורים — וקטור $x$, וקטור $y$ והווקטור $x+y$, להמחשת אי-שוויון המשולש.](c01_fig05.png){#fig-c01_fig05 width="62%" fig-align="center"}
+:::
+
+אורך צלע $\geq$ סכום הצלעות האחרות.
+
+לכל $x,y \in R$ מתקיים: $$.|x+y| \leq |x| + |y|$$
+
+::: {#exm-triangle-inequality .example}
+$$x = 2, y = -1$$ $$|x+y| < |x| + |y|$$ $$|1| < |2| + |(-1)|$$ $$1 < 2 + 1 = 3$$
+:::
+
+## סביבת-$\varepsilon$ של נקודה
+
+### $\varepsilon$-סביבות
+
+(נחוצה לתורת הגבולות) <!-- בדיקה: הערה בכתב יד -->
+
+אם $\varepsilon > 0$, ואם $x_0 \in R$, אז נגדיר את הסביבת $\varepsilon$ של $x_0$ להיות קבוצת כל המספרים שמרחקם מ-$x_0$ קטן מ-$\varepsilon$.
+
+כלומר: $(x_0 - \varepsilon, x_0 + \varepsilon)$
+
+```{python}
+#| echo: false
+#| output: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6.4, 3.4))
+
+ax.axhline(0, color="black", lw=1.2, zorder=1)
+
+x0 = 0.0
+eps = 1.5
+
+# open neighborhood (x0-eps, x0+eps)
+ax.plot([x0 - eps, x0 + eps], [0, 0], color="C0", lw=4,
+        solid_capstyle="butt", zorder=2)
+for x in [x0 - eps, x0 + eps]:
+    ax.plot([x], [0], "o", ms=9, markerfacecolor="white",
+            markeredgecolor="C0", markeredgewidth=1.8, zorder=3)
+ax.plot([x0], [0], "o", color="black", ms=6, zorder=3)
+
+ax.text(x0 - eps, -0.22, r"$x_0-\varepsilon$", ha="center", va="top", fontsize=12)
+ax.text(x0, -0.22, r"$x_0$", ha="center", va="top", fontsize=12)
+ax.text(x0 + eps, -0.22, r"$x_0+\varepsilon$", ha="center", va="top", fontsize=12)
+
+# epsilon arcs on both sides
+th = np.linspace(0, np.pi, 100)
+for (a, b) in [(x0 - eps, x0), (x0, x0 + eps)]:
+    cx = (a + b) / 2.0
+    r = (b - a) / 2.0
+    ax.plot(cx + r * np.cos(th), 0.45 * np.sin(th), color="C0", lw=1.6)
+    ax.text(cx, 0.55, r"$\varepsilon$", ha="center", va="bottom",
+            fontsize=13, color="C0")
+
+ax.set_xlim(x0 - eps - 1, x0 + eps + 1)
+ax.set_ylim(-0.7, 0.9)
+ax.axis("off")
+
+fig.savefig("c01_fig06.png", dpi=150, bbox_inches="tight")
+plt.close(fig)
+```
+
+```{=latex}
+\par\medskip
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig06.png}\hss}\endL\par
+\medskip
+```
+
+::: {style="text-align:center"}
+תרשים: ציר מספרים עם הנקודות $x_0-\varepsilon$, $x_0$, $x_0+\varepsilon$ וקשתות באורך $\varepsilon$ משני צדי $x_0$.
+:::
+
+::: {.content-visible when-format="html"}
+![ציר מספרים עם הנקודות $x_0-\varepsilon$, $x_0$, $x_0+\varepsilon$ וקשתות באורך $\varepsilon$ משני צדי $x_0$.](c01_fig06.png){#fig-c01_fig06 width="62%" fig-align="center"}
+:::
+
+::: {#exm-epsilon-neighborhood .example}
+סביבת $\frac{1}{2}$ של $2$ היא: $\left(\frac{3}{2}, \frac{5}{2}\right)$.
+:::
+
+## אינדוקציה
+
+### עקרון האינדוקציה
+
+שיטת הוכחה לטענות מהצורה:
+
+לכל מספר טבעי $n$, מתקיים \_\_\_\_\_\_\_\_\_.
+
+::: {#exm-induction-statements .example}
+לכל מספר $n \in N$ מתקיים: $2^n + n \leq 3^n$
+
+לכל מספר $n \in N$ מתקיים: $1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$
+
+לכל מספר $n \in N$ מתקיים: $1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$
+
+לכל מספר $n \in N$ מתקיים: $24 \mid 2 \cdot 7^n + 3 \cdot 5^n - 5$
+
+(מתרגול ה-24) <!-- בדיקה: הערה בכתב יד -->
+:::
+
+### שלבי האינדוקציה
+
+במקום לבדוק את נכונות הטענה לכל $n = 1,2,3,\dots$ נעשה כך:
+
+1)  בסיס האינדוקציה - נבדוק שהטענה נכונה עבור $n=1$.
+
+2)  נניח כי הטענה נכונה עבור $n$ כללי, ואז נראה כי הטענה נכונה עבור $n+1$.
+
+::: {#exm-induction-sum-squares .example}
+נוכיח באינדוקציה כי מתקיים: $1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$ לכל $n \in N$.
+
+**פתרון:**
+
+1)  נבדוק את בסיס האינדוקציה:
+
+עבור $n=1$ נקבל: $$1^2 \overset{?}{=} \frac{1 \cdot 2 \cdot 3}{6} \overset{\checkmark}{=} 1$$
+
+2)  נניח כי מתקיים: $1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$
+
+ונראה כי: $$1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+1+1)(2(n+1)+1)}{6}$$ $$1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+2)(2n+3)}{6}$$
+
+נעבוד על אגף שמאל: $$1^2 + \dots + n^2 + (n+1)^2 = \underbrace{\frac{n(n+1)(2n+1)}{6}}_{\text{הנחת האינדוקציה}} + (n+1)^2 =$$ $$= \frac{(n+1)[n(2n+1) + 6(n+1)]}{6} = \frac{(n+1)[2n^2 + 7n + 6]}{6} = \frac{(n+1) \cdot [n+2][2n+3]}{6}$$
+:::
