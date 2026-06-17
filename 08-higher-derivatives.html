@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he" xml:lang="he" dir="rtl"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>נגזרות מסדר גבוה וחקירת פונקציות – חשבון אינפיניטסימלי 1 — הנדסת מכונות</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./09-indefinite-integral.html" rel="next">
+<link href="./07-derivative-applications.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "אין תוצאות",
+    "search-matching-documents-text": "מסמכים תואמים",
+    "search-copy-link-title": "העתק קישור לחיפוש",
+    "search-hide-matches-text": "הסתר התאמות נוספות",
+    "search-more-match-text": "התאמה נוספת במסמך זה",
+    "search-more-matches-text": "התאמות נוספות במסמך זה",
+    "search-clear-button-title": "נקה",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "בטל",
+    "search-submit-button-title": "שלח",
+    "search-label": "חפש"
+  }
+}</script>
+<style>
+.theorem-title::after {
+  content: ".";
+}
+.todo {
+  color: #8a8a8a;
+  font-style: italic;
+  background: #fafafa;
+  border: 1px dashed #cccccc;
+  border-radius: 4px;
+  padding: 1.2rem 1rem;
+  margin: 0.4rem 0 1.2rem;
+}
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./08-higher-derivatives.html"><span class="chapter-title">נגזרות מסדר גבוה וחקירת פונקציות</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="חפש" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">חשבון אינפיניטסימלי 1 — הנדסת מכונות</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="הצג/הסתר מצב קריאה">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="חפש"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">פתח דבר</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-basic-concepts.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">מושגי יסוד</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-sequences.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">סדרות</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-functions-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">מבוא לפונקציות</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-function-limits.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">גבולות של פונקציות</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-continuity.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">רציפות</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-derivative.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">הנגזרת</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-derivative-applications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">שימושים של הנגזרת</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-higher-derivatives.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">נגזרות מסדר גבוה וחקירת פונקציות</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-indefinite-integral.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">האינטגרל הלא-מסוים</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-definite-integral.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">האינטגרל המסוים</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-improper-integral.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">האינטגרל המוכלל</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">תוכן העניינים</h2>
+   
+  <ul>
+  <li><a href="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים" id="toc-הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="nav-link active" data-scroll-target="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים">הגדרת הנגזרת מסדר גבוה וסימונים</a></li>
+  <li><a href="#דוגמאות-לנגזרת-מסדר-גבוה" id="toc-דוגמאות-לנגזרת-מסדר-גבוה" class="nav-link" data-scroll-target="#דוגמאות-לנגזרת-מסדר-גבוה">דוגמאות לנגזרת מסדר גבוה</a></li>
+  <li><a href="#פולינום-טיילור-ומקלורן" id="toc-פולינום-טיילור-ומקלורן" class="nav-link" data-scroll-target="#פולינום-טיילור-ומקלורן">פולינום טיילור ומקלורן</a>
+  <ul class="collapse">
+  <li><a href="#רעיון-ראשון---פולינום-טיילור" id="toc-רעיון-ראשון---פולינום-טיילור" class="nav-link" data-scroll-target="#רעיון-ראשון---פולינום-טיילור">רעיון ראשון - פולינום טיילור</a></li>
+  </ul></li>
+  <li><a href="#מציאת-פולינום-מקלורן-מסדר-n" id="toc-מציאת-פולינום-מקלורן-מסדר-n" class="nav-link" data-scroll-target="#מציאת-פולינום-מקלורן-מסדר-n">מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></a>
+  <ul class="collapse">
+  <li><a href="#פולינום-מקלורן" id="toc-פולינום-מקלורן" class="nav-link" data-scroll-target="#פולינום-מקלורן">פולינום מקלורן</a></li>
+  </ul></li>
+  <li><a href="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" id="toc-סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="nav-link" data-scroll-target="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות">סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</a>
+  <ul class="collapse">
+  <li><a href="#רעיון-שני" id="toc-רעיון-שני" class="nav-link" data-scroll-target="#רעיון-שני">רעיון שני</a></li>
+  <li><a href="#השארית" id="toc-השארית" class="nav-link" data-scroll-target="#השארית">השארית</a></li>
+  <li><a href="#סדרי-גודל" id="toc-סדרי-גודל" class="nav-link" data-scroll-target="#סדרי-גודל">סדרי גודל</a></li>
+  <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות:</a></li>
+  <li><a href="#השארית-בטיילור" id="toc-השארית-בטיילור" class="nav-link" data-scroll-target="#השארית-בטיילור">השארית בטיילור</a></li>
+  <li><a href="#דוגמאות-1" id="toc-דוגמאות-1" class="nav-link" data-scroll-target="#דוגמאות-1">דוגמאות:</a></li>
+  </ul></li>
+  <li><a href="#משפט-לגראנז-על-השארית" id="toc-משפט-לגראנז-על-השארית" class="nav-link" data-scroll-target="#משפט-לגראנז-על-השארית">משפט לגראנז’ על השארית</a>
+  <ul class="collapse">
+  <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא:</a></li>
+  </ul></li>
+  <li><a href="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" id="toc-מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="nav-link" data-scroll-target="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי">מבחן הנגזרת השנייה לנקודות קיצון מקומי</a>
+  <ul class="collapse">
+  <li><a href="#הסבר-רעיוני-למשפט" id="toc-הסבר-רעיוני-למשפט" class="nav-link" data-scroll-target="#הסבר-רעיוני-למשפט">הסבר רעיוני למשפט</a></li>
+  </ul></li>
+  <li><a href="#קמירות-וקעירות-של-פונקציה" id="toc-קמירות-וקעירות-של-פונקציה" class="nav-link" data-scroll-target="#קמירות-וקעירות-של-פונקציה">קמירות וקעירות של פונקציה</a></li>
+  <li><a href="#נקודת-פיתול" id="toc-נקודת-פיתול" class="nav-link" data-scroll-target="#נקודת-פיתול">נקודת פיתול</a></li>
+  <li><a href="#אסימפטוטות-אנכיות-ומשופעות" id="toc-אסימפטוטות-אנכיות-ומשופעות" class="nav-link" data-scroll-target="#אסימפטוטות-אנכיות-ומשופעות">אסימפטוטות — אנכיות ומשופעות</a>
+  <ul class="collapse">
+  <li><a href="#אסימפטוטה-אנכית" id="toc-אסימפטוטה-אנכית" class="nav-link" data-scroll-target="#אסימפטוטה-אנכית">אסימפטוטה אנכית</a></li>
+  <li><a href="#אסימפטוטה-משופעת" id="toc-אסימפטוטה-משופעת" class="nav-link" data-scroll-target="#אסימפטוטה-משופעת">אסימפטוטה משופעת</a></li>
+  </ul></li>
+  <li><a href="#שרטוט-גרף-של-פונקציה" id="toc-שרטוט-גרף-של-פונקציה" class="nav-link" data-scroll-target="#שרטוט-גרף-של-פונקציה">שרטוט גרף של פונקציה</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">נגזרות מסדר גבוה וחקירת פונקציות</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="level2">
+<h2 class="anchored" data-anchor-id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים">הגדרת הנגזרת מסדר גבוה וסימונים</h2>
+<p>נגזרת <span class="math inline">\(f\)</span> מסדר ח מסדר <span class="math inline">\(x_0\)</span>:</p>
+<p><span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
+<p><span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
+<p><span class="math inline">\(f'\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
+<p><span class="math inline">\(\vdots\)</span></p>
+<p><span class="math inline">\(((f')'\ldots)'\)</span> גזירה ב- <span class="math inline">\(x_0\)</span> (ח-1 פעמים)</p>
+<p>כלומר: <span class="math inline">\(f\)</span> גזירה מסדר ראשון <span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
+<p><span class="math inline">\(f\)</span> גזירה מסדר שלישי <span class="math inline">\(f,f',f''\)</span> גזירות ב- <span class="math inline">\(x_0\)</span></p>
+<p>נסמן: <span class="math inline">\(f^{(n)}(x) = (\ldots(f')'\ldots)'\)</span> — ח נגזרות (הנגזרת ה-n-ית של <span class="math inline">\(f\)</span>)</p>
+<p>לפי המוסכמה:</p>
+<p><span class="math display">\[f^{(0)}(x) = f(x)\]</span></p>
+<p><span class="math display">\[f^{(1)}(x) = f'(x)\]</span></p>
+<p><span class="math display">\[f^{(3)}(x) = f'''(x)\]</span></p>
+<p>דוגמאות:</p>
+<p><strong>(1)</strong> נמצא את <span class="math inline">\(f^{(n)}(x)\)</span> עבור <span class="math inline">\(f(x) = e^x\)</span> לכל <span class="math inline">\(n \geq 0\)</span>:</p>
+<p><span class="math display">\[f^{(0)}(x) = e^x\]</span></p>
+<p><span class="math display">\[f^{(1)}(x) = e^x\]</span></p>
+<p><span class="math display">\[\vdots\]</span></p>
+<p><span class="math display">\[f^{(n)}(x) = e^x\]</span></p>
+<p><strong>(2)</strong> נמצא את <span class="math inline">\(f^{(n)}(x)\)</span> עבור <span class="math inline">\(f(x) = \sin(x)\)</span> לכל <span class="math inline">\(n \geq 0\)</span>:</p>
+<p><span class="math display">\[f^{(0)}(x) = \sin(x)\]</span></p>
+<p><span class="math display">\[f^{(1)}(x) = \cos(x)\]</span></p>
+<p><span class="math display">\[f^{(2)}(x) = -\sin(x)\]</span></p>
+<p><span class="math display">\[f^{(3)}(x) = -\cos(x)\]</span></p>
+<p><span class="math display">\[f^{(4)}(x) = \sin(x)\]</span></p>
+<p><span class="math display">\[f^{(1)}(x) = f^{(5)}(x)\]</span></p>
+<p><span class="math display">\[\vdots\]</span></p>
+<p><span class="math display">\[f^{(n)}(x) = \begin{cases} \sin(x) &amp; n = 4k \\ \cos(x) &amp; n = 4k+1 \\ -\sin(x) &amp; n = 4k+2 \\ -\cos(x) &amp; n = 4k+3 \end{cases}\]</span></p>
+<p>לדוגמה:</p>
+<p><span class="math display">\[f^{(103)}(x) = -\cos(x)\]</span></p>
+<p><strong>(3)</strong> נמצא את <span class="math inline">\(f^{(n)}(x)\)</span> עבור <span class="math inline">\(f(x) = \ln(1+x)\)</span> לכל <span class="math inline">\(n \geq 0\)</span>:</p>
+<p><span class="math display">\[f^{(0)}(x) = \ln(1+x)\]</span></p>
+<p><span class="math display">\[f^{(1)}(x) = \frac{1}{1+x} = (1+x)^{-1}\]</span></p>
+<p><span class="math display">\[f^{(2)}(x) = -(1+x)^{-2} = \frac{-1}{(1+x)^2}\]</span></p>
+<p><span class="math display">\[f^{(3)}(x) = 2\cdot(1+x)^{-3} = \frac{2}{(1+x)^3}\]</span></p>
+<p><span class="math display">\[f^{(4)}(x) = -3\cdot 2\cdot(1+x)^{-4} = \frac{-6}{(1+x)^4}\]</span></p>
+<p><span class="math display">\[\vdots\]</span></p>
+<p><span class="math display">\[f^{(n)}(x) = (-1)^{n+1}\cdot(n-1)!\cdot(1+x)^{-n}\]</span></p>
+<p><span class="math display">\[f^{(n)}(x) = \frac{(-1)^{n+1}\cdot(n-1)!}{(1+x)^n}\]</span></p>
+</section>
+<section id="דוגמאות-לנגזרת-מסדר-גבוה" class="level2">
+<h2 class="anchored" data-anchor-id="דוגמאות-לנגזרת-מסדר-גבוה">דוגמאות לנגזרת מסדר גבוה</h2>
+<div class="todo">
+<p>דוגמאות לנגזרת מסדר גבוה (<span class="math inline">\(\sin x,\ e^x,\ xe^x\)</span>) מופיעות בסעיף ״הגדרת הנגזרת מסדר גבוה״ לעיל. להשלמה והפרדה.</p>
+</div>
+</section>
+<section id="פולינום-טיילור-ומקלורן" class="level2">
+<h2 class="anchored" data-anchor-id="פולינום-טיילור-ומקלורן">פולינום טיילור ומקלורן</h2>
+<section id="רעיון-ראשון---פולינום-טיילור" class="level3">
+<h3 class="anchored" data-anchor-id="רעיון-ראשון---פולינום-טיילור">רעיון ראשון - פולינום טיילור</h3>
+<p>נתונה פונקציה <span class="math inline">\(f(x)\)</span>, ידועות לנו הנגזרות שלה ב- <span class="math inline">\(x_0\)</span>: <span class="math inline">\(f^{(0)}(x_0), f^{(1)}(x_0), \ldots, f^{(n)}(x_0)\)</span></p>
+<p>נרצה למצוא פונקציה אחרת שהיא מאוד פשוטה (פולינום), נסמנה <span class="math inline">\(g(x)\)</span>, שהיא מסכימה עם <span class="math inline">\(f\)</span> על הנגזרות ב- <span class="math inline">\(x_0\)</span>.</p>
+<p>כלומר:</p>
+<p><span class="math display">\[f^{(0)}(x_0) = g^{(0)}(x_0)\]</span></p>
+<p><span class="math display">\[f'(x_0) = g'(x_0)\]</span></p>
+<p><span class="math display">\[\vdots\]</span></p>
+<p><span class="math display">\[f^{(n)}(x_0) = g^{(n)}(x_0)\]</span></p>
+<p>נחפש <span class="math inline">\(g(x)\)</span> מהצורה:</p>
+<p><span class="math display">\[g(x) = a_0 + a_1(x-x_0) + \ldots + a_n(x-x_0)^n\]</span></p>
+<p>כאשר אנחנו עדיין לא יודעים את: <span class="math inline">\(a_0, a_1, \ldots, a_n\)</span></p>
+<p>נציב <span class="math inline">\(x = x_0\)</span> ב- <span class="math inline">\(g(x)\)</span>: <span class="math inline">\(g(x_0) = a_0 \overset{\text{נרצה}}{=} f(x_0)\)</span></p>
+<p>נגזור את <span class="math inline">\(g(x)\)</span>:</p>
+<p><span class="math display">\[g^{(1)}(x) = a_1 + 2\cdot a_2(x-x_0) + \ldots + na_n\cdot(x-x_0)^{n-1}\]</span></p>
+<p>נציב <span class="math inline">\(x = x_0\)</span>: <span class="math inline">\(g^{(1)}(x_0) = a_1 \overset{\text{נרצה}}{=} f'(x_0)\)</span></p>
+<p>נגזור את <span class="math inline">\(g^{(1)}(x)\)</span>:</p>
+<p><span class="math display">\[g^{(2)}(x) = 2a_2 + 3\cdot 2\cdot a_3(x-x_0) + \ldots\]</span></p>
+<p>נציב <span class="math inline">\(x = x_0\)</span>: <span class="math inline">\(g^{(2)}(x_0) = 2\cdot a_2 \overset{\text{נרצה}}{=} f^{(2)}(x_0)\)</span></p>
+<p>נגזור את <span class="math inline">\(g^{(2)}(x)\)</span>:</p>
+<p><span class="math display">\[g^{(3)}(x) = 3\cdot 2\cdot a_3 + \ldots(x-x_0) + \ldots\]</span></p>
+<p>נציב <span class="math inline">\(x = x_0\)</span>: <span class="math inline">\(g^{(3)}(x_0) = 3!\cdot a_3 \overset{\text{נרצה}}{=} f^{(3)}(x_0)\)</span></p>
+<p>לכן, נבחר את <span class="math inline">\(a_k = \dfrac{f^{(k)}(x_0)}{k!}\)</span> לכל <span class="math inline">\(k = 0,1,\ldots,n\)</span></p>
+<p>לסיכום, אם <span class="math inline">\(f\)</span> פונקציה גזירה מסדר ח בנקודה <span class="math inline">\(x_0\)</span>, אז הפולינום:</p>
+<p><span class="math display">\[P_n(x) = f(x_0) + \frac{f'(x_0)}{1!}\cdot(x-x_0) + \frac{f^{(2)}(x_0)}{2!}\cdot(x-x_0)^2 + \ldots + \frac{f^{(n)}(x_0)}{n!}\cdot(x-x_0)^n\]</span></p>
+<p>נקרא “פולינום טיילור” של <span class="math inline">\(f\)</span> מסדר ח סביב <span class="math inline">\(x_0\)</span>, ומסומן <span class="math inline">\(P_n(x)\)</span>.</p>
+<p><strong>* מוסכמה:</strong> <span class="math inline">\(0! = 1\)</span></p>
+<p>הראנו כי פולינום טיילור מקיים:</p>
+<p><span class="math display">\[f(x_0) = P_n(x_0)\]</span></p>
+<p><span class="math display">\[f^{(1)}(x_0) = P^{(1)}n(x_0)\]</span></p>
+<p><span class="math display">\[\vdots\]</span></p>
+<p><span class="math display">\[f^{(n)}(x_0) = P^{(n)}n(x_0)\]</span></p>
+<p><strong>*</strong> עבור <span class="math inline">\(x_0 = 0\)</span> פולינום טיילור נקרא “פולינום מקלורן”.</p>
+</section>
+</section>
+<section id="מציאת-פולינום-מקלורן-מסדר-n" class="level2">
+<h2 class="anchored" data-anchor-id="מציאת-פולינום-מקלורן-מסדר-n">מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></h2>
+<section id="פולינום-מקלורן" class="level3">
+<h3 class="anchored" data-anchor-id="פולינום-מקלורן">פולינום מקלורן</h3>
+<p>פולינום מקלורן של <span class="math inline">\(e^x\)</span> מסדר ח, לכל <span class="math inline">\(n \geq 0\)</span>:</p>
+<p><span class="math display">\[P_n(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots + \frac{x^n}{n!}\]</span></p>
+<p>דוגמאות:</p>
+<p><strong>(1)</strong> עבור <span class="math inline">\(f(x) = e^x\)</span> נמצא את פולינומי-מקלורן:</p>
+<p><span class="math display">\[P_0(x) = f(0) = 1 \qquad f^{(0)}(0) = 1\]</span></p>
+<p><span class="math display">\[P_1(x) = 1 + 1\cdot x = 1 + x\]</span></p>
+<p><span class="math display">\[P_2(x) = 1 + x + \frac{x^2}{2}\]</span></p>
+<p><strong>(2)</strong> עבור <span class="math inline">\(f(x) = \sin(x)\)</span> נמצא את פולינומי-מקלורן:</p>
+<p><span class="math display">\[f^{(n)}(0) = \begin{cases} 0 &amp; n = 4k \\ 1 &amp; n = 4k+1 \\ 0 &amp; n = 4k+2 \\ -1 &amp; n = 4k+3 \end{cases}\]</span></p>
+<p>ולכן:</p>
+<p><span class="math display">\[P_1(x) = x = P_2(x)\]</span></p>
+<p><span class="math display">\[P_3(x) = x - \frac{x^3}{3!} = P_4(x)\]</span></p>
+<p><span class="math display">\[P_5(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!}\]</span></p>
+</section>
+</section>
+<section id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="level2">
+<h2 class="anchored" data-anchor-id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות">סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</h2>
+<section id="רעיון-שני" class="level3">
+<h3 class="anchored" data-anchor-id="רעיון-שני">רעיון שני</h3>
+<p>לעיתים, נשתמש ב- <span class="math inline">\(P_n(x)\)</span> במקום ב- <span class="math inline">\(f(x)\)</span>, לשתי מטרות:</p>
+<p><strong>(1)</strong> חישובי גבולות.</p>
+<p><strong>(2)</strong> קירובים ל- <span class="math inline">\(f(x)\)</span>.</p>
+<section id="חישובי-גבולות" class="level4">
+<h4 class="anchored" data-anchor-id="חישובי-גבולות">חישובי גבולות</h4>
+<div id="thm-taylor-limit" class="theorem">
+<p><span class="theorem-title"><strong>משפט 1</strong></span> משפט: (ללא הוכחה)</p>
+<p>אם <span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0 = 0\)</span> מסדר ח, אז מתקיים:</p>
+<p><span class="math display">\[\lim_{x\to 0} \frac{f(x) - P_n(x)}{x^n} = 0\]</span></p>
+</div>
+<p><strong>הוכחה המשפט:</strong> ננסה בעזרת לופיטל:</p>
+<p><span class="math display">\[\lim_{x\to 0} \frac{f(x) - P_n(x)}{x^n} \;\underset{f(0)-P_n(0)=0}{=}\; \lim_{x\to 0} \frac{f'(x) - P_n'(x)}{n\cdot x^{n-1}} = \ldots = \lim_{x\to 0} \frac{f^{(n)}(x) - P_n^{(n)}(x)}{n!} = 0\]</span></p>
+<!-- בדיקה: מעל השוויונים נכתב "מפעילים את לופיטל n פעמים" -->
+<p>דוגמאות:</p>
+<p><strong>(1)</strong> עבור <span class="math inline">\(f(x) = e^x\)</span> ניקח את פולינום מקלורן מסדר 1: <span class="math inline">\(P_1(x) = 1 + x\)</span></p>
+<p>נציב ונקבל:</p>
+<p><span class="math display">\[\lim_{x\to 0} \frac{e^x - (1+x)}{x} = 0\]</span></p>
+<p><span class="math display">\[\lim_{x\to 0} \left(\frac{e^x - 1}{x} - 1\right) = 0\]</span></p>
+<p><span class="math display">\[\boxed{\lim_{x\to 0} \frac{e^x - 1}{x} = 1}\]</span></p>
+<p><strong>(2)</strong> עבור <span class="math inline">\(f(x) = e^x\)</span> ניקח את פולינום מקלורן מסדר 2: <span class="math inline">\(P_2(x) = 1 + x + \dfrac{x^2}{2}\)</span></p>
+<p>נציב ונקבל:</p>
+<p><span class="math display">\[\lim_{x\to 0} \frac{e^x - (1 + x + \frac{x^2}{2})}{x^2} = 0\]</span></p>
+<p><span class="math display">\[\boxed{\lim_{x\to 0} \frac{e^{x-1} - x}{x^2} = \frac{1}{2}}\]</span></p>
+<!-- מקור: הרצאה 21a -->
+</section>
+</section>
+<section id="השארית" class="level3">
+<h3 class="anchored" data-anchor-id="השארית">השארית</h3>
+<p><span class="math inline">\(f(x) - P_n(x)\)</span> ייקרא “השארית (מסדר n)”, ויסומן ע”י: <span class="math inline">\(R_n(x)\)</span></p>
+<p><span class="math display">\[R_n(x) = f(x) - P_n(x)\]</span></p>
+</section>
+<section id="סדרי-גודל" class="level3">
+<h3 class="anchored" data-anchor-id="סדרי-גודל">סדרי גודל</h3>
+<p>אם פונקציה <span class="math inline">\(g(x)\)</span> מקיימת: <span class="math inline">\(\lim_{x \to 0} \frac{g(x)}{x^n} = 0\)</span> אז נסמן ע”י: <span class="math inline">\(g(x) = o(x^n)\)</span></p>
+<p>ב- <span class="math inline">\(o(x^n)\)</span> יש חזקות של <span class="math inline">\(x\)</span> שגדולות מ-<span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[o(x^n) \cdot o(x^m) = o(x^{n+m})\]</span></p>
+</section>
+<section id="דוגמאות" class="level3">
+<h3 class="anchored" data-anchor-id="דוגמאות">דוגמאות:</h3>
+<p><strong>1)</strong> האם זה נכון ש <span class="math inline">\(x^{100} = o(x^4)\)</span> ?</p>
+<p>נבדוק האם</p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{x^{100}}{x^4} = x^{96} = 0 \quad \Longleftarrow \quad x^{100} = o(x^4)\]</span></p>
+<p><strong>2)</strong> האם זה נכון ש <span class="math inline">\(\sin^4(x) = o(x^4)\)</span> ?</p>
+<p>נבדוק האם</p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{\sin^4(x)}{x^4} = \lim_{x \to 0} \left( \frac{\sin x}{x} \right)^4 = 1 \quad \Longleftarrow \quad \sin^4(x) \neq o(x^4)\]</span></p>
+<p>נתון- האם זה נכון ש <span class="math inline">\(\sin^4(x) = o(x^3)\)</span> ?</p>
+<p>נבדוק האם</p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{\sin^4(x)}{x^3} = \lim_{x \to 0} \frac{\sin^3(x)}{x^3} \sin(x) = 0 \quad \Longleftarrow \quad \sin^4(x) = o(x^3)\]</span></p>
+</section>
+<section id="השארית-בטיילור" class="level3">
+<h3 class="anchored" data-anchor-id="השארית-בטיילור">השארית בטיילור</h3>
+<p>ראינו ש</p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{f(x) - P_n(x)}{x^n} = 0 \quad \text{כלומר} \quad f(x) - P_n(x) = o(x^n)\]</span></p>
+<p><span class="math display">\[f(x) = P_n(x) + o(x^n)\]</span></p>
+<p>למשל: פולינום מקלורן של <span class="math inline">\(f(x) = e^x\)</span> :</p>
+<p><span class="math display">\[P_n(x) = 1 + x + \frac{x^2}{2!} + \ldots + \frac{x^n}{n!}\]</span></p>
+<p>ולכן <span class="math inline">\(e^x = 1 + x + o(x)\)</span> , אפשר גם לרשום</p>
+<p><span class="math display">\[\underbrace{e^x = 1 + x + \frac{x^2}{2!}}_{P_n(x)} + o(x^2)\]</span></p>
+</section>
+<section id="דוגמאות-1" class="level3">
+<h3 class="anchored" data-anchor-id="דוגמאות-1">דוגמאות:</h3>
+<p><strong>1)</strong> חשבו את הגבול: <span class="math inline">\(\lim_{x \to 0} \frac{\sin(x)}{x}\)</span></p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \frac{P_1(x) + o(x)}{x} = \lim_{x \to 0} \frac{x + o(x)}{x} = \lim_{x \to 0} \left( 1 + \frac{o(x)}{x} \right) = \boxed{1}\]</span></p>
+<p><strong>2)</strong> חשבו את הגבול: <span class="math inline">\(\lim_{x \to 0} \frac{\sin x \cdot \cos x - x}{x^2}\)</span></p>
+<p><span class="math display">\[\sin x = P_2(x) + o(x^2) = x + o(x^2) \quad , \quad \cos x = P_2(x) + o(x^2) = 1 - \frac{x^2}{2!} + o(x^2)\]</span></p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{\sin x \cdot \cos x - x}{x^2} = \lim_{x \to 0} \frac{(x + o(x^2))(1 - \frac{x^2}{2} + o(x^2)) - x}{x^2} =\]</span></p>
+<p><span class="math display">\[= \lim_{x \to 0} \frac{x - \frac{x^3}{2} + x \cdot o(x^2) + o(x^2) - \frac{x^2}{2} \cdot o(x^2) + o(x^2) \cdot o(x^2) - x}{x^2} =\]</span></p>
+<p><span class="math display">\[= \lim_{x \to 0} \frac{-\frac{x^3}{2} + o(x^2)}{x^2} = \lim_{x \to 0} \left( -\frac{x}{2} + \frac{o(x^2)}{x^2} \right) = \boxed{0}\]</span></p>
+<p><strong>3)</strong> מצאו את פולינום מקלורן מסדר <span class="math inline">\(4\)</span> של <span class="math inline">\(g(x) = \sqrt{1 + x^2}\)</span></p>
+<p>נגזור את הפונקציה <span class="math inline">\(g(x)\)</span> : <span class="math inline">\(g(x) = (1 + x^2)^{\frac{1}{2}}\)</span></p>
+<p><span class="math display">\[g'(x) = \frac{1}{2}(1 + x^2)^{-\frac{1}{2}} \cdot 2x\]</span></p>
+<p><span class="math display">\[g^{(2)}(x) = (1 + x^2)^{-\frac{1}{2}} - x^2 \cdot (1 + x^2)^{-\frac{3}{2}}\]</span></p>
+<p><span class="math display">\[g^{(3)}(x) = -\frac{1}{2}(1 + x^2)^{-\frac{3}{2}} \cdot 2x - \left[ 2x \cdot (1 + x^2)^{-\frac{3}{2}} + x^2 \cdot \left( -\frac{3}{2} \right)(1 + x^2)^{-\frac{5}{2}} \cdot 2x \right]\]</span></p>
+<p><span class="math display">\[g^{(4)}(x) = -3 \cdot \left[ (1 + x^2)^{-\frac{3}{2}} \cdot 1 + x \left( -\frac{3}{2} \right) \cdot (1 + x^2)^{-\frac{5}{2}} \cdot 2x \right] + 3 \left[ 3x^2 \cdot (1 + x^2)^{-\frac{5}{2}} + x^3 \left( -\frac{5}{2} \right) \cdot (1 + x^2)^{-\frac{7}{2}} \cdot 2x \right]\]</span></p>
+<p>ולכן: <span class="math inline">\(g(0) = 1\)</span> , <span class="math inline">\(g'(0) = 0\)</span> , <span class="math inline">\(g^{(2)}(0) = 1\)</span> , <span class="math inline">\(g^{(3)}(0) = 0\)</span> , <span class="math inline">\(g^{(4)}(0) = -3\)</span></p>
+<p>פולינום מקלורן מסדר <span class="math inline">\(4\)</span> של <span class="math inline">\(g(x) = \sqrt{1 + x^2}\)</span> :</p>
+<p><span class="math display">\[\boxed{P_4(x) = 1 + \frac{1}{2}x^2 - \frac{3}{4!}x^4}\]</span></p>
+<p><strong>4)</strong> חשבו את הגבול: <span class="math inline">\(\lim_{x \to 0} \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4}\)</span></p>
+<p><span class="math display">\[\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{4!} + o(x^4) \quad , \quad \sqrt{1 + x^2} = 1 + \frac{x^2}{2} - \frac{3 \cdot x^4}{4!} + o(x^4)\]</span></p>
+<p><span class="math display">\[\lim_{x \to 0} \frac{1 - \cos x \cdot \sqrt{1 + x^2}}{x^4} = \lim_{x \to 0} \frac{1 - (1 - \frac{x^2}{2} + \frac{x^4}{4!} + o(x^4))(1 + \frac{x^2}{2} - \frac{3 x^4}{4!} + o(x^4))}{x^4} =\]</span></p>
+<p><span class="math display">\[= \lim_{x \to 0} \frac{1 - 1 - \frac{x^2}{2} + \frac{3x^4}{4!} + \frac{x^2}{2} + \frac{x^4}{4} - \frac{x^4}{4!} - x^4 \cdot o(x^4)}{x^4} = \lim_{x \to 0} \frac{x^4 \left( \frac{3}{4!} + \frac{1}{4} - \frac{1}{4!} \right) + o(x^4)}{x^4} =\]</span></p>
+<p><span class="math display">\[= \frac{3}{4!} + \frac{1}{4} - \frac{1}{4!} = \boxed{\frac{2}{4!} + \frac{1}{4}}\]</span></p>
+</section>
+</section>
+<section id="משפט-לגראנז-על-השארית" class="level2">
+<h2 class="anchored" data-anchor-id="משפט-לגראנז-על-השארית">משפט לגראנז’ על השארית</h2>
+<p>חישוב ספרות אחרי הנקודה.</p>
+<div id="thm-lagrange-remainder" class="theorem">
+<p><span class="theorem-title"><strong>משפט 2</strong></span> אם <span class="math inline">\(f(x)\)</span> גזירה <span class="math inline">\((n+1)\)</span> פעמים בסביבת הנקודה <span class="math inline">\(x_0\)</span> , לכל <span class="math inline">\(x\)</span> בסביבת <span class="math inline">\(x_0\)</span> , אז קיימת נקודה <span class="math inline">\(c\)</span> בין <span class="math inline">\(x_0\)</span> ל-<span class="math inline">\(x\)</span> עבורה:</p>
+<p><span class="math display">\[f(x) - P_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (x - x_0)^{n+1}\]</span></p>
+</div>
+<p>(הנוסחה כוללת: מספר אקראי <span class="math inline">\(x_0\)</span> , הביטוי <span class="math inline">\(f(x) - P_n(x)\)</span> הוא השארית.)</p>
+<!-- בדיקה: הערות בכתב יד מסביב לנוסחה - "מספר אקראי בין x_0", "השארית" -->
+<p><strong>*</strong> אם נרצה לחשב בקירוב את <span class="math inline">\(f(x)\)</span> , במקום זה נחשב את <span class="math inline">\(P_n(x)\)</span> והשגיאה (המרחק בין <span class="math inline">\(f(x)\)</span> ל-<span class="math inline">\(P_n(x)\)</span> ) היא מהצורה <span class="math inline">\(\frac{f^{(n+1)}(c)}{(n+1)!}\)</span> ונוסה להעריך אותה.</p>
+<section id="דוגמא" class="level3">
+<h3 class="anchored" data-anchor-id="דוגמא">דוגמא:</h3>
+<p>ניקח את <span class="math inline">\(f(x) = \sin(x)\)</span> ואת <span class="math inline">\(x_0 = 0\)</span> , אז</p>
+<p><span class="math display">\[P_n(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \ldots\]</span></p>
+<p>נקרב את <span class="math inline">\(\sin(0.1)\)</span> עד כדי דיוק של <span class="math inline">\(10^{-2}\)</span> .</p>
+<p>נסתכל על <span class="math inline">\(x = 0.1\)</span> ואז מהמשפט נקבל לנגראנז’ של השארית:</p>
+<p><span class="math display">\[\underbrace{\sin(0.1)}_{f(0.1)} - \underbrace{P_n(0.1)}_{הקירוב} = \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (0.1 - 0)^{n+1}\]</span></p>
+<!-- בדיקה: הערה בכתב יד - "c איזה נקודה בלתי ידועה בין 0 ל-0.1" -->
+<p>נרצה שיתקיים: <span class="math inline">\(|\sin(0.1) - P_n(0.1)| &lt; 10^{-2}\)</span></p>
+<p>אז נפשט את הביטוי:</p>
+<p><span class="math display">\[|\sin(0.1) - P_n(0.1)| = \frac{f^{(n+1)}(c)}{(n+1)! \cdot 10^{n+1}} \leq \frac{1}{(n+1)! \cdot 10^{n+1}}\]</span></p>
+<!-- בדיקה: הערה בכתב יד - "כי הנגזרת של sin היא ±sin x, ±cos x" -->
+<p>נרצה לבחור את <span class="math inline">\(n\)</span> כך ש:</p>
+<p><span class="math display">\[\frac{1}{(n+1)! \cdot 10^{n+1}} \leq 10^{-2} \quad \Longleftarrow \quad \text{רואים שמספיק} \; n=1 : \quad \frac{1}{2! \cdot 10^2} &lt; \frac{1}{10^2}\]</span></p>
+<p>ולכן קיבלנו כי <span class="math inline">\(|\sin(0.1) - P_1(0.1)| &lt; 10^{-2}\)</span></p>
+<p>כך שהקירוב המבוקש יהיה:</p>
+<p><span class="math display">\[\boxed{P_1(0.1) = 0.1}\]</span></p>
+<!-- מקור: הרצאה 21b -->
+</section>
+</section>
+<section id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="level2">
+<h2 class="anchored" data-anchor-id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי">מבחן הנגזרת השנייה לנקודות קיצון מקומי</h2>
+<ul>
+<li>אם <span class="math inline">\(f\)</span> גזירה ב-<span class="math inline">\(x_0\)</span> ו-<span class="math inline">\(f'(x_0) = 0\)</span>, אז <span class="math inline">\(x_0\)</span> נקודת קיצון.</li>
+</ul>
+<p>כלומר, אם ב-<span class="math inline">\(x_0\)</span>, <span class="math inline">\(f'(x_0) \neq 0\)</span> אז <span class="math inline">\(x_0\)</span> לא נקודת קיצון (מקומית).</p>
+<ul>
+<li><p>אם <span class="math inline">\(f'(x) \geq 0\)</span> בקטע <span class="math inline">\(I\)</span> אז <span class="math inline">\(f\)</span> מונוטונית עולה ב-<span class="math inline">\(I\)</span>.</p>
+<p>אם <span class="math inline">\(f'(x) \leq 0\)</span> בקטע <span class="math inline">\(I\)</span> אז <span class="math inline">\(f\)</span> מונוטונית יורדת ב-<span class="math inline">\(I\)</span>.</p></li>
+</ul>
+<div id="thm-second-derivative-test" class="theorem">
+<p><span class="theorem-title"><strong>משפט 3</strong></span> <strong>מבחן הנגזרת השנייה לקיצון</strong></p>
+<p>אם <span class="math inline">\(f\)</span> גזירה בסביבה של <span class="math inline">\(x_0\)</span> מסדר <span class="math inline">\(2\)</span>, ואם <span class="math inline">\(f'(x_0) = 0\)</span> ואם <span class="math inline">\(f^{(2)}(x_0) \neq 0\)</span></p>
+<p>אז <span class="math inline">\(x_0\)</span> נקודת קיצון מקומית של <span class="math inline">\(f\)</span>.</p>
+<p>לכן אם <span class="math inline">\(f^{(2)}(x_0) &gt; 0\)</span> אז <span class="math inline">\(x_0\)</span> נקודת מינימום מקומית,</p>
+<p>ואם <span class="math inline">\(f^{(2)}(x_0) &lt; 0\)</span> אז <span class="math inline">\(x_0\)</span> נקודת מקסימום מקומית.</p>
+</div>
+<section id="הסבר-רעיוני-למשפט" class="level3">
+<h3 class="anchored" data-anchor-id="הסבר-רעיוני-למשפט">הסבר רעיוני למשפט</h3>
+<p>עבור <span class="math inline">\(x_0 = 0\)</span>: <span class="math inline">\(f(x) = P_2(x) + o(x^2)\)</span> פולינום מקלורן של <span class="math inline">\(f\)</span> מסדר <span class="math inline">\(2\)</span>.</p>
+<p>כלומר: <span class="math display">\[P_2(x) = f(0) + \frac{f'(0)}{1!}x + \frac{f^{(2)}(0)}{2!}x^2\]</span></p>
+<p>כאשר <span class="math inline">\(\frac{f'(0)}{1!} = 0\)</span>.</p>
+<p>נניח ש <span class="math inline">\(f^{(2)}(0) &gt; 0\)</span>: <span class="math display">\[f(x) = f(0) + \frac{f^{(2)}(0)}{2!}x^2 + o(x^2)\]</span></p>
+<p><span class="math display">\[.f(x) - f(0) = \frac{f^{(2)}(0)}{2!}x^2 + o(x^2) \geq 0\]</span></p>
+<p>כאשר <span class="math inline">\(\frac{f^{(2)}(0)}{2!}x^2 + o(x^2)\)</span> נזרקת אי-שלילי (חיובי), כי <span class="math inline">\(x^2\)</span> גדל יותר מהר מ-<span class="math inline">\(o(x^2)\)</span> קרוב ל-<span class="math inline">\(0\)</span>.</p>
+<div id="exm-critical-points" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 1</strong></span> <strong>דוגמא:</strong></p>
+<p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> נמצא את כל נקודות הקיצון המקומי שלה.</p>
+<p>ב-<span class="math inline">\(\mathbb{R}\backslash\{0\}\)</span> הפונקציה <span class="math inline">\(f\)</span> גזירה ולכן נבדוק: <span class="math display">\[f'(x) = \left(x + \frac{1}{x}\right)' = 1 - \frac{1}{x^2}\]</span></p>
+<p><span class="math display">\[f'(x) = 0\]</span></p>
+<p><span class="math display">\[\frac{1}{x^2} = 1 \quad \Rightarrow \quad x = \pm 1\]</span></p>
+<p>החשודות לקיצון.</p>
+<p>נבדוק האם <span class="math inline">\(x = \pm 1\)</span> הן אכן נקודות קיצון מקומיות: <span class="math display">\[f^{(2)}(x) = \frac{2}{x^3}\]</span></p>
+<p><span class="math display">\[f^{(2)}(1) = 2 &gt; 0 \quad \Rightarrow \quad x = 1 \text{ נקודת קיצון מינימום}\]</span></p>
+<p><span class="math display">\[f^{(2)}(-1) = -2 &lt; 0 \quad \Rightarrow \quad x = -1 \text{ נקודת קיצון מקסימום}\]</span></p>
+<p>(לפי מבחן הנגזרת השנייה).</p>
+</div>
+<div style="text-align:center">
+<p>תרשים: שני ענפי הפונקציה <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> — ענף ימני עם מינימום ב-<span class="math inline">\((1,2)\)</span> וענף שמאלי עם מקסימום ב-<span class="math inline">\((-1,-2)\)</span>.</p>
+</div>
+<div id="fig-c08_fig01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;1: שני ענפי הפונקציה <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> — ענף ימני עם מינימום ב-<span class="math inline">\((1,2)\)</span> וענף שמאלי עם מקסימום ב-<span class="math inline">\((-1,-2)\)</span>.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="קמירות-וקעירות-של-פונקציה" class="level2">
+<h2 class="anchored" data-anchor-id="קמירות-וקעירות-של-פונקציה">קמירות וקעירות של פונקציה</h2>
+<p>נגיד כי פונקציה היא קמורה כלפי מטה בקטע <span class="math inline">\(I\)</span>, אם לכל <span class="math inline">\(2\)</span> נקודות <span class="math inline">\(x_1, x_2 \in I\)</span> נמצא הגרף של <span class="math inline">\(f\)</span> מעל המיתר שמחבר בין <span class="math inline">\((x_1, f(x_1)), (x_2, f(x_2))\)</span>.</p>
+<p>נגיד כי פונקציה היא קמורה כלפי מעלה בקטע <span class="math inline">\(I\)</span>, אם לכל <span class="math inline">\(2\)</span> נקודות <span class="math inline">\(x_1, x_2 \in I\)</span> נמצא הגרף של <span class="math inline">\(f\)</span> מתחת למיתר שמחבר בין <span class="math inline">\((x_1, f(x_1)), (x_2, f(x_2))\)</span>.</p>
+<div style="text-align:center">
+<p>תרשים: עקומה גלית — החלק העליון (אדום) קמור כלפי מטה והחלק התחתון (כחול) קמור כלפי מעלה.</p>
+</div>
+<div id="fig-c08_fig02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;2: עקומה גלית — החלק העליון (אדום) קמור כלפי מטה והחלק התחתון (כחול) קמור כלפי מעלה.
+</figcaption>
+</figure>
+</div>
+<div id="thm-convexity" class="theorem">
+<p><span class="theorem-title"><strong>משפט 4</strong></span> אם <span class="math inline">\(f\)</span> גזירה פעמיים בקטע <span class="math inline">\(I\)</span>, ואם <span class="math inline">\(f''(x) \leq 0\)</span> ב-<span class="math inline">\(I\)</span>, אז <span class="math inline">\(f\)</span> קמורה כלפי מטה ב-<span class="math inline">\(I\)</span>.</p>
+<p>אם <span class="math inline">\(f\)</span> גזירה פעמיים בקטע <span class="math inline">\(I\)</span>, ואם <span class="math inline">\(f''(x) \geq 0\)</span> ב-<span class="math inline">\(I\)</span>, אז <span class="math inline">\(f\)</span> קמורה כלפי מעלה ב-<span class="math inline">\(I\)</span>.</p>
+</div>
+<div id="exm-convexity" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 2</strong></span> <strong>דוגמא:</strong></p>
+<p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> ← <span class="math inline">\(f^{(2)}(x) = \frac{2}{x^3}\)</span>.</p>
+<p>מתקיים: <span class="math inline">\(f^{(2)}(x) &gt; 0\)</span> לכל <span class="math inline">\(x &gt; 0\)</span> ו-<span class="math inline">\(f^{(2)}(x) &lt; 0\)</span> לכל <span class="math inline">\(x &lt; 0\)</span>.</p>
+<p>אז ב-<span class="math inline">\((0, \infty)\)</span> הפונקציה <span class="math inline">\(f\)</span> קמורה כלפי מעלה,</p>
+<p>וב-<span class="math inline">\((-\infty, 0)\)</span> הפונקציה <span class="math inline">\(f\)</span> קמורה כלפי מטה.</p>
+</div>
+<div style="text-align:center">
+<p>תרשים: שני ענפי <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> — הענף הימני (<span class="math inline">\(x&gt;0\)</span>) קמור כלפי מעלה והענף השמאלי (<span class="math inline">\(x&lt;0\)</span>) קמור כלפי מטה.</p>
+</div>
+<div id="fig-c08_fig03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;3: שני ענפי <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> — הענף הימני (<span class="math inline">\(x&gt;0\)</span>) קמור כלפי מעלה והענף השמאלי (<span class="math inline">\(x&lt;0\)</span>) קמור כלפי מטה.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>הנקודה <span class="math inline">\(x_0\)</span> בה מתחלף סימן הקמירות, נקרא “נקודת פיתול”.</li>
+</ul>
+<p>דוגמא: <span class="math inline">\(f(x) = x^3\)</span></p>
+<div style="text-align:center">
+<p>תרשים: הפונקציה <span class="math inline">\(f(x)=x^3\)</span> עם נקודת פיתול בראשית <span class="math inline">\(x=0\)</span>.</p>
+</div>
+<div id="fig-c08_fig04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4: הפונקציה <span class="math inline">\(f(x)=x^3\)</span> עם נקודת פיתול בראשית <span class="math inline">\(x=0\)</span>.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="נקודת-פיתול" class="level2">
+<h2 class="anchored" data-anchor-id="נקודת-פיתול">נקודת פיתול</h2>
+<div class="todo">
+<p>נקודת הפיתול מוזכרת בדיון על הקמירות לעיל. להשלמה.</p>
+</div>
+</section>
+<section id="אסימפטוטות-אנכיות-ומשופעות" class="level2">
+<h2 class="anchored" data-anchor-id="אסימפטוטות-אנכיות-ומשופעות">אסימפטוטות — אנכיות ומשופעות</h2>
+<section id="אסימפטוטה-אנכית" class="level3">
+<h3 class="anchored" data-anchor-id="אסימפטוטה-אנכית">אסימפטוטה אנכית</h3>
+<p>ל-<span class="math inline">\(f(x)\)</span> יש אסימפטוטה אנכית בנקודה <span class="math inline">\(x_0\)</span>, אם <span class="math display">\[\lim_{x \to x_0^+} f(x) = \pm\infty \quad \underline{\text{או}} \quad \lim_{x \to x_0^-} f(x) = \pm\infty\]</span></p>
+<div id="exm-vertical-asymptote" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 3</strong></span> <strong>דוגמא:</strong></p>
+<p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> רק <span class="math inline">\(x=0\)</span> אסימפטוטה אפשרית: <span class="math display">\[\lim_{x \to x_0^+} f(x) = \infty \quad , \quad \lim_{x \to x_0^-} f(x) = -\infty\]</span></p>
+</div>
+<div style="text-align:center">
+<p>תרשים: <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> עם אסימפטוטה אנכית מקווקוות ב-<span class="math inline">\(x=0\)</span> — הענף הימני נשאף ל-<span class="math inline">\(+\infty\)</span> והשמאלי ל-<span class="math inline">\(-\infty\)</span>.</p>
+</div>
+<div id="fig-c08_fig05" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;5: <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> עם אסימפטוטה אנכית מקווקוות ב-<span class="math inline">\(x=0\)</span> — הענף הימני נשאף ל-<span class="math inline">\(+\infty\)</span> והשמאלי ל-<span class="math inline">\(-\infty\)</span>.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="אסימפטוטה-משופעת" class="level3">
+<h3 class="anchored" data-anchor-id="אסימפטוטה-משופעת">אסימפטוטה משופעת</h3>
+<p>ל-<span class="math inline">\(f(x)\)</span> יש אסימפטוטה משופעת <span class="math inline">\(y = ax + b\)</span> ב-<span class="math inline">\(\infty\)</span> (או ב-<span class="math inline">\((-\infty)\)</span>) אם <span class="math display">\[\lim_{x \to \infty} (f(x) - (ax+b)) = 0\]</span></p>
+<p>הנוסחאות עבור <span class="math inline">\(a, b\)</span>: <span class="math inline">\(\lim_{x \to \infty} (f(x) - (ax+b)) = 0\)</span> <span class="math display">\[\lim_{x \to \infty} \frac{f(x) - ax - b}{x} = 0 \quad \Rightarrow \quad \lim_{x \to \infty} \left(\frac{f(x)}{x} - a\right) = 0\]</span></p>
+<p><span class="math display">\[a = \lim_{x \to \infty} \frac{f(x)}{x}\]</span></p>
+<p><span class="math display">\[b = \lim_{x \to \infty} (f(x) - a(x))\]</span></p>
+<div id="exm-oblique-asymptote" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4</strong></span> <strong>דוגמא:</strong></p>
+<p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span></p>
+<p>נבדוק: <span class="math display">\[a = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{f(x)}{x} = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{x^2+1}{x^2} = 1 \quad , \quad b = \lim_{\substack{x \to \infty \\ (-\infty)}} (f(x) - 1 \cdot x) = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{1}{x} = 0\]</span></p>
+<p>לכן ל-<span class="math inline">\(f\)</span> יש אסימפטוטה משופעת ב-<span class="math inline">\(\infty\)</span> וב-<span class="math inline">\((-\infty)\)</span>, שהיא <span class="math inline">\(y = x\)</span>.</p>
+</div>
+<div style="text-align:center">
+<p>תרשים: שני ענפי <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> עם האסימפטוטה המשופעת <span class="math inline">\(y=x\)</span> (מקווקוות) ב-<span class="math inline">\(\infty\)</span> וב-<span class="math inline">\(-\infty\)</span>.</p>
+</div>
+<div id="fig-c08_fig06" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c08_fig06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c08_fig06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c08_fig06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;6: שני ענפי <span class="math inline">\(f(x)=\frac{x^2+1}{x}\)</span> עם האסימפטוטה המשופעת <span class="math inline">\(y=x\)</span> (מקווקוות) ב-<span class="math inline">\(\infty\)</span> וב-<span class="math inline">\(-\infty\)</span>.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="שרטוט-גרף-של-פונקציה" class="level2">
+<h2 class="anchored" data-anchor-id="שרטוט-גרף-של-פונקציה">שרטוט גרף של פונקציה</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "הועתק!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "הועתק!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./07-derivative-applications.html" class="pagination-link" aria-label="שימושים של הנגזרת">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">שימושים של הנגזרת</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./09-indefinite-integral.html" class="pagination-link" aria-label="האינטגרל הלא-מסוים">
+        <span class="nav-page-text"><span class="chapter-title">האינטגרל הלא-מסוים</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
