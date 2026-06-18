@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "חשבון אינפיניטסימלי 1 — הנדסת מכונות"
+  title: "חשבון אינפיניטסימלי 1 להנדסה"
   subtitle: "טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה"
   author: "יובל חצ׳טריאן-רזיאל"
   output-file: "Book_Draft"
