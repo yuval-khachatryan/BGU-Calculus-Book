@@ -231,10 +231,11 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#קבוצות-איברים-והכלה" id="toc-קבוצות-איברים-והכלה" class="nav-link active" data-scroll-target="#קבוצות-איברים-והכלה">קבוצות: איברים והכלה</a></li>
+  <li><a href="#מבוא" id="toc-מבוא" class="nav-link active" data-scroll-target="#מבוא">מבוא</a></li>
+  <li><a href="#קבוצות-איברים-והכלה" id="toc-קבוצות-איברים-והכלה" class="nav-link" data-scroll-target="#קבוצות-איברים-והכלה">קבוצות: איברים והכלה</a></li>
   <li><a href="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש" id="toc-פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="nav-link" data-scroll-target="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש">פעולות על קבוצות: איחוד, חיתוך והפרש</a></li>
   <li><a href="#הקבוצה-הריקה" id="toc-הקבוצה-הריקה" class="nav-link" data-scroll-target="#הקבוצה-הריקה">הקבוצה הריקה</a></li>
-  <li><a href="#מערכות-מספרים-mathbbn-mathbbz-mathbbq-mathbbr" id="toc-מערכות-מספרים-mathbbn-mathbbz-mathbbq-mathbbr" class="nav-link" data-scroll-target="#מערכות-מספרים-mathbbn-mathbbz-mathbbq-mathbbr">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></a></li>
+  <li><a href="#sec-number-systems" id="toc-sec-number-systems" class="nav-link" data-scroll-target="#sec-number-systems">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></a></li>
   <li><a href="#אי-רציונליות-sqrt2-כדוגמה" id="toc-אי-רציונליות-sqrt2-כדוגמה" class="nav-link" data-scroll-target="#אי-רציונליות-sqrt2-כדוגמה">אי-רציונליות; <span class="math inline">\(\sqrt{2}\)</span> כדוגמה</a>
   <ul class="collapse">
   <li><a href="#הוכחות" id="toc-הוכחות" class="nav-link" data-scroll-target="#הוכחות">הוכחות</a></li>
@@ -280,8 +281,49 @@ window.Quarto = {
 </header>
 
 
+<section id="מבוא" class="level2">
+<h2 class="anchored" data-anchor-id="מבוא">מבוא</h2>
+<p>כל תופעה שנחקרת או מנותחת מנוסחת בסופו של דבר בעזרת שפה מתמטית. זו הסיבה שבגינה מתמטיקה מכונה לעיתים ״שפת המדעים״. המתמטיקאי הצרפתי אנרי פואנקרה ניסח זאת בציטוטו המפורסם: ״מתמטיקה היא האמנות של מתן שמות זהים לדברים שונים״. מה זה אומר? מדובר בתהליך שנקרא <strong>הפשטה</strong>: אנו לוקחים תופעה מסוימת, מתמקדים בתכונות שמעניינות אותנו (ורק בהן), מסמנים אותן בסימונים זהים — ״שמות זהים״ — ומנתחים אותן בעזרת אותן פעולות. הדוגמה הפשוטה ביותר לכך היא היכולת לספור דברים. כעת נציג את השפה ואת מושגי היסוד שישרתו אותנו בהמשך הקורס ובהמשך התואר.</p>
+</section>
 <section id="קבוצות-איברים-והכלה" class="level2">
 <h2 class="anchored" data-anchor-id="קבוצות-איברים-והכלה">קבוצות: איברים והכלה</h2>
+<p>אחד המושגים הבסיסיים ביותר במתמטיקה הוא המושג <strong>קבוצה</strong>. באופן אינטואיטיבי, קבוצה היא אוסף של איברים, וכל אוסף ״הגיוני״ ניתן לחשוב עליו כקבוצה. למשל, אפשר לדבר על קבוצת כל המרצים בקורס בחדו״א 1 למהנדסים, על קבוצת ראשי ממשלת ישראל שכיהנו עד 2026, על קבוצות של אותיות, על קבוצות של מספרים, וכן הלאה. ברוב הקורס נעסוק בקבוצות של אובייקטים מתמטיים, כמו מספרים.</p>
+<p>נתחיל בדוגמה פשוטה. קבוצות נהוג לסמן <strong>באותיות לועזיות גדולות</strong> (או בסימנים מיוחדים, כשמדובר בקבוצות מוכרות, כפי שנראה בהמשך), ואת איברי הקבוצה ניתן לתאר בכמה דרכים. הדרך הפשוטה ביותר היא רישום האיברים בתוך סוגריים מסולסלים. נסמן ב-<span class="math inline">\(A\)</span> את קבוצת שלוש האותיות הראשונות בא״ב האנגלי; הרישום המלא הוא <span class="math display">\[.A=\{a,\,b,\,c\}\]</span></p>
+<p>הקבוצה נקראת <span class="math inline">\(A\)</span>, ואיבריה הם האותיות <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> ו-<span class="math inline">\(c\)</span>.</p>
+<p>כדי לציין שאובייקט מסוים הוא איבר בקבוצה, משתמשים בסימן ההשתייכות <span class="math inline">\(\in\)</span>. הכתיב <span class="math inline">\(x \in X\)</span> נקרא ״<span class="math inline">\(x\)</span> שייך ל-<span class="math inline">\(X\)</span>״, ופירושו ש-<span class="math inline">\(x\)</span> הוא איבר של <span class="math inline">\(X\)</span>; הכתיב <span class="math inline">\(x \notin X\)</span> פירושו ש-<span class="math inline">\(x\)</span> אינו איבר של <span class="math inline">\(X\)</span>. כך, למשל, <span class="math inline">\(a \in A\)</span> ואילו <span class="math inline">\(d \notin A\)</span>.</p>
+<p>מה מאפיין קבוצה? אך ורק זהות איבריה. לפיכך, שתי קבוצות שוות זו לזו אם ורק אם הן מכילות בדיוק את אותם האיברים. בעזרת סימן ההשתייכות נוכל לנסח זאת באופן פורמלי.</p>
+<div id="def-set-equality" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> הן <strong>שוות</strong>, ונסמן <span class="math inline">\(A=B\)</span>, אם לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[,x \in A \iff x \in B\]</span> כלומר, כל איבר של <span class="math inline">\(A\)</span> הוא איבר של <span class="math inline">\(B\)</span> ולהפך.</p>
+</div>
+<p>מהגדרה זו נובע שברישום של קבוצה אין חשיבות לסדר האיברים ואין חשיבות לחזרות. כך, למשל, שלוש הקבוצות הבאות שוות זו לזו: <span class="math display">\[.\{a,a,b,c,c\}=\{a,b,c\}=\{b,c,a\}\]</span></p>
+<p>לעומת זאת, נתבונן בקבוצה <span class="math inline">\(B=\{a,\,b,\,d\}\)</span>. הקבוצות <span class="math inline">\(A=\{a,\,b,\,c\}\)</span> ו-<span class="math inline">\(B\)</span> <strong>אינן</strong> שוות. כדי להראות זאת, די למצוא אובייקט <strong>יחיד</strong> שעבורו השקילות <span class="math inline">\(x \in A \iff x \in B\)</span> אינה מתקיימת — כלומר איבר ששייך לאחת הקבוצות אך לא לשנייה. ואכן, <span class="math inline">\(c \in A\)</span> אך <span class="math inline">\(c \notin B\)</span>: האות <span class="math inline">\(c\)</span> שייכת ל-<span class="math inline">\(A\)</span> אך אינה שייכת ל-<span class="math inline">\(B\)</span>, ולכן השקילות נכשלת עבור <span class="math inline">\(x=c\)</span>, <strong>ודי בכך</strong> כדי להסיק ש-<span class="math inline">\(A \neq B\)</span>. כלומר, <strong>מספיק איבר מבדיל אחד</strong> — אין צורך לבדוק את כל האיברים. במקרה זה קיים גם איבר מבדיל שני, שכן <span class="math inline">\(d \in B\)</span> אך <span class="math inline">\(d \notin A\)</span>, אך כאמור צד אחד מספיק; הצגנו את שניהם רק לשם ההמחשה.</p>
+<p>כעת נפנה למושג ה<strong>הכלה</strong>: מתי קבוצה אחת ״נמצאת בתוך״ קבוצה אחרת.</p>
+<div id="def-subset" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 2</strong></span> תהיינה <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> קבוצות. נאמר ש-<span class="math inline">\(B\)</span> <strong>מוכלת</strong> ב-<span class="math inline">\(A\)</span>, או ש-<span class="math inline">\(B\)</span> היא <strong>תת-קבוצה</strong> של <span class="math inline">\(A\)</span>, ונסמן <span class="math inline">\(B \subseteq A\)</span>, אם כל איבר של <span class="math inline">\(B\)</span> הוא גם איבר של <span class="math inline">\(A\)</span>; כלומר, לכל <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[.x \in B \implies x \in A\]</span></p>
+</div>
+<div id="exm-subset" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 1</strong></span> נתבונן שוב בקבוצה <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>. הקבוצה <span class="math inline">\(\{a,\,b\}\)</span> היא תת-קבוצה של <span class="math inline">\(A\)</span>, כלומר <span class="math inline">\(\{a,\,b\} \subseteq A\)</span>, שכן כל איבר שלה שייך גם ל-<span class="math inline">\(A\)</span>: אכן <span class="math inline">\(a \in A\)</span> וגם <span class="math inline">\(b \in A\)</span>.</p>
+</div>
+<p>חשוב להבחין בין שני הסימנים <span class="math inline">\(\in\)</span> ו-<span class="math inline">\(\subseteq\)</span>, שכן ערבוב ביניהם הוא מקור נפוץ לבלבול. הסימן <span class="math inline">\(\in\)</span> מקשר <strong>אובייקט (איבר)</strong> לקבוצה: <span class="math inline">\(x \in A\)</span> פירושו ש-<span class="math inline">\(x\)</span> הוא אחד מאיברי <span class="math inline">\(A\)</span>. לעומתו, הסימן <span class="math inline">\(\subseteq\)</span> מקשר <strong>קבוצה</strong> לקבוצה: <span class="math inline">\(B \subseteq A\)</span> פירושו שכל איברי <span class="math inline">\(B\)</span> הם איברים של <span class="math inline">\(A\)</span>. כך, למשל, עבור <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(a \in A\)</span> — נכון, שכן <span class="math inline">\(a\)</span> הוא איבר של <span class="math inline">\(A\)</span>;</li>
+<li><span class="math inline">\(\{a\} \subseteq A\)</span> — נכון, שכן הקבוצה <span class="math inline">\(\{a\}\)</span> מכילה איבר יחיד, <span class="math inline">\(a\)</span>, ששייך ל-<span class="math inline">\(A\)</span>;</li>
+<li><span class="math inline">\(\{a\} \in A\)</span> — <strong>לא נכון</strong>: איברי <span class="math inline">\(A\)</span> הם האותיות <span class="math inline">\(a,b,c\)</span>, והקבוצה <span class="math inline">\(\{a\}\)</span> אינה אחת מהן;</li>
+<li><span class="math inline">\(a \subseteq A\)</span> — <strong>חסר משמעות</strong>, שכן <span class="math inline">\(a\)</span> אינו קבוצה (אלא איבר), ואין מובן ל״הכלה״ של איבר.</li>
+</ul>
+<p>הקשר בין הכלה לשוויון נותן בידינו את שיטת ההוכחה החשובה ביותר לשוויון קבוצות.</p>
+<div id="prp-double-inclusion" class="proposition theorem">
+<p><span class="theorem-title"><strong>טענה 1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, <span class="math inline">\(A=B\)</span> אם ורק אם <span class="math inline">\(A \subseteq B\)</span> וגם <span class="math inline">\(B \subseteq A\)</span>.</p>
+</div>
+<p>הטענה נובעת ישירות מהגדרת השוויון: התנאי <span class="math inline">\(x \in A \iff x \in B\)</span> שקול לכך ששתי הגרירות מתקיימות — <span class="math inline">\(x \in A \implies x \in B\)</span> (שהיא <span class="math inline">\(A \subseteq B\)</span>) ו-<span class="math inline">\(x \in B \implies x \in A\)</span> (שהיא <span class="math inline">\(B \subseteq A\)</span>). <strong>זוהי הדרך הסטנדרטית והנפוצה ביותר להוכיח שוויון בין קבוצות</strong>: מוכיחים בנפרד את שתי ההכלות, <span class="math inline">\(A \subseteq B\)</span> ואז <span class="math inline">\(B \subseteq A\)</span>. שיטה זו שימושית במיוחד כאשר הקבוצות מוגדרות על ידי תכונה (בשיטת השומר) ולא על ידי רשימת איברים מפורשת — ובמקרים כאלה היא לרוב הדרך הטבעית ביותר.</p>
+<p>נחזור לעניין תיאור איבריה של קבוצה. אף על פי שהסימון בעזרת סוגריים מסולסלים הוא פשוט וחד-משמעי, הוא אינו תמיד נוח, ולעיתים אף אינו מספיק. כל עוד באוסף יש מעט איברים אין בכך בעיה, אך מה נעשה אם במקום 3 איברים יש 100,000? כתיבת כולם עלולה להיות מייגעת למדי. <strong>הכלל הוא שסימון נועד להקל על ההבנה ועל הניתוח של המידע, לא לסרבל אותם</strong>; <strong>אם סימון מסרבל במקום לפשט — אין בו צורך.</strong> בעיה שנייה, חמורה אף יותר, מתעוררת כאשר בקבוצה יש אינסוף איברים — למשל אוסף כל המספרים הטבעיים <span class="math inline">\(0,1,2,\dots\)</span>. במקרה כזה הסימון שהצגנו אינו מספיק כלל, שכן לא ניתן לכתוב אינסוף איברים בתוך סוגריים מסולסלים. לכן נזדקק לדרכים נוספות לתיאור קבוצות.</p>
+<p>מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב <span class="math inline">\(\mathbb{N}=\{0, 1, 2, \dots\}\)</span>; שלושת האיברים הראשונים <span class="math inline">\(0, 1, 2\)</span> כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה <a href="#sec-number-systems">בסעיף על מערכות מספרים</a>.) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא <strong>שיטת השומר</strong> (סימון בונה-קבוצות), שאותה נציג כעת.</p>
+<div id="def-set-builder" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 3</strong></span> תהי <span class="math inline">\(X\)</span> קבוצה, ותהי <span class="math inline">\(P(x)\)</span> <strong>תכונה</strong> — טענה שכל אובייקט <span class="math inline">\(x\)</span> מקיים אותה או אינו מקיים אותה. הקבוצה <span class="math display">\[\{x \in X \mid P(x)\}\]</span> מוגדרת כקבוצת <strong>כל</strong> האיברים <span class="math inline">\(x\)</span> שב-<span class="math inline">\(X\)</span> המקיימים את התכונה <span class="math inline">\(P\)</span>. הקו האנכי <span class="math inline">\(\mid\)</span>, ה<strong>שומר</strong>, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט <span class="math inline">\(y\)</span> מתקיים ש-<span class="math inline">\(y\)</span> שייך לקבוצה אם ורק אם <span class="math inline">\(y \in X\)</span> והתכונה <span class="math inline">\(P(y)\)</span> מתקיימת. כאשר ה״עולם״ <span class="math inline">\(X\)</span> ברור מן ההקשר, נהוג לקצר ולכתוב <span class="math inline">\(\{x \mid P(x)\}\)</span>.</p>
+</div>
+<div id="exm-set-builder" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 2</strong></span> הקבוצה <span class="math inline">\(\{n \in \mathbb{N} \mid n &gt; 5\}\)</span> היא קבוצת כל המספרים הטבעיים הגדולים מ-<span class="math inline">\(5\)</span>, כלומר <span class="math display">\[.\{n \in \mathbb{N} \mid n &gt; 5\} = \{6, 7, 8, \dots\}\]</span> כך, <span class="math inline">\(7\)</span> שייך לקבוצה (שכן <span class="math inline">\(7 \in \mathbb{N}\)</span> וגם <span class="math inline">\(7 &gt; 5\)</span>), ואילו <span class="math inline">\(3\)</span> אינו שייך לה (שכן <span class="math inline">\(3\)</span> אינו גדול מ-<span class="math inline">\(5\)</span>).</p>
+</div>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
@@ -298,8 +340,8 @@ window.Quarto = {
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="מערכות-מספרים-mathbbn-mathbbz-mathbbq-mathbbr" class="level2">
-<h2 class="anchored" data-anchor-id="מערכות-מספרים-mathbbn-mathbbz-mathbbq-mathbbr">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></h2>
+<section id="sec-number-systems" class="level2">
+<h2 class="anchored" data-anchor-id="sec-number-systems">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
@@ -309,7 +351,7 @@ window.Quarto = {
 <section id="הוכחות" class="level3">
 <h3 class="anchored" data-anchor-id="הוכחות">הוכחות</h3>
 <div id="prp-sqrt2-irrational" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 1</strong></span> <span class="math display">\[.\sqrt{2} \notin \mathbb{Q}\]</span></p>
+<p><span class="theorem-title"><strong>טענה 2</strong></span> <span class="math display">\[.\sqrt{2} \notin \mathbb{Q}\]</span></p>
 </div>
 <p><strong>הוכחה:</strong> נניח בשלילה כי <span class="math inline">\(\sqrt{2} \in \mathbb{Q}\)</span>.</p>
 <p>הסכם נסכום מהגדרת המספרים הרציונליים. <!-- בדיקה: שורה בכתב יד, קריאה משוערת --></p>
@@ -343,18 +385,18 @@ window.Quarto = {
 <section id="ערך-מוחלט-1" class="level3">
 <h3 class="anchored" data-anchor-id="ערך-מוחלט-1">ערך מוחלט</h3>
 <div id="def-absolute-value" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 1</strong></span> לכל מספר <span class="math inline">\(x\)</span> ממשי, הערך המוחלט של <span class="math inline">\(x\)</span> מסומן ומוגדר ע”י: <span class="math display">\[|x| =
+<p><span class="theorem-title"><strong>הגדרה 4</strong></span> לכל מספר <span class="math inline">\(x\)</span> ממשי, הערך המוחלט של <span class="math inline">\(x\)</span> מסומן ומוגדר ע”י: <span class="math display">\[|x| =
 \begin{cases}
 x &amp; : x \geq 0 \\
 -x &amp; : x &lt; 0
 \end{cases}\]</span></p>
 </div>
 <div id="exm-abs-values" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1</strong></span> <span class="math display">\[|5| = 5, \quad |-3| = 3\]</span></p>
+<p><span class="theorem-title"><strong>דוגמה 3</strong></span> <span class="math display">\[|5| = 5, \quad |-3| = 3\]</span></p>
 </div>
 <p>ערך מוחלט של <span class="math inline">\(x\)</span> זה המרחק של <span class="math inline">\(x\)</span> מ-<span class="math inline">\(0\)</span>, ולכן אין שלילי במרחק.</p>
 <div id="exm-abs-distance" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2</strong></span> <span class="math display">\[|-3| = |3| = 3\]</span></p>
+<p><span class="theorem-title"><strong>דוגמה 4</strong></span> <span class="math display">\[|-3| = |3| = 3\]</span></p>
 <div style="text-align:center">
 <p>תרשים: ציר מספרים עם הנקודות <span class="math inline">\(-3\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(3\)</span> וקשתות “מרחק 3” משני הצדדים.</p>
 </div>
@@ -371,10 +413,10 @@ x &amp; : x \geq 0 \\
 </div>
 <p>לכן המרחק בין שני מספרים <span class="math inline">\(a,b \in R\)</span> הוא: <span class="math inline">\(|a-b| = |b-a|\)</span>.</p>
 <div id="exm-abs-no-solution" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 3</strong></span> <span class="math display">\[|x| = -2\]</span> ל-<span class="math inline">\(x\)</span> חיובי או אפס ולכן אין פתרון.</p>
+<p><span class="theorem-title"><strong>דוגמה 5</strong></span> <span class="math display">\[|x| = -2\]</span> ל-<span class="math inline">\(x\)</span> חיובי או אפס ולכן אין פתרון.</p>
 </div>
 <div id="exm-abs-open-interval" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 4</strong></span> <span class="math display">\[|x| &lt; 1\]</span> הקטע הפתוח: <span class="math inline">\(\{x \mid -1 &lt; x &lt; 1\} = (-1,1)\)</span></p>
+<p><span class="theorem-title"><strong>דוגמה 6</strong></span> <span class="math display">\[|x| &lt; 1\]</span> הקטע הפתוח: <span class="math inline">\(\{x \mid -1 &lt; x &lt; 1\} = (-1,1)\)</span></p>
 <div style="text-align:center">
 <p>תרשים: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הפתוח ביניהן.</p>
 </div>
@@ -390,7 +432,7 @@ x &amp; : x \geq 0 \\
 </div>
 </div>
 <div id="exm-abs-closed-interval" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 5</strong></span> <span class="math display">\[|x| \leq 1\]</span> הקטע הסגור: <span class="math inline">\(\{x \mid -1 \leq x \leq 1\} = [-1,1]\)</span></p>
+<p><span class="theorem-title"><strong>דוגמה 7</strong></span> <span class="math display">\[|x| \leq 1\]</span> הקטע הסגור: <span class="math inline">\(\{x \mid -1 \leq x \leq 1\} = [-1,1]\)</span></p>
 <div style="text-align:center">
 <p>תרשים: ציר מספרים עם נקודות סגורות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הסגור ביניהן.</p>
 </div>
@@ -406,7 +448,7 @@ x &amp; : x \geq 0 \\
 </div>
 </div>
 <div id="exm-abs-greater" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6</strong></span> <span class="math display">\[|x| &gt; 3\]</span> <span class="math display">\[\{x \mid x &gt; 3 \cup x &lt; -3\} = (3,\infty) \cup (-\infty,-3)\]</span></p>
+<p><span class="theorem-title"><strong>דוגמה 8</strong></span> <span class="math display">\[|x| &gt; 3\]</span> <span class="math display">\[\{x \mid x &gt; 3 \cup x &lt; -3\} = (3,\infty) \cup (-\infty,-3)\]</span></p>
 <div style="text-align:center">
 <p>תרשים: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-3\)</span> וב-<span class="math inline">\(3\)</span>, והקרניים החיצוניות מסומנות.</p>
 </div>
@@ -440,7 +482,7 @@ x &amp; : x \geq 0 \\
 <p>אורך צלע <span class="math inline">\(\geq\)</span> סכום הצלעות האחרות.</p>
 <p>לכל <span class="math inline">\(x,y \in R\)</span> מתקיים: <span class="math display">\[.|x+y| \leq |x| + |y|\]</span></p>
 <div id="exm-triangle-inequality" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 7</strong></span> <span class="math display">\[x = 2, y = -1\]</span> <span class="math display">\[|x+y| &lt; |x| + |y|\]</span> <span class="math display">\[|1| &lt; |2| + |(-1)|\]</span> <span class="math display">\[1 &lt; 2 + 1 = 3\]</span></p>
+<p><span class="theorem-title"><strong>דוגמה 9</strong></span> <span class="math display">\[x = 2, y = -1\]</span> <span class="math display">\[|x+y| &lt; |x| + |y|\]</span> <span class="math display">\[|1| &lt; |2| + |(-1)|\]</span> <span class="math display">\[1 &lt; 2 + 1 = 3\]</span></p>
 </div>
 </section>
 </section>
@@ -465,7 +507,7 @@ x &amp; : x \geq 0 \\
 </figure>
 </div>
 <div id="exm-epsilon-neighborhood" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 8</strong></span> סביבת <span class="math inline">\(\frac{1}{2}\)</span> של <span class="math inline">\(2\)</span> היא: <span class="math inline">\(\left(\frac{3}{2}, \frac{5}{2}\right)\)</span>.</p>
+<p><span class="theorem-title"><strong>דוגמה 10</strong></span> סביבת <span class="math inline">\(\frac{1}{2}\)</span> של <span class="math inline">\(2\)</span> היא: <span class="math inline">\(\left(\frac{3}{2}, \frac{5}{2}\right)\)</span>.</p>
 </div>
 </section>
 </section>
@@ -476,7 +518,7 @@ x &amp; : x \geq 0 \\
 <p>שיטת הוכחה לטענות מהצורה:</p>
 <p>לכל מספר טבעי <span class="math inline">\(n\)</span>, מתקיים _________.</p>
 <div id="exm-induction-statements" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 9</strong></span> לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(2^n + n \leq 3^n\)</span></p>
+<p><span class="theorem-title"><strong>דוגמה 11</strong></span> לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(2^n + n \leq 3^n\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(24 \mid 2 \cdot 7^n + 3 \cdot 5^n - 5\)</span></p>
@@ -491,7 +533,7 @@ x &amp; : x \geq 0 \\
 <li><p>נניח כי הטענה נכונה עבור <span class="math inline">\(n\)</span> כללי, ואז נראה כי הטענה נכונה עבור <span class="math inline">\(n+1\)</span>.</p></li>
 </ol>
 <div id="exm-induction-sum-squares" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 10</strong></span> נוכיח באינדוקציה כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span> לכל <span class="math inline">\(n \in N\)</span>.</p>
+<p><span class="theorem-title"><strong>דוגמה 12</strong></span> נוכיח באינדוקציה כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span> לכל <span class="math inline">\(n \in N\)</span>.</p>
 <p><strong>פתרון:</strong></p>
 <ol type="1">
 <li>נבדוק את בסיס האינדוקציה:</li>
