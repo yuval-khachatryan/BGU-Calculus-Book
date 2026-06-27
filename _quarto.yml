@@ -11,24 +11,51 @@ book:
   reader-mode: true
   chapters:
     - index.qmd
-    - 01-basic-concepts.qmd
-    - 02-sequences.qmd
-    - 03-functions-intro.qmd
-    - 04-function-limits.qmd
-    - 05-continuity.qmd
-    - 06-derivative.qmd
-    - 07-derivative-applications.qmd
-    - 08-higher-derivatives.qmd
-    - 09-indefinite-integral.qmd
-    - 10-definite-integral.qmd
-    - 11-improper-integral.qmd
+    - part: part-1-foundations.qmd
+      chapters:
+        - 01-logic.qmd
+        - 02-sets.qmd
+        - 03-number-systems.qmd
+        - 04-abs-value.qmd
+        - 05-induction.qmd
+    - part: "חלק 2: סדרות"
+      chapters:
+        - 06-sequences.qmd
+    - part: "חלק 3: מבוא לפונקציות"
+      chapters:
+        - 07-functions-intro.qmd
+    - part: "חלק 4: גבולות של פונקציות"
+      chapters:
+        - 08-function-limits.qmd
+    - part: "חלק 5: רציפות"
+      chapters:
+        - 09-continuity.qmd
+    - part: "חלק 6: הנגזרת"
+      chapters:
+        - 10-derivative.qmd
+    - part: "חלק 7: שימושים של הנגזרת"
+      chapters:
+        - 11-derivative-applications.qmd
+    - part: "חלק 8: נגזרות מסדר גבוה וחקירת פונקציות"
+      chapters:
+        - 12-higher-derivatives.qmd
+    - part: "חלק 9: האינטגרל הלא-מסוים"
+      chapters:
+        - 13-indefinite-integral.qmd
+    - part: "חלק 10: האינטגרל המסוים"
+      chapters:
+        - 14-definite-integral.qmd
+    - part: "חלק 11: האינטגרל המוכלל"
+      chapters:
+        - 15-improper-integral.qmd
 
 lang: he
 dir: rtl
-number-sections: false
+number-sections: true
+number-depth: 1
 
 crossref:
-  chapters: false
+  chapters: true
   def-title: "הגדרה"
   exm-title: "דוגמה"
   thm-title: "משפט"
@@ -56,11 +83,5 @@ format:
     code-overflow: wrap
     geometry:
       - margin=2.5cm
-    header-includes:
-      - \usepackage{chngcntr}
-      - \AtBeginDocument{\ifcsname c@theorem\endcsname\counterwithout{theorem}{section}\renewcommand{\thetheorem}{\arabic{theorem}}\fi}
-      - \AtBeginDocument{\ifcsname c@proposition\endcsname\counterwithout{proposition}{section}\renewcommand{\theproposition}{\arabic{proposition}}\fi}
-      - \AtBeginDocument{\ifcsname c@definition\endcsname\counterwithout{definition}{section}\renewcommand{\thedefinition}{\arabic{definition}}\fi}
-      - \AtBeginDocument{\ifcsname c@example\endcsname\counterwithout{example}{section}\renewcommand{\theexample}{\arabic{example}}\fi}
 
 jupyter: python3
