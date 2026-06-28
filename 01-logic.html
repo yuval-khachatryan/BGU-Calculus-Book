@@ -452,6 +452,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#לכל" id="toc-לכל" class="nav-link" data-scroll-target="#לכל">לכל</a></li>
   <li><a href="#קיים" id="toc-קיים" class="nav-link" data-scroll-target="#קיים">קיים</a></li>
+  <li><a href="#חידה-לסיכום" id="toc-חידה-לסיכום" class="nav-link" data-scroll-target="#חידה-לסיכום">חידה לסיכום</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -593,10 +594,13 @@ window.Quarto = {
 <section id="גרירה" class="level3">
 <h3 class="anchored" data-anchor-id="גרירה">גרירה</h3>
 <p>הקשר הבא, ה<strong>גרירה</strong>, הוא ככל הנראה המבלבל ביותר. הפסוק ״<strong>אם</strong> <span class="math inline">\(P\)</span> <strong>אז</strong> <span class="math inline">\(Q\)</span>״, המסומן <span class="math inline">\(P \to Q\)</span>, הוא <strong>שקר</strong> בדיוק במקרה אחד: כאשר <span class="math inline">\(P\)</span> אמת ו-<span class="math inline">\(Q\)</span> שקר; בכל מקרה אחר הוא <strong>אמת</strong>. הפסוק <span class="math inline">\(P\)</span> נקרא ה<strong>הנחה</strong>, ו-<span class="math inline">\(Q\)</span> נקרא ה<strong>מסקנה</strong>.</p>
-<p>יש להדגיש: הגרירה <strong>אינה</strong> קשר של סיבה ותוצאה, אלא אמירה על ערכי אמת בלבד. הדוגמה הבאה ממחישה זאת, ולאחריה חידה קטנה.</p>
+<p>יש להדגיש: הגרירה <strong>אינה</strong> קשר של סיבה ותוצאה, אלא אמירה על ערכי אמת בלבד. הדוגמה הבאה ממחישה זאת, ובהמשך — חידה קטנה.</p>
 <div id="exm-implication-smoke" class="example theorem">
 <p><span class="theorem-title"><strong>דוגמה 1.7</strong></span> הפתגם ״אין עשן בלי אש״ הוא בעצם הגרירה ״<strong>אם</strong> יש עשן, <strong>אז</strong> יש אש״ — כלומר הפסוק ׳יש עשן׳ <strong>גורר</strong> את הפסוק ׳יש אש׳. שימו לב לכיוון: מבחינת סיבה ותוצאה, ה<strong>אש</strong> היא הסיבה וה<strong>עשן</strong> הוא התוצאה; אך הגרירה פועלת <strong>מן העשן (התוצאה) אל האש (הסיבה)</strong>, שהרי מתוך תצפית בעשן אנו מסיקים שקיימת אש. הכיוון הלוגי הפוך, אם כן, לכיוון הסיבתי.</p>
 </div>
+<p>כדי להבין את ההגדרה לעומק, נחשוב על הגרירה <span class="math inline">\(P \to Q\)</span> כעל <strong>הבטחה</strong>: ״אם <span class="math inline">\(P\)</span> מתקיים, אז <span class="math inline">\(Q\)</span> מתקיים״. הבטחה כזו מופרת במקרה אחד בלבד — כש-<span class="math inline">\(P\)</span> אמת ובכל זאת <span class="math inline">\(Q\)</span> שקר; בכל מקרה אחר היא נשמרת, ולכן הגרירה אמת.</p>
+<p>מה קורה כאשר ההנחה <span class="math inline">\(P\)</span> <strong>שקרית</strong>? אז ההבטחה כלל לא ״הופעלה״: היא אינה אומרת דבר על מצב כזה, וממילא לא הופרה. לכן ערך האמת של המסקנה <span class="math inline">\(Q\)</span> פשוט <strong>לא משנה</strong> — גם <span class="math inline">\(F \to T\)</span> וגם <span class="math inline">\(F \to F\)</span> הן אמת. אלה הם מקרי ה״<strong>לא אכפת</strong>״ (<em>don’t care</em>) של הגרירה: כשההנחה שקרית, איננו בודקים כלל את המסקנה, והגרירה אמת תהא המסקנה אשר תהא.</p>
+<p>נמחיש בדוגמה מופרכת בכוונה. נניח שאני מצהיר: ״<strong>אם אני מלך אנגליה, אז כל הסטודנטים מקבלים 100 בקורס</strong>.״ מאחר שאינני מלך אנגליה, ההנחה שקרית — ולכן ההצהרה שלי אמת מבחינה לוגית, ללא כל תלות בציון שתקבלו בפועל. לא הבטחתי דבר ממשי: כל עוד איני מלך אנגליה, ייתכן שתקבלו 100 וייתכן שלא — ובשני המקרים לא שיקרתי. זהו בדיוק ה״לא אכפת״: כשההנחה שקרית, המסקנה חופשית להיות אמת או שקר, והגרירה נשארת אמת.</p>
 <p><strong>חידה.</strong> האם הגרירה <span class="math inline">\(2 \neq 2 \to 5 = 5\)</span> היא אמת או שקר?</p>
 <div class="tf-quiz" data-correct="true">
 <button class="tf-opt" data-val="true">אמת</button>
@@ -615,13 +619,10 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>אמת!</strong> ההנחה ״<span class="math inline">\(2 \neq 2\)</span>״ שקרית, ולכן הגרירה כולה אמת — על אף שאין שום קשר תוכני בין שני הצדדים. זהו ביטוי לכלל ״מן השקר נובע הכול״: בכל פעם שההנחה שקרית, הגרירה אמת באופן אוטומטי. מדוע? נסביר מיד.</p>
+<p><strong>אמת!</strong> ההנחה ״<span class="math inline">\(2 \neq 2\)</span>״ שקרית — ומהנחה שקרית הגרירה אמת תמיד.</p>
 </div>
 </div>
 </div>
-<p>כדי להבין מדוע, נחזור אל ההגדרה. הגרירה <span class="math inline">\(P \to Q\)</span> היא בעצם <strong>הבטחה</strong>: ״אם <span class="math inline">\(P\)</span> מתקיים, אז <span class="math inline">\(Q\)</span> מתקיים״. הבטחה כזו מופרת במקרה אחד בלבד — כש-<span class="math inline">\(P\)</span> אמת ובכל זאת <span class="math inline">\(Q\)</span> שקר; בכל מקרה אחר היא נשמרת, ולכן הגרירה אמת.</p>
-<p>מה קורה כאשר ההנחה <span class="math inline">\(P\)</span> <strong>שקרית</strong>? אז ההבטחה כלל לא ״הופעלה״: היא אינה אומרת דבר על מצב כזה, וממילא לא הופרה. לכן ערך האמת של המסקנה <span class="math inline">\(Q\)</span> פשוט <strong>לא משנה</strong> — גם <span class="math inline">\(F \to T\)</span> וגם <span class="math inline">\(F \to F\)</span> הן אמת. אלה הם מקרי ה״<strong>לא אכפת</strong>״ (<em>don’t care</em>) של הגרירה: כשההנחה שקרית, איננו בודקים כלל את המסקנה, והגרירה אמת תהא המסקנה אשר תהא.</p>
-<p>נמחיש בדוגמה מופרכת בכוונה. נניח שאני מצהיר: ״<strong>אם אני מלך אנגליה, אז כל הסטודנטים מקבלים 100 בקורס</strong>.״ מאחר שאינני מלך אנגליה, ההנחה שקרית — ולכן ההצהרה שלי אמת מבחינה לוגית, ללא כל תלות בציון שתקבלו בפועל. לא הבטחתי דבר ממשי: כל עוד איני מלך אנגליה, ייתכן שתקבלו 100 וייתכן שלא — ובשני המקרים לא שיקרתי. זהו בדיוק ה״לא אכפת״: כשההנחה שקרית, המסקנה חופשית להיות אמת או שקר, והגרירה נשארת אמת.</p>
 </section>
 <section id="שקילות" class="level3">
 <h3 class="anchored" data-anchor-id="שקילות">שקילות</h3>
@@ -712,6 +713,9 @@ window.Quarto = {
 <p>לעיתים נרצה דווקא לטעון טענה הפוכה באופייה: לא שכל האיברים מקיימים תכונה, אלא ש<strong>לפחות אחד</strong> מהם מקיים אותה. למשל: ״קיים מספר טבעי הגדול מ-<span class="math inline">\(5\)</span>״ (ואכן <span class="math inline">\(6\)</span> הוא כזה), או ״יש בכיתה סטודנט שנולד בחודש מאי״. די בקיומו של איבר <strong>יחיד</strong> מתאים כדי שטענה כזו תהיה אמת.</p>
 <p>לשם כך משתמשים בסימן <span class="math inline">\(\exists\)</span>, הנקרא ״<strong>קיים</strong>״ (או ״<strong>יש</strong>״). כותבים <span class="math inline">\(\exists x\)</span> וקוראים ״קיים <span class="math inline">\(x\)</span>״.</p>
 <p>הטענה ״קיים <span class="math inline">\(x\)</span> שמקיים <span class="math inline">\(P(x)\)</span>״ היא <strong>אמת</strong> כאשר לפחות איבר אחד מקיים את <span class="math inline">\(P\)</span>, ו<strong>שקר</strong> רק כאשר אף איבר אינו מקיים את <span class="math inline">\(P\)</span>.</p>
+</section>
+<section id="חידה-לסיכום" class="level3">
+<h3 class="anchored" data-anchor-id="חידה-לסיכום">חידה לסיכום</h3>
 <p><strong>חידה.</strong> שלושה מתמטיקאים נכנסים לבר. המוזג שואל: ״בירה לכולם?״ הראשון עונה ״אינני יודע״, השני עונה ״אינני יודע״, והשלישי עונה ״כן״. האם השלישי צודק — וכיצד ידע?</p>
 <div class="tf-quiz" data-correct="true">
 <button class="tf-opt" data-val="true">כן, צודק</button>
