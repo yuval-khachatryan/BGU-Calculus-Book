@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="יובל חצ׳טריאן-רזיאל">
 
-<title>חשבון אינפיניטסימלי 1 להנדסה</title>
+<title>5&nbsp; אינדוקציה – חשבון אינפיניטסימלי 1 להנדסה</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-1-foundations.html" rel="next">
+<link href="./06-sequences.html" rel="next">
+<link href="./04-abs-value.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -179,7 +179,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">פתח דבר</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./05-induction.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">אינדוקציה</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="חפש" onclick="window.quartoOpenSearch();">
@@ -213,7 +213,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">פתח דבר</span></a>
   </div>
 </li>
@@ -252,7 +252,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-induction.html" class="sidebar-item-text sidebar-link">
+  <a href="./05-induction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">אינדוקציה</span></span></a>
   </div>
 </li>
@@ -438,29 +438,23 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#פתח-דבר" id="toc-פתח-דבר" class="nav-link active" data-scroll-target="#פתח-דבר">פתח דבר</a></li>
+  <li><a href="#עקרון-האינדוקציה" id="toc-עקרון-האינדוקציה" class="nav-link active" data-scroll-target="#עקרון-האינדוקציה">עקרון האינדוקציה</a></li>
+  <li><a href="#שלבי-האינדוקציה" id="toc-שלבי-האינדוקציה" class="nav-link" data-scroll-target="#שלבי-האינדוקציה">שלבי האינדוקציה</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./05-induction.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">אינדוקציה</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">חשבון אינפיניטסימלי 1 להנדסה</h1>
-<p class="subtitle lead">טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה</p>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">אינדוקציה</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">כותב</div>
-    <div class="quarto-title-meta-contents">
-             <p>יובל חצ׳טריאן-רזיאל </p>
-          </div>
-  </div>
     
   
     
@@ -471,12 +465,38 @@ window.Quarto = {
 </header>
 
 
-<section id="פתח-דבר" class="level1 unnumbered">
-<h1 class="unnumbered">פתח דבר</h1>
-<p>ברוכים הבאים לגרסה המקוונת של ספר הלימוד בחשבון אינפיניטסימלי 1 לסטודנטים וסטודנטיות בהנדסה. השתמשו בתפריט הצד כדי לנווט בין הפרקים.</p>
-<blockquote class="blockquote">
-<p><strong>הערה לעורך.</strong> טיוטה זו מאורגנת <strong>לפי מטריצת הנושאים של הקורס</strong> (<em>Progress Calc ME Fall 2026</em>): כל נושא-משנה במטריצה הוא כותרת-סעיף. סעיפים בעלי כיסוי במחברת ההרצאות מולאו בתעתיק גולמי כפי-שהוא (כולל תרשימים משוחזרים); נושאים שאינם מכוסים במחברת (למשל קבוצות, פעולות על קבוצות, מערכות מספרים) הושארו כממלאי-מקום לכתיבה. ייתכנו נושאי-משנה שתוכנם נדון יחד עם נושא סמוך — ראו הערות בגוף הסעיף.</p>
-</blockquote>
+<section id="עקרון-האינדוקציה" class="level2">
+<h2 class="anchored" data-anchor-id="עקרון-האינדוקציה">עקרון האינדוקציה</h2>
+<p>שיטת הוכחה לטענות מהצורה:</p>
+<p>לכל מספר טבעי <span class="math inline">\(n\)</span>, מתקיים _________.</p>
+<div id="exm-induction-statements" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 5.1</strong></span> לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(2^n + n \leq 3^n\)</span></p>
+<p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}\)</span></p>
+<p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span></p>
+<p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(24 \mid 2 \cdot 7^n + 3 \cdot 5^n - 5\)</span></p>
+<p>(מתרגול ה-24) <!-- בדיקה: הערה בכתב יד --></p>
+</div>
+</section>
+<section id="שלבי-האינדוקציה" class="level2">
+<h2 class="anchored" data-anchor-id="שלבי-האינדוקציה">שלבי האינדוקציה</h2>
+<p>במקום לבדוק את נכונות הטענה לכל <span class="math inline">\(n = 1,2,3,\dots\)</span> נעשה כך:</p>
+<ol type="1">
+<li><p>בסיס האינדוקציה - נבדוק שהטענה נכונה עבור <span class="math inline">\(n=1\)</span>.</p></li>
+<li><p>נניח כי הטענה נכונה עבור <span class="math inline">\(n\)</span> כללי, ואז נראה כי הטענה נכונה עבור <span class="math inline">\(n+1\)</span>.</p></li>
+</ol>
+<div id="exm-induction-sum-squares" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 5.2</strong></span> נוכיח באינדוקציה כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span> לכל <span class="math inline">\(n \in N\)</span>.</p>
+<p><strong>פתרון:</strong></p>
+<ol type="1">
+<li>נבדוק את בסיס האינדוקציה:</li>
+</ol>
+<p>עבור <span class="math inline">\(n=1\)</span> נקבל: <span class="math display">\[1^2 \overset{?}{=} \frac{1 \cdot 2 \cdot 3}{6} \overset{\checkmark}{=} 1\]</span></p>
+<ol start="2" type="1">
+<li>נניח כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span></li>
+</ol>
+<p>ונראה כי: <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+1+1)(2(n+1)+1)}{6}\]</span> <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+2)(2n+3)}{6}\]</span></p>
+<p>נעבוד על אגף שמאל: <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \underbrace{\frac{n(n+1)(2n+1)}{6}}_{\text{הנחת האינדוקציה}} + (n+1)^2 =\]</span> <span class="math display">\[= \frac{(n+1)[n(2n+1) + 6(n+1)]}{6} = \frac{(n+1)[2n^2 + 7n + 6]}{6} = \frac{(n+1) \cdot [n+2][2n+3]}{6}\]</span></p>
+</div>
 
 
 </section>
@@ -884,10 +904,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./04-abs-value.html" class="pagination-link" aria-label="ערך מוחלט וקטעים">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ערך מוחלט וקטעים</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-1-foundations.html" class="pagination-link" aria-label="חלק 1: מושגי יסוד">
-        <span class="nav-page-text">חלק 1: מושגי יסוד</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./06-sequences.html" class="pagination-link" aria-label="סדרות">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">סדרות</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

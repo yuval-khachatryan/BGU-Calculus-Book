@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="יובל חצ׳טריאן-רזיאל">
 
-<title>חשבון אינפיניטסימלי 1 להנדסה</title>
+<title>2&nbsp; קבוצות – חשבון אינפיניטסימלי 1 להנדסה</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-1-foundations.html" rel="next">
+<link href="./03-number-systems.html" rel="next">
+<link href="./01-logic.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -179,7 +179,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">פתח דבר</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./02-sets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">קבוצות</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="חפש" onclick="window.quartoOpenSearch();">
@@ -213,7 +213,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">פתח דבר</span></a>
   </div>
 </li>
@@ -234,7 +234,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-sets.html" class="sidebar-item-text sidebar-link">
+  <a href="./02-sets.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">קבוצות</span></span></a>
   </div>
 </li>
@@ -438,29 +438,24 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#פתח-דבר" id="toc-פתח-דבר" class="nav-link active" data-scroll-target="#פתח-דבר">פתח דבר</a></li>
+  <li><a href="#איברים-והכלה" id="toc-איברים-והכלה" class="nav-link active" data-scroll-target="#איברים-והכלה">איברים והכלה</a></li>
+  <li><a href="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש" id="toc-פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="nav-link" data-scroll-target="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש">פעולות על קבוצות: איחוד, חיתוך והפרש</a></li>
+  <li><a href="#הקבוצה-הריקה" id="toc-הקבוצה-הריקה" class="nav-link" data-scroll-target="#הקבוצה-הריקה">הקבוצה הריקה</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./02-sets.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">קבוצות</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">חשבון אינפיניטסימלי 1 להנדסה</h1>
-<p class="subtitle lead">טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה</p>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">קבוצות</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">כותב</div>
-    <div class="quarto-title-meta-contents">
-             <p>יובל חצ׳טריאן-רזיאל </p>
-          </div>
-  </div>
     
   
     
@@ -471,12 +466,60 @@ window.Quarto = {
 </header>
 
 
-<section id="פתח-דבר" class="level1 unnumbered">
-<h1 class="unnumbered">פתח דבר</h1>
-<p>ברוכים הבאים לגרסה המקוונת של ספר הלימוד בחשבון אינפיניטסימלי 1 לסטודנטים וסטודנטיות בהנדסה. השתמשו בתפריט הצד כדי לנווט בין הפרקים.</p>
-<blockquote class="blockquote">
-<p><strong>הערה לעורך.</strong> טיוטה זו מאורגנת <strong>לפי מטריצת הנושאים של הקורס</strong> (<em>Progress Calc ME Fall 2026</em>): כל נושא-משנה במטריצה הוא כותרת-סעיף. סעיפים בעלי כיסוי במחברת ההרצאות מולאו בתעתיק גולמי כפי-שהוא (כולל תרשימים משוחזרים); נושאים שאינם מכוסים במחברת (למשל קבוצות, פעולות על קבוצות, מערכות מספרים) הושארו כממלאי-מקום לכתיבה. ייתכנו נושאי-משנה שתוכנם נדון יחד עם נושא סמוך — ראו הערות בגוף הסעיף.</p>
-</blockquote>
+<section id="איברים-והכלה" class="level2">
+<h2 class="anchored" data-anchor-id="איברים-והכלה">איברים והכלה</h2>
+<p>אחד המושגים הבסיסיים ביותר במתמטיקה הוא המושג <strong>קבוצה</strong>. באופן אינטואיטיבי, קבוצה היא אוסף של איברים, וכל אוסף ״הגיוני״ ניתן לחשוב עליו כקבוצה. למשל, אפשר לדבר על קבוצת כל המרצים בקורס בחדו״א 1 למהנדסים, על קבוצת ראשי ממשלת ישראל שכיהנו עד 2026, על קבוצות של אותיות, על קבוצות של מספרים, וכן הלאה. ברוב הקורס נעסוק בקבוצות של אובייקטים מתמטיים, כמו מספרים.</p>
+<p>נתחיל בדוגמה פשוטה. קבוצות נהוג לסמן <strong>באותיות לועזיות גדולות</strong> (או בסימנים מיוחדים, כשמדובר בקבוצות מוכרות, כפי שנראה בהמשך), ואת איברי הקבוצה ניתן לתאר בכמה דרכים. הדרך הפשוטה ביותר היא רישום האיברים בתוך סוגריים מסולסלים. נסמן ב-<span class="math inline">\(A\)</span> את קבוצת שלוש האותיות הראשונות בא״ב האנגלי; הרישום המלא הוא <span class="math display">\[.A=\{a,\,b,\,c\}\]</span></p>
+<p>הקבוצה נקראת <span class="math inline">\(A\)</span>, ואיבריה הם האותיות <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> ו-<span class="math inline">\(c\)</span>.</p>
+<p>כדי לציין שאובייקט מסוים הוא איבר בקבוצה, משתמשים בסימן ההשתייכות <span class="math inline">\(\in\)</span>. הכתיב <span class="math inline">\(x \in X\)</span> נקרא ״<span class="math inline">\(x\)</span> שייך ל-<span class="math inline">\(X\)</span>״, ופירושו ש-<span class="math inline">\(x\)</span> הוא איבר של <span class="math inline">\(X\)</span>; הכתיב <span class="math inline">\(x \notin X\)</span> פירושו ש-<span class="math inline">\(x\)</span> אינו איבר של <span class="math inline">\(X\)</span>. כך, למשל, <span class="math inline">\(a \in A\)</span> ואילו <span class="math inline">\(d \notin A\)</span>.</p>
+<p>מה מאפיין קבוצה? אך ורק זהות איבריה. לפיכך, שתי קבוצות שוות זו לזו אם ורק אם הן מכילות בדיוק את אותם האיברים. בעזרת סימן ההשתייכות נוכל לנסח זאת באופן פורמלי.</p>
+<div id="def-set-equality" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 2.1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> הן <strong>שוות</strong>, ונסמן <span class="math inline">\(A=B\)</span>, אם לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[,x \in A \leftrightarrow x \in B\]</span> כלומר, כל איבר של <span class="math inline">\(A\)</span> הוא איבר של <span class="math inline">\(B\)</span> ולהפך.</p>
+</div>
+<p>מהגדרה זו נובע שברישום של קבוצה אין חשיבות לסדר האיברים ואין חשיבות לחזרות. כך, למשל, שלוש הקבוצות הבאות שוות זו לזו: <span class="math display">\[.\{a,a,b,c,c\}=\{a,b,c\}=\{b,c,a\}\]</span></p>
+<p>לעומת זאת, נתבונן בקבוצה <span class="math inline">\(B=\{a,\,b,\,d\}\)</span>. הקבוצות <span class="math inline">\(A=\{a,\,b,\,c\}\)</span> ו-<span class="math inline">\(B\)</span> <strong>אינן</strong> שוות. כדי להראות זאת, די למצוא אובייקט <strong>יחיד</strong> שעבורו השקילות <span class="math inline">\(x \in A \leftrightarrow x \in B\)</span> אינה מתקיימת — כלומר איבר ששייך לאחת הקבוצות אך לא לשנייה. ואכן, <span class="math inline">\(c \in A\)</span> אך <span class="math inline">\(c \notin B\)</span>: האות <span class="math inline">\(c\)</span> שייכת ל-<span class="math inline">\(A\)</span> אך אינה שייכת ל-<span class="math inline">\(B\)</span>, ולכן השקילות נכשלת עבור <span class="math inline">\(x=c\)</span>, <strong>ודי בכך</strong> כדי להסיק ש-<span class="math inline">\(A \neq B\)</span>. כלומר, <strong>מספיק איבר מבדיל אחד</strong> — אין צורך לבדוק את כל האיברים. במקרה זה קיים גם איבר מבדיל שני, שכן <span class="math inline">\(d \in B\)</span> אך <span class="math inline">\(d \notin A\)</span>, אך כאמור צד אחד מספיק; הצגנו את שניהם רק לשם ההמחשה.</p>
+<p>כעת נפנה למושג ה<strong>הכלה</strong>: מתי קבוצה אחת ״נמצאת בתוך״ קבוצה אחרת.</p>
+<div id="def-subset" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 2.2</strong></span> תהיינה <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> קבוצות. נאמר ש-<span class="math inline">\(B\)</span> <strong>מוכלת</strong> ב-<span class="math inline">\(A\)</span>, או ש-<span class="math inline">\(B\)</span> היא <strong>תת-קבוצה</strong> של <span class="math inline">\(A\)</span>, ונסמן <span class="math inline">\(B \subseteq A\)</span>, אם כל איבר של <span class="math inline">\(B\)</span> הוא גם איבר של <span class="math inline">\(A\)</span>; כלומר, לכל <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[.x \in B \to x \in A\]</span></p>
+</div>
+<div id="exm-subset" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 2.1</strong></span> נתבונן שוב בקבוצה <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>. הקבוצה <span class="math inline">\(\{a,\,b\}\)</span> היא תת-קבוצה של <span class="math inline">\(A\)</span>, כלומר <span class="math inline">\(\{a,\,b\} \subseteq A\)</span>, שכן כל איבר שלה שייך גם ל-<span class="math inline">\(A\)</span>: אכן <span class="math inline">\(a \in A\)</span> וגם <span class="math inline">\(b \in A\)</span>.</p>
+</div>
+<p>חשוב להבחין בין שני הסימנים <span class="math inline">\(\in\)</span> ו-<span class="math inline">\(\subseteq\)</span>, שכן ערבוב ביניהם הוא מקור נפוץ לבלבול. הסימן <span class="math inline">\(\in\)</span> מקשר <strong>אובייקט (איבר)</strong> לקבוצה: <span class="math inline">\(x \in A\)</span> פירושו ש-<span class="math inline">\(x\)</span> הוא אחד מאיברי <span class="math inline">\(A\)</span>. לעומתו, הסימן <span class="math inline">\(\subseteq\)</span> מקשר <strong>קבוצה</strong> לקבוצה: <span class="math inline">\(B \subseteq A\)</span> פירושו שכל איברי <span class="math inline">\(B\)</span> הם איברים של <span class="math inline">\(A\)</span>. כך, למשל, עבור <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(a \in A\)</span> — נכון, שכן <span class="math inline">\(a\)</span> הוא איבר של <span class="math inline">\(A\)</span>;</li>
+<li><span class="math inline">\(\{a\} \subseteq A\)</span> — נכון, שכן הקבוצה <span class="math inline">\(\{a\}\)</span> מכילה איבר יחיד, <span class="math inline">\(a\)</span>, ששייך ל-<span class="math inline">\(A\)</span>;</li>
+<li><span class="math inline">\(\{a\} \in A\)</span> — <strong>לא נכון</strong>: איברי <span class="math inline">\(A\)</span> הם האותיות <span class="math inline">\(a,b,c\)</span>, והקבוצה <span class="math inline">\(\{a\}\)</span> אינה אחת מהן;</li>
+<li><span class="math inline">\(a \subseteq A\)</span> — <strong>חסר משמעות</strong>, שכן <span class="math inline">\(a\)</span> אינו קבוצה (אלא איבר), ואין מובן ל״הכלה״ של איבר.</li>
+</ul>
+<p>הקשר בין הכלה לשוויון נותן בידינו את שיטת ההוכחה החשובה ביותר לשוויון קבוצות.</p>
+<div id="prp-double-inclusion" class="proposition theorem">
+<p><span class="theorem-title"><strong>טענה 2.1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, <span class="math inline">\(A=B\)</span> אם ורק אם <span class="math inline">\(A \subseteq B\)</span> וגם <span class="math inline">\(B \subseteq A\)</span>.</p>
+</div>
+<p>הטענה נובעת ישירות מהגדרת השוויון: התנאי <span class="math inline">\(x \in A \leftrightarrow x \in B\)</span> שקול לכך ששתי הגרירות מתקיימות — <span class="math inline">\(x \in A \to x \in B\)</span> (שהיא <span class="math inline">\(A \subseteq B\)</span>) ו-<span class="math inline">\(x \in B \to x \in A\)</span> (שהיא <span class="math inline">\(B \subseteq A\)</span>). <strong>זוהי הדרך הסטנדרטית והנפוצה ביותר להוכיח שוויון בין קבוצות</strong>: מוכיחים בנפרד את שתי ההכלות, <span class="math inline">\(A \subseteq B\)</span> ואז <span class="math inline">\(B \subseteq A\)</span>. שיטה זו שימושית במיוחד כאשר הקבוצות מוגדרות על ידי תכונה (בשיטת השומר) ולא על ידי רשימת איברים מפורשת — ובמקרים כאלה היא לרוב הדרך הטבעית ביותר.</p>
+<p>נחזור לעניין תיאור איבריה של קבוצה. אף על פי שהסימון בעזרת סוגריים מסולסלים הוא פשוט וחד-משמעי, הוא אינו תמיד נוח, ולעיתים אף אינו מספיק. כל עוד באוסף יש מעט איברים אין בכך בעיה, אך מה נעשה אם במקום 3 איברים יש 100,000? כתיבת כולם עלולה להיות מייגעת למדי. <strong>הכלל הוא שסימון נועד להקל על ההבנה ועל הניתוח של המידע, לא לסרבל אותם</strong>; <strong>אם סימון מסרבל במקום לפשט — אין בו צורך.</strong> בעיה שנייה, חמורה אף יותר, מתעוררת כאשר בקבוצה יש אינסוף איברים — למשל אוסף כל המספרים הטבעיים <span class="math inline">\(0,1,2,\dots\)</span>. במקרה כזה הסימון שהצגנו אינו מספיק כלל, שכן לא ניתן לכתוב אינסוף איברים בתוך סוגריים מסולסלים. לכן נזדקק לדרכים נוספות לתיאור קבוצות.</p>
+<p>מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב <span class="math inline">\(\mathbb{N}=\{0, 1, 2, \dots\}\)</span>; שלושת האיברים הראשונים <span class="math inline">\(0, 1, 2\)</span> כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה <a href="./03-number-systems.html#sec-number-systems">בסעיף על מערכות מספרים</a>.) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא <strong>שיטת השומר</strong> (סימון בונה-קבוצות), שאותה נציג כעת.</p>
+<div id="def-set-builder" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 2.3</strong></span> תהי <span class="math inline">\(X\)</span> קבוצה, ותהי <span class="math inline">\(P(x)\)</span> <strong>תכונה</strong> — טענה שכל אובייקט <span class="math inline">\(x\)</span> מקיים אותה או אינו מקיים אותה. הקבוצה <span class="math display">\[\{x \in X \mid P(x)\}\]</span> מוגדרת כקבוצת <strong>כל</strong> האיברים <span class="math inline">\(x\)</span> שב-<span class="math inline">\(X\)</span> המקיימים את התכונה <span class="math inline">\(P\)</span>. הקו האנכי <span class="math inline">\(\mid\)</span>, ה<strong>שומר</strong>, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט <span class="math inline">\(y\)</span> מתקיים ש-<span class="math inline">\(y\)</span> שייך לקבוצה אם ורק אם <span class="math inline">\(y \in X\)</span> והתכונה <span class="math inline">\(P(y)\)</span> מתקיימת. כאשר ה״עולם״ <span class="math inline">\(X\)</span> ברור מן ההקשר, נהוג לקצר ולכתוב <span class="math inline">\(\{x \mid P(x)\}\)</span>.</p>
+</div>
+<div id="exm-set-builder" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 2.2</strong></span> הקבוצה <span class="math inline">\(\{n \in \mathbb{N} \mid n &gt; 5\}\)</span> היא קבוצת כל המספרים הטבעיים הגדולים מ-<span class="math inline">\(5\)</span>, כלומר <span class="math display">\[.\{n \in \mathbb{N} \mid n &gt; 5\} = \{6, 7, 8, \dots\}\]</span> כך, <span class="math inline">\(7\)</span> שייך לקבוצה (שכן <span class="math inline">\(7 \in \mathbb{N}\)</span> וגם <span class="math inline">\(7 &gt; 5\)</span>), ואילו <span class="math inline">\(3\)</span> אינו שייך לה (שכן <span class="math inline">\(3\)</span> אינו גדול מ-<span class="math inline">\(5\)</span>).</p>
+</div>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="level2">
+<h2 class="anchored" data-anchor-id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש">פעולות על קבוצות: איחוד, חיתוך והפרש</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="הקבוצה-הריקה" class="level2">
+<h2 class="anchored" data-anchor-id="הקבוצה-הריקה">הקבוצה הריקה</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
 
 
 </section>
@@ -884,10 +927,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./01-logic.html" class="pagination-link" aria-label="שפת המתמטיקה ולוגיקה">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">שפת המתמטיקה ולוגיקה</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-1-foundations.html" class="pagination-link" aria-label="חלק 1: מושגי יסוד">
-        <span class="nav-page-text">חלק 1: מושגי יסוד</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-number-systems.html" class="pagination-link" aria-label="מערכות מספרים: $\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}$">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

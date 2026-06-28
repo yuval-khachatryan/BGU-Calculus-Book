@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="יובל חצ׳טריאן-רזיאל">
 
-<title>חשבון אינפיניטסימלי 1 להנדסה</title>
+<title>4&nbsp; ערך מוחלט וקטעים – חשבון אינפיניטסימלי 1 להנדסה</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-1-foundations.html" rel="next">
+<link href="./05-induction.html" rel="next">
+<link href="./03-number-systems.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -179,7 +179,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">פתח דבר</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./04-abs-value.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ערך מוחלט וקטעים</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="חפש" onclick="window.quartoOpenSearch();">
@@ -213,7 +213,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">פתח דבר</span></a>
   </div>
 </li>
@@ -246,7 +246,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-abs-value.html" class="sidebar-item-text sidebar-link">
+  <a href="./04-abs-value.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ערך מוחלט וקטעים</span></span></a>
   </div>
 </li>
@@ -438,29 +438,27 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#פתח-דבר" id="toc-פתח-דבר" class="nav-link active" data-scroll-target="#פתח-דבר">פתח דבר</a></li>
+  <li><a href="#קטעים" id="toc-קטעים" class="nav-link active" data-scroll-target="#קטעים">קטעים</a></li>
+  <li><a href="#ערך-מוחלט" id="toc-ערך-מוחלט" class="nav-link" data-scroll-target="#ערך-מוחלט">ערך מוחלט</a>
+  <ul class="collapse">
+  <li><a href="#אי-שוויון-המשולש" id="toc-אי-שוויון-המשולש" class="nav-link" data-scroll-target="#אי-שוויון-המשולש">אי שוויון המשולש</a></li>
+  </ul></li>
+  <li><a href="#סביבת-varepsilon-של-נקודה" id="toc-סביבת-varepsilon-של-נקודה" class="nav-link" data-scroll-target="#סביבת-varepsilon-של-נקודה">סביבת-<span class="math inline">\(\varepsilon\)</span> של נקודה</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./part-1-foundations.html">חלק 1: מושגי יסוד</a></li><li class="breadcrumb-item"><a href="./04-abs-value.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ערך מוחלט וקטעים</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">חשבון אינפיניטסימלי 1 להנדסה</h1>
-<p class="subtitle lead">טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה</p>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ערך מוחלט וקטעים</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">כותב</div>
-    <div class="quarto-title-meta-contents">
-             <p>יובל חצ׳טריאן-רזיאל </p>
-          </div>
-  </div>
     
   
     
@@ -471,12 +469,136 @@ window.Quarto = {
 </header>
 
 
-<section id="פתח-דבר" class="level1 unnumbered">
-<h1 class="unnumbered">פתח דבר</h1>
-<p>ברוכים הבאים לגרסה המקוונת של ספר הלימוד בחשבון אינפיניטסימלי 1 לסטודנטים וסטודנטיות בהנדסה. השתמשו בתפריט הצד כדי לנווט בין הפרקים.</p>
-<blockquote class="blockquote">
-<p><strong>הערה לעורך.</strong> טיוטה זו מאורגנת <strong>לפי מטריצת הנושאים של הקורס</strong> (<em>Progress Calc ME Fall 2026</em>): כל נושא-משנה במטריצה הוא כותרת-סעיף. סעיפים בעלי כיסוי במחברת ההרצאות מולאו בתעתיק גולמי כפי-שהוא (כולל תרשימים משוחזרים); נושאים שאינם מכוסים במחברת (למשל קבוצות, פעולות על קבוצות, מערכות מספרים) הושארו כממלאי-מקום לכתיבה. ייתכנו נושאי-משנה שתוכנם נדון יחד עם נושא סמוך — ראו הערות בגוף הסעיף.</p>
-</blockquote>
+<section id="קטעים" class="level2">
+<h2 class="anchored" data-anchor-id="קטעים">קטעים</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="ערך-מוחלט" class="level2">
+<h2 class="anchored" data-anchor-id="ערך-מוחלט">ערך מוחלט</h2>
+<div id="def-absolute-value" class="definition theorem">
+<p><span class="theorem-title"><strong>הגדרה 4.1</strong></span> לכל מספר <span class="math inline">\(x\)</span> ממשי, הערך המוחלט של <span class="math inline">\(x\)</span> מסומן ומוגדר ע”י: <span class="math display">\[|x| =
+\begin{cases}
+x &amp; : x \geq 0 \\
+-x &amp; : x &lt; 0
+\end{cases}\]</span></p>
+</div>
+<div id="exm-abs-values" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.1</strong></span> <span class="math display">\[|5| = 5, \quad |-3| = 3\]</span></p>
+</div>
+<p>ערך מוחלט של <span class="math inline">\(x\)</span> זה המרחק של <span class="math inline">\(x\)</span> מ-<span class="math inline">\(0\)</span>, ולכן אין שלילי במרחק.</p>
+<div id="exm-abs-distance" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.2</strong></span> <span class="math display">\[|-3| = |3| = 3\]</span></p>
+<div style="text-align:center">
+<p>תרשים: ציר מספרים עם הנקודות <span class="math inline">\(-3\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(3\)</span> וקשתות “מרחק 3” משני הצדדים.</p>
+</div>
+<div id="fig-c01_fig01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.1: ציר מספרים עם הנקודות <span class="math inline">\(-3\)</span>, <span class="math inline">\(0\)</span>, <span class="math inline">\(3\)</span> וקשתות “מרחק 3” משני הצדדים.
+</figcaption>
+</figure>
+</div>
+</div>
+<p>לכן המרחק בין שני מספרים <span class="math inline">\(a,b \in R\)</span> הוא: <span class="math inline">\(|a-b| = |b-a|\)</span>.</p>
+<div id="exm-abs-no-solution" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.3</strong></span> <span class="math display">\[|x| = -2\]</span> ל-<span class="math inline">\(x\)</span> חיובי או אפס ולכן אין פתרון.</p>
+</div>
+<div id="exm-abs-open-interval" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.4</strong></span> <span class="math display">\[|x| &lt; 1\]</span> הקטע הפתוח: <span class="math inline">\(\{x \mid -1 &lt; x &lt; 1\} = (-1,1)\)</span></p>
+<div style="text-align:center">
+<p>תרשים: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הפתוח ביניהן.</p>
+</div>
+<div id="fig-c01_fig02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.2: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הפתוח ביניהן.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="exm-abs-closed-interval" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.5</strong></span> <span class="math display">\[|x| \leq 1\]</span> הקטע הסגור: <span class="math inline">\(\{x \mid -1 \leq x \leq 1\} = [-1,1]\)</span></p>
+<div style="text-align:center">
+<p>תרשים: ציר מספרים עם נקודות סגורות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הסגור ביניהן.</p>
+</div>
+<div id="fig-c01_fig03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.3: ציר מספרים עם נקודות סגורות ב-<span class="math inline">\(-1\)</span> וב-<span class="math inline">\(1\)</span>, והקטע הסגור ביניהן.
+</figcaption>
+</figure>
+</div>
+</div>
+<div id="exm-abs-greater" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.6</strong></span> <span class="math display">\[|x| &gt; 3\]</span> <span class="math display">\[\{x \mid x &gt; 3 \cup x &lt; -3\} = (3,\infty) \cup (-\infty,-3)\]</span></p>
+<div style="text-align:center">
+<p>תרשים: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-3\)</span> וב-<span class="math inline">\(3\)</span>, והקרניים החיצוניות מסומנות.</p>
+</div>
+<div id="fig-c01_fig04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.4: ציר מספרים עם נקודות פתוחות ב-<span class="math inline">\(-3\)</span> וב-<span class="math inline">\(3\)</span>, והקרניים החיצוניות מסומנות.
+</figcaption>
+</figure>
+</div>
+</div>
+<section id="אי-שוויון-המשולש" class="level3">
+<h3 class="anchored" data-anchor-id="אי-שוויון-המשולש">אי שוויון המשולש</h3>
+<div style="text-align:center">
+<p>תרשים: סקיצת משולש וקטורים — וקטור <span class="math inline">\(x\)</span>, וקטור <span class="math inline">\(y\)</span> והווקטור <span class="math inline">\(x+y\)</span>, להמחשת אי-שוויון המשולש.</p>
+</div>
+<div id="fig-c01_fig05" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.5: סקיצת משולש וקטורים — וקטור <span class="math inline">\(x\)</span>, וקטור <span class="math inline">\(y\)</span> והווקטור <span class="math inline">\(x+y\)</span>, להמחשת אי-שוויון המשולש.
+</figcaption>
+</figure>
+</div>
+<p>אורך צלע <span class="math inline">\(\geq\)</span> סכום הצלעות האחרות.</p>
+<p>לכל <span class="math inline">\(x,y \in R\)</span> מתקיים: <span class="math display">\[.|x+y| \leq |x| + |y|\]</span></p>
+<div id="exm-triangle-inequality" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.7</strong></span> <span class="math display">\[x = 2, y = -1\]</span> <span class="math display">\[|x+y| &lt; |x| + |y|\]</span> <span class="math display">\[|1| &lt; |2| + |(-1)|\]</span> <span class="math display">\[1 &lt; 2 + 1 = 3\]</span></p>
+</div>
+</section>
+</section>
+<section id="סביבת-varepsilon-של-נקודה" class="level2">
+<h2 class="anchored" data-anchor-id="סביבת-varepsilon-של-נקודה">סביבת-<span class="math inline">\(\varepsilon\)</span> של נקודה</h2>
+<p>(נחוצה לתורת הגבולות) <!-- בדיקה: הערה בכתב יד --></p>
+<p>אם <span class="math inline">\(\varepsilon &gt; 0\)</span>, ואם <span class="math inline">\(x_0 \in R\)</span>, אז נגדיר את הסביבת <span class="math inline">\(\varepsilon\)</span> של <span class="math inline">\(x_0\)</span> להיות קבוצת כל המספרים שמרחקם מ-<span class="math inline">\(x_0\)</span> קטן מ-<span class="math inline">\(\varepsilon\)</span>.</p>
+<p>כלומר: <span class="math inline">\((x_0 - \varepsilon, x_0 + \varepsilon)\)</span></p>
+<div style="text-align:center">
+<p>תרשים: ציר מספרים עם הנקודות <span class="math inline">\(x_0-\varepsilon\)</span>, <span class="math inline">\(x_0\)</span>, <span class="math inline">\(x_0+\varepsilon\)</span> וקשתות באורך <span class="math inline">\(\varepsilon\)</span> משני צדי <span class="math inline">\(x_0\)</span>.</p>
+</div>
+<div id="fig-c01_fig06" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-c01_fig06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c01_fig06.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c01_fig06-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;4.6: ציר מספרים עם הנקודות <span class="math inline">\(x_0-\varepsilon\)</span>, <span class="math inline">\(x_0\)</span>, <span class="math inline">\(x_0+\varepsilon\)</span> וקשתות באורך <span class="math inline">\(\varepsilon\)</span> משני צדי <span class="math inline">\(x_0\)</span>.
+</figcaption>
+</figure>
+</div>
+<div id="exm-epsilon-neighborhood" class="example theorem">
+<p><span class="theorem-title"><strong>דוגמה 4.8</strong></span> סביבת <span class="math inline">\(\frac{1}{2}\)</span> של <span class="math inline">\(2\)</span> היא: <span class="math inline">\(\left(\frac{3}{2}, \frac{5}{2}\right)\)</span>.</p>
+</div>
 
 
 </section>
@@ -884,10 +1006,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./03-number-systems.html" class="pagination-link" aria-label="מערכות מספרים: $\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}$">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">מערכות מספרים: <span class="math inline">\(\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R}\)</span></span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-1-foundations.html" class="pagination-link" aria-label="חלק 1: מושגי יסוד">
-        <span class="nav-page-text">חלק 1: מושגי יסוד</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-induction.html" class="pagination-link" aria-label="אינדוקציה">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">אינדוקציה</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

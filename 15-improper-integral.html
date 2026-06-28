@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="יובל חצ׳טריאן-רזיאל">
 
-<title>חשבון אינפיניטסימלי 1 להנדסה</title>
+<title>15&nbsp; האינטגרל המוכלל – חשבון אינפיניטסימלי 1 להנדסה</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -34,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./part-1-foundations.html" rel="next">
+<link href="./14-definite-integral.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -179,7 +178,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">פתח דבר</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-improper-integral.html">חלק 11: האינטגרל המוכלל</a></li><li class="breadcrumb-item"><a href="./15-improper-integral.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">האינטגרל המוכלל</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="הצג/הסתר את סרגל הניווט" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="חפש" onclick="window.quartoOpenSearch();">
@@ -213,7 +212,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">פתח דבר</span></a>
   </div>
 </li>
@@ -422,7 +421,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./15-improper-integral.html" class="sidebar-item-text sidebar-link">
+  <a href="./15-improper-integral.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">האינטגרל המוכלל</span></span></a>
   </div>
 </li>
@@ -438,29 +437,25 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#פתח-דבר" id="toc-פתח-דבר" class="nav-link active" data-scroll-target="#פתח-דבר">פתח דבר</a></li>
+  <li><a href="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" id="toc-הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="nav-link active" data-scroll-target="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן">הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</a></li>
+  <li><a href="#דוגמאות-לחישוב-אינטגרל-מוכלל" id="toc-דוגמאות-לחישוב-אינטגרל-מוכלל" class="nav-link" data-scroll-target="#דוגמאות-לחישוב-אינטגרל-מוכלל">דוגמאות לחישוב אינטגרל מוכלל</a></li>
+  <li><a href="#מבחן-ההשוואה-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-לפונקציות-אי-שליליות">מבחן ההשוואה לפונקציות אי-שליליות</a></li>
+  <li><a href="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות">מבחן ההשוואה הגבולית לפונקציות אי-שליליות</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./15-improper-integral.html">חלק 11: האינטגרל המוכלל</a></li><li class="breadcrumb-item"><a href="./15-improper-integral.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">האינטגרל המוכלל</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">חשבון אינפיניטסימלי 1 להנדסה</h1>
-<p class="subtitle lead">טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה</p>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">האינטגרל המוכלל</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">כותב</div>
-    <div class="quarto-title-meta-contents">
-             <p>יובל חצ׳טריאן-רזיאל </p>
-          </div>
-  </div>
     
   
     
@@ -471,12 +466,29 @@ window.Quarto = {
 </header>
 
 
-<section id="פתח-דבר" class="level1 unnumbered">
-<h1 class="unnumbered">פתח דבר</h1>
-<p>ברוכים הבאים לגרסה המקוונת של ספר הלימוד בחשבון אינפיניטסימלי 1 לסטודנטים וסטודנטיות בהנדסה. השתמשו בתפריט הצד כדי לנווט בין הפרקים.</p>
-<blockquote class="blockquote">
-<p><strong>הערה לעורך.</strong> טיוטה זו מאורגנת <strong>לפי מטריצת הנושאים של הקורס</strong> (<em>Progress Calc ME Fall 2026</em>): כל נושא-משנה במטריצה הוא כותרת-סעיף. סעיפים בעלי כיסוי במחברת ההרצאות מולאו בתעתיק גולמי כפי-שהוא (כולל תרשימים משוחזרים); נושאים שאינם מכוסים במחברת (למשל קבוצות, פעולות על קבוצות, מערכות מספרים) הושארו כממלאי-מקום לכתיבה. ייתכנו נושאי-משנה שתוכנם נדון יחד עם נושא סמוך — ראו הערות בגוף הסעיף.</p>
-</blockquote>
+<section id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="level2">
+<h2 class="anchored" data-anchor-id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן">הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="דוגמאות-לחישוב-אינטגרל-מוכלל" class="level2">
+<h2 class="anchored" data-anchor-id="דוגמאות-לחישוב-אינטגרל-מוכלל">דוגמאות לחישוב אינטגרל מוכלל</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="מבחן-ההשוואה-לפונקציות-אי-שליליות" class="level2">
+<h2 class="anchored" data-anchor-id="מבחן-ההשוואה-לפונקציות-אי-שליליות">מבחן ההשוואה לפונקציות אי-שליליות</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
+</section>
+<section id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="level2">
+<h2 class="anchored" data-anchor-id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות">מבחן ההשוואה הגבולית לפונקציות אי-שליליות</h2>
+<div class="todo">
+<p>תוכן בהכנה — להשלמה.</p>
+</div>
 
 
 </section>
@@ -884,11 +896,11 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./14-definite-integral.html" class="pagination-link" aria-label="האינטגרל המסוים">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">האינטגרל המסוים</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./part-1-foundations.html" class="pagination-link" aria-label="חלק 1: מושגי יסוד">
-        <span class="nav-page-text">חלק 1: מושגי יסוד</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
