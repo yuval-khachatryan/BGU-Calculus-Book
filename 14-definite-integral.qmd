@@ -28,13 +28,13 @@ ax.text(2.7, 1.0, r"$f$", fontsize=13, color="C0")
 ax.set_xlim(-0.3, 5.2)
 ax.set_ylim(-0.4, 4)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -43,7 +43,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטח הכלוא בין גרף $f$ לציר ה-$x$ בקטע $[a,b]$](c10_fig01.png){#fig-c10_fig01 width="62%" fig-align="center"}
+![השטח הכלוא בין גרף $f$ לציר ה-$x$ בקטע $[a,b]$](c14_fig01.png){#fig-c10_fig01 width="62%" fig-align="center"}
 :::
 
 השטח שכלוא בין גרף הפונקציה של $f$, לציר ה-$x$, כאשר $a \le x \le b$.
@@ -76,13 +76,13 @@ ax.text(0.85, 1.0, r"$x^2$", fontsize=13, color="C0")
 ax.set_xlim(-0.35, 1.35)
 ax.set_ylim(-0.2, 1.6)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -91,7 +91,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטח הכלוא מתחת ל-$f(x)=x^2$ בקטע $[0,1]$](c10_fig02.png){#fig-c10_fig02 width="62%" fig-align="center"}
+![השטח הכלוא מתחת ל-$f(x)=x^2$ בקטע $[0,1]$](c14_fig02.png){#fig-c10_fig02 width="62%" fig-align="center"}
 :::
 
 השטח הכלוא: $$\int_0^1 x^2\,dx = \left.\frac{x^3}{3}\right|_0^1 = \frac{1}{3}$$
@@ -124,13 +124,13 @@ ax.text(4.3, C + 0.1, r"$f(x)=C$", fontsize=12, color="C0")
 ax.set_xlim(-0.3, 5.2)
 ax.set_ylim(-0.3, 3)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -139,7 +139,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![מלבן השטח מתחת לפונקציה הקבועה $f(x)=C$ בקטע $[a,b]$](c10_fig03.png){#fig-c10_fig03 width="62%" fig-align="center"}
+![מלבן השטח מתחת לפונקציה הקבועה $f(x)=C$ בקטע $[a,b]$](c14_fig03.png){#fig-c10_fig03 width="62%" fig-align="center"}
 :::
 
 השטח הכלוא: $$(b-a) \cdot C$$
@@ -177,13 +177,13 @@ ax.text(0.8, 0.85, r"$x^2$", fontsize=13, color="C0")
 ax.set_xlim(-0.05, 1.15)
 ax.set_ylim(-0.1, 1.2)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -192,7 +192,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![קירוב השטח מתחת ל-$x^2$ ב-$n$ מלבנים (סכום רימן) בקטע $[0,1]$](c10_fig04.png){#fig-c10_fig04 width="62%" fig-align="center"}
+![קירוב השטח מתחת ל-$x^2$ ב-$n$ מלבנים (סכום רימן) בקטע $[0,1]$](c14_fig04.png){#fig-c10_fig04 width="62%" fig-align="center"}
 :::
 
 נחשב את סכומי המלבנים: $$\frac{1}{n} \cdot \left(\frac{1}{n}\right)^2 + \frac{1}{n} \cdot \left(\frac{2}{n}\right)^2 + \dots + \frac{1}{n}\left(\frac{n}{n}\right)^2 =$$
@@ -240,13 +240,13 @@ ax.text(2.05, 0.08, r"$x\notin\mathbb{Q}$", fontsize=11, color="C1", va="center"
 ax.set_xlim(-0.2, 2.9)
 ax.set_ylim(-0.3, 1.5)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -255,7 +255,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![פונקציית דיריכלה בקטע $[0,2]$ — ערך $1$ ברציונליים וערך $0$ באי-רציונליים](c10_fig05.png){#fig-c10_fig05 width="62%" fig-align="center"}
+![פונקציית דיריכלה בקטע $[0,2]$ — ערך $1$ ברציונליים וערך $0$ באי-רציונליים](c14_fig05.png){#fig-c10_fig05 width="62%" fig-align="center"}
 :::
 
 פונקציית דיריכלה: $$D(x) = \begin{cases} 1 & x \in \mathbb{Q} \\ 0 & x \notin \mathbb{Q} \end{cases}$$
@@ -303,13 +303,13 @@ ax.text(5.0, 2.3, r"$f$", fontsize=13, color="C0")
 ax.set_xlim(-0.3, 6.3)
 ax.set_ylim(-0.3, 3)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig14.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig06.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig14.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig06.png}\hss}\endL\par
 \medskip
 ```
 
@@ -318,7 +318,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטח המוצלל מתחת ל-$f$ בקטע $[a,b]$, המייצג את $\int_a^b f$](c10_fig14.png){#fig-c10_fig14 width="62%" fig-align="center"}
+![השטח המוצלל מתחת ל-$f$ בקטע $[a,b]$, המייצג את $\int_a^b f$](c14_fig06.png){#fig-c10_fig14 width="62%" fig-align="center"}
 :::
 
 אם $f$ פונקציה רציפה ב-$[a,b]$, פרט למספר <u>סופי</u> כלשהוא של נקודות בהן יש קפיצה או סליקה ("חור"), אז $f$ אינטגרבילית ב-$[a,b]$.
@@ -349,13 +349,13 @@ ax.text(2.6, 2.2, r"$|x|$", fontsize=13, color="C0")
 ax.set_xlim(-2.6, 3.7)
 ax.set_ylim(-0.3, 3.5)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig15.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig07.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig15.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig07.png}\hss}\endL\par
 \medskip
 ```
 
@@ -364,7 +364,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הפונקציה $f(x)=|x|$ עם הנקודות $-2,-1,1,2,3$ והשטח המוצלל בקטע $[-2,3]$](c10_fig15.png){#fig-c10_fig15 width="62%" fig-align="center"}
+![הפונקציה $f(x)=|x|$ עם הנקודות $-2,-1,1,2,3$ והשטח המוצלל בקטע $[-2,3]$](c14_fig07.png){#fig-c10_fig15 width="62%" fig-align="center"}
 :::
 
 חשבו: $\int_{-2}^{3} |x|\,dx$
@@ -421,13 +421,13 @@ ax.text(5.0, 1.4, r"$f$", fontsize=13, color="C0")
 ax.set_xlim(-0.3, 6.3)
 ax.set_ylim(-0.3, 3.4)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig16.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig08.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig16.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig08.png}\hss}\endL\par
 \medskip
 ```
 
@@ -436,7 +436,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![פונקציית השטח הצבור $F(x)=\int_a^x f(t)\,dt$ — השטח מ-$a$ עד $x$ מתחת לפונקציה יורדת](c10_fig16.png){#fig-c10_fig16 width="62%" fig-align="center"}
+![פונקציית השטח הצבור $F(x)=\int_a^x f(t)\,dt$ — השטח מ-$a$ עד $x$ מתחת לפונקציה יורדת](c14_fig08.png){#fig-c10_fig16 width="62%" fig-align="center"}
 :::
 
 דוגמאות:
@@ -512,13 +512,13 @@ ax.text(4.8, 1.7, r"$f$", fontsize=13, color="C0")
 ax.set_xlim(-0.3, 6.5)
 ax.set_ylim(-0.2, 2)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig06.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig09.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig06.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig09.png}\hss}\endL\par
 \medskip
 ```
 
@@ -527,7 +527,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![חלוקה לתת-קטעים עם נקודות מדגם $t_1,\dots,t_n$ ומלבני סכום רימן מתחת ל-$f$](c10_fig06.png){#fig-c10_fig06 width="62%" fig-align="center"}
+![חלוקה לתת-קטעים עם נקודות מדגם $t_1,\dots,t_n$ ומלבני סכום רימן מתחת ל-$f$](c14_fig09.png){#fig-c10_fig06 width="62%" fig-align="center"}
 :::
 
 נפתח את אגף ימין:
@@ -578,13 +578,13 @@ ax.text(5.0, 0.6, r"$2$", fontsize=13)
 ax.set_xlim(-0.3, 6.3)
 ax.set_ylim(-1.6, 1.7)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig07.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig10.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig07.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig10.png}\hss}\endL\par
 \medskip
 ```
 
@@ -593,7 +593,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שטח נטו — אזורים מעל הציר חיוביים ואזור מתחת לציר שלילי ($-\tfrac{1}{2}$)](c10_fig07.png){#fig-c10_fig07 width="62%" fig-align="center"}
+![שטח נטו — אזורים מעל הציר חיוביים ואזור מתחת לציר שלילי ($-\tfrac{1}{2}$)](c14_fig10.png){#fig-c10_fig07 width="62%" fig-align="center"}
 :::
 
 $$\int_a^b f(x)dx = 1 - \frac{1}{2} + 2 = 2\frac{1}{2}$$
@@ -632,13 +632,13 @@ ax.text(1.5, 3.2, r"$x^2$", fontsize=13, color="C0")
 ax.set_xlim(-1.7, 2.6)
 ax.set_ylim(-0.4, 4.5)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig08.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig11.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig08.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig11.png}\hss}\endL\par
 \medskip
 ```
 
@@ -647,7 +647,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטח מתחת ל-$f(x)=x^2$ בין $x=-1$ ל-$x=2$](c10_fig08.png){#fig-c10_fig08 width="62%" fig-align="center"}
+![השטח מתחת ל-$f(x)=x^2$ בין $x=-1$ ל-$x=2$](c14_fig11.png){#fig-c10_fig08 width="62%" fig-align="center"}
 :::
 
 **(2)** בקטע $[a,c]$ מתקיים $f(x) \geq g(x)$
@@ -687,13 +687,13 @@ ax.text(7.0, 6.2, r"$g$", fontsize=12, color="C3")
 ax.set_xlim(0.3, 7.8)
 ax.set_ylim(-0.3, 7)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig09.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig12.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig09.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig12.png}\hss}\endL\par
 \medskip
 ```
 
@@ -702,7 +702,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטחים $1,2,3$ הכלואים בין $f$ ל-$g$ בקטעים $[a,c],[c,d],[d,b]$](c10_fig09.png){#fig-c10_fig09 width="62%" fig-align="center"}
+![השטחים $1,2,3$ הכלואים בין $f$ ל-$g$ בקטעים $[a,c],[c,d],[d,b]$](c14_fig12.png){#fig-c10_fig09 width="62%" fig-align="center"}
 :::
 
 שטח 1 ב- $[a,c]$ : $\int_a^c (f(x) - g(x))dx$
@@ -743,13 +743,13 @@ ax.text(1.05, 0.5, r"$x^3$", fontsize=12, color="C3")
 ax.set_xlim(-1.3, 1.4)
 ax.set_ylim(-1.3, 1.3)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig10.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig13.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig10.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig13.png}\hss}\endL\par
 \medskip
 ```
 
@@ -758,7 +758,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![השטחים החסומים בין $f(x)=x$ ל-$g(x)=x^3$ בקטע $[-1,1]$](c10_fig10.png){#fig-c10_fig10 width="62%" fig-align="center"}
+![השטחים החסומים בין $f(x)=x$ ל-$g(x)=x^3$ בקטע $[-1,1]$](c14_fig13.png){#fig-c10_fig10 width="62%" fig-align="center"}
 :::
 
 $$\int_{-1}^1 |x - x^3| dx = \int_{-1}^0 (x^3 - x)dx + \int_0^1 (x - x^3)dx =$$
@@ -835,13 +835,13 @@ ax.set_xlim(-1.7, 1.7); ax.set_ylim(-1.8, 2)
 ax.grid(alpha=0.3)
 
 fig.tight_layout()
-fig.savefig("c10_fig11.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig14.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig11.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig14.png}\hss}\endL\par
 \medskip
 ```
 
@@ -850,7 +850,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![פונקציה זוגית (סימטרית, השטחים מצטברים) מול פונקציה אי-זוגית (השטחים מתבטלים)](c10_fig11.png){#fig-c10_fig11 width="62%" fig-align="center"}
+![פונקציה זוגית (סימטרית, השטחים מצטברים) מול פונקציה אי-זוגית (השטחים מתבטלים)](c14_fig14.png){#fig-c10_fig11 width="62%" fig-align="center"}
 :::
 
 פונקציה זוגית:
@@ -893,13 +893,13 @@ ax.set_xlim(-1.4, 1.4)
 ax.set_ylim(-0.25, 1.3)
 ax.set_aspect("equal", adjustable="box")
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig12.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig15.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig12.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig15.png}\hss}\endL\par
 \medskip
 ```
 
@@ -908,7 +908,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![חצי העיגול העליון $y=\sqrt{1-x^2}$ עם מרכז בראשית ורדיוס $1$, השטח צבוע](c10_fig12.png){#fig-c10_fig12 width="62%" fig-align="center"}
+![חצי העיגול העליון $y=\sqrt{1-x^2}$ עם מרכז בראשית ורדיוס $1$, השטח צבוע](c14_fig15.png){#fig-c10_fig12 width="62%" fig-align="center"}
 :::
 
 $$x^2 + y^2 = R^2$$ $$R = 1$$ $$y^2 = 1 - x^2$$ $$y = \sqrt{1 - x^2}$$
@@ -965,13 +965,13 @@ ax.set_xlim(-1.4, 1.4)
 ax.set_ylim(-0.25, 1.3)
 ax.set_aspect("equal", adjustable="box")
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig13.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig16.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig13.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig16.png}\hss}\endL\par
 \medskip
 ```
 
@@ -980,7 +980,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![חצי מעגל ברדיוס $1$ ומרכז בראשית, הנקודות $0$ ו-$1$ מסומנות על הציר](c10_fig13.png){#fig-c10_fig13 width="62%" fig-align="center"}
+![חצי מעגל ברדיוס $1$ ומרכז בראשית, הנקודות $0$ ו-$1$ מסומנות על הציר](c14_fig16.png){#fig-c10_fig13 width="62%" fig-align="center"}
 :::
 
 $$x^2 + y^2 = R^2$$ $$R = 1$$ $$y^2 = 1 - x^2$$ $$y = \sqrt{1 - x^2}$$
@@ -1058,13 +1058,13 @@ ax.set_xlim(-0.5, 4.2)
 ax.set_ylim(-3.5, 3.5)
 ax.set_aspect("equal", adjustable="box")
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig17.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig17.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig17.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig17.png}\hss}\endL\par
 \medskip
 ```
 
@@ -1073,7 +1073,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![חרוט שנוצר מסיבוב הישר $f(x)=x$ סביב ציר ה-$x$](c10_fig17.png){#fig-c10_fig17 width="62%" fig-align="center"}
+![חרוט שנוצר מסיבוב הישר $f(x)=x$ סביב ציר ה-$x$](c14_fig17.png){#fig-c10_fig17 width="62%" fig-align="center"}
 :::
 
 $$\pi \int_{a}^{b} f(x)^2\,dx$$
@@ -1107,13 +1107,13 @@ ax.set_xlim(-3.7, 3.7)
 ax.set_ylim(-0.5, 4.0)
 ax.set_aspect("equal", adjustable="box")
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig18.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig18.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig18.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig18.png}\hss}\endL\par
 \medskip
 ```
 
@@ -1122,7 +1122,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![חרוט שנוצר מסיבוב הישר $f(x)=x$ סביב ציר ה-$y$](c10_fig18.png){#fig-c10_fig18 width="62%" fig-align="center"}
+![חרוט שנוצר מסיבוב הישר $f(x)=x$ סביב ציר ה-$y$](c14_fig18.png){#fig-c10_fig18 width="62%" fig-align="center"}
 :::
 
 $$\pi \int_{a}^{b} x \cdot f(x)\,dx$$
@@ -1155,13 +1155,13 @@ ax.text(4.9, 2.9, r"$f$", fontsize=13, color="C0")
 ax.set_xlim(-0.3, 6.3)
 ax.set_ylim(-0.3, 3.5)
 ax.grid(alpha=0.3)
-fig.savefig("c10_fig19.png", dpi=150, bbox_inches="tight")
+fig.savefig("c14_fig19.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig19.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c14_fig19.png}\hss}\endL\par
 \medskip
 ```
 
@@ -1170,7 +1170,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![אורך הקשת של העקומה $f$ בקטע $[a,b]$, עם קווים אנכיים בקצוות](c10_fig19.png){#fig-c10_fig19 width="62%" fig-align="center"}
+![אורך הקשת של העקומה $f$ בקטע $[a,b]$, עם קווים אנכיים בקצוות](c14_fig19.png){#fig-c10_fig19 width="62%" fig-align="center"}
 :::
 
 $$l = \int_{a}^{b} \sqrt{1 + (f'(x))^2}\,dx$$

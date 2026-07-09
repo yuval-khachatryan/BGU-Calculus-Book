@@ -25,3 +25,6 @@ __pycache__/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Local troubleshooting
+.debug

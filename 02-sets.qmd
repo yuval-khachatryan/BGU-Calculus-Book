@@ -326,13 +326,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("c02_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -343,7 +343,7 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: ההפרש הסימטרי $A \triangle B$ הוא כל מה ששייך לאחת הקבוצות בלבד (האזור המוצלל).](c02_fig05.png){#fig-symmetric-difference width="50%" fig-align="center"}
+![דיאגרמת ון: ההפרש הסימטרי $A \triangle B$ הוא כל מה ששייך לאחת הקבוצות בלבד (האזור המוצלל).](c02_fig04.png){#fig-symmetric-difference width="50%" fig-align="center"}
 :::
 
 ::: {#exm-symmetric-difference .example}
@@ -417,13 +417,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("c02_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -434,7 +434,7 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: המשלים $A^{c}$ הוא כל מה שבתוך העולם $U$ ומחוץ ל-$A$ (האזור המוצלל).](c02_fig04.png){#fig-complement width="50%" fig-align="center"}
+![דיאגרמת ון: המשלים $A^{c}$ הוא כל מה שבתוך העולם $U$ ומחוץ ל-$A$ (האזור המוצלל).](c02_fig05.png){#fig-complement width="50%" fig-align="center"}
 :::
 
 ::: {#exm-complement .example}

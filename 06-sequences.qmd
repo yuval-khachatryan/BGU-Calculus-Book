@@ -75,13 +75,13 @@ ax.plot(xs, [0]*len(xs), "o", color="tab:green", ms=6, zorder=4)
 ax.set_xlim(L-2, L+2)
 ax.set_ylim(-0.45, 0.6)
 ax.axis("off")
-fig.savefig("c02_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("c06_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c02_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -90,7 +90,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם הקטע $(L-1,\,L+1)$ סביב הגבול $L$ — כל איברי הסדרה נמצאים בקטע ממקום מסוים](c02_fig01.png){#fig-c02_fig01 width="62%" fig-align="center"}
+![ציר מספרים עם הקטע $(L-1,\,L+1)$ סביב הגבול $L$ — כל איברי הסדרה נמצאים בקטע ממקום מסוים](c06_fig01.png){#fig-c02_fig01 width="62%" fig-align="center"}
 :::
 
 אם $(a_n)_{n=1}^{\infty}$ מתכנסת ל-$L$, נסמן זאת: $$\lim_{n \to \infty} a_n = L$$
@@ -179,13 +179,13 @@ ax.annotate(r"$+1$", xy=(1.0, 0), xytext=(1.0, 0.12), ha="center", fontsize=12, 
 ax.set_xlim(-2.1, 2.1)
 ax.set_ylim(-0.45, 0.4)
 ax.axis("off")
-fig.savefig("c02_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("c06_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c02_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -194,7 +194,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני קטעים זרים על ציר המספרים — $\left(\tfrac12,\tfrac32\right)$ ו-$\left(-\tfrac32,-\tfrac12\right)$ — המראים שלא קיים $L$ יחיד, ומכאן הסתירה](c02_fig02.png){#fig-c02_fig02 width="62%" fig-align="center"}
+![שני קטעים זרים על ציר המספרים — $\left(\tfrac12,\tfrac32\right)$ ו-$\left(-\tfrac32,-\tfrac12\right)$ — המראים שלא קיים $L$ יחיד, ומכאן הסתירה](c06_fig02.png){#fig-c02_fig02 width="62%" fig-align="center"}
 :::
 
 זאת סתירה, ולכן $\lim_{n \to \infty} (-1)^n$ לא קיים.
@@ -259,13 +259,13 @@ for x in (L1, L2):
 ax.set_xlim(-3.0, 3.0)
 ax.set_ylim(-0.4, 0.7)
 ax.axis("off")
-fig.savefig("c02_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("c06_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c02_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -274,7 +274,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני קטעי $\varepsilon=\tfrac{d}{4}$ זרים סביב $L_1$ ו-$L_2$ במרחק $d$ — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה](c02_fig05.png){#fig-c02_fig05 width="62%" fig-align="center"}
+![שני קטעי $\varepsilon=\tfrac{d}{4}$ זרים סביב $L_1$ ו-$L_2$ במרחק $d$ — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה](c06_fig03.png){#fig-c02_fig05 width="62%" fig-align="center"}
 :::
 
 ## חסימוּת של סדרה מתכנסת (וההיפך השגוי)
@@ -337,13 +337,13 @@ ax.set_xlim(-3.0, 3.0)
 ax.set_ylim(-1.3, 1.0)
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("c06_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c02_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -352,7 +352,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)](c02_fig03.png){#fig-c02_fig03 width="62%" fig-align="center"}
+![סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)](c06_fig04.png){#fig-c02_fig03 width="62%" fig-align="center"}
 :::
 
 - אם $(a_n)_{n=1}^{\infty}$ סדרה מתכנסת, אז היא חסומה.
@@ -404,13 +404,13 @@ for x, lab, col in [(-2.9, r"$m$", "purple"), (2.6, r"$M$", "purple")]:
 ax.set_xlim(-3.3, 3.0)
 ax.set_ylim(-0.4, 0.4)
 ax.axis("off")
-fig.savefig("c02_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("c06_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c02_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -419,7 +419,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הזנב $a_n$ (עבור $n>N$) בקטע $(L-1,L+1)$, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין $m$ ל-$M$](c02_fig04.png){#fig-c02_fig04 width="62%" fig-align="center"}
+![הזנב $a_n$ (עבור $n>N$) בקטע $(L-1,L+1)$, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין $m$ ל-$M$](c06_fig05.png){#fig-c02_fig04 width="62%" fig-align="center"}
 :::
 
 - סדרה <u>שאינה חסומה</u>, אז היא אינה מתכנסת.

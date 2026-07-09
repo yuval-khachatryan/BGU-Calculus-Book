@@ -1,0 +1,4442 @@
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/14-definite-integral.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-session24b2a8fcd5420aab/c12b228990365ee0/quarto-inpute3f26ab75bd302e7.md
+----
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/15-improper-integral.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-session24b2a8fcd5420aab/c12b228990365ee0/quarto-input8dc71f091f9f3408.md
+----
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/index.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-session24b2a8fcd5420aab/c12b228990365ee0/quarto-inputc02c469e524d33d5.md
+----
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionaab382485916ac12/4361c2d0a49faa29/quarto-input1601a47063b5db03.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionaab382485916ac12/acbd2aecbf5ed859/quarto-input2f57aac778be7ec2.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionaab382485916ac12/1dacc3d568940e74/quarto-input9035639c27a1a494.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-session7e0e8bd9da18a3b4/53c1625e108d309d/quarto-inputc36b924578fe4627.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-session7e0e8bd9da18a3b4/9d42e64e920c9c20/quarto-input8502d85859364123.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/index.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input30ea87a9a24714ae.md
+----
+=== Pandoc chap=nil nblocks=6
+  Header level=1
+  Para
+  Div classes=[]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/part-1-foundations.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input8f3e49eb95750de1.md
+----
+=== Pandoc chap=nil nblocks=6
+  Para
+  Para
+  BulletList
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/01-logic.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inputbd08ac6487c3bda1.md
+----
+=== Pandoc chap=01 nblocks=81
+  Para
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Para
+  Table
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Table
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  BulletList
+  Header level=3
+  Para
+  Para
+  OrderedList
+  Para
+  Header level=4
+  Para
+  Para
+  Header level=3
+  Para
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/02-sets.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input6693f15f4d8fadc9.md
+----
+=== Pandoc chap=02 nblocks=99
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  BulletList
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Header level=2
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/03-number-systems.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inputdb8d612e872b84e4.md
+----
+=== Pandoc chap=03 nblocks=53
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/04-abs-value.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input79a72c39ea4344b7.md
+----
+=== Pandoc chap=04 nblocks=30
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/05-induction.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input825ba78790f4ef0c.md
+----
+=== Pandoc chap=05 nblocks=11
+  Header level=2
+  Para
+  Para
+  Div classes=[]
+  Header level=2
+  Para
+  OrderedList
+  Div classes=[]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/06-sequences.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input6b02551541aa4803.md
+----
+=== Pandoc chap=06 nblocks=240
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Header level=3
+  Div classes=[]
+  Para
+  BulletList
+  Header level=3
+  BulletList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Header level=2
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Table
+  Para
+  Para
+  Para
+  Table
+  Para
+  Table
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  BulletList
+  Header level=3
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  BulletList
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/07-functions-intro.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input2f1b3d595bd4081c.md
+----
+=== Pandoc chap=07 nblocks=99
+  Header level=2
+  Div classes=[]
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  BulletList
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  BulletList
+  Para
+  BulletList
+  Header level=3
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  OrderedList
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/08-function-limits.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input4aad957ed00acdae.md
+----
+=== Pandoc chap=08 nblocks=277
+  Header level=2
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Header level=4
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=4
+  Para
+  Para
+  Header level=4
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Header level=4
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  RawBlock
+  HorizontalRule
+  BulletList
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Para
+  RawBlock
+  BulletList
+  Para
+  Para
+  Para
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/09-continuity.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input4934d06f740340e8.md
+----
+=== Pandoc chap=09 nblocks=154
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  BulletList
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BlockQuote
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=4
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  RawBlock
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/10-derivative.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input71076472875bde56.md
+----
+=== Pandoc chap=10 nblocks=143
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=2
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/11-derivative-applications.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input51e86939437a0c5e.md
+----
+=== Pandoc chap=11 nblocks=156
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[theorem]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  OrderedList
+  Header level=2
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  BulletList
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Para
+  Header level=3
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/12-higher-derivatives.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inpute6c23f00185bf81e.md
+----
+=== Pandoc chap=12 nblocks=236
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  BulletList
+  Para
+  BulletList
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/13-indefinite-integral.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inputa4256188cd72ce9b.md
+----
+=== Pandoc chap=13 nblocks=223
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Table
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  OrderedList
+  Para
+  RawBlock
+  OrderedList
+  Para
+  Para
+  Para
+  RawBlock
+  OrderedList
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  RawBlock
+  OrderedList
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/14-definite-integral.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-input888d866724df51c6.md
+----
+=== Pandoc chap=14 nblocks=210
+  Header level=2
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  RawBlock
+  RawBlock
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/15-improper-integral.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inputc21bb26977029b1d.md
+----
+=== Pandoc chap=15 nblocks=11
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]
+  Div classes=[hidden]
+  Div classes=[hidden]
+quarto.doc.input_file = /Users/yuvalkhachatryan/Library/CloudStorage/Dropbox/Documents/BGU/Work Assignment/BGU-Calculus-Book/index.qmd
+PANDOC_STATE.input_files[1] = /var/folders/3z/jvqm90hx23zdjs8n8kzk71y00000gn/T/quarto-sessionf5c25689f1b4e850/c9f3763cc47b8473/quarto-inpute058d28dba3dec0.md
+----
+=== Pandoc chap=nil nblocks=2041
+  Para
+  RawBlock
+  Header level=1
+  CodeBlock
+  Para
+  Div classes=[]
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Para
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Para
+  Table
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Table
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  BulletList
+  Header level=3
+  Para
+  Para
+  OrderedList
+  Para
+  Header level=4
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  BulletList
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Header level=2
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=1
+  Para
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=3
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[]
+  Para
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Para
+  Div classes=[]
+  Header level=2
+  Para
+  OrderedList
+  Div classes=[]
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Header level=3
+  Div classes=[]
+  Para
+  BulletList
+  Header level=3
+  BulletList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Header level=2
+  Header level=3
+  Para
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Div classes=[]
+  Para
+  Table
+  Para
+  Para
+  Para
+  Table
+  Para
+  Table
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  BulletList
+  Header level=3
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  BulletList
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Div classes=[]
+  Para
+  BulletList
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  BulletList
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  BulletList
+  Para
+  BulletList
+  Header level=3
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  OrderedList
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Header level=4
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=4
+  Para
+  Para
+  Header level=4
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Header level=4
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  RawBlock
+  HorizontalRule
+  BulletList
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Para
+  RawBlock
+  BulletList
+  Para
+  Para
+  Para
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  BulletList
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BlockQuote
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=4
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Para
+  Para
+  RawBlock
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Header level=2
+  Div classes=[todo]
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Header level=2
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=2
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Header level=2
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Div classes=[theorem]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  OrderedList
+  Header level=2
+  Div classes=[]
+  Header level=3
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  BulletList
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Para
+  Para
+  Para
+  Header level=3
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  BlockQuote
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=4
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  BulletList
+  Para
+  BulletList
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  BulletList
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Header level=3
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  Header level=3
+  Para
+  Para
+  BulletList
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Table
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  OrderedList
+  Para
+  RawBlock
+  OrderedList
+  Para
+  Para
+  Para
+  RawBlock
+  OrderedList
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  RawBlock
+  OrderedList
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  OrderedList
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=2
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Header level=2
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Header level=3
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Header level=2
+  Header level=3
+  Para
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  OrderedList
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Header level=2
+  Para
+  Para
+  Header level=3
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Header level=3
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  Para
+  Para
+  RawBlock
+  Para
+  Div classes=[]
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  RawBlock
+  Para
+  Para
+  RawBlock
+  Para
+  RawBlock
+  Para
+  RawBlock
+  RawBlock
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  OrderedList
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Para
+  RawBlock
+  Div classes=[]
+  Div classes=[]
+  Para
+  Div classes=[quarto-book-part]
+  Para
+  RawBlock
+  Header level=1
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Header level=2
+  Div classes=[todo]
+  Div classes=[hidden]

@@ -55,13 +55,13 @@ ax.set_xlim(-4.5, 4.5)
 ax.set_ylim(-0.6, 0.8)
 ax.axis("off")
 
-fig.savefig("c01_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -70,7 +70,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם הנקודות $-3$, $0$, $3$ וקשתות "מרחק 3" משני הצדדים.](c01_fig01.png){#fig-c01_fig01 width="62%" fig-align="center"}
+![ציר מספרים עם הנקודות $-3$, $0$, $3$ וקשתות "מרחק 3" משני הצדדים.](c04_fig01.png){#fig-c01_fig01 width="62%" fig-align="center"}
 :::
 :::::
 
@@ -110,13 +110,13 @@ ax.set_xlim(-2.2, 2.2)
 ax.set_ylim(-0.5, 0.5)
 ax.axis("off")
 
-fig.savefig("c01_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -125,7 +125,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם נקודות פתוחות ב-$-1$ וב-$1$, והקטע הפתוח ביניהן.](c01_fig02.png){#fig-c01_fig02 width="62%" fig-align="center"}
+![ציר מספרים עם נקודות פתוחות ב-$-1$ וב-$1$, והקטע הפתוח ביניהן.](c04_fig02.png){#fig-c01_fig02 width="62%" fig-align="center"}
 :::
 :::::
 
@@ -159,13 +159,13 @@ ax.set_xlim(-2.2, 2.2)
 ax.set_ylim(-0.5, 0.5)
 ax.axis("off")
 
-fig.savefig("c01_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -174,7 +174,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם נקודות סגורות ב-$-1$ וב-$1$, והקטע הסגור ביניהן.](c01_fig03.png){#fig-c01_fig03 width="62%" fig-align="center"}
+![ציר מספרים עם נקודות סגורות ב-$-1$ וב-$1$, והקטע הסגור ביניהן.](c04_fig03.png){#fig-c01_fig03 width="62%" fig-align="center"}
 :::
 :::::
 
@@ -215,13 +215,13 @@ ax.set_xlim(-6, 6)
 ax.set_ylim(-0.5, 0.5)
 ax.axis("off")
 
-fig.savefig("c01_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -230,7 +230,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם נקודות פתוחות ב-$-3$ וב-$3$, והקרניים החיצוניות מסומנות.](c01_fig04.png){#fig-c01_fig04 width="62%" fig-align="center"}
+![ציר מספרים עם נקודות פתוחות ב-$-3$ וב-$3$, והקרניים החיצוניות מסומנות.](c04_fig04.png){#fig-c01_fig04 width="62%" fig-align="center"}
 :::
 :::::
 
@@ -270,13 +270,13 @@ ax.set_ylim(-0.7, 3.0)
 ax.set_aspect("equal")
 ax.axis("off")
 
-fig.savefig("c01_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -285,7 +285,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![סקיצת משולש וקטורים — וקטור $x$, וקטור $y$ והווקטור $x+y$, להמחשת אי-שוויון המשולש.](c01_fig05.png){#fig-c01_fig05 width="62%" fig-align="center"}
+![סקיצת משולש וקטורים — וקטור $x$, וקטור $y$ והווקטור $x+y$, להמחשת אי-שוויון המשולש.](c04_fig05.png){#fig-c01_fig05 width="62%" fig-align="center"}
 :::
 
 אורך צלע $\geq$ סכום הצלעות האחרות.
@@ -343,13 +343,13 @@ ax.set_xlim(x0 - eps - 1, x0 + eps + 1)
 ax.set_ylim(-0.7, 0.9)
 ax.axis("off")
 
-fig.savefig("c01_fig06.png", dpi=150, bbox_inches="tight")
+fig.savefig("c04_fig06.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c01_fig06.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c04_fig06.png}\hss}\endL\par
 \medskip
 ```
 
@@ -358,7 +358,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם הנקודות $x_0-\varepsilon$, $x_0$, $x_0+\varepsilon$ וקשתות באורך $\varepsilon$ משני צדי $x_0$.](c01_fig06.png){#fig-c01_fig06 width="62%" fig-align="center"}
+![ציר מספרים עם הנקודות $x_0-\varepsilon$, $x_0$, $x_0+\varepsilon$ וקשתות באורך $\varepsilon$ משני צדי $x_0$.](c04_fig06.png){#fig-c01_fig06 width="62%" fig-align="center"}
 :::
 
 ::: {#exm-epsilon-neighborhood .example}

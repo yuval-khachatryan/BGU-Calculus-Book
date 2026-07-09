@@ -466,13 +466,13 @@ ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -481,7 +481,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני ענפי הפונקציה $f(x)=\frac{x^2+1}{x}$ — ענף ימני עם מינימום ב-$(1,2)$ וענף שמאלי עם מקסימום ב-$(-1,-2)$.](c08_fig01.png){#fig-c08_fig01 width="62%" fig-align="center"}
+![שני ענפי הפונקציה $f(x)=\frac{x^2+1}{x}$ — ענף ימני עם מינימום ב-$(1,2)$ וענף שמאלי עם מקסימום ב-$(-1,-2)$.](c12_fig01.png){#fig-c08_fig01 width="62%" fig-align="center"}
 :::
 
 ## קמירות וקעירות של פונקציה
@@ -520,13 +520,13 @@ ax.set_ylabel(r"$y$")
 ax.legend(loc="lower left", fontsize=9)
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -535,7 +535,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![עקומה גלית — החלק העליון (אדום) קמור כלפי מטה והחלק התחתון (כחול) קמור כלפי מעלה.](c08_fig02.png){#fig-c08_fig02 width="62%" fig-align="center"}
+![עקומה גלית — החלק העליון (אדום) קמור כלפי מטה והחלק התחתון (כחול) קמור כלפי מעלה.](c12_fig02.png){#fig-c08_fig02 width="62%" fig-align="center"}
 :::
 
 ::: {#thm-convexity .theorem}
@@ -583,13 +583,13 @@ ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -598,7 +598,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני ענפי $f(x)=\frac{x^2+1}{x}$ — הענף הימני ($x>0$) קמור כלפי מעלה והענף השמאלי ($x<0$) קמור כלפי מטה.](c08_fig03.png){#fig-c08_fig03 width="62%" fig-align="center"}
+![שני ענפי $f(x)=\frac{x^2+1}{x}$ — הענף הימני ($x>0$) קמור כלפי מעלה והענף השמאלי ($x<0$) קמור כלפי מטה.](c12_fig03.png){#fig-c08_fig03 width="62%" fig-align="center"}
 :::
 
 - הנקודה $x_0$ בה מתחלף סימן הקמירות, נקרא "נקודת פיתול".
@@ -632,13 +632,13 @@ ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -647,7 +647,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הפונקציה $f(x)=x^3$ עם נקודת פיתול בראשית $x=0$.](c08_fig04.png){#fig-c08_fig04 width="62%" fig-align="center"}
+![הפונקציה $f(x)=x^3$ עם נקודת פיתול בראשית $x=0$.](c12_fig04.png){#fig-c08_fig04 width="62%" fig-align="center"}
 :::
 
 ## נקודת פיתול
@@ -697,13 +697,13 @@ ax.set_ylabel(r"$y$")
 ax.legend(loc="lower right", fontsize=9)
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -712,7 +712,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![$f(x)=\frac{x^2+1}{x}$ עם אסימפטוטה אנכית מקווקוות ב-$x=0$ — הענף הימני נשאף ל-$+\infty$ והשמאלי ל-$-\infty$.](c08_fig05.png){#fig-c08_fig05 width="62%" fig-align="center"}
+![$f(x)=\frac{x^2+1}{x}$ עם אסימפטוטה אנכית מקווקוות ב-$x=0$ — הענף הימני נשאף ל-$+\infty$ והשמאלי ל-$-\infty$.](c12_fig05.png){#fig-c08_fig05 width="62%" fig-align="center"}
 :::
 
 ### אסימפטוטה משופעת
@@ -764,13 +764,13 @@ ax.set_ylabel(r"$y$")
 ax.legend(loc="lower right", fontsize=9)
 ax.grid(alpha=0.3)
 
-fig.savefig("c08_fig06.png", dpi=150, bbox_inches="tight")
+fig.savefig("c12_fig06.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c08_fig06.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c12_fig06.png}\hss}\endL\par
 \medskip
 ```
 
@@ -779,7 +779,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני ענפי $f(x)=\frac{x^2+1}{x}$ עם האסימפטוטה המשופעת $y=x$ (מקווקוות) ב-$\infty$ וב-$-\infty$.](c08_fig06.png){#fig-c08_fig06 width="62%" fig-align="center"}
+![שני ענפי $f(x)=\frac{x^2+1}{x}$ עם האסימפטוטה המשופעת $y=x$ (מקווקוות) ב-$\infty$ וב-$-\infty$.](c12_fig06.png){#fig-c08_fig06 width="62%" fig-align="center"}
 :::
 
 ## שרטוט גרף של פונקציה

@@ -52,7 +52,7 @@ book:
 lang: he
 dir: rtl
 number-sections: true
-number-depth: 1
+number-depth: 2
 
 crossref:
   chapters: true
@@ -63,6 +63,10 @@ crossref:
 
 language:
   crossref-prp-prefix: "טענה"
+
+filters:
+  - theorem-numbering.lua
+  - quarto
 
 format:
   html:
