@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,43 +526,43 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-רציפות-בנקודה-ובקטע" id="toc-הגדרת-רציפות-בנקודה-ובקטע" class="nav-link active" data-scroll-target="#הגדרת-רציפות-בנקודה-ובקטע">הגדרת רציפות בנקודה ובקטע</a>
+  <li><a href="#הגדרת-רציפות-בנקודה-ובקטע" id="toc-הגדרת-רציפות-בנקודה-ובקטע" class="nav-link active" data-scroll-target="#הגדרת-רציפות-בנקודה-ובקטע"><span class="header-section-number">9.1</span> הגדרת רציפות בנקודה ובקטע</a>
   <ul class="collapse">
   <li><a href="#פונקציות-רציפות" id="toc-פונקציות-רציפות" class="nav-link" data-scroll-target="#פונקציות-רציפות">פונקציות רציפות</a></li>
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות:</a></li>
   </ul></li>
-  <li><a href="#דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" id="toc-דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" class="nav-link" data-scroll-target="#דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר">דוגמה: פונקציה מפוצלת עם גבולות מופלאים ופרמטר</a>
+  <li><a href="#דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" id="toc-דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" class="nav-link" data-scroll-target="#דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר"><span class="header-section-number">9.2</span> דוגמה: פונקציה מפוצלת עם גבולות מופלאים ופרמטר</a>
   <ul class="collapse">
   <li><a href="#דוגמא-נוספת" id="toc-דוגמא-נוספת" class="nav-link" data-scroll-target="#דוגמא-נוספת">דוגמא נוספת</a></li>
   </ul></li>
-  <li><a href="#דוגמה-פונקציית-דיריכלה" id="toc-דוגמה-פונקציית-דיריכלה" class="nav-link" data-scroll-target="#דוגמה-פונקציית-דיריכלה">דוגמה: פונקציית דיריכלה</a>
+  <li><a href="#דוגמה-פונקציית-דיריכלה" id="toc-דוגמה-פונקציית-דיריכלה" class="nav-link" data-scroll-target="#דוגמה-פונקציית-דיריכלה"><span class="header-section-number">9.3</span> דוגמה: פונקציית דיריכלה</a>
   <ul class="collapse">
   <li><a href="#פונקציית-דיריכלה" id="toc-פונקציית-דיריכלה" class="nav-link" data-scroll-target="#פונקציית-דיריכלה">פונקציית דיריכלה</a></li>
   </ul></li>
-  <li><a href="#דוגמה-פונקציית-הערך-השלם" id="toc-דוגמה-פונקציית-הערך-השלם" class="nav-link" data-scroll-target="#דוגמה-פונקציית-הערך-השלם">דוגמה: פונקציית הערך השלם</a>
+  <li><a href="#דוגמה-פונקציית-הערך-השלם" id="toc-דוגמה-פונקציית-הערך-השלם" class="nav-link" data-scroll-target="#דוגמה-פונקציית-הערך-השלם"><span class="header-section-number">9.4</span> דוגמה: פונקציית הערך השלם</a>
   <ul class="collapse">
   <li><a href="#דוגמאות-מיוחדות" id="toc-דוגמאות-מיוחדות" class="nav-link" data-scroll-target="#דוגמאות-מיוחדות">דוגמאות מיוחדות</a></li>
   </ul></li>
-  <li><a href="#אריתמטיקה-של-פונקציות-רציפות" id="toc-אריתמטיקה-של-פונקציות-רציפות" class="nav-link" data-scroll-target="#אריתמטיקה-של-פונקציות-רציפות">אריתמטיקה של פונקציות רציפות</a>
+  <li><a href="#אריתמטיקה-של-פונקציות-רציפות" id="toc-אריתמטיקה-של-פונקציות-רציפות" class="nav-link" data-scroll-target="#אריתמטיקה-של-פונקציות-רציפות"><span class="header-section-number">9.5</span> אריתמטיקה של פונקציות רציפות</a>
   <ul class="collapse">
   <li><a href="#אריתמטיקה-של-פונקציות-רציפות-1" id="toc-אריתמטיקה-של-פונקציות-רציפות-1" class="nav-link" data-scroll-target="#אריתמטיקה-של-פונקציות-רציפות-1">אריתמטיקה של פונקציות רציפות</a></li>
   </ul></li>
-  <li><a href="#פונקציות-אלמנטריות" id="toc-פונקציות-אלמנטריות" class="nav-link" data-scroll-target="#פונקציות-אלמנטריות">פונקציות אלמנטריות</a>
+  <li><a href="#פונקציות-אלמנטריות" id="toc-פונקציות-אלמנטריות" class="nav-link" data-scroll-target="#פונקציות-אלמנטריות"><span class="header-section-number">9.6</span> פונקציות אלמנטריות</a>
   <ul class="collapse">
   <li><a href="#פונקציה-אלמנטרית" id="toc-פונקציה-אלמנטרית" class="nav-link" data-scroll-target="#פונקציה-אלמנטרית">פונקציה אלמנטרית</a></li>
   </ul></li>
-  <li><a href="#משפט-ערך-הביניים-1" id="toc-משפט-ערך-הביניים-1" class="nav-link" data-scroll-target="#משפט-ערך-הביניים-1">משפט ערך הביניים</a></li>
-  <li><a href="#דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" id="toc-דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" class="nav-link" data-scroll-target="#דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה">דוגמה: חוסר רציפות בנקודה אחת הורס את המסקנה</a></li>
-  <li><a href="#דוגמה-קיום-פתרון-של-משוואה" id="toc-דוגמה-קיום-פתרון-של-משוואה" class="nav-link" data-scroll-target="#דוגמה-קיום-פתרון-של-משוואה">דוגמה: קיום פתרון של משוואה</a>
+  <li><a href="#משפט-ערך-הביניים-1" id="toc-משפט-ערך-הביניים-1" class="nav-link" data-scroll-target="#משפט-ערך-הביניים-1"><span class="header-section-number">9.7</span> משפט ערך הביניים</a></li>
+  <li><a href="#דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" id="toc-דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" class="nav-link" data-scroll-target="#דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה"><span class="header-section-number">9.8</span> דוגמה: חוסר רציפות בנקודה אחת הורס את המסקנה</a></li>
+  <li><a href="#דוגמה-קיום-פתרון-של-משוואה" id="toc-דוגמה-קיום-פתרון-של-משוואה" class="nav-link" data-scroll-target="#דוגמה-קיום-פתרון-של-משוואה"><span class="header-section-number">9.9</span> דוגמה: קיום פתרון של משוואה</a>
   <ul class="collapse">
   <li><a href="#דוגמאות-לשימושים-בערך-הביניים" id="toc-דוגמאות-לשימושים-בערך-הביניים" class="nav-link" data-scroll-target="#דוגמאות-לשימושים-בערך-הביניים">דוגמאות לשימושים בערך הביניים</a></li>
   </ul></li>
-  <li><a href="#דוגמה-קיום-מספר-פתרונות-של-משוואה" id="toc-דוגמה-קיום-מספר-פתרונות-של-משוואה" class="nav-link" data-scroll-target="#דוגמה-קיום-מספר-פתרונות-של-משוואה">דוגמה: קיום מספר פתרונות של משוואה</a></li>
-  <li><a href="#משפט-ויירשטראס" id="toc-משפט-ויירשטראס" class="nav-link" data-scroll-target="#משפט-ויירשטראס">משפט ויירשטראס</a>
+  <li><a href="#דוגמה-קיום-מספר-פתרונות-של-משוואה" id="toc-דוגמה-קיום-מספר-פתרונות-של-משוואה" class="nav-link" data-scroll-target="#דוגמה-קיום-מספר-פתרונות-של-משוואה"><span class="header-section-number">9.10</span> דוגמה: קיום מספר פתרונות של משוואה</a></li>
+  <li><a href="#משפט-ויירשטראס" id="toc-משפט-ויירשטראס" class="nav-link" data-scroll-target="#משפט-ויירשטראס"><span class="header-section-number">9.11</span> משפט ויירשטראס</a>
   <ul class="collapse">
   <li><a href="#דוגמאות-לגרפים" id="toc-דוגמאות-לגרפים" class="nav-link" data-scroll-target="#דוגמאות-לגרפים">דוגמאות לגרפים:</a></li>
   </ul></li>
-  <li><a href="#נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" id="toc-נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" class="nav-link" data-scroll-target="#נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית">נקודות אי-רציפות: סליקה, קפיצה ועיקרית</a></li>
+  <li><a href="#נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" id="toc-נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" class="nav-link" data-scroll-target="#נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית"><span class="header-section-number">9.12</span> נקודות אי-רציפות: סליקה, קפיצה ועיקרית</a></li>
   </ul>
 </nav>
     </div>
@@ -576,8 +588,8 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-רציפות-בנקודה-ובקטע" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-רציפות-בנקודה-ובקטע">הגדרת רציפות בנקודה ובקטע</h2>
+<section id="הגדרת-רציפות-בנקודה-ובקטע" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="הגדרת-רציפות-בנקודה-ובקטע"><span class="header-section-number">9.1</span> הגדרת רציפות בנקודה ובקטע</h2>
 <section id="פונקציות-רציפות" class="level3">
 <h3 class="anchored" data-anchor-id="פונקציות-רציפות">פונקציות רציפות</h3>
 <p>פונקציה היא רציפה אם ניתן לשרטטה מבלי להרים את העט מהדף.</p>
@@ -656,8 +668,8 @@ window.Quarto = {
 <!-- בדיקה: שוב מופיע "נבול מופלא" כמו בעמודים קודמים -->
 </section>
 </section>
-<section id="דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר">דוגמה: פונקציה מפוצלת עם גבולות מופלאים ופרמטר</h2>
+<section id="דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="דוגמה-פונקציה-מפוצלת-עם-גבולות-מופלאים-ופרמטר"><span class="header-section-number">9.2</span> דוגמה: פונקציה מפוצלת עם גבולות מופלאים ופרמטר</h2>
 <section id="דוגמא-נוספת" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמא-נוספת">דוגמא נוספת</h3>
 <p>עבור אילו ערכים של <span class="math inline">\(A, B \in R\)</span> הפונקציה הבאה רציפה בנקודות <span class="math inline">\(0\)</span>:</p>
@@ -685,8 +697,8 @@ window.Quarto = {
 <p><span class="math display">\[1 \overset{?}{=} \lim\limits_{x \to 0} \frac{\sin(x)}{x} \neq \lim\limits_{x \to 0} \frac{0}{x} = 0\]</span></p>
 </section>
 </section>
-<section id="דוגמה-פונקציית-דיריכלה" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-פונקציית-דיריכלה">דוגמה: פונקציית דיריכלה</h2>
+<section id="דוגמה-פונקציית-דיריכלה" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="דוגמה-פונקציית-דיריכלה"><span class="header-section-number">9.3</span> דוגמה: פונקציית דיריכלה</h2>
 <section id="פונקציית-דיריכלה" class="level3">
 <h3 class="anchored" data-anchor-id="פונקציית-דיריכלה">פונקציית דיריכלה</h3>
 <p><span class="math display">\[D(x) = \begin{cases} 1 &amp; x \in Q \\ 0 &amp; x \notin Q \end{cases}\]</span></p>
@@ -709,8 +721,8 @@ window.Quarto = {
 <p>לכן לפי היינה <span class="math inline">\(\lim\limits_{n \to \infty} D(x)\)</span> לא קיים.</p>
 </section>
 </section>
-<section id="דוגמה-פונקציית-הערך-השלם" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-פונקציית-הערך-השלם">דוגמה: פונקציית הערך השלם</h2>
+<section id="דוגמה-פונקציית-הערך-השלם" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="דוגמה-פונקציית-הערך-השלם"><span class="header-section-number">9.4</span> דוגמה: פונקציית הערך השלם</h2>
 <section id="דוגמאות-מיוחדות" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמאות-מיוחדות">דוגמאות מיוחדות</h3>
 <p>פונקציית הערך השלם <span class="math inline">\(f(x) = \lfloor x \rfloor\)</span> רציפה בכל נקודה <span class="math inline">\(x_0\)</span>, עבור <span class="math inline">\(x_0 \notin \mathbb{Z}\)</span>.</p>
@@ -732,8 +744,8 @@ window.Quarto = {
 <p>לא רציפה ב- <span class="math inline">\([1,2]\)</span>.</p>
 </section>
 </section>
-<section id="אריתמטיקה-של-פונקציות-רציפות" class="level2">
-<h2 class="anchored" data-anchor-id="אריתמטיקה-של-פונקציות-רציפות">אריתמטיקה של פונקציות רציפות</h2>
+<section id="אריתמטיקה-של-פונקציות-רציפות" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="אריתמטיקה-של-פונקציות-רציפות"><span class="header-section-number">9.5</span> אריתמטיקה של פונקציות רציפות</h2>
 <section id="אריתמטיקה-של-פונקציות-רציפות-1" class="level3">
 <h3 class="anchored" data-anchor-id="אריתמטיקה-של-פונקציות-רציפות-1">אריתמטיקה של פונקציות רציפות</h3>
 <p>חיבור, חיסור, כפל, חילוק, הרכבה והופכית של פונקציות רציפות יצא פונקציה רציפה.</p>
@@ -794,8 +806,8 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="פונקציות-אלמנטריות" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציות-אלמנטריות">פונקציות אלמנטריות</h2>
+<section id="פונקציות-אלמנטריות" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="פונקציות-אלמנטריות"><span class="header-section-number">9.6</span> פונקציות אלמנטריות</h2>
 <section id="פונקציה-אלמנטרית" class="level3">
 <h3 class="anchored" data-anchor-id="פונקציה-אלמנטרית">פונקציה אלמנטרית</h3>
 <p>פונקציה אלמנטרית היא פונקציה שמתקבלת מהרכבה של פונקציות בסיסיות בעזרת פעולות: חיבור, חיסור, כפל, חילוק והרכבה.</p>
@@ -815,8 +827,8 @@ window.Quarto = {
 <p>כל פונקציה אלמנטרית היא פונקציה <u>רציפה</u>, בכל נקודה בתחום הגדרתה.</p>
 </section>
 </section>
-<section id="משפט-ערך-הביניים-1" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-ערך-הביניים-1">משפט ערך הביניים</h2>
+<section id="משפט-ערך-הביניים-1" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="משפט-ערך-הביניים-1"><span class="header-section-number">9.7</span> משפט ערך הביניים</h2>
 <p>אם פונקציה <span class="math inline">\(f(x)\)</span> רציפה ב-<span class="math inline">\([a,b]\)</span>, אז לכל מספר <span class="math inline">\(y\)</span> שנמצא בין <span class="math inline">\(f(a)\)</span> ל-<span class="math inline">\(f(b)\)</span>, קיימת <span class="math inline">\(c \in (a,b)\)</span>.</p>
 <p>לדוגמא:</p>
 <p>הפונקציה <span class="math inline">\(f(x) = x^3 - 5x - 2\)</span> בקטע <span class="math inline">\([0,3]\)</span> היא רציפה (אלמנטרית).</p>
@@ -836,14 +848,14 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה">דוגמה: חוסר רציפות בנקודה אחת הורס את המסקנה</h2>
+<section id="דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="דוגמה-חוסר-רציפות-בנקודה-אחת-הורס-את-המסקנה"><span class="header-section-number">9.8</span> דוגמה: חוסר רציפות בנקודה אחת הורס את המסקנה</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="דוגמה-קיום-פתרון-של-משוואה" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-קיום-פתרון-של-משוואה">דוגמה: קיום פתרון של משוואה</h2>
+<section id="דוגמה-קיום-פתרון-של-משוואה" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="דוגמה-קיום-פתרון-של-משוואה"><span class="header-section-number">9.9</span> דוגמה: קיום פתרון של משוואה</h2>
 <section id="דוגמאות-לשימושים-בערך-הביניים" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמאות-לשימושים-בערך-הביניים">דוגמאות לשימושים בערך הביניים</h3>
 <p><strong>1)</strong> נתונות שתי פונקציות <span class="math inline">\(f,g\)</span> רציפות בקטע <span class="math inline">\([0,1]\)</span> ונתון כי <span class="math inline">\(f(0) &lt; g(0)\)</span> , <span class="math inline">\(f(1) &gt; g(1)\)</span>. הראו כי קיימת נקודה <span class="math inline">\(0 &lt; c &lt; 1\)</span> עבורה <span class="math inline">\(f(c) = g(c)\)</span>.</p>
@@ -890,14 +902,14 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="דוגמה-קיום-מספר-פתרונות-של-משוואה" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-קיום-מספר-פתרונות-של-משוואה">דוגמה: קיום מספר פתרונות של משוואה</h2>
+<section id="דוגמה-קיום-מספר-פתרונות-של-משוואה" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="דוגמה-קיום-מספר-פתרונות-של-משוואה"><span class="header-section-number">9.10</span> דוגמה: קיום מספר פתרונות של משוואה</h2>
 <div class="todo">
 <p>ראו את הדוגמאות למשפט ערך הביניים לעיל (קיום פתרון). להשלמת המקרה של מספר פתרונות.</p>
 </div>
 </section>
-<section id="משפט-ויירשטראס" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-ויירשטראס">משפט ויירשטראס</h2>
+<section id="משפט-ויירשטראס" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="משפט-ויירשטראס"><span class="header-section-number">9.11</span> משפט ויירשטראס</h2>
 <p>אם <span class="math inline">\(f(x)\)</span> רציפה, ב-<span class="math inline">\([a,b]\)</span>, אז היא חסומה ב-<span class="math inline">\([a,b]\)</span> ומקבלת בו מינימום ומקסימום.</p>
 <p>קיימות <span class="math inline">\(x_{min}, x_{max} \in [a,b]\)</span> כך שמתקיים <span class="math inline">\(f(x_{min}) \leq f(x) \leq f(x_{max})\)</span> לכל <span class="math inline">\(x \in [a,b]\)</span></p>
 <section id="דוגמאות-לגרפים" class="level3">
@@ -918,8 +930,8 @@ window.Quarto = {
 <!-- בדיקה: כותרות התרשימים נכתבו בכתב יד; ניסוח "אי אפשר/אפשר ליישם את משפט ויירשטראס" הוא קריאה משוערת -->
 </section>
 </section>
-<section id="נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" class="level2">
-<h2 class="anchored" data-anchor-id="נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית">נקודות אי-רציפות: סליקה, קפיצה ועיקרית</h2>
+<section id="נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="נקודות-אי-רציפות-סליקה-קפיצה-ועיקרית"><span class="header-section-number">9.12</span> נקודות אי-רציפות: סליקה, קפיצה ועיקרית</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>

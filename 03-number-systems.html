@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,21 +526,21 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#sec-naturals" id="toc-sec-naturals" class="nav-link active" data-scroll-target="#sec-naturals">המספרים הטבעיים</a>
+  <li><a href="#sec-naturals" id="toc-sec-naturals" class="nav-link active" data-scroll-target="#sec-naturals"><span class="header-section-number">3.1</span> המספרים הטבעיים</a>
   <ul class="collapse">
   <li><a href="#יחס-סדר" id="toc-יחס-סדר" class="nav-link" data-scroll-target="#יחס-סדר">יחס סדר</a></li>
   <li><a href="#הסדר-על-הטבעיים" id="toc-הסדר-על-הטבעיים" class="nav-link" data-scroll-target="#הסדר-על-הטבעיים">הסדר על הטבעיים</a></li>
   <li><a href="#אין-מספר-טבעי-מקסימלי" id="toc-אין-מספר-טבעי-מקסימלי" class="nav-link" data-scroll-target="#אין-מספר-טבעי-מקסימלי">אין מספר טבעי מקסימלי</a></li>
   <li><a href="#עקרון-הסדר-הטוב" id="toc-עקרון-הסדר-הטוב" class="nav-link" data-scroll-target="#עקרון-הסדר-הטוב">עקרון הסדר הטוב</a></li>
   </ul></li>
-  <li><a href="#המספרים-השלמים" id="toc-המספרים-השלמים" class="nav-link" data-scroll-target="#המספרים-השלמים">המספרים השלמים</a></li>
-  <li><a href="#המספרים-הרציונליים" id="toc-המספרים-הרציונליים" class="nav-link" data-scroll-target="#המספרים-הרציונליים">המספרים הרציונליים</a></li>
-  <li><a href="#המספרים-הממשיים" id="toc-המספרים-הממשיים" class="nav-link" data-scroll-target="#המספרים-הממשיים">המספרים הממשיים</a>
+  <li><a href="#המספרים-השלמים" id="toc-המספרים-השלמים" class="nav-link" data-scroll-target="#המספרים-השלמים"><span class="header-section-number">3.2</span> המספרים השלמים</a></li>
+  <li><a href="#המספרים-הרציונליים" id="toc-המספרים-הרציונליים" class="nav-link" data-scroll-target="#המספרים-הרציונליים"><span class="header-section-number">3.3</span> המספרים הרציונליים</a></li>
+  <li><a href="#המספרים-הממשיים" id="toc-המספרים-הממשיים" class="nav-link" data-scroll-target="#המספרים-הממשיים"><span class="header-section-number">3.4</span> המספרים הממשיים</a>
   <ul class="collapse">
   <li><a href="#אי-רציונליות-sqrt2-כדוגמה" id="toc-אי-רציונליות-sqrt2-כדוגמה" class="nav-link" data-scroll-target="#אי-רציונליות-sqrt2-כדוגמה">אי-רציונליות; <span class="math inline">\(\sqrt{2}\)</span> כדוגמה</a></li>
   <li><a href="#תכונות-הסדר-על-הממשיים" id="toc-תכונות-הסדר-על-הממשיים" class="nav-link" data-scroll-target="#תכונות-הסדר-על-הממשיים">תכונות הסדר על הממשיים</a></li>
   </ul></li>
-  <li><a href="#המספרים-המרוכבים" id="toc-המספרים-המרוכבים" class="nav-link" data-scroll-target="#המספרים-המרוכבים">המספרים המרוכבים</a></li>
+  <li><a href="#המספרים-המרוכבים" id="toc-המספרים-המרוכבים" class="nav-link" data-scroll-target="#המספרים-המרוכבים"><span class="header-section-number">3.5</span> המספרים המרוכבים</a></li>
   </ul>
 </nav>
     </div>
@@ -555,14 +567,15 @@ window.Quarto = {
 
 
 <p>בפרק זה נסקור את מערכות המספרים המרכזיות — הטבעיים <span class="math inline">\(\mathbb{N}\)</span>, השלמים <span class="math inline">\(\mathbb{Z}\)</span>, הרציונליים <span class="math inline">\(\mathbb{Q}\)</span> והממשיים <span class="math inline">\(\mathbb{R}\)</span> — הבנויות זו על גבי זו: <span class="math display">\[.\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}\]</span> כל מערכת מרחיבה את קודמתה כדי לאפשר פעולות שלא היו אפשריות קודם (חיסור, חילוק, פתרון משוואות). לא נבנה את המערכות מן היסוד, אלא נניח את האריתמטיקה המוכרת ונתמקד בתכונות המבניות החשובות.</p>
-<section id="sec-naturals" class="level2">
-<h2 class="anchored" data-anchor-id="sec-naturals">המספרים הטבעיים</h2>
+<section id="sec-naturals" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-naturals"><span class="header-section-number">3.1</span> המספרים הטבעיים</h2>
 <p><strong>מניין וסימון.</strong> המספרים הטבעיים צומחים באופן טבעי מן הצורך <strong>לספור</strong> — כמה סטודנטים בכיתה, כמה ספרים על המדף, כמה ימים נותרו עד המבחן. אלה המספרים <span class="math inline">\(0, 1, 2, 3, \dots\)</span>, ואת קבוצתם מסמנים באות <span class="math inline">\(\mathbb{N}\)</span>: <span class="math display">\[.\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}\]</span> לא נבנה את <span class="math inline">\(\mathbb{N}\)</span> מן היסוד; נניח שהחיבור והכפל ותכונותיהם המוכרות ידועים לנו — ובכללן החילופיות והקיבוציות, העובדה ש-<span class="math inline">\(0\)</span> הוא איבר האפס של החיבור, וכן ה<strong>צמצום</strong>: אם <span class="math inline">\(a + n = a\)</span> אז <span class="math inline">\(n = 0\)</span>. על בסיס האריתמטיקה הזו נגדיר את ה<strong>סדר</strong> על <span class="math inline">\(\mathbb{N}\)</span> ונחקור את תכונותיו.</p>
 <section id="יחס-סדר" class="level3">
 <h3 class="anchored" data-anchor-id="יחס-סדר">יחס סדר</h3>
 <p>אינטואיטיבית, ״סדר״ הוא דרך להשוות בין איברים ולקבוע מי ״גדול״ ומי ״קטן״. נפרמל את המושג.</p>
-<div id="def-order" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 3.1</strong></span> יהי <span class="math inline">\(&gt;\)</span> <strong>יחס</strong> על קבוצה <span class="math inline">\(X\)</span> — כלומר, לכל שני איברים <span class="math inline">\(a, b \in X\)</span> נקבע אם הטענה ״<span class="math inline">\(a &gt; b\)</span>״ אמת או לא. נאמר ש-<span class="math inline">\(&gt;\)</span> הוא <strong>יחס סדר</strong> אם לכל <span class="math inline">\(a, b, c \in X\)</span> מתקיימות שלוש התכונות:</p>
+<div id="box-def-order" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.1.</strong></p>
+<p>יהי <span class="math inline">\(&gt;\)</span> <strong>יחס</strong> על קבוצה <span class="math inline">\(X\)</span> — כלומר, לכל שני איברים <span class="math inline">\(a, b \in X\)</span> נקבע אם הטענה ״<span class="math inline">\(a &gt; b\)</span>״ אמת או לא. נאמר ש-<span class="math inline">\(&gt;\)</span> הוא <strong>יחס סדר</strong> אם לכל <span class="math inline">\(a, b, c \in X\)</span> מתקיימות שלוש התכונות:</p>
 <ol type="1">
 <li><strong>אי-רפלקסיביות:</strong> לא מתקיים <span class="math inline">\(a &gt; a\)</span> (אף איבר אינו גדול מעצמו).</li>
 <li><strong>אנטי-סימטריות:</strong> אם <span class="math inline">\(a &gt; b\)</span>, אז לא מתקיים <span class="math inline">\(b &gt; a\)</span>.</li>
@@ -573,12 +586,14 @@ window.Quarto = {
 <section id="הסדר-על-הטבעיים" class="level3">
 <h3 class="anchored" data-anchor-id="הסדר-על-הטבעיים">הסדר על הטבעיים</h3>
 <p>כעת נגדיר סדר קונקרטי על <span class="math inline">\(\mathbb{N}\)</span>, בעזרת החיבור בלבד.</p>
-<div id="def-natural-order" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 3.2</strong></span> עבור <span class="math inline">\(a, b \in \mathbb{N}\)</span> נאמר ש-<span class="math inline">\(a\)</span> <strong>גדול מ-</strong><span class="math inline">\(b\)</span>, ונכתוב <span class="math inline">\(a &gt; b\)</span>, אם קיים מספר טבעי <span class="math inline">\(n \neq 0\)</span> כך ש-<span class="math display">\[.a = b + n\]</span></p>
+<div id="box-def-natural-order" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.2.</strong></p>
+<p>עבור <span class="math inline">\(a, b \in \mathbb{N}\)</span> נאמר ש-<span class="math inline">\(a\)</span> <strong>גדול מ-</strong><span class="math inline">\(b\)</span>, ונכתוב <span class="math inline">\(a &gt; b\)</span>, אם קיים מספר טבעי <span class="math inline">\(n \neq 0\)</span> כך ש-<span class="math display">\[.a = b + n\]</span></p>
 </div>
 <p>במילים: <span class="math inline">\(a &gt; b\)</span> פירושו שאפשר להגיע מ-<span class="math inline">\(b\)</span> ל-<span class="math inline">\(a\)</span> על ידי הוספת כמות <strong>חיובית</strong>. כך, למשל, <span class="math inline">\(5 &gt; 3\)</span> שכן <span class="math inline">\(5 = 3 + 2\)</span> ו-<span class="math inline">\(2 \neq 0\)</span>.</p>
-<div id="prp-natural-order-is-order" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 3.1</strong></span> היחס <span class="math inline">\(&gt;\)</span> שהגדרנו על <span class="math inline">\(\mathbb{N}\)</span> הוא יחס סדר.</p>
+<div id="box-prp-natural-order-is-order" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.1.3.</strong></p>
+<p>היחס <span class="math inline">\(&gt;\)</span> שהגדרנו על <span class="math inline">\(\mathbb{N}\)</span> הוא יחס סדר.</p>
 </div>
 <p><strong>הוכחה.</strong> נבדוק את שלוש התכונות. נשתמש בשתי עובדות בסיסיות על חיבור מספרים טבעיים: (i) אם <span class="math inline">\(a + n = a\)</span> אז <span class="math inline">\(n = 0\)</span> (צמצום); (ii) אם <span class="math inline">\(m + n = 0\)</span> אז <span class="math inline">\(m = 0\)</span> וגם <span class="math inline">\(n = 0\)</span> (סכום של טבעיים מתאפס רק אם שני המחוברים אפס).</p>
 <p><strong>אי-רפלקסיביות.</strong> נניח בשלילה ש-<span class="math inline">\(a &gt; a\)</span>. אז קיים <span class="math inline">\(n \neq 0\)</span> עם <span class="math inline">\(a = a + n\)</span>, ולפי (i) נובע <span class="math inline">\(n = 0\)</span> — סתירה. לכן לא מתקיים <span class="math inline">\(a &gt; a\)</span>.</p>
@@ -588,37 +603,40 @@ window.Quarto = {
 </section>
 <section id="אין-מספר-טבעי-מקסימלי" class="level3">
 <h3 class="anchored" data-anchor-id="אין-מספר-טבעי-מקסימלי">אין מספר טבעי מקסימלי</h3>
-<div id="prp-no-max-natural" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 3.2</strong></span> לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל <span class="math inline">\(n \in \mathbb{N}\)</span> קיים <span class="math inline">\(m \in \mathbb{N}\)</span> כך ש-<span class="math inline">\(m &gt; n\)</span>. בפרט, אין ב-<span class="math inline">\(\mathbb{N}\)</span> איבר מקסימלי.</p>
+<div id="box-prp-no-max-natural" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.1.4.</strong></p>
+<p>לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל <span class="math inline">\(n \in \mathbb{N}\)</span> קיים <span class="math inline">\(m \in \mathbb{N}\)</span> כך ש-<span class="math inline">\(m &gt; n\)</span>. בפרט, אין ב-<span class="math inline">\(\mathbb{N}\)</span> איבר מקסימלי.</p>
 </div>
 <p><strong>הוכחה.</strong> יהי <span class="math inline">\(n \in \mathbb{N}\)</span>, ונבחר <span class="math inline">\(m = n + 1\)</span>. מאחר ש-<span class="math inline">\(m = n + 1\)</span> ו-<span class="math inline">\(1 \neq 0\)</span>, מתקיים לפי ההגדרה <span class="math inline">\(m &gt; n\)</span> (העד הוא <span class="math inline">\(1\)</span>). לפיכך לכל טבעי יש טבעי גדול ממנו, ואין מספר טבעי הגדול מכולם. <span class="math inline">\(\blacksquare\)</span></p>
 </section>
 <section id="עקרון-הסדר-הטוב" class="level3">
 <h3 class="anchored" data-anchor-id="עקרון-הסדר-הטוב">עקרון הסדר הטוב</h3>
 <p>תכונה יסודית נוספת של הטבעיים היא שאי אפשר ״לרדת בהם לנצח״: כל אוסף לא-ריק של מספרים טבעיים מכיל איבר <strong>קטן ביותר</strong>. תחילה נגדיר במדויק מהו איבר כזה.</p>
-<div id="def-minimum" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 3.3</strong></span> תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span>. איבר <span class="math inline">\(m \in S\)</span> נקרא <strong>מינימום</strong> של <span class="math inline">\(S\)</span> אם כל איברי <span class="math inline">\(S\)</span> גדולים ממנו או שווים לו — כלומר, לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(s &gt; m\)</span> או <span class="math inline">\(s = m\)</span>.</p>
+<div id="box-def-minimum" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.5.</strong></p>
+<p>תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span>. איבר <span class="math inline">\(m \in S\)</span> נקרא <strong>מינימום</strong> של <span class="math inline">\(S\)</span> אם כל איברי <span class="math inline">\(S\)</span> גדולים ממנו או שווים לו — כלומר, לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(s &gt; m\)</span> או <span class="math inline">\(s = m\)</span>.</p>
 </div>
-<div id="prp-well-ordering" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 3.3</strong></span> <strong>(עקרון הסדר הטוב)</strong> לכל קבוצה לא-ריקה <span class="math inline">\(S \subseteq \mathbb{N}\)</span> קיים מינימום.</p>
+<div id="box-prp-well-ordering" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.1.6.</strong></p>
+<p><strong>(עקרון הסדר הטוב)</strong> לכל קבוצה לא-ריקה <span class="math inline">\(S \subseteq \mathbb{N}\)</span> קיים מינימום.</p>
 </div>
 <p>עקרון זה הוא תכונה יסודית של <span class="math inline">\(\mathbb{N}\)</span>, ולעת עתה נסתפק באזכורו. הוא קשור קשר הדוק ל<strong>עקרון האינדוקציה</strong> — למעשה השניים <strong>שקולים</strong>, ומכל אחד מהם אפשר לגזור את השני. את האינדוקציה, ואת הקשר בין השניים, נפתח <a href="./05-induction.html">בפרק על האינדוקציה</a>.</p>
 </section>
 </section>
-<section id="המספרים-השלמים" class="level2">
-<h2 class="anchored" data-anchor-id="המספרים-השלמים">המספרים השלמים</h2>
+<section id="המספרים-השלמים" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="המספרים-השלמים"><span class="header-section-number">3.2</span> המספרים השלמים</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="המספרים-הרציונליים" class="level2">
-<h2 class="anchored" data-anchor-id="המספרים-הרציונליים">המספרים הרציונליים</h2>
+<section id="המספרים-הרציונליים" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="המספרים-הרציונליים"><span class="header-section-number">3.3</span> המספרים הרציונליים</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="המספרים-הממשיים" class="level2">
-<h2 class="anchored" data-anchor-id="המספרים-הממשיים">המספרים הממשיים</h2>
+<section id="המספרים-הממשיים" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="המספרים-הממשיים"><span class="header-section-number">3.4</span> המספרים הממשיים</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
@@ -626,8 +644,9 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="אי-רציונליות-sqrt2-כדוגמה">אי-רציונליות; <span class="math inline">\(\sqrt{2}\)</span> כדוגמה</h3>
 <section id="הוכחות" class="level4">
 <h4 class="anchored" data-anchor-id="הוכחות">הוכחות</h4>
-<div id="prp-sqrt2-irrational" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 3.4</strong></span> <span class="math display">\[.\sqrt{2} \notin \mathbb{Q}\]</span></p>
+<div id="box-prp-sqrt2-irrational" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.4.1.</strong></p>
+<p><span class="math display">\[.\sqrt{2} \notin \mathbb{Q}\]</span></p>
 </div>
 <p><strong>הוכחה:</strong> נניח בשלילה כי <span class="math inline">\(\sqrt{2} \in \mathbb{Q}\)</span>.</p>
 <p>הסכם נסכום מהגדרת המספרים הרציונליים. <!-- בדיקה: שורה בכתב יד, קריאה משוערת --></p>
@@ -651,8 +670,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="המספרים-המרוכבים" class="level2">
-<h2 class="anchored" data-anchor-id="המספרים-המרוכבים">המספרים המרוכבים</h2>
+<section id="המספרים-המרוכבים" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="המספרים-המרוכבים"><span class="header-section-number">3.5</span> המספרים המרוכבים</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>

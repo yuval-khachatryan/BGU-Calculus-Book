@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,7 +526,7 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-הגבול" id="toc-הגדרת-הגבול" class="nav-link active" data-scroll-target="#הגדרת-הגבול">הגדרת הגבול</a>
+  <li><a href="#הגדרת-הגבול" id="toc-הגדרת-הגבול" class="nav-link active" data-scroll-target="#הגדרת-הגבול"><span class="header-section-number">6.1</span> הגדרת הגבול</a>
   <ul class="collapse">
   <li><a href="#סדרות-של-מספרים" id="toc-סדרות-של-מספרים" class="nav-link" data-scroll-target="#סדרות-של-מספרים">סדרות של מספרים</a></li>
   <li><a href="#גבול-של-סדרה" id="toc-גבול-של-סדרה" class="nav-link" data-scroll-target="#גבול-של-סדרה">גבול של סדרה</a></li>
@@ -522,39 +534,39 @@ window.Quarto = {
   <li><a href="#דוגמא-נוספת" id="toc-דוגמא-נוספת" class="nav-link" data-scroll-target="#דוגמא-נוספת">דוגמא נוספת:</a></li>
   <li><a href="#דוגמא-לסדרה-לא-מתכנסת" id="toc-דוגמא-לסדרה-לא-מתכנסת" class="nav-link" data-scroll-target="#דוגמא-לסדרה-לא-מתכנסת">דוגמא לסדרה לא מתכנסת:</a></li>
   </ul></li>
-  <li><a href="#יחידות-הגבול" id="toc-יחידות-הגבול" class="nav-link" data-scroll-target="#יחידות-הגבול">יחידות הגבול</a>
+  <li><a href="#יחידות-הגבול" id="toc-יחידות-הגבול" class="nav-link" data-scroll-target="#יחידות-הגבול"><span class="header-section-number">6.2</span> יחידות הגבול</a>
   <ul class="collapse">
   <li><a href="#יחידות-הגבול-1" id="toc-יחידות-הגבול-1" class="nav-link" data-scroll-target="#יחידות-הגבול-1">יחידות הגבול</a></li>
   </ul></li>
-  <li><a href="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" id="toc-חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="nav-link" data-scroll-target="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי">חסימוּת של סדרה מתכנסת (וההיפך השגוי)</a>
+  <li><a href="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" id="toc-חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="nav-link" data-scroll-target="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי"><span class="header-section-number">6.3</span> חסימוּת של סדרה מתכנסת (וההיפך השגוי)</a>
   <ul class="collapse">
   <li><a href="#סדרה-חסומה" id="toc-סדרה-חסומה" class="nav-link" data-scroll-target="#סדרה-חסומה">סדרה חסומה</a></li>
   <li><a href="#הקשר-בין-התכנסות-לחסימות-של-סדרה" id="toc-הקשר-בין-התכנסות-לחסימות-של-סדרה" class="nav-link" data-scroll-target="#הקשר-בין-התכנסות-לחסימות-של-סדרה">הקשר בין התכנסות לחסימות של סדרה</a></li>
   </ul></li>
-  <li><a href="#אריתמטיקה-של-גבולות" id="toc-אריתמטיקה-של-גבולות" class="nav-link" data-scroll-target="#אריתמטיקה-של-גבולות">אריתמטיקה של גבולות</a>
+  <li><a href="#אריתמטיקה-של-גבולות" id="toc-אריתמטיקה-של-גבולות" class="nav-link" data-scroll-target="#אריתמטיקה-של-גבולות"><span class="header-section-number">6.4</span> אריתמטיקה של גבולות</a>
   <ul class="collapse">
   <li><a href="#כלי-להראות-התכנסות-של-סדרה-ומציאת-גבול---אריתמטיקה" id="toc-כלי-להראות-התכנסות-של-סדרה-ומציאת-גבול---אריתמטיקה" class="nav-link" data-scroll-target="#כלי-להראות-התכנסות-של-סדרה-ומציאת-גבול---אריתמטיקה">כלי להראות התכנסות של סדרה ומציאת גבול - אריתמטיקה</a></li>
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות</a></li>
   </ul></li>
-  <li><a href="#משפט-הסנדוויץ-כפל-אפסית-בחסומה" id="toc-משפט-הסנדוויץ-כפל-אפסית-בחסומה" class="nav-link" data-scroll-target="#משפט-הסנדוויץ-כפל-אפסית-בחסומה">משפט הסנדוויץ׳; כפל אפסית בחסומה</a></li>
-  <li><a href="#מונוטוניות-של-סדרות-דוגמה" id="toc-מונוטוניות-של-סדרות-דוגמה" class="nav-link" data-scroll-target="#מונוטוניות-של-סדרות-דוגמה">מונוטוניות של סדרות; דוגמה</a></li>
-  <li><a href="#סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" id="toc-סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" class="nav-link" data-scroll-target="#סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה">סדרה חסומה ומונוטונית מתכנסת (ללא הוכחה)</a></li>
-  <li><a href="#המספר-e-והסדרה-המתאימה" id="toc-המספר-e-והסדרה-המתאימה" class="nav-link" data-scroll-target="#המספר-e-והסדרה-המתאימה">המספר <span class="math inline">\(e\)</span> והסדרה המתאימה</a></li>
-  <li><a href="#אינסוף-כגבול" id="toc-אינסוף-כגבול" class="nav-link" data-scroll-target="#אינסוף-כגבול">אינסוף כגבול</a></li>
-  <li><a href="#מבחן-המנה-ומבחן-השורש" id="toc-מבחן-המנה-ומבחן-השורש" class="nav-link" data-scroll-target="#מבחן-המנה-ומבחן-השורש">מבחן המנה ומבחן השורש</a>
+  <li><a href="#משפט-הסנדוויץ-כפל-אפסית-בחסומה" id="toc-משפט-הסנדוויץ-כפל-אפסית-בחסומה" class="nav-link" data-scroll-target="#משפט-הסנדוויץ-כפל-אפסית-בחסומה"><span class="header-section-number">6.5</span> משפט הסנדוויץ׳; כפל אפסית בחסומה</a></li>
+  <li><a href="#מונוטוניות-של-סדרות-דוגמה" id="toc-מונוטוניות-של-סדרות-דוגמה" class="nav-link" data-scroll-target="#מונוטוניות-של-סדרות-דוגמה"><span class="header-section-number">6.6</span> מונוטוניות של סדרות; דוגמה</a></li>
+  <li><a href="#סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" id="toc-סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" class="nav-link" data-scroll-target="#סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה"><span class="header-section-number">6.7</span> סדרה חסומה ומונוטונית מתכנסת (ללא הוכחה)</a></li>
+  <li><a href="#המספר-e-והסדרה-המתאימה" id="toc-המספר-e-והסדרה-המתאימה" class="nav-link" data-scroll-target="#המספר-e-והסדרה-המתאימה"><span class="header-section-number">6.8</span> המספר <span class="math inline">\(e\)</span> והסדרה המתאימה</a></li>
+  <li><a href="#אינסוף-כגבול" id="toc-אינסוף-כגבול" class="nav-link" data-scroll-target="#אינסוף-כגבול"><span class="header-section-number">6.9</span> אינסוף כגבול</a></li>
+  <li><a href="#מבחן-המנה-ומבחן-השורש" id="toc-מבחן-המנה-ומבחן-השורש" class="nav-link" data-scroll-target="#מבחן-המנה-ומבחן-השורש"><span class="header-section-number">6.10</span> מבחן המנה ומבחן השורש</a>
   <ul class="collapse">
   <li><a href="#מבחן-המנה" id="toc-מבחן-המנה" class="nav-link" data-scroll-target="#מבחן-המנה">מבחן המנה</a></li>
   <li><a href="#מבחן-השורש" id="toc-מבחן-השורש" class="nav-link" data-scroll-target="#מבחן-השורש">מבחן השורש</a></li>
   <li><a href="#אריתמטיקה-של-חזקות-בשאיפות" id="toc-אריתמטיקה-של-חזקות-בשאיפות" class="nav-link" data-scroll-target="#אריתמטיקה-של-חזקות-בשאיפות">אריתמטיקה של חזקות בשאיפות</a></li>
   </ul></li>
-  <li><a href="#יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" id="toc-יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" class="nav-link" data-scroll-target="#יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn">יחסי הגדילה הבסיסיים: <span class="math inline">\(n^k \ll k^n \ll n! \ll n^n\)</span></a>
+  <li><a href="#יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" id="toc-יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" class="nav-link" data-scroll-target="#יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn"><span class="header-section-number">6.11</span> יחסי הגדילה הבסיסיים: <span class="math inline">\(n^k \ll k^n \ll n! \ll n^n\)</span></a>
   <ul class="collapse">
   <li><a href="#סדר-שואף-לאינסוף-בסדרות" id="toc-סדר-שואף-לאינסוף-בסדרות" class="nav-link" data-scroll-target="#סדר-שואף-לאינסוף-בסדרות">סדר שואף לאינסוף בסדרות</a></li>
   </ul></li>
-  <li><a href="#תת-סדרות" id="toc-תת-סדרות" class="nav-link" data-scroll-target="#תת-סדרות">תת-סדרות</a></li>
-  <li><a href="#משפט-בולצאנוויירשטראס-ללא-הוכחה" id="toc-משפט-בולצאנוויירשטראס-ללא-הוכחה" class="nav-link" data-scroll-target="#משפט-בולצאנוויירשטראס-ללא-הוכחה">משפט בולצאנו–ויירשטראס (ללא הוכחה)</a></li>
-  <li><a href="#הגבול-העליון-והגבול-התחתון-ללא-הוכחות" id="toc-הגבול-העליון-והגבול-התחתון-ללא-הוכחות" class="nav-link" data-scroll-target="#הגבול-העליון-והגבול-התחתון-ללא-הוכחות">הגבול העליון והגבול התחתון (ללא הוכחות)</a></li>
-  <li><a href="#סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" id="toc-סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" class="nav-link" data-scroll-target="#סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0">סדרות מהצורה <span class="math inline">\((1+a_n)^{1/a_n}\)</span> כאשר <span class="math inline">\(a_n\to 0\)</span></a></li>
+  <li><a href="#תת-סדרות" id="toc-תת-סדרות" class="nav-link" data-scroll-target="#תת-סדרות"><span class="header-section-number">6.12</span> תת-סדרות</a></li>
+  <li><a href="#משפט-בולצאנוויירשטראס-ללא-הוכחה" id="toc-משפט-בולצאנוויירשטראס-ללא-הוכחה" class="nav-link" data-scroll-target="#משפט-בולצאנוויירשטראס-ללא-הוכחה"><span class="header-section-number">6.13</span> משפט בולצאנו–ויירשטראס (ללא הוכחה)</a></li>
+  <li><a href="#הגבול-העליון-והגבול-התחתון-ללא-הוכחות" id="toc-הגבול-העליון-והגבול-התחתון-ללא-הוכחות" class="nav-link" data-scroll-target="#הגבול-העליון-והגבול-התחתון-ללא-הוכחות"><span class="header-section-number">6.14</span> הגבול העליון והגבול התחתון (ללא הוכחות)</a></li>
+  <li><a href="#סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" id="toc-סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" class="nav-link" data-scroll-target="#סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0"><span class="header-section-number">6.15</span> סדרות מהצורה <span class="math inline">\((1+a_n)^{1/a_n}\)</span> כאשר <span class="math inline">\(a_n\to 0\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -580,14 +592,15 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-הגבול" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-הגבול">הגדרת הגבול</h2>
+<section id="הגדרת-הגבול" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="הגדרת-הגבול"><span class="header-section-number">6.1</span> הגדרת הגבול</h2>
 <section id="סדרות-של-מספרים" class="level3">
 <h3 class="anchored" data-anchor-id="סדרות-של-מספרים">סדרות של מספרים</h3>
 <p>סדרה היא אוסף אינסופי של מספרים ממשיים, עם חשיבות לסדר. <span class="math display">\[a_1, a_2, a_3, \dots, a_n, \dots\]</span></p>
 <p>(האיבר במקום ה-<span class="math inline">\(n\)</span> של הסדרה) <!-- בדיקה: הערה בכתב יד --></p>
-<div id="exm-sequences" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.1</strong></span> הסדרה <span class="math inline">\(a_n = n\)</span> היא: <span class="math inline">\(1,2,3,\dots\)</span></p>
+<div id="box-exm-sequences" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.1.1.</strong></p>
+<p>הסדרה <span class="math inline">\(a_n = n\)</span> היא: <span class="math inline">\(1,2,3,\dots\)</span></p>
 <p>הסדרה <span class="math inline">\(a_n = (-1)^n\)</span> היא: <span class="math inline">\(-1,1,-1,1,\dots\)</span></p>
 <p>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> היא: <span class="math inline">\(8,8,8,8,\dots\)</span></p>
 <p>בדרך רקורסיבית:</p>
@@ -597,16 +610,18 @@ window.Quarto = {
 <section id="גבול-של-סדרה" class="level3">
 <h3 class="anchored" data-anchor-id="גבול-של-סדרה">גבול של סדרה</h3>
 <p>סדרה מתכנסת.</p>
-<div id="exm-convergence" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.2</strong></span> מתכנסת ל-<span class="math inline">\(0\)</span>: <span class="math inline">\(a_n = \frac{1}{n}\)</span> : <span class="math inline">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots\)</span></p>
+<div id="box-exm-convergence" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.1.2.</strong></p>
+<p>מתכנסת ל-<span class="math inline">\(0\)</span>: <span class="math inline">\(a_n = \frac{1}{n}\)</span> : <span class="math inline">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots\)</span></p>
 <p>מתכנסת לאינסוף: <span class="math inline">\(1,2,3,4,\dots\)</span></p>
 <p>סדרה <em>לא</em> מתכנסת: <span class="math inline">\(-1,1,-1,1,-1,\dots\)</span></p>
 </div>
 <!-- מקור: הרצאה 3 -->
 <p>סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת למספר <span class="math inline">\(L \in R\)</span>:</p>
 <p>איברי הסדרה יהיו קרובים ל-<span class="math inline">\(L\)</span> (הגבול) כמה שנגדיר, החל ממקום מסוים.</p>
-<div id="def-convergent-sequence" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 6.1</strong></span> סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת למספר <span class="math inline">\(L \in R\)</span>, אם:</p>
+<div id="box-def-convergent-sequence" class="thmbox thmbox-definition">
+<p><strong>הגדרה 6.1.3.</strong></p>
+<p>סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת למספר <span class="math inline">\(L \in R\)</span>, אם:</p>
 <p>לכל מספר <span class="math inline">\(\varepsilon\)</span> חיובי (השגיאה), קיים <span class="math inline">\(N \in \mathbb{N}\)</span> (מקום השגיאה) כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[|a_{n} - L| &lt; \varepsilon\]</span></p>
 </div>
 <p>נניח, עבור <span class="math inline">\(\varepsilon = 1\)</span>: קיים <span class="math inline">\(N_1 \in \mathbb{N}\)</span> כך (שהחל ממנו) לכל <span class="math inline">\(n &gt; N_1\)</span> <span class="math display">\[|a_n - L| &lt; 1\]</span></p>
@@ -678,12 +693,13 @@ window.Quarto = {
 <!-- מקור: הרצאה 4 -->
 </section>
 </section>
-<section id="יחידות-הגבול" class="level2">
-<h2 class="anchored" data-anchor-id="יחידות-הגבול">יחידות הגבול</h2>
+<section id="יחידות-הגבול" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="יחידות-הגבול"><span class="header-section-number">6.2</span> יחידות הגבול</h2>
 <section id="יחידות-הגבול-1" class="level3">
 <h3 class="anchored" data-anchor-id="יחידות-הגבול-1">יחידות הגבול</h3>
-<div id="thm-limit-uniqueness" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.1</strong></span> אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה המקיימת <span class="math inline">\(a_n \to L_1\)</span> וגם <span class="math inline">\(a_n \to L_2\)</span> אז <span class="math inline">\(L_1 = L_2\)</span></p>
+<div id="box-thm-limit-uniqueness" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.2.1.</strong></p>
+<p>אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה המקיימת <span class="math inline">\(a_n \to L_1\)</span> וגם <span class="math inline">\(a_n \to L_2\)</span> אז <span class="math inline">\(L_1 = L_2\)</span></p>
 <p>כלומר, אם סדרה מתכנסת אז <u>הגבול</u> שלה הוא יחיד.</p>
 </div>
 <p><strong>הוכחה:</strong></p>
@@ -706,12 +722,13 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="level2">
-<h2 class="anchored" data-anchor-id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי">חסימוּת של סדרה מתכנסת (וההיפך השגוי)</h2>
+<section id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי"><span class="header-section-number">6.3</span> חסימוּת של סדרה מתכנסת (וההיפך השגוי)</h2>
 <section id="סדרה-חסומה" class="level3">
 <h3 class="anchored" data-anchor-id="סדרה-חסומה">סדרה חסומה</h3>
-<div id="def-bounded-sequence" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 6.2</strong></span> תהי <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה, נגיד כי <span class="math inline">\(a_n\)</span> חסומה, אם קיימים <span class="math inline">\(m,M \in R\)</span> כך שלכל <span class="math inline">\(n\)</span>: <span class="math display">\[m \le a_n \le M\]</span></p>
+<div id="box-def-bounded-sequence" class="thmbox thmbox-definition">
+<p><strong>הגדרה 6.3.1.</strong></p>
+<p>תהי <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה, נגיד כי <span class="math inline">\(a_n\)</span> חסומה, אם קיימים <span class="math inline">\(m,M \in R\)</span> כך שלכל <span class="math inline">\(n\)</span>: <span class="math display">\[m \le a_n \le M\]</span></p>
 </div>
 <p>דוגמאות:</p>
 <ul>
@@ -767,13 +784,14 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-<section id="אריתמטיקה-של-גבולות" class="level2">
-<h2 class="anchored" data-anchor-id="אריתמטיקה-של-גבולות">אריתמטיקה של גבולות</h2>
+<section id="אריתמטיקה-של-גבולות" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="אריתמטיקה-של-גבולות"><span class="header-section-number">6.4</span> אריתמטיקה של גבולות</h2>
 <section id="כלי-להראות-התכנסות-של-סדרה-ומציאת-גבול---אריתמטיקה" class="level3">
 <h3 class="anchored" data-anchor-id="כלי-להראות-התכנסות-של-סדרה-ומציאת-גבול---אריתמטיקה">כלי להראות התכנסות של סדרה ומציאת גבול - אריתמטיקה</h3>
 <p>מתוך סדרות מתכנסות, נייצר סדרות נוספות שהן מתכנסות, ע”י: <span class="math inline">\(+\)</span> , <span class="math inline">\(-\)</span> , <span class="math inline">\(\cdot\)</span> , <span class="math inline">\(:\)</span> .</p>
-<div id="thm-sequence-arithmetic" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.2</strong></span> אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> , <span class="math inline">\((b_n)_{n=1}^{\infty}\)</span> סדרות המקיימות <span class="math inline">\(a_n \to L_1\)</span> , <span class="math inline">\(b_n \to L_2\)</span> אז:</p>
+<div id="box-thm-sequence-arithmetic" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.4.1.</strong></p>
+<p>אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> , <span class="math inline">\((b_n)_{n=1}^{\infty}\)</span> סדרות המקיימות <span class="math inline">\(a_n \to L_1\)</span> , <span class="math inline">\(b_n \to L_2\)</span> אז:</p>
 <ol type="1">
 <li><p>חיבור: הסדרה <span class="math inline">\((a_n + b_n)_{n=1}^{\infty}\)</span> גם מתכנסת, ומתקיים <span class="math inline">\(a_n + b_n \to L_1 + L_2\)</span></p></li>
 <li><p>חיסור: הסדרה <span class="math inline">\((a_n - b_n)_{n=1}^{\infty}\)</span> גם מתכנסת, ומתקיים <span class="math inline">\(a_n - b_n \to L_1 - L_2\)</span></p></li>
@@ -784,55 +802,62 @@ window.Quarto = {
 </section>
 <section id="דוגמאות" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמאות">דוגמאות</h3>
-<div id="exm-seq-rational-1" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.3</strong></span> נראה כי הסדרה <span class="math inline">\(\dfrac{3n-4}{n+2}\)</span> מתכנסת, ונמצא לאן.</p>
+<div id="box-exm-seq-rational-1" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.4.2.</strong></p>
+<p>נראה כי הסדרה <span class="math inline">\(\dfrac{3n-4}{n+2}\)</span> מתכנסת, ונמצא לאן.</p>
 <p>הסדרה <span class="math inline">\(b_n = n+2\)</span> לא מתכנסת, כי היא לא חסומה.</p>
 <p>נפשט את <span class="math inline">\(a_n\)</span> לפי החזקה הכי גדולה. כלומר, נחלק ב-ח את המונה ואת המכנה: <span class="math display">\[a_n = \frac{3 - \dfrac{4}{n}}{1 + \dfrac{2}{n}} = \frac{\rightarrow 3}{\rightarrow 1} \to 3\]</span></p>
 <p><span class="math inline">\(\dfrac{4}{n} \to 4 \cdot \dfrac{1}{n} \to 0\)</span> , <span class="math inline">\(\quad\)</span> <span class="math inline">\(\dfrac{2}{n} \to 2 \cdot \dfrac{1}{n} \to 0\)</span></p>
 </div>
-<div id="exm-seq-rational-2" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.4</strong></span> מצאו את הגבול של הסדרה <span class="math display">\[a_n = \frac{8n+3}{n^2+1}\]</span></p>
+<div id="box-exm-seq-rational-2" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.4.3.</strong></p>
+<p>מצאו את הגבול של הסדרה <span class="math display">\[a_n = \frac{8n+3}{n^2+1}\]</span></p>
 <p>נפשט ע”י חילוק בחזקה הכי גדולה במכנה: <span class="math display">\[a_n = \frac{\dfrac{8}{n} + \dfrac{3}{n^2}}{1 + \dfrac{1}{n^2}} = \frac{\rightarrow 0}{\rightarrow 1} \to 0\]</span></p>
 <p><span class="math inline">\(\dfrac{1}{n^2} = \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0\)</span> , <span class="math inline">\(\quad\)</span> <span class="math inline">\(\dfrac{8}{n} \to 8 \cdot \dfrac{1}{n} \to 0\)</span> , <span class="math inline">\(\quad\)</span> <span class="math inline">\(\dfrac{3}{n^2} = 3 \cdot \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0\)</span></p>
 </div>
 <!-- מקור: הרצאה 5 -->
 </section>
 </section>
-<section id="משפט-הסנדוויץ-כפל-אפסית-בחסומה" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-הסנדוויץ-כפל-אפסית-בחסומה">משפט הסנדוויץ׳; כפל אפסית בחסומה</h2>
-<div id="thm-piza-rachav" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.3</strong></span> משפט הפיצה</p>
+<section id="משפט-הסנדוויץ-כפל-אפסית-בחסומה" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="משפט-הסנדוויץ-כפל-אפסית-בחסומה"><span class="header-section-number">6.5</span> משפט הסנדוויץ׳; כפל אפסית בחסומה</h2>
+<div id="box-thm-piza-rachav" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.5.1.</strong></p>
+<p>משפט הפיצה</p>
 <p>אם <span class="math inline">\(a_n \leq b_n\)</span> לכל <span class="math inline">\(n \geq 1\)</span>, ואם <span class="math inline">\(a_n \to \infty\)</span>, אז <span class="math display">\[\lim_{n\to\infty} b_n = \infty\]</span></p>
 </div>
-<div id="exm-piza-1" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.5</strong></span> דוגמא:</p>
+<div id="box-exm-piza-1" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.5.2.</strong></p>
+<p>דוגמא:</p>
 <p>האם הסדרה <span class="math inline">\(b_n = n + (-1)^n\)</span> מתכנסת במובן הרחב?</p>
 <p><strong>פתרון:</strong></p>
 <p>נראה כי <span class="math inline">\(b_n \to \infty\)</span> מתקיים <span class="math inline">\(b_n \geq n - 1\)</span> אם נסתכל על <span class="math inline">\(n - 1 \xrightarrow[\to\infty]{} \infty\)</span></p>
 <p>אז מכלל הפיצה <span class="math display">\[b_n \to \infty\]</span></p>
 </div>
-<div id="exm-piza-2" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.6</strong></span> דוגמא:</p>
+<div id="box-exm-piza-2" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.5.3.</strong></p>
+<p>דוגמא:</p>
 <p>האם הסדרה <span class="math inline">\(b_n = \dfrac{n^2}{n!}\)</span> מתכנסת במובן הרחב?</p>
 <p><strong>פתרון:</strong></p>
 <p><span class="math display">\[b_n = \frac{n^2}{n!} = \frac{n \cdots n}{1 \cdot 2 \cdots n} = \frac{n}{1} \cdot \underbrace{\frac{n}{2}}_{\geq 1} \cdots \cdots \underbrace{\frac{n}{n}}_{\geq 1} \geq n \geq n \cdot 1 \cdots \cdots 1\]</span></p>
 <p>לכן מכלל הפיצה <span class="math display">\[b_n \to \infty\]</span></p>
 </div>
-<div id="exm-piza-3" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.7</strong></span> דוגמא:</p>
+<div id="box-exm-piza-3" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.5.4.</strong></p>
+<p>דוגמא:</p>
 <p>האם הסדרה <span class="math inline">\(b_n = \left(1 + \dfrac{1}{n}\right)^{n^2}\)</span> מתכנסת במובן הרחב?</p>
 <p><span class="math display">\[\left(1 + \frac{1}{n}\right)^{n^2} = \left(1 + \frac{1}{n}\right)^{n \cdot n} = \left(\left(1 + \frac{1}{n}\right)^n\right)^n\]</span></p>
 <p><span class="math display">\[\left(1 + \frac{1}{n}\right)^n \to e\]</span> כאשר <span class="math inline">\(\left(1 + \frac{1}{n}\right)^n &gt; 2\)</span> באשר הם מספר מאוחרים מסוים</p>
 <p><span class="math display">\[a_n = \left(\left(1 + \frac{1}{n}\right)^n\right)^n &gt; 2\]</span> לבן הם מספר מאוחרים מסוים</p>
 <p>הרי <span class="math inline">\(2^n \to \infty\)</span> לכן מכלל הפיצה: <span class="math display">\[\boxed{a_n \to \infty}\]</span></p>
 </div>
-<div id="thm-piza-minf" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.4</strong></span> כלל הפיצה ההפוכה</p>
+<div id="box-thm-piza-minf" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.5.5.</strong></p>
+<p>כלל הפיצה ההפוכה</p>
 <p>אם <span class="math inline">\(a_n \leq b_n\)</span> לכל <span class="math inline">\(n \geq 1\)</span>, ואם <span class="math inline">\(b_n \to -\infty\)</span>, אז <span class="math display">\[\lim_{n\to n} a_n = -\infty\]</span></p>
 </div>
 </section>
-<section id="מונוטוניות-של-סדרות-דוגמה" class="level2">
-<h2 class="anchored" data-anchor-id="מונוטוניות-של-סדרות-דוגמה">מונוטוניות של סדרות; דוגמה</h2>
+<section id="מונוטוניות-של-סדרות-דוגמה" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="מונוטוניות-של-סדרות-דוגמה"><span class="header-section-number">6.6</span> מונוטוניות של סדרות; דוגמה</h2>
 <p>סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> תיקרא:</p>
 <p><strong>מונוטונית עולה</strong>, אם <span class="math inline">\(a_n \le a_{n+1}\)</span> לכל <span class="math inline">\(n \ge 1\)</span>.</p>
 <p><strong>מונוטונית יורדת</strong>, אם <span class="math inline">\(a_n \ge a_{n+1}\)</span> לכל <span class="math inline">\(n \ge 1\)</span>.</p>
@@ -848,8 +873,8 @@ window.Quarto = {
 <p><span class="math inline">\(d_1 = -1\)</span> , <span class="math inline">\(d_2 = 1\)</span> , <span class="math inline">\(d_3 = -1\)</span></p>
 <p><span class="math inline">\(d_1 &lt; d_2 , d_3 &lt; d_2\)</span></p>
 </section>
-<section id="סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" class="level2">
-<h2 class="anchored" data-anchor-id="סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה">סדרה חסומה ומונוטונית מתכנסת (ללא הוכחה)</h2>
+<section id="סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="סדרה-חסומה-ומונוטונית-מתכנסת-ללא-הוכחה"><span class="header-section-number">6.7</span> סדרה חסומה ומונוטונית מתכנסת (ללא הוכחה)</h2>
 <p><span class="math inline">\(a_n\)</span> מונוטונית <span class="math inline">\(\not\Leftarrow\)</span> <span class="math inline">\(a_n\)</span> מתכנסת</p>
 <p>דוגמא: <span class="math display">\[a_n = n\]</span></p>
 <p><span class="math inline">\(a_n\)</span> מתכנסת <span class="math inline">\(\not\Leftarrow\)</span> <span class="math inline">\(a_n\)</span> מונוטונית</p>
@@ -895,14 +920,14 @@ window.Quarto = {
 <p>נסמן את הגבול של הסדרה ע”י <span class="math inline">\(e\)</span>, מספר כלשהוא בין 2 ל-3. כלומר:</p>
 <p><span class="math display">\[\boxed{\left(1 + \dfrac{1}{n}\right)^n \to e}\]</span></p>
 </section>
-<section id="המספר-e-והסדרה-המתאימה" class="level2">
-<h2 class="anchored" data-anchor-id="המספר-e-והסדרה-המתאימה">המספר <span class="math inline">\(e\)</span> והסדרה המתאימה</h2>
+<section id="המספר-e-והסדרה-המתאימה" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="המספר-e-והסדרה-המתאימה"><span class="header-section-number">6.8</span> המספר <span class="math inline">\(e\)</span> והסדרה המתאימה</h2>
 <div class="todo">
 <p>המספר <span class="math inline">\(e\)</span> והסדרה <span class="math inline">\((1+\tfrac1n)^n\)</span> נדונים יחד עם המשפט על התכנסות סדרה חסומה ומונוטונית (לעיל) ובסעיף ״משפטי התכנסות״. יש לרכז ולהרחיב כאן.</p>
 </div>
 </section>
-<section id="אינסוף-כגבול" class="level2">
-<h2 class="anchored" data-anchor-id="אינסוף-כגבול">אינסוף כגבול</h2>
+<section id="אינסוף-כגבול" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="אינסוף-כגבול"><span class="header-section-number">6.9</span> אינסוף כגבול</h2>
 <p>הסדרה <span class="math inline">\(a_n\)</span> מתכנסת לאינסוף, אם לכל <span class="math inline">\(M &gt; 0\)</span> , קיים N טבעי, כך שלכל <span class="math inline">\(n &gt; N\)</span></p>
 <p>מתקיים: <span class="math inline">\(a_n &gt; M\)</span></p>
 <p><span class="math display">\[\lim_{n \to \infty} a_n = \infty\]</span></p>
@@ -915,8 +940,8 @@ window.Quarto = {
 <p>הסדרה <span class="math inline">\(a_n\)</span> מתכנסת למינוס אינסוף, אם לכל <span class="math inline">\(M &lt; 0\)</span>, קיים <span class="math inline">\(N\)</span> טבעי, כך שלכל <span class="math inline">\(n &gt; \mathbb{N}\)</span></p>
 <p>מתקיים: <span class="math display">\[a_n &lt; M\]</span></p>
 <p><span class="math display">\[\lim_{n \to \infty} a_n = -\infty\]</span></p>
-<div id="def-shlilit" class="theorem definition">
-<p><span class="theorem-title"><strong>הגדרה 6.3</strong></span> תהי סדרה <span class="math inline">\(a_n\)</span>.</p>
+<div id="box-def-shlilit">
+<p>תהי סדרה <span class="math inline">\(a_n\)</span>.</p>
 <p>מתקיים: <span class="math inline">\(a_n \to -\infty\)</span> אם ורק אם <span class="math inline">\(-a_n \to \infty\)</span></p>
 </div>
 <p>דוגמא: <span class="math display">\[\lim_{n \to \infty} \frac{-n^2 - \sin(n)}{2n + 3} = -\infty\]</span></p>
@@ -930,8 +955,9 @@ window.Quarto = {
 <p>נרצה לדרוש: <span class="math inline">\(-\frac{n}{3} + 1 &lt; M \quad\leftarrow\quad -\frac{n}{3} &lt; M - 1 \quad\leftarrow\quad n &gt; -3(M-1)\)</span></p>
 <p>לכן נבחר: <span class="math inline">\(N = \lfloor -3(M-1) \rfloor + 1\)</span> וכך לכל <span class="math inline">\(n &gt; N\)</span>: <span class="math inline">\(a_n &lt; M\)</span></p>
 <p>סדרה נקראת מתכנסת במובן הרחב, אם יש לה גבול ששווה למספר כלשהוא או אינסוף או מינוס אינסוף.</p>
-<div id="thm-arithmetika-rachav" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.5</strong></span> שאיפות:</p>
+<div id="box-thm-arithmetika-rachav" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.9.1.</strong></p>
+<p>שאיפות:</p>
 <p>(א) אם <span class="math inline">\(a_n \to \infty\)</span>, <span class="math inline">\(b_n \to \infty\)</span> אז <span class="math inline">\(a_n + b_n \to \infty\)</span></p>
 <p>(ב) אם <span class="math inline">\(a_n \to \infty\)</span>, <span class="math inline">\(b_n \to \infty\)</span> אז <span class="math inline">\(a_n \cdot b_n \to \infty\)</span></p>
 <p>(ג) אם <span class="math inline">\(a_n \to \infty\)</span>, <span class="math inline">\(b_n \to L\)</span> (<span class="math inline">\(L &gt; 0\)</span>) אז <span class="math inline">\(a_n + b_n \to \infty\)</span></p>
@@ -1031,8 +1057,8 @@ window.Quarto = {
 <p><span class="math display">\[(-1, 2, -3, 4, -5, \ldots)\]</span></p>
 <!-- מקור: הרצאה 7 -->
 </section>
-<section id="מבחן-המנה-ומבחן-השורש" class="level2">
-<h2 class="anchored" data-anchor-id="מבחן-המנה-ומבחן-השורש">מבחן המנה ומבחן השורש</h2>
+<section id="מבחן-המנה-ומבחן-השורש" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="מבחן-המנה-ומבחן-השורש"><span class="header-section-number">6.10</span> מבחן המנה ומבחן השורש</h2>
 <section id="מבחן-המנה" class="level3">
 <h3 class="anchored" data-anchor-id="מבחן-המנה">מבחן המנה</h3>
 <p>אם <span class="math inline">\(a_n &gt; 0\)</span>, ואם <span class="math inline">\(\displaystyle\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = L\)</span>, אז:</p>
@@ -1048,8 +1074,9 @@ window.Quarto = {
 <li>אם <span class="math inline">\(L &gt; 1\)</span>: <span class="math inline">\(a_n \to \infty\)</span></li>
 <li>אם <span class="math inline">\(L &lt; 1\)</span>: <span class="math inline">\(a_n \to 0\)</span></li>
 </ul>
-<div id="exm-mivchanim-1" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.8</strong></span> דוגמאות:</p>
+<div id="box-exm-mivchanim-1" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.10.1.</strong></p>
+<p>דוגמאות:</p>
 <ol type="1">
 <li>חשבו את הגבול <span class="math display">\[\lim_{n\to\infty} \frac{2^n}{n^2}\]</span></li>
 </ol>
@@ -1058,8 +1085,8 @@ window.Quarto = {
 <p><span class="math display">\[\frac{a_{n+1}}{a_n} = \frac{\left(\frac{2^{n+1}}{(n+1)^2}\right)}{\left(\frac{2^n}{n^2}\right)} = \frac{n^2}{2^n} \cdot \frac{2^{n+1}}{(n+1)^2} = 2 \cdot \frac{n^2}{(n+1)^2} = 2 \cdot \frac{1}{\left(\frac{n+1}{n}\right)^2} = 2 \cdot \frac{1}{\left(1 + \frac{1}{n}\right)^2} \to 2\]</span></p>
 <p>לכן לפי מבחן המנה נקבל: <span class="math display">\[\boxed{\lim_{n\to\infty} \frac{2^n}{n^2} = \infty}\]</span></p>
 </div>
-<div id="exm-mivchanim-2" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.9</strong></span> &nbsp;</p>
+<div id="box-exm-mivchanim-2" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.10.2.</strong></p>
 <ol start="2" type="1">
 <li>הסדרה <span class="math inline">\(a_n = 3^n\)</span> היא <span class="math inline">\(a_n \to \infty\)</span>, מדוע?</li>
 </ol>
@@ -1073,8 +1100,9 @@ window.Quarto = {
 <!-- מקור: הרצאה 8 -->
 <p>משפט דלאמבר:</p>
 <p>אם <span class="math inline">\(a_n\)</span> חיובית, ואם <span class="math inline">\(\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=L\)</span> אז <span class="math inline">\(\lim_{n\to\infty}\sqrt[n]{a_n}=L\)</span></p>
-<div id="exm-dalembert-root-n" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.10</strong></span> דוגמא:</p>
+<div id="box-exm-dalembert-root-n" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.10.3.</strong></p>
+<p>דוגמא:</p>
 <p>נבדוק מהו הגבול של הסדרה <span class="math inline">\(\sqrt[n]{n}=\sqrt[n]{a_n}\)</span> ?</p>
 <p><span class="math display">\[(1,\sqrt{2},\sqrt[3]{3},\sqrt[4]{4},\dots)\]</span></p>
 <p>פתרון:</p>
@@ -1096,8 +1124,8 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-<section id="יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" class="level2">
-<h2 class="anchored" data-anchor-id="יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn">יחסי הגדילה הבסיסיים: <span class="math inline">\(n^k \ll k^n \ll n! \ll n^n\)</span></h2>
+<section id="יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="יחסי-הגדילה-הבסיסיים-nk-ll-kn-ll-n-ll-nn"><span class="header-section-number">6.11</span> יחסי הגדילה הבסיסיים: <span class="math inline">\(n^k \ll k^n \ll n! \ll n^n\)</span></h2>
 <section id="סדר-שואף-לאינסוף-בסדרות" class="level3">
 <h3 class="anchored" data-anchor-id="סדר-שואף-לאינסוף-בסדרות">סדר שואף לאינסוף בסדרות</h3>
 <p>סדרות שמתכנסות לאינסוף לפי שאיפה יותר “חזקה”: <span class="math inline">\(n^2&lt;2^n&lt;&lt;n!&lt;&lt;n^n\)</span></p>
@@ -1106,8 +1134,8 @@ window.Quarto = {
 <!-- מקור: הרצאה 8 -->
 </section>
 </section>
-<section id="תת-סדרות" class="level2">
-<h2 class="anchored" data-anchor-id="תת-סדרות">תת-סדרות</h2>
+<section id="תת-סדרות" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="תת-סדרות"><span class="header-section-number">6.12</span> תת-סדרות</h2>
 <p>תהי <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה.</p>
 <p>תת סדרה שלה היא אוסף אינסופי של איברי הסדרה, ושומרים על הסדר.</p>
 <p>דוגמאות:</p>
@@ -1117,12 +1145,14 @@ window.Quarto = {
 <li><p><span class="math inline">\((a_{2n})_{n=1}^{\infty}:a_2,a_4,a_6,\dots\)</span> <!-- בדיקה: הערה בכתב יד — תת סדרה של איברים הזוגיים --></p></li>
 <li><p><span class="math inline">\((a_{2^n})_{n=1}^{\infty}:a_2,a_4,a_8,\dots\)</span></p></li>
 </ul>
-<div id="def-partial-limit" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 6.4</strong></span> אם <span class="math inline">\((a_{n_k})_{k=1}^{\infty}\)</span> תת סדרה של <span class="math inline">\(a_n\)</span> , ואם היא מתכנסת ל-<span class="math inline">\(L\)</span>, אז נקרא ל-<span class="math inline">\(L\)</span> גבול חלקי של <span class="math inline">\(a_n\)</span> .</p>
+<div id="box-def-partial-limit" class="thmbox thmbox-definition">
+<p><strong>הגדרה 6.12.1.</strong></p>
+<p>אם <span class="math inline">\((a_{n_k})_{k=1}^{\infty}\)</span> תת סדרה של <span class="math inline">\(a_n\)</span> , ואם היא מתכנסת ל-<span class="math inline">\(L\)</span>, אז נקרא ל-<span class="math inline">\(L\)</span> גבול חלקי של <span class="math inline">\(a_n\)</span> .</p>
 <p><span class="math display">\[a_{n_k}=a_{n_1},a_{n_2},a_{n_3},\dots \qquad a_{n_k}\xrightarrow[k\to\infty]{}L\]</span></p>
 </div>
-<div id="exm-minus-one-power-n" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.11</strong></span> דוגמא:</p>
+<div id="box-exm-minus-one-power-n" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.12.2.</strong></p>
+<p>דוגמא:</p>
 <p>לסדרה <span class="math inline">\(a_n=(-1)^n\)</span> יש שני גבולות חלקיים: <span class="math inline">\(1\)</span> , <span class="math inline">\(-1\)</span></p>
 <p><span class="math display">\[a_n=-1,1,-1,1,-1,1,\dots \qquad a_{2n}\to\boxed{1} \quad,\quad a_{2n-1}\to\boxed{-1}\]</span></p>
 </div>
@@ -1130,8 +1160,9 @@ window.Quarto = {
 <p>כלומר, אם מצאנו שתי תת סדרות של <span class="math inline">\(a_n\)</span> שמתכנסות לגבולות שונים, אז <span class="math inline">\(a_n\)</span> לא מתכנסת.</p>
 <!-- מקור: הרצאה 9 -->
 <p>אם מצאנו כי יש מספר של תתי סדרות של <span class="math inline">\(a_n\)</span>, שהן <u>מכסות את הסדרה כולה</u>, וידוע לנו לאן הן מתכנסות, אז אלו כל הגבולות החלקיים של <span class="math inline">\(a_n\)</span>.</p>
-<div id="exm-gvulot-chelkiim" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.12</strong></span> מצאו את כל הגבולות החלקיים של הסדרה:</p>
+<div id="box-exm-gvulot-chelkiim" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.12.3.</strong></p>
+<p>מצאו את כל הגבולות החלקיים של הסדרה:</p>
 <p><span class="math display">\[a_n = (\frac{\cos(\frac{\pi}{2} \cdot n) \cdot 2n}{3n + 4} + \frac{\sin(\frac{\pi}{2} \cdot n) \cdot (2n^2 + n - 3)}{3n^2 + 5n})^2\]</span></p>
 <p>תזכורת:</p>
 <p><span class="math display">\[\cos(\frac{\pi}{2}) = \cos(\frac{3\pi}{2}) = 0 \qquad \sin(\frac{\pi}{2}) = \sin(\frac{5\pi}{2}) = 1\]</span></p>
@@ -1155,47 +1186,54 @@ window.Quarto = {
 <p>לכן <span class="math inline">\(a_n \to \frac{4}{9}\)</span></p>
 </div>
 </section>
-<section id="משפט-בולצאנוויירשטראס-ללא-הוכחה" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-בולצאנוויירשטראס-ללא-הוכחה">משפט בולצאנו–ויירשטראס (ללא הוכחה)</h2>
-<div id="thm-chsuma-monotonit" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.6</strong></span> <strong>משפט החסומה והמונוטונית</strong></p>
+<section id="משפט-בולצאנוויירשטראס-ללא-הוכחה" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="משפט-בולצאנוויירשטראס-ללא-הוכחה"><span class="header-section-number">6.13</span> משפט בולצאנו–ויירשטראס (ללא הוכחה)</h2>
+<div id="box-thm-chsuma-monotonit" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.13.1.</strong></p>
+<p><strong>משפט החסומה והמונוטונית</strong></p>
 <p>אם <span class="math inline">\(a_n\)</span> סדרה חסומה, אז קיימת לה תת סדרה שמתכנסת למספר במובן הרחב.</p>
 </div>
-<div id="thm-hitkansut-monotoniot" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.7</strong></span> <strong>משפט התכנסות הסדרות המונוטוניות</strong></p>
+<div id="box-thm-hitkansut-monotoniot" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.13.2.</strong></p>
+<p><strong>משפט התכנסות הסדרות המונוטוניות</strong></p>
 <p>אם <span class="math inline">\(a_n\)</span> סדרה מונוטונית, אז היא מתכנסת במובן הרחב.</p>
 <p>כלומר, אם <span class="math inline">\(a_n\)</span> חסומה, אז היא מתכנסת למספר.</p>
 <p>אבל אם <span class="math inline">\(a_n\)</span> לא חסומה, אז <span class="math inline">\(a_n \to \infty\)</span> עולה, או <span class="math inline">\(a_n \to -\infty\)</span> יורדת.</p>
 </div>
-<div id="thm-sandvich" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.8</strong></span> <strong>משפט הסנדוויץ’ החזק</strong></p>
+<div id="box-thm-sandvich" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.13.3.</strong></p>
+<p><strong>משפט הסנדוויץ’ החזק</strong></p>
 <p>אם <span class="math inline">\(a_n\)</span> סדרה מתכנסת ל-<span class="math inline">\(L\)</span> ו-<span class="math inline">\(m \le a_n \le M\)</span> אזי <span class="math inline">\(m \le L \le M\)</span>.</p>
 </div>
-<div id="thm-gvul-e" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.9</strong></span> <strong>הגבול</strong> <span class="math inline">\(e\)</span></p>
+<div id="box-thm-gvul-e" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.13.4.</strong></p>
+<p><strong>הגבול</strong> <span class="math inline">\(e\)</span></p>
 <p>אם <span class="math inline">\(a_n \to 0\)</span> אזי <span class="math inline">\((1 + a_n)^{\frac{1}{a_n}} \to e\)</span> או <span class="math inline">\((1 + \frac{1}{n})^n \to e\)</span></p>
 </div>
-<div id="exm-gvul-e" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.13</strong></span> לאן מתכנסת הסדרה <span class="math inline">\((1 - \frac{1}{n})^n\)</span></p>
+<div id="box-exm-gvul-e" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.13.5.</strong></p>
+<p>לאן מתכנסת הסדרה <span class="math inline">\((1 - \frac{1}{n})^n\)</span></p>
 <p><span class="math display">\[(1 - \frac{1}{n})^n \to \frac{1}{e}\]</span></p>
 <p>ולכן <span class="math inline">\(\frac{1}{(1 - \frac{1}{n})^n}\)</span> ונקבל: <span class="math inline">\((1 - \frac{1}{n})^{-n} \to e\)</span> כי: נציב את <span class="math inline">\(a_n = -\frac{1}{n}\)</span></p>
 </div>
-<div id="thm-gvul-shoresh" class="theorem">
-<p><span class="theorem-title"><strong>משפט 6.10</strong></span> <strong>משפט גבול שורש</strong></p>
+<div id="box-thm-gvul-shoresh" class="thmbox thmbox-theorem">
+<p><strong>משפט 6.13.6.</strong></p>
+<p><strong>משפט גבול שורש</strong></p>
 <p><span class="math display">\[\sqrt[n]{q} \to 1\]</span> לכל קבוע <span class="math inline">\(0 &lt; q\)</span></p>
 </div>
-<div id="exm-gvul-shoresh" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 6.14</strong></span> <span class="math display">\[\sqrt[n]{2} = 2^{\frac{1}{n}} \to 2^0 = 1\]</span></p>
+<div id="box-exm-gvul-shoresh" class="thmbox thmbox-example">
+<p><strong>דוגמה 6.13.7.</strong></p>
+<p><span class="math display">\[\sqrt[n]{2} = 2^{\frac{1}{n}} \to 2^0 = 1\]</span></p>
 </div>
 </section>
-<section id="הגבול-העליון-והגבול-התחתון-ללא-הוכחות" class="level2">
-<h2 class="anchored" data-anchor-id="הגבול-העליון-והגבול-התחתון-ללא-הוכחות">הגבול העליון והגבול התחתון (ללא הוכחות)</h2>
+<section id="הגבול-העליון-והגבול-התחתון-ללא-הוכחות" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="הגבול-העליון-והגבול-התחתון-ללא-הוכחות"><span class="header-section-number">6.14</span> הגבול העליון והגבול התחתון (ללא הוכחות)</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" class="level2">
-<h2 class="anchored" data-anchor-id="סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0">סדרות מהצורה <span class="math inline">\((1+a_n)^{1/a_n}\)</span> כאשר <span class="math inline">\(a_n\to 0\)</span></h2>
+<section id="סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="סדרות-מהצורה-1a_n1a_n-כאשר-a_nto-0"><span class="header-section-number">6.15</span> סדרות מהצורה <span class="math inline">\((1+a_n)^{1/a_n}\)</span> כאשר <span class="math inline">\(a_n\to 0\)</span></h2>
 <div class="todo">
 <p>הצורה הכללית <span class="math inline">\((1+a_n)^{1/a_n}\)</span> מבוססת על הגבול <span class="math inline">\((1+\tfrac1n)^n\to e\)</span> שנדון לעיל. להשלמה.</p>
 </div>

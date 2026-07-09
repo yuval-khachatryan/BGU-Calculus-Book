@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,36 +526,36 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#קיצון-מקומי-ומשפט-פרמה" id="toc-קיצון-מקומי-ומשפט-פרמה" class="nav-link active" data-scroll-target="#קיצון-מקומי-ומשפט-פרמה">קיצון מקומי ומשפט פרמה</a>
+  <li><a href="#קיצון-מקומי-ומשפט-פרמה" id="toc-קיצון-מקומי-ומשפט-פרמה" class="nav-link active" data-scroll-target="#קיצון-מקומי-ומשפט-פרמה"><span class="header-section-number">11.1</span> קיצון מקומי ומשפט פרמה</a>
   <ul class="collapse">
   <li><a href="#טעויות-נפוצות" id="toc-טעויות-נפוצות" class="nav-link" data-scroll-target="#טעויות-נפוצות">טעויות נפוצות:</a></li>
   <li><a href="#הוכחה-למשפט-פרמה" id="toc-הוכחה-למשפט-פרמה" class="nav-link" data-scroll-target="#הוכחה-למשפט-פרמה">הוכחה למשפט פרמה</a></li>
   </ul></li>
-  <li><a href="#מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" id="toc-מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" class="nav-link" data-scroll-target="#מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור">מציאת קיצון של פונקציה רציפה בקטע סגור</a>
+  <li><a href="#מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" id="toc-מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" class="nav-link" data-scroll-target="#מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור"><span class="header-section-number">11.2</span> מציאת קיצון של פונקציה רציפה בקטע סגור</a>
   <ul class="collapse">
   <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא:</a></li>
   </ul></li>
-  <li><a href="#משפט-רול" id="toc-משפט-רול" class="nav-link" data-scroll-target="#משפט-רול">משפט רול</a>
+  <li><a href="#משפט-רול" id="toc-משפט-רול" class="nav-link" data-scroll-target="#משפט-רול"><span class="header-section-number">11.3</span> משפט רול</a>
   <ul class="collapse">
   <li><a href="#הוכחת-משפט-רול" id="toc-הוכחת-משפט-רול" class="nav-link" data-scroll-target="#הוכחת-משפט-רול">הוכחת משפט רול</a></li>
   </ul></li>
-  <li><a href="#משפט-לגראנז" id="toc-משפט-לגראנז" class="nav-link" data-scroll-target="#משפט-לגראנז">משפט לגראנז’</a>
+  <li><a href="#משפט-לגראנז" id="toc-משפט-לגראנז" class="nav-link" data-scroll-target="#משפט-לגראנז"><span class="header-section-number">11.4</span> משפט לגראנז’</a>
   <ul class="collapse">
   <li><a href="#דוגמא-1" id="toc-דוגמא-1" class="nav-link" data-scroll-target="#דוגמא-1">דוגמא:</a></li>
   <li><a href="#הוכחת-משפט-לגראנג" id="toc-הוכחת-משפט-לגראנג" class="nav-link" data-scroll-target="#הוכחת-משפט-לגראנג">הוכחת משפט לגראנג’</a></li>
   </ul></li>
-  <li><a href="#מסקנות-ממשפט-לגראנז-מונוטוניות" id="toc-מסקנות-ממשפט-לגראנז-מונוטוניות" class="nav-link" data-scroll-target="#מסקנות-ממשפט-לגראנז-מונוטוניות">מסקנות ממשפט לגראנז’ — מונוטוניות</a>
+  <li><a href="#מסקנות-ממשפט-לגראנז-מונוטוניות" id="toc-מסקנות-ממשפט-לגראנז-מונוטוניות" class="nav-link" data-scroll-target="#מסקנות-ממשפט-לגראנז-מונוטוניות"><span class="header-section-number">11.5</span> מסקנות ממשפט לגראנז’ — מונוטוניות</a>
   <ul class="collapse">
   <li><a href="#הוכחה-לסעיף-א" id="toc-הוכחה-לסעיף-א" class="nav-link" data-scroll-target="#הוכחה-לסעיף-א">הוכחה לסעיף (א)</a></li>
   <li><a href="#תרגיל-1" id="toc-תרגיל-1" class="nav-link" data-scroll-target="#תרגיל-1">תרגיל (1)</a></li>
   <li><a href="#תרגיל-2" id="toc-תרגיל-2" class="nav-link" data-scroll-target="#תרגיל-2">תרגיל (2)</a></li>
   </ul></li>
-  <li><a href="#משפט-קושי" id="toc-משפט-קושי" class="nav-link" data-scroll-target="#משפט-קושי">משפט קושי</a></li>
-  <li><a href="#כלל-לופיטל-00" id="toc-כלל-לופיטל-00" class="nav-link" data-scroll-target="#כלל-לופיטל-00">כלל לופיטל (<span class="math inline">\(0/0\)</span>)</a>
+  <li><a href="#משפט-קושי" id="toc-משפט-קושי" class="nav-link" data-scroll-target="#משפט-קושי"><span class="header-section-number">11.6</span> משפט קושי</a></li>
+  <li><a href="#כלל-לופיטל-00" id="toc-כלל-לופיטל-00" class="nav-link" data-scroll-target="#כלל-לופיטל-00"><span class="header-section-number">11.7</span> כלל לופיטל (<span class="math inline">\(0/0\)</span>)</a>
   <ul class="collapse">
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות:</a></li>
   </ul></li>
-  <li><a href="#כלל-לופיטל-inftyinfty" id="toc-כלל-לופיטל-inftyinfty" class="nav-link" data-scroll-target="#כלל-לופיטל-inftyinfty">כלל לופיטל (<span class="math inline">\(\infty/\infty\)</span>)</a>
+  <li><a href="#כלל-לופיטל-inftyinfty" id="toc-כלל-לופיטל-inftyinfty" class="nav-link" data-scroll-target="#כלל-לופיטל-inftyinfty"><span class="header-section-number">11.8</span> כלל לופיטל (<span class="math inline">\(\infty/\infty\)</span>)</a>
   <ul class="collapse">
   <li><a href="#דוגמאות-1" id="toc-דוגמאות-1" class="nav-link" data-scroll-target="#דוגמאות-1">דוגמאות:</a></li>
   </ul></li>
@@ -572,8 +584,8 @@ window.Quarto = {
 </header>
 
 
-<section id="קיצון-מקומי-ומשפט-פרמה" class="level2">
-<h2 class="anchored" data-anchor-id="קיצון-מקומי-ומשפט-פרמה">קיצון מקומי ומשפט פרמה</h2>
+<section id="קיצון-מקומי-ומשפט-פרמה" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="קיצון-מקומי-ומשפט-פרמה"><span class="header-section-number">11.1</span> קיצון מקומי ומשפט פרמה</h2>
 <p>נקודות קיצון מקומיות של פונקציה</p>
 <p><span class="math inline">\(x_0\)</span> נקראת נקודת מקסימום מקומי של <span class="math inline">\(f\)</span>, אם קיימת <span class="math inline">\(\delta &gt; 0\)</span> כך שלכל <span class="math inline">\(x \in (x_0 - \delta, x_0 + \delta)\)</span> מתקיים: <span class="math display">\[f(x) \leq f(x_0)\]</span></p>
 <p><span class="math inline">\(x_0\)</span> נקראת נקודת מינימום מקומי של <span class="math inline">\(f\)</span>, אם קיימת <span class="math inline">\(\delta &gt; 0\)</span> כך שלכל <span class="math inline">\(x \in (x_0 - \delta, x_0 + \delta)\)</span> מתקיים: <span class="math display">\[f(x) \geq f(x_0)\]</span></p>
@@ -636,8 +648,9 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="thm-fermat" class="theorem">
-<p><span class="theorem-title"><strong>משפט 11.1</strong></span> <strong>פרמה</strong></p>
+<div id="box-thm-fermat" class="thmbox thmbox-theorem">
+<p><strong>משפט 11.1.1.</strong></p>
+<p><strong>פרמה</strong></p>
 <p>אם <span class="math inline">\(f(x)\)</span> פונקציה ו-<span class="math inline">\(x_0\)</span> נקודת קיצון מקומי, ואם <span class="math inline">\(f\)</span> גזירה ב-<span class="math inline">\(x_0\)</span> אז <span class="math inline">\(f'(x_0) = 0\)</span></p>
 </div>
 <p>טעויות נפוצות:</p>
@@ -669,12 +682,13 @@ window.Quarto = {
 <p>ולכן <span class="math inline">\(f'(x_0) = 0\)</span></p>
 </section>
 </section>
-<section id="מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" class="level2">
-<h2 class="anchored" data-anchor-id="מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור">מציאת קיצון של פונקציה רציפה בקטע סגור</h2>
+<section id="מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="מציאת-קיצון-של-פונקציה-רציפה-בקטע-סגור"><span class="header-section-number">11.2</span> מציאת קיצון של פונקציה רציפה בקטע סגור</h2>
 <section id="דוגמא" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמא">דוגמא:</h3>
-<div id="exm-max-min-x3-3x" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 11.1</strong></span> מצאו את הערך המקסימלי והמינימלי של הפונקציה <span class="math inline">\(f(x) = x^3 - 3x\)</span> בקטע <span class="math inline">\([-2,2]\)</span> .</p>
+<div id="box-exm-max-min-x3-3x" class="thmbox thmbox-example">
+<p><strong>דוגמה 11.2.1.</strong></p>
+<p>מצאו את הערך המקסימלי והמינימלי של הפונקציה <span class="math inline">\(f(x) = x^3 - 3x\)</span> בקטע <span class="math inline">\([-2,2]\)</span> .</p>
 <p><strong>פתרון:</strong></p>
 <p>הפונקציה היא אלמנטרית ולכן רציפה ב- <span class="math inline">\([-2,2]\)</span></p>
 <p>אז ממשפט ויירשטראס, קיימות נקודות מקסימום ומינימום לפונקציה בקטע <span class="math inline">\([-2,2]\)</span></p>
@@ -700,10 +714,11 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="משפט-רול" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-רול">משפט רול</h2>
-<div id="thm-rolle" class="theorem">
-<p><span class="theorem-title"><strong>משפט 11.2</strong></span> אם <span class="math inline">\(f(x)\)</span> רציפה ב- <span class="math inline">\([a,b]\)</span> ואם <span class="math inline">\(f(x)\)</span> גזירה ב- (a,b) ואם <span class="math inline">\(f(a) = f(b)\)</span> , אז קיימת <span class="math inline">\(c \in (a,b)\)</span> עבורה <span class="math inline">\(f'(c) = 0\)</span></p>
+<section id="משפט-רול" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="משפט-רול"><span class="header-section-number">11.3</span> משפט רול</h2>
+<div id="box-thm-rolle" class="thmbox thmbox-theorem">
+<p><strong>משפט 11.3.1.</strong></p>
+<p>אם <span class="math inline">\(f(x)\)</span> רציפה ב- <span class="math inline">\([a,b]\)</span> ואם <span class="math inline">\(f(x)\)</span> גזירה ב- (a,b) ואם <span class="math inline">\(f(a) = f(b)\)</span> , אז קיימת <span class="math inline">\(c \in (a,b)\)</span> עבורה <span class="math inline">\(f'(c) = 0\)</span></p>
 </div>
 <div style="text-align:center">
 <p>תרשים: פונקציה קעורה כלפי מטה מעל <span class="math inline">\([a,b]\)</span> עם <span class="math inline">\(f(a)=f(b)\)</span> ונקודת מקסימום ביניהן (משפט רול)</p>
@@ -727,15 +742,17 @@ window.Quarto = {
 </ol>
 </section>
 </section>
-<section id="משפט-לגראנז" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-לגראנז">משפט לגראנז’</h2>
-<div id="thm-lagrange" class="theorem">
-<p><span class="theorem-title"><strong>משפט 11.3</strong></span> אם <span class="math inline">\(f(x)\)</span> רציפה ב- <span class="math inline">\([a,b]\)</span> וגזירה ב- (a,b) , אז קיימת נקודה <span class="math inline">\(c \in (a,b)\)</span> עבורה: <span class="math display">\[f'(c) = \frac{f(b) - f(a)}{b - a}\]</span></p>
+<section id="משפט-לגראנז" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="משפט-לגראנז"><span class="header-section-number">11.4</span> משפט לגראנז’</h2>
+<div id="box-thm-lagrange" class="thmbox thmbox-theorem">
+<p><strong>משפט 11.4.1.</strong></p>
+<p>אם <span class="math inline">\(f(x)\)</span> רציפה ב- <span class="math inline">\([a,b]\)</span> וגזירה ב- (a,b) , אז קיימת נקודה <span class="math inline">\(c \in (a,b)\)</span> עבורה: <span class="math display">\[f'(c) = \frac{f(b) - f(a)}{b - a}\]</span></p>
 </div>
 <section id="דוגמא-1" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמא-1">דוגמא:</h3>
-<div id="exm-lagrange-sin-sqrt" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 11.2</strong></span> חשבו את הגבול של <span class="math display">\[\lim_{n \to \infty} (\sin \sqrt{n+1} - \sin \sqrt{n})\]</span></p>
+<div id="box-exm-lagrange-sin-sqrt" class="thmbox thmbox-example">
+<p><strong>דוגמה 11.4.2.</strong></p>
+<p>חשבו את הגבול של <span class="math display">\[\lim_{n \to \infty} (\sin \sqrt{n+1} - \sin \sqrt{n})\]</span></p>
 <p><strong>פתרון:</strong></p>
 <p>נסמן <span class="math inline">\(f(x) = \sin(x)\)</span> , אז <span class="math inline">\(\sin(\sqrt{n+1}) - \sin(\sqrt{n}) = f(\sqrt{n+1}) - f(\sqrt{n})\)</span></p>
 <p>הפונקציה f רציפה ב- <span class="math inline">\([\sqrt{n}, \sqrt{n+1}]\)</span> וגזירה בקטע הפתוח, לכן ממשפט לגראנג’ קיימת <span class="math inline">\(\sqrt{n} &lt; c &lt; \sqrt{n+1}\)</span> עבורה <span class="math inline">\(\frac{f(\sqrt{n+1}) - f(\sqrt{n})}{\sqrt{n+1} - \sqrt{n}} = f'(c)\)</span></p>
@@ -765,10 +782,11 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="מסקנות-ממשפט-לגראנז-מונוטוניות" class="level2">
-<h2 class="anchored" data-anchor-id="מסקנות-ממשפט-לגראנז-מונוטוניות">מסקנות ממשפט לגראנז’ — מונוטוניות</h2>
-<div id="thm-monotone-derivative" class="theorem">
-<p><span class="theorem-title"><strong>משפט 11.4</strong></span> מסקנה ממשפט לגראנג’</p>
+<section id="מסקנות-ממשפט-לגראנז-מונוטוניות" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="מסקנות-ממשפט-לגראנז-מונוטוניות"><span class="header-section-number">11.5</span> מסקנות ממשפט לגראנז’ — מונוטוניות</h2>
+<div id="box-thm-monotone-derivative" class="thmbox thmbox-theorem">
+<p><strong>משפט 11.5.1.</strong></p>
+<p>מסקנה ממשפט לגראנג’</p>
 <p>אם <span class="math inline">\(f(x)\)</span> גזירה ב- <span class="math inline">\(I = (a,b)\)</span>, אז:</p>
 <p>א) <span class="math inline">\(f(x)\)</span> מונוטונית <u>עולה</u> ב- <span class="math inline">\(I\)</span> אם ורק אם לכל <span class="math inline">\(x \in I\)</span> : <span class="math inline">\(f'(x) \geq 0\)</span></p>
 <p><span class="math inline">\(f(x)\)</span> מונוטונית <u>יורדת</u> ב- <span class="math inline">\(I\)</span> אם ורק אם לכל <span class="math inline">\(x \in I\)</span> : <span class="math inline">\(f'(x) \leq 0\)</span></p>
@@ -822,8 +840,8 @@ window.Quarto = {
 <p>אבל לכל <span class="math inline">\(x \in \left(0, \frac{\pi}{2}\right)\)</span>: <span class="math inline">\(\sin(x) &gt; 0\)</span> , <span class="math inline">\(\cos(x) - 1 \leq 0\)</span> ולכן <span class="math inline">\(f'(x) &lt; 0\)</span> בסתירה ל-<span class="math inline">\(f'(x_0) = 0\)</span></p>
 </section>
 </section>
-<section id="משפט-קושי" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-קושי">משפט קושי</h2>
+<section id="משפט-קושי" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="משפט-קושי"><span class="header-section-number">11.6</span> משפט קושי</h2>
 <p>אם <span class="math inline">\(f, g\)</span> רציפות ב-<span class="math inline">\([a,b]\)</span> וגזירות ב-<span class="math inline">\((a,b)\)</span>, ואם <span class="math inline">\(g'(x) \neq 0\)</span> לכל <span class="math inline">\(x \in (a, b)\)</span></p>
 <p>אז קיימת נקודה <span class="math inline">\(c \in (a, b)\)</span> עבורה <span class="math display">\[\frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}\]</span></p>
 <ul>
@@ -831,8 +849,8 @@ window.Quarto = {
 <li><p>ההוכחה של משפט קושי דומה מאוד להוכחה של משפט לגראנג’, בעזרת בניית העזר: <span class="math display">\[h(x) = f(x) - \frac{f(b) - f(a)}{g(b) - g(a)} \to (g(x) - g(a))\]</span></p></li>
 </ul>
 </section>
-<section id="כלל-לופיטל-00" class="level2">
-<h2 class="anchored" data-anchor-id="כלל-לופיטל-00">כלל לופיטל (<span class="math inline">\(0/0\)</span>)</h2>
+<section id="כלל-לופיטל-00" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="כלל-לופיטל-00"><span class="header-section-number">11.7</span> כלל לופיטל (<span class="math inline">\(0/0\)</span>)</h2>
 <p>עונה על הצורך לחשב גבולות מהצורה <span class="math inline">\(\left[\frac{0}{0}\right]\)</span></p>
 <p>נניח כי נרצה לחשב <span class="math display">\[\lim_{x \to x_0} \frac{f(x)}{g(x)} = ?\]</span></p>
 <p>כאשר <span class="math inline">\(f, g\)</span> רציפות בסביבה של <span class="math inline">\(x_0\)</span> , וגזירות שם וגם <span class="math inline">\(f(x_0) = g(x_0) = 0\)</span></p>
@@ -869,8 +887,8 @@ window.Quarto = {
 </blockquote>
 </section>
 </section>
-<section id="כלל-לופיטל-inftyinfty" class="level2">
-<h2 class="anchored" data-anchor-id="כלל-לופיטל-inftyinfty">כלל לופיטל (<span class="math inline">\(\infty/\infty\)</span>)</h2>
+<section id="כלל-לופיטל-inftyinfty" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="כלל-לופיטל-inftyinfty"><span class="header-section-number">11.8</span> כלל לופיטל (<span class="math inline">\(\infty/\infty\)</span>)</h2>
 <p><span class="math display">\[\lim_{x \to \square} \frac{f(x)}{g(x)} =\]</span></p>
 <p><span class="math inline">\(\square\)</span> יכול להיות: <span class="math inline">\(x_0^-, x_0^+, x_0, \infty, -\infty\)</span></p>
 <p><span class="math display">\[\lim_{x \to \square} f(x) = \infty\]</span> <span class="math display">\[\lim_{x \to \square} g(x) = \infty\]</span></p>

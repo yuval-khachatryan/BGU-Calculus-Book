@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,9 +526,9 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#מבוא-קצר-ללוגיקה-מתמטית" id="toc-מבוא-קצר-ללוגיקה-מתמטית" class="nav-link active" data-scroll-target="#מבוא-קצר-ללוגיקה-מתמטית">מבוא קצר ללוגיקה מתמטית</a></li>
-  <li><a href="#פסוקים" id="toc-פסוקים" class="nav-link" data-scroll-target="#פסוקים">פסוקים</a></li>
-  <li><a href="#sec-connectives" id="toc-sec-connectives" class="nav-link" data-scroll-target="#sec-connectives">קשרים לוגיים</a>
+  <li><a href="#מבוא-קצר-ללוגיקה-מתמטית" id="toc-מבוא-קצר-ללוגיקה-מתמטית" class="nav-link active" data-scroll-target="#מבוא-קצר-ללוגיקה-מתמטית"><span class="header-section-number">1.1</span> מבוא קצר ללוגיקה מתמטית</a></li>
+  <li><a href="#פסוקים" id="toc-פסוקים" class="nav-link" data-scroll-target="#פסוקים"><span class="header-section-number">1.2</span> פסוקים</a></li>
+  <li><a href="#sec-connectives" id="toc-sec-connectives" class="nav-link" data-scroll-target="#sec-connectives"><span class="header-section-number">1.3</span> קשרים לוגיים</a>
   <ul class="collapse">
   <li><a href="#sec-negation" id="toc-sec-negation" class="nav-link" data-scroll-target="#sec-negation">שלילה</a></li>
   <li><a href="#sec-conjunction" id="toc-sec-conjunction" class="nav-link" data-scroll-target="#sec-conjunction">וגם</a></li>
@@ -524,13 +536,13 @@ window.Quarto = {
   <li><a href="#גרירה" id="toc-גרירה" class="nav-link" data-scroll-target="#גרירה">גרירה</a></li>
   <li><a href="#שקילות" id="toc-שקילות" class="nav-link" data-scroll-target="#שקילות">שקילות</a></li>
   </ul></li>
-  <li><a href="#sec-quantifiers" id="toc-sec-quantifiers" class="nav-link" data-scroll-target="#sec-quantifiers">כמתים לוגיים</a>
+  <li><a href="#sec-quantifiers" id="toc-sec-quantifiers" class="nav-link" data-scroll-target="#sec-quantifiers"><span class="header-section-number">1.4</span> כמתים לוגיים</a>
   <ul class="collapse">
   <li><a href="#לכל" id="toc-לכל" class="nav-link" data-scroll-target="#לכל">לכל</a></li>
   <li><a href="#קיים" id="toc-קיים" class="nav-link" data-scroll-target="#קיים">קיים</a></li>
   <li><a href="#חידה-לסיכום" id="toc-חידה-לסיכום" class="nav-link" data-scroll-target="#חידה-לסיכום">חידה לסיכום</a></li>
   </ul></li>
-  <li><a href="#מונחים-נפוצים." id="toc-מונחים-נפוצים." class="nav-link" data-scroll-target="#מונחים-נפוצים.">מונחים נפוצים.</a>
+  <li><a href="#מונחים-נפוצים." id="toc-מונחים-נפוצים." class="nav-link" data-scroll-target="#מונחים-נפוצים."><span class="header-section-number">1.5</span> מונחים נפוצים.</a>
   <ul class="collapse">
   <li><a href="#יהי-ותהי" id="toc-יהי-ותהי" class="nav-link" data-scroll-target="#יהי-ותהי">״יהי״ ו״תהי״</a></li>
   <li><a href="#נניח" id="toc-נניח" class="nav-link" data-scroll-target="#נניח">״נניח״</a></li>
@@ -563,23 +575,25 @@ window.Quarto = {
 
 <p>כל תופעה שנחקרת או מנותחת מנוסחת בסופו של דבר בעזרת שפה מתמטית. זו הסיבה שבגינה מתמטיקה מכונה לעיתים ״שפת המדעים״. המתמטיקאי הצרפתי אנרי פואנקרה ניסח זאת בציטוטו המפורסם: ״מתמטיקה היא האמנות של מתן שמות זהים לדברים שונים״. מה זה אומר? מדובר בתהליך שנקרא <strong>הפשטה</strong>: אנו לוקחים תופעה מסוימת, מתמקדים בתכונות שמעניינות אותנו (ורק בהן), מסמנים אותן בסימונים זהים — ״שמות זהים״ — ומנתחים אותן בעזרת אותן פעולות. הדוגמה הפשוטה ביותר לכך היא היכולת לספור דברים. כעת נציג את השפה ואת מושגי היסוד שישרתו אותנו בהמשך הקורס ובהמשך התואר.</p>
 <p>לפני שנעבור ללב הקורס, חשוב להתעכב על אחד הדברים המבלבלים סטודנטים חדשים במתמטיקה — <strong>השפה של המתמטיקה</strong>. למתמטיקה יש שפה משלה, הכוללת אוצר מילים וביטויים אופייניים: <em>יהי</em>, <em>קיים</em>, <em>נניח</em>, <em>נניח בשלילה</em>, <em>לכן</em>, <em>מכאן נובע ש-</em>, <em>סתירה</em>, <em>הפרכה</em>, <em>מש״ל</em>, <em>הוכחה</em> וכדומה. למעשה, ברגע שמבינים אותה היא פשוטה מאוד, שכן היא מבוססת על היגיון; אולם רוב הסטודנטים המתחילים תואר כמעט לא התנסו בה — פרט אולי לפסיכומטרי או להוכחות בגיאומטריה של המישור בבית הספר — ולכן היא מהווה קושי בתחילת הדרך.</p>
-<section id="מבוא-קצר-ללוגיקה-מתמטית" class="level2">
-<h2 class="anchored" data-anchor-id="מבוא-קצר-ללוגיקה-מתמטית">מבוא קצר ללוגיקה מתמטית</h2>
+<section id="מבוא-קצר-ללוגיקה-מתמטית" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="מבוא-קצר-ללוגיקה-מתמטית"><span class="header-section-number">1.1</span> מבוא קצר ללוגיקה מתמטית</h2>
 <p>בסעיף זה נבנה מעין <strong>שיחון</strong> של המונחים והביטויים השכיחים. אך לפני שנציג אותו, ננסה להסביר בקצרה כיצד עובדת החשיבה המתמטית. הדבר הראשון שחשוב להבין הוא שהמתמטיקה היא <strong>דדוקטיבית</strong>. מה פירוש הדבר? המתמטיקה אינה ממציאה דבר חדש — היא רק מסיקה האם טענה נכונה או אינה נכונה מתוך הנחות קיימות; ״הכול נובע מן הנתונים״. יש אפילו בדיחה ידועה על כך: ״במתמטיקה הכול טריוויאלי, שהרי הכול נובע מן הנתונים״. אפשר לחשוב על כך כעל משחק: נתון ״עולם״ ובו הנחות מסוימות, וכן כללים הקובעים מה מותר לעשות עם ההנחות הללו. בהינתן שאלה, מנסים להכריע אם התשובה היא ״נכון״, ״לא נכון״, או ״אין מספיק נתונים״.</p>
-<div id="exm-deduction" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.1</strong></span> נניח שכל הכלבים הם יונקים, ושחומי הוא כלב. אז הטענה ״חומי הוא יונק״ <strong>נכונה</strong>. לעומת זאת, נניח שלאיגור יש דוברמן; האם שמו של הדוברמן הוא חומי? כאן התשובה היא <strong>״אין מספיק נתונים״</strong>.</p>
+<div id="box-exm-deduction" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.1.1.</strong></p>
+<p>נניח שכל הכלבים הם יונקים, ושחומי הוא כלב. אז הטענה ״חומי הוא יונק״ <strong>נכונה</strong>. לעומת זאת, נניח שלאיגור יש דוברמן; האם שמו של הדוברמן הוא חומי? כאן התשובה היא <strong>״אין מספיק נתונים״</strong>.</p>
 </div>
 <p>התחום הפורמלי במתמטיקה, במדע ובפילוסופיה העוסק בהסקת מסקנות מהנחות ובבדיקת טענות על סמך הנחות נקרא <strong>לוגיקה</strong> (בעברית: <em>תורת ההיגיון</em>). זהו תחום מורכב ועמוק, שלא ניכנס אליו לעומק; אך הלוגיקה הבסיסית מופיעה בכל תחום במתמטיקה ובמדע, וחשוב להכירה <strong>כשפה</strong>. נציג אותה כאן באופן לא-פורמלי, בעזרת דוגמאות יומיומיות או מתמטיות פשוטות מאוד, ולצד זאת נציג את הסימונים הבסיסיים.</p>
 </section>
-<section id="פסוקים" class="level2">
-<h2 class="anchored" data-anchor-id="פסוקים">פסוקים</h2>
+<section id="פסוקים" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="פסוקים"><span class="header-section-number">1.2</span> פסוקים</h2>
 <p>המושג הבסיסי ביותר בלוגיקה הוא ה<strong>פסוק</strong>.</p>
-<div id="def-proposition" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 1.1</strong></span> <strong>פסוק</strong> הוא משפט הצהרתי שאפשר לקבוע לגביו, באופן חד-משמעי, אם הוא <strong>אמת</strong> או <strong>שקר</strong> (אך לא שניהם בו-זמנית). ערך זה — אמת או שקר — נקרא <strong>ערך האמת</strong> של הפסוק. נהוג לסמן את הערך ״אמת״ באות <span class="math inline">\(T\)</span> (מאנגלית, <em>True</em>) ואת הערך ״שקר״ באות <span class="math inline">\(F\)</span> (<em>False</em>).</p>
+<div id="box-def-proposition" class="thmbox thmbox-definition">
+<p><strong>הגדרה 1.2.1.</strong></p>
+<p><strong>פסוק</strong> הוא משפט הצהרתי שאפשר לקבוע לגביו, באופן חד-משמעי, אם הוא <strong>אמת</strong> או <strong>שקר</strong> (אך לא שניהם בו-זמנית). ערך זה — אמת או שקר — נקרא <strong>ערך האמת</strong> של הפסוק. נהוג לסמן את הערך ״אמת״ באות <span class="math inline">\(T\)</span> (מאנגלית, <em>True</em>) ואת הערך ״שקר״ באות <span class="math inline">\(F\)</span> (<em>False</em>).</p>
 </div>
 <p>מדוע פסוקים חשובים לנו? <strong>כי הרוב המוחלט של הטענות המתמטיות מנוסח כפסוקים.</strong></p>
-<div id="exm-propositions" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.2</strong></span> &nbsp;</p>
+<div id="box-exm-propositions" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.2.2.</strong></p>
 <ul>
 <li>״<span class="math inline">\(2+2=4\)</span>״ — פסוק שערך האמת שלו <strong>אמת</strong>.</li>
 <li>״<span class="math inline">\(3 &gt; 5\)</span>״ — פסוק שערך האמת שלו <strong>שקר</strong>.</li>
@@ -589,21 +603,23 @@ window.Quarto = {
 </div>
 <p>כשהתוכן אינו חשוב, או כשאנו רוצים לקצר, נסמן פסוקים באותיות לועזיות גדולות, כגון <span class="math inline">\(P, Q, \dots\)</span>.</p>
 <p>לעיתים נתבונן בביטוי המכיל <strong>משתנה</strong>, שאינו פסוק בפני עצמו אלא הופך לפסוק רק לאחר שמציבים במקום המשתנה ערך מסוים.</p>
-<div id="def-predicate" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 1.2</strong></span> ביטוי <span class="math inline">\(P(x)\)</span> התלוי במשתנה <span class="math inline">\(x\)</span>, אשר בהצבת כל ערך קונקרטי <span class="math inline">\(a\)</span> במקום <span class="math inline">\(x\)</span> הופך לפסוק <span class="math inline">\(P(a)\)</span> (אמת או שקר), נקרא <strong>פסוק פתוח</strong> (או <strong>תכונה</strong>). נאמר ש-<span class="math inline">\(a\)</span> <strong>מקיים</strong> את <span class="math inline">\(P\)</span> אם <span class="math inline">\(P(a)\)</span> הוא פסוק אמת.</p>
+<div id="box-def-predicate" class="thmbox thmbox-definition">
+<p><strong>הגדרה 1.2.3.</strong></p>
+<p>ביטוי <span class="math inline">\(P(x)\)</span> התלוי במשתנה <span class="math inline">\(x\)</span>, אשר בהצבת כל ערך קונקרטי <span class="math inline">\(a\)</span> במקום <span class="math inline">\(x\)</span> הופך לפסוק <span class="math inline">\(P(a)\)</span> (אמת או שקר), נקרא <strong>פסוק פתוח</strong> (או <strong>תכונה</strong>). נאמר ש-<span class="math inline">\(a\)</span> <strong>מקיים</strong> את <span class="math inline">\(P\)</span> אם <span class="math inline">\(P(a)\)</span> הוא פסוק אמת.</p>
 </div>
-<div id="exm-predicate" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.3</strong></span> ניקח את <span class="math inline">\(P(x)\)</span> להיות ״<span class="math inline">\(x &gt; 5\)</span>״. כל עוד <span class="math inline">\(x\)</span> אינו ידוע, <span class="math inline">\(P(x)\)</span> אינו פסוק; אך בהצבת ערך מתקבל פסוק: <span class="math inline">\(P(7)\)</span> היא הטענה ״<span class="math inline">\(7 &gt; 5\)</span>״, שהיא <strong>אמת</strong>, ואילו <span class="math inline">\(P(3)\)</span> היא ״<span class="math inline">\(3 &gt; 5\)</span>״, שהיא <strong>שקר</strong>. אם כן, <span class="math inline">\(7\)</span> מקיים את <span class="math inline">\(P\)</span> ואילו <span class="math inline">\(3\)</span> אינו מקיים.</p>
+<div id="box-exm-predicate" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.2.4.</strong></p>
+<p>ניקח את <span class="math inline">\(P(x)\)</span> להיות ״<span class="math inline">\(x &gt; 5\)</span>״. כל עוד <span class="math inline">\(x\)</span> אינו ידוע, <span class="math inline">\(P(x)\)</span> אינו פסוק; אך בהצבת ערך מתקבל פסוק: <span class="math inline">\(P(7)\)</span> היא הטענה ״<span class="math inline">\(7 &gt; 5\)</span>״, שהיא <strong>אמת</strong>, ואילו <span class="math inline">\(P(3)\)</span> היא ״<span class="math inline">\(3 &gt; 5\)</span>״, שהיא <strong>שקר</strong>. אם כן, <span class="math inline">\(7\)</span> מקיים את <span class="math inline">\(P\)</span> ואילו <span class="math inline">\(3\)</span> אינו מקיים.</p>
 </div>
 </section>
-<section id="sec-connectives" class="level2">
-<h2 class="anchored" data-anchor-id="sec-connectives">קשרים לוגיים</h2>
+<section id="sec-connectives" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-connectives"><span class="header-section-number">1.3</span> קשרים לוגיים</h2>
 <p>עם פסוק בודד אין הרבה מה לעשות מלבד לקבוע אם הוא אמת או שקר. אם נחשוב על הלוגיקה כעל שפה, פסוק בודד מקביל למילה בודדת; וכדי לבנות מן המילים משפטים, דרושים לנו אמצעים לשנות את משמעותן ולחבר ביניהן. בלוגיקה, אמצעים אלה הם ה<strong>קשרים הלוגיים</strong>: בעזרתם אנו מרכיבים מפסוקים נתונים פסוקים מורכבים יותר. הפסוקים המרכיבים פסוק מורכב נקראים ה<strong>תת-פסוקים</strong> שלו. נציג את הקשרים החשובים בזה אחר זה, ונלווה כל אחד בדוגמאות. ערך האמת של פסוק מורכב נקבע באופן מלא מתוך ערכי האמת של תת-הפסוקים שלו.</p>
 <section id="sec-negation" class="level3">
 <h3 class="anchored" data-anchor-id="sec-negation">שלילה</h3>
 <p>הקשר הפשוט ביותר פועל על פסוק יחיד: ה<strong>שלילה</strong> של פסוק <span class="math inline">\(P\)</span>, המסומנת <span class="math inline">\(\neg P\)</span> ונקראת ״לא <span class="math inline">\(P\)</span>״, היא הפסוק שאמת בדיוק כאשר <span class="math inline">\(P\)</span> שקר (ושקר כאשר <span class="math inline">\(P\)</span> אמת).</p>
-<div id="exm-negation" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.4</strong></span> &nbsp;</p>
+<div id="box-exm-negation" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.3.1.</strong></p>
 <ul>
 <li>אם <span class="math inline">\(P\)</span> הוא ״<span class="math inline">\(5\)</span> הוא מספר ראשוני״ (אמת), אז <span class="math inline">\(\neg P\)</span> הוא ״<span class="math inline">\(5\)</span> אינו מספר ראשוני״ (שקר).</li>
 <li>אם <span class="math inline">\(Q\)</span> הוא ״<span class="math inline">\(2 &gt; 3\)</span>״ (שקר), אז <span class="math inline">\(\neg Q\)</span> הוא ״<span class="math inline">\(2 \le 3\)</span>״ (אמת).</li>
@@ -613,8 +629,8 @@ window.Quarto = {
 <section id="sec-conjunction" class="level3">
 <h3 class="anchored" data-anchor-id="sec-conjunction">וגם</h3>
 <p>מכאן עוברים לקשרים הפועלים על שני פסוקים. הפסוק ״<span class="math inline">\(P\)</span> <strong>וגם</strong> <span class="math inline">\(Q\)</span>״, המסומן <span class="math inline">\(P \land Q\)</span>, אמת בדיוק כאשר <strong>שני</strong> הפסוקים אמת.</p>
-<div id="exm-conjunction" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.5</strong></span> &nbsp;</p>
+<div id="box-exm-conjunction" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.3.2.</strong></p>
 <ul>
 <li>״<span class="math inline">\(2\)</span> זוגי <strong>וגם</strong> <span class="math inline">\(2\)</span> ראשוני״ — שני החלקים אמת, ולכן הפסוק כולו <strong>אמת</strong>.</li>
 <li>״<span class="math inline">\(2\)</span> זוגי <strong>וגם</strong> <span class="math inline">\(2 &gt; 3\)</span>״ — החלק השני שקר, ולכן הפסוק כולו <strong>שקר</strong>.</li>
@@ -626,8 +642,9 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="sec-disjunction">או</h3>
 <p>הפסוק ״<span class="math inline">\(P\)</span> <strong>או</strong> <span class="math inline">\(Q\)</span>״, המסומן <span class="math inline">\(P \lor Q\)</span>, אמת בדיוק כאשר <strong>לפחות אחד</strong> מן הפסוקים אמת — כולל המקרה שבו <strong>שניהם</strong> אמת. קשר זה הוא מקור נפוץ לבלבול, ולכן נתעכב עליו.</p>
 <p>הבלבול נובע מכך שבשפה היומיומית ״או״ הוא לרוב <strong>מפריד</strong>: אחד מן השניים, אך לא שניהם (״תה או קפה?״). ה״או״ הלוגי, לעומת זאת, הוא <strong>מכליל</strong> — הוא אמת גם כששני החלקים מתקיימים. לכן, מבחינה לוגית, ״<span class="math inline">\(P\)</span> או <span class="math inline">\(Q\)</span>?״ היא שאלת כן/לא, שהתשובה עליה ״כן״ אם מתקיים לפחות אחד מהם.</p>
-<div id="exm-or-jokes" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.6</strong></span> ההבדל הזה הוא מקור לבדיחות:</p>
+<div id="box-exm-or-jokes" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.3.3.</strong></p>
+<p>ההבדל הזה הוא מקור לבדיחות:</p>
 <ul>
 <li>״ילדה אשתך בן <strong>או</strong> בת?״ — ״כן.״</li>
 <li>בקופה: ״תשלם במזומן <strong>או</strong> באשראי?״ — ״כן.״</li>
@@ -677,8 +694,9 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="גרירה">גרירה</h3>
 <p>הקשר הבא, ה<strong>גרירה</strong>, הוא ככל הנראה המבלבל ביותר. הפסוק ״<strong>אם</strong> <span class="math inline">\(P\)</span> <strong>אז</strong> <span class="math inline">\(Q\)</span>״, המסומן <span class="math inline">\(P \to Q\)</span>, הוא <strong>שקר</strong> בדיוק במקרה אחד: כאשר <span class="math inline">\(P\)</span> אמת ו-<span class="math inline">\(Q\)</span> שקר; בכל מקרה אחר הוא <strong>אמת</strong>. הפסוק <span class="math inline">\(P\)</span> נקרא ה<strong>הנחה</strong>, ו-<span class="math inline">\(Q\)</span> נקרא ה<strong>מסקנה</strong>.</p>
 <p>יש להדגיש: הגרירה <strong>אינה</strong> קשר של סיבה ותוצאה, אלא אמירה על ערכי אמת בלבד. הדוגמה הבאה ממחישה זאת, ובהמשך — חידה קטנה.</p>
-<div id="exm-implication-smoke" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.7</strong></span> הפתגם ״אין עשן בלי אש״ הוא בעצם הגרירה ״<strong>אם</strong> יש עשן, <strong>אז</strong> יש אש״ — כלומר הפסוק ׳יש עשן׳ <strong>גורר</strong> את הפסוק ׳יש אש׳. שימו לב לכיוון: מבחינת סיבה ותוצאה, ה<strong>אש</strong> היא הסיבה וה<strong>עשן</strong> הוא התוצאה; אך הגרירה פועלת <strong>מן העשן (התוצאה) אל האש (הסיבה)</strong>, שהרי מתוך תצפית בעשן אנו מסיקים שקיימת אש. הכיוון הלוגי הפוך, אם כן, לכיוון הסיבתי.</p>
+<div id="box-exm-implication-smoke" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.3.4.</strong></p>
+<p>הפתגם ״אין עשן בלי אש״ הוא בעצם הגרירה ״<strong>אם</strong> יש עשן, <strong>אז</strong> יש אש״ — כלומר הפסוק ׳יש עשן׳ <strong>גורר</strong> את הפסוק ׳יש אש׳. שימו לב לכיוון: מבחינת סיבה ותוצאה, ה<strong>אש</strong> היא הסיבה וה<strong>עשן</strong> הוא התוצאה; אך הגרירה פועלת <strong>מן העשן (התוצאה) אל האש (הסיבה)</strong>, שהרי מתוך תצפית בעשן אנו מסיקים שקיימת אש. הכיוון הלוגי הפוך, אם כן, לכיוון הסיבתי.</p>
 </div>
 <p>כדי להבין את ההגדרה לעומק, נחשוב על הגרירה <span class="math inline">\(P \to Q\)</span> כעל <strong>הבטחה</strong>: ״אם <span class="math inline">\(P\)</span> מתקיים, אז <span class="math inline">\(Q\)</span> מתקיים״. הבטחה כזו מופרת במקרה אחד בלבד — כש-<span class="math inline">\(P\)</span> אמת ובכל זאת <span class="math inline">\(Q\)</span> שקר; בכל מקרה אחר היא נשמרת, ולכן הגרירה אמת.</p>
 <p>מה קורה כאשר ההנחה <span class="math inline">\(P\)</span> <strong>שקרית</strong>? אז ההבטחה כלל לא ״הופעלה״: היא אינה אומרת דבר על מצב כזה, וממילא לא הופרה. לכן ערך האמת של המסקנה <span class="math inline">\(Q\)</span> פשוט <strong>לא משנה</strong> — גם <span class="math inline">\(F \to T\)</span> וגם <span class="math inline">\(F \to F\)</span> הן אמת. אלה הם מקרי ה״<strong>לא אכפת</strong>״ (<em>don’t care</em>) של הגרירה: כשההנחה שקרית, איננו בודקים כלל את המסקנה, והגרירה אמת תהא המסקנה אשר תהא.</p>
@@ -709,8 +727,8 @@ window.Quarto = {
 <section id="שקילות" class="level3">
 <h3 class="anchored" data-anchor-id="שקילות">שקילות</h3>
 <p>לבסוף, הפסוק ״<span class="math inline">\(P\)</span> <strong>אם ורק אם</strong> <span class="math inline">\(Q\)</span>״, המסומן <span class="math inline">\(P \leftrightarrow Q\)</span> ונקרא <strong>שקילות</strong>, אמת בדיוק כאשר ל-<span class="math inline">\(P\)</span> ול-<span class="math inline">\(Q\)</span> <strong>אותו ערך אמת</strong> (שניהם אמת, או שניהם שקר). זוהי בדיוק קיומן של שתי הגרירות יחד: <span class="math inline">\(P \to Q\)</span> וגם <span class="math inline">\(Q \to P\)</span>.</p>
-<div id="exm-equivalence" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 1.8</strong></span> &nbsp;</p>
+<div id="box-exm-equivalence" class="thmbox thmbox-example">
+<p><strong>דוגמה 1.3.5.</strong></p>
 <ul>
 <li>עבור מספר שלם <span class="math inline">\(n\)</span>: ״<span class="math inline">\(n\)</span> זוגי״ <strong>אם ורק אם</strong> ״<span class="math inline">\(n+1\)</span> אי-זוגי״ — לשני הפסוקים תמיד אותו ערך אמת, ולכן השקילות <strong>אמת</strong>.</li>
 <li>״<span class="math inline">\(3 &gt; 5 \leftrightarrow 10 &lt; 0\)</span>״ — שני הצדדים שקריים, ולכן השקילות <strong>אמת</strong>.</li>
@@ -781,8 +799,8 @@ window.Quarto = {
 <p><strong>הערה על סימונים.</strong> את הגרירה ואת השקילות סימנו כאן בחצים <span class="math inline">\(\to\)</span> ו-<span class="math inline">\(\leftrightarrow\)</span>. במקורות רבים נהוג לסמנם דווקא בחצים הכפולים, <span class="math inline">\(\implies\)</span> ו-<span class="math inline">\(\iff\)</span> (בהתאמה); מדובר באותם קשרים בדיוק, בסימון שונה.</p>
 </section>
 </section>
-<section id="sec-quantifiers" class="level2">
-<h2 class="anchored" data-anchor-id="sec-quantifiers">כמתים לוגיים</h2>
+<section id="sec-quantifiers" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-quantifiers"><span class="header-section-number">1.4</span> כמתים לוגיים</h2>
 <p>לעיתים נרצה לנסח פסוק על <strong>קבוצה</strong> שלמה — לקבוע, למשל, אם תכונה מסוימת מתקיימת עבור <em>כל</em> איבריה, או עבור <em>לפחות אחד</em> מהם. לשם כך דרושים לנו אמצעים חדשים, ה<strong>כמתים</strong>. (את מושג הקבוצה נציג בהרחבה ב<a href="./02-sets.html">פרק על קבוצות</a>; לעת עתה אפשר לחשוב על קבוצה פשוט כעל אוסף של איברים.)</p>
 <section id="לכל" class="level3">
 <h3 class="anchored" data-anchor-id="לכל">לכל</h3>
@@ -824,8 +842,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="מונחים-נפוצים." class="level2">
-<h2 class="anchored" data-anchor-id="מונחים-נפוצים.">מונחים נפוצים.</h2>
+<section id="מונחים-נפוצים." class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="מונחים-נפוצים."><span class="header-section-number">1.5</span> מונחים נפוצים.</h2>
 <p>בפתח הפרק הבטחנו לבנות מעין <strong>שיחון</strong> של המונחים והביטויים השכיחים בשפה המתמטית; את רובם כבר פגשנו לאורך הדרך. כאן נעצור על כמה מונחים וסימנים שמבלבלים סטודנטים רבים בתחילת התואר.</p>
 <section id="יהי-ותהי" class="level3">
 <h3 class="anchored" data-anchor-id="יהי-ותהי">״יהי״ ו״תהי״</h3>

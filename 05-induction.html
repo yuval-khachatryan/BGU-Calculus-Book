@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,8 +526,8 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#עקרון-האינדוקציה" id="toc-עקרון-האינדוקציה" class="nav-link active" data-scroll-target="#עקרון-האינדוקציה">עקרון האינדוקציה</a></li>
-  <li><a href="#שלבי-האינדוקציה" id="toc-שלבי-האינדוקציה" class="nav-link" data-scroll-target="#שלבי-האינדוקציה">שלבי האינדוקציה</a></li>
+  <li><a href="#עקרון-האינדוקציה" id="toc-עקרון-האינדוקציה" class="nav-link active" data-scroll-target="#עקרון-האינדוקציה"><span class="header-section-number">5.1</span> עקרון האינדוקציה</a></li>
+  <li><a href="#שלבי-האינדוקציה" id="toc-שלבי-האינדוקציה" class="nav-link" data-scroll-target="#שלבי-האינדוקציה"><span class="header-section-number">5.2</span> שלבי האינדוקציה</a></li>
   </ul>
 </nav>
     </div>
@@ -541,27 +553,29 @@ window.Quarto = {
 </header>
 
 
-<section id="עקרון-האינדוקציה" class="level2">
-<h2 class="anchored" data-anchor-id="עקרון-האינדוקציה">עקרון האינדוקציה</h2>
+<section id="עקרון-האינדוקציה" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="עקרון-האינדוקציה"><span class="header-section-number">5.1</span> עקרון האינדוקציה</h2>
 <p>שיטת הוכחה לטענות מהצורה:</p>
 <p>לכל מספר טבעי <span class="math inline">\(n\)</span>, מתקיים _________.</p>
-<div id="exm-induction-statements" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 5.1</strong></span> לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(2^n + n \leq 3^n\)</span></p>
+<div id="box-exm-induction-statements" class="thmbox thmbox-example">
+<p><strong>דוגמה 5.1.1.</strong></p>
+<p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(2^n + n \leq 3^n\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span></p>
 <p>לכל מספר <span class="math inline">\(n \in N\)</span> מתקיים: <span class="math inline">\(24 \mid 2 \cdot 7^n + 3 \cdot 5^n - 5\)</span></p>
 <p>(מתרגול ה-24) <!-- בדיקה: הערה בכתב יד --></p>
 </div>
 </section>
-<section id="שלבי-האינדוקציה" class="level2">
-<h2 class="anchored" data-anchor-id="שלבי-האינדוקציה">שלבי האינדוקציה</h2>
+<section id="שלבי-האינדוקציה" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="שלבי-האינדוקציה"><span class="header-section-number">5.2</span> שלבי האינדוקציה</h2>
 <p>במקום לבדוק את נכונות הטענה לכל <span class="math inline">\(n = 1,2,3,\dots\)</span> נעשה כך:</p>
 <ol type="1">
 <li><p>בסיס האינדוקציה - נבדוק שהטענה נכונה עבור <span class="math inline">\(n=1\)</span>.</p></li>
 <li><p>נניח כי הטענה נכונה עבור <span class="math inline">\(n\)</span> כללי, ואז נראה כי הטענה נכונה עבור <span class="math inline">\(n+1\)</span>.</p></li>
 </ol>
-<div id="exm-induction-sum-squares" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 5.2</strong></span> נוכיח באינדוקציה כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span> לכל <span class="math inline">\(n \in N\)</span>.</p>
+<div id="box-exm-induction-sum-squares" class="thmbox thmbox-example">
+<p><strong>דוגמה 5.2.1.</strong></p>
+<p>נוכיח באינדוקציה כי מתקיים: <span class="math inline">\(1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}\)</span> לכל <span class="math inline">\(n \in N\)</span>.</p>
 <p><strong>פתרון:</strong></p>
 <ol type="1">
 <li>נבדוק את בסיס האינדוקציה:</li>

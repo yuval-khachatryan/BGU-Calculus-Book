@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,25 +526,25 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-הגבול-של-פונקציה-דוגמה" id="toc-הגדרת-הגבול-של-פונקציה-דוגמה" class="nav-link active" data-scroll-target="#הגדרת-הגבול-של-פונקציה-דוגמה">הגדרת הגבול של פונקציה + דוגמה</a></li>
-  <li><a href="#משפט-היינה" id="toc-משפט-היינה" class="nav-link" data-scroll-target="#משפט-היינה">משפט היינה</a>
+  <li><a href="#הגדרת-הגבול-של-פונקציה-דוגמה" id="toc-הגדרת-הגבול-של-פונקציה-דוגמה" class="nav-link active" data-scroll-target="#הגדרת-הגבול-של-פונקציה-דוגמה"><span class="header-section-number">8.1</span> הגדרת הגבול של פונקציה + דוגמה</a></li>
+  <li><a href="#משפט-היינה" id="toc-משפט-היינה" class="nav-link" data-scroll-target="#משפט-היינה"><span class="header-section-number">8.2</span> משפט היינה</a>
   <ul class="collapse">
   <li><a href="#משפט-היינה-1" id="toc-משפט-היינה-1" class="nav-link" data-scroll-target="#משפט-היינה-1">משפט היינה</a></li>
   <li><a href="#דוגמא-מטעית-היינה" id="toc-דוגמא-מטעית-היינה" class="nav-link" data-scroll-target="#דוגמא-מטעית-היינה">דוגמא מטעית היינה:</a></li>
   <li><a href="#פתרון" id="toc-פתרון" class="nav-link" data-scroll-target="#פתרון">פתרון:</a></li>
   </ul></li>
-  <li><a href="#אריתמטיקה-של-גבולות" id="toc-אריתמטיקה-של-גבולות" class="nav-link" data-scroll-target="#אריתמטיקה-של-גבולות">אריתמטיקה של גבולות</a>
+  <li><a href="#אריתמטיקה-של-גבולות" id="toc-אריתמטיקה-של-גבולות" class="nav-link" data-scroll-target="#אריתמטיקה-של-גבולות"><span class="header-section-number">8.3</span> אריתמטיקה של גבולות</a>
   <ul class="collapse">
   <li><a href="#אריתמטיקה-של-גבולות-1" id="toc-אריתמטיקה-של-גבולות-1" class="nav-link" data-scroll-target="#אריתמטיקה-של-גבולות-1">אריתמטיקה של גבולות</a></li>
   <li><a href="#דוגמאות-שימושיות" id="toc-דוגמאות-שימושיות" class="nav-link" data-scroll-target="#דוגמאות-שימושיות">דוגמאות שימושיות</a></li>
   </ul></li>
-  <li><a href="#משפט-הסנדוויץ" id="toc-משפט-הסנדוויץ" class="nav-link" data-scroll-target="#משפט-הסנדוויץ">משפט הסנדוויץ׳</a>
+  <li><a href="#משפט-הסנדוויץ" id="toc-משפט-הסנדוויץ" class="nav-link" data-scroll-target="#משפט-הסנדוויץ"><span class="header-section-number">8.4</span> משפט הסנדוויץ׳</a>
   <ul class="collapse">
   <li><a href="#משפט-כלל-הסנדויץ" id="toc-משפט-כלל-הסנדויץ" class="nav-link" data-scroll-target="#משפט-כלל-הסנדויץ">משפט כלל הסנדויץ’</a></li>
   <li><a href="#לדוגמא" id="toc-לדוגמא" class="nav-link" data-scroll-target="#לדוגמא">לדוגמא:</a></li>
   <li><a href="#פתרון-1" id="toc-פתרון-1" class="nav-link" data-scroll-target="#פתרון-1">פתרון:</a></li>
   </ul></li>
-  <li><a href="#גבולות-חד-צדדיים" id="toc-גבולות-חד-צדדיים" class="nav-link" data-scroll-target="#גבולות-חד-צדדיים">גבולות חד-צדדיים</a>
+  <li><a href="#גבולות-חד-צדדיים" id="toc-גבולות-חד-צדדיים" class="nav-link" data-scroll-target="#גבולות-חד-צדדיים"><span class="header-section-number">8.5</span> גבולות חד-צדדיים</a>
   <ul class="collapse">
   <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא:</a></li>
   <li><a href="#פתרון-2" id="toc-פתרון-2" class="nav-link" data-scroll-target="#פתרון-2">פתרון:</a></li>
@@ -540,8 +552,8 @@ window.Quarto = {
   <li><a href="#דוגמא-1" id="toc-דוגמא-1" class="nav-link" data-scroll-target="#דוגמא-1">דוגמא:</a></li>
   <li><a href="#פתרון-3" id="toc-פתרון-3" class="nav-link" data-scroll-target="#פתרון-3">פתרון:</a></li>
   </ul></li>
-  <li><a href="#הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" id="toc-הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" class="nav-link" data-scroll-target="#הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2">הגבולות ה״מופלאים״: <span class="math inline">\(\frac{\sin x}{x}\)</span>, <span class="math inline">\(\frac{1-\cos x}{x^2}\)</span></a></li>
-  <li><a href="#גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" id="toc-גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" class="nav-link" data-scroll-target="#גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x">גבולות מופלאים נוספים: <span class="math inline">\((1+x)^{1/x}\)</span>, <span class="math inline">\(\frac{\ln(1+x)}{x}\)</span>, <span class="math inline">\(\frac{e^x-1}{x}\)</span>, <span class="math inline">\(\frac{(1+x)^a-1}{x}\)</span></a>
+  <li><a href="#הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" id="toc-הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" class="nav-link" data-scroll-target="#הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2"><span class="header-section-number">8.6</span> הגבולות ה״מופלאים״: <span class="math inline">\(\frac{\sin x}{x}\)</span>, <span class="math inline">\(\frac{1-\cos x}{x^2}\)</span></a></li>
+  <li><a href="#גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" id="toc-גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" class="nav-link" data-scroll-target="#גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x"><span class="header-section-number">8.7</span> גבולות מופלאים נוספים: <span class="math inline">\((1+x)^{1/x}\)</span>, <span class="math inline">\(\frac{\ln(1+x)}{x}\)</span>, <span class="math inline">\(\frac{e^x-1}{x}\)</span>, <span class="math inline">\(\frac{(1+x)^a-1}{x}\)</span></a>
   <ul class="collapse">
   <li><a href="#הסבר-ל-3" id="toc-הסבר-ל-3" class="nav-link" data-scroll-target="#הסבר-ל-3">הסבר ל-(3)</a></li>
   <li><a href="#הסבר-ל-4" id="toc-הסבר-ל-4" class="nav-link" data-scroll-target="#הסבר-ל-4">הסבר ל-(4)</a></li>
@@ -552,7 +564,7 @@ window.Quarto = {
   <li><a href="#הסבר-ל-5-1" id="toc-הסבר-ל-5-1" class="nav-link" data-scroll-target="#הסבר-ל-5-1">הסבר ל-(5)</a></li>
   <li><a href="#הסבר-ל-6-1" id="toc-הסבר-ל-6-1" class="nav-link" data-scroll-target="#הסבר-ל-6-1">הסבר ל-(6)</a></li>
   </ul></li>
-  <li><a href="#אינסוף-כגבול-וגבול-באינסוף" id="toc-אינסוף-כגבול-וגבול-באינסוף" class="nav-link" data-scroll-target="#אינסוף-כגבול-וגבול-באינסוף">אינסוף כגבול וגבול באינסוף</a>
+  <li><a href="#אינסוף-כגבול-וגבול-באינסוף" id="toc-אינסוף-כגבול-וגבול-באינסוף" class="nav-link" data-scroll-target="#אינסוף-כגבול-וגבול-באינסוף"><span class="header-section-number">8.8</span> אינסוף כגבול וגבול באינסוף</a>
   <ul class="collapse">
   <li><a href="#גבולות-לא-סופיים-של-פונקציות" id="toc-גבולות-לא-סופיים-של-פונקציות" class="nav-link" data-scroll-target="#גבולות-לא-סופיים-של-פונקציות">גבולות לא סופיים של פונקציות</a></li>
   <li><a href="#האחד-מבל-האפשרויות-של-גבולות-לא-סופיים" id="toc-האחד-מבל-האפשרויות-של-גבולות-לא-סופיים" class="nav-link" data-scroll-target="#האחד-מבל-האפשרויות-של-גבולות-לא-סופיים">האחד מבל האפשרויות של גבולות לא סופיים</a></li>
@@ -583,8 +595,8 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-הגבול-של-פונקציה-דוגמה" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-הגבול-של-פונקציה-דוגמה">הגדרת הגבול של פונקציה + דוגמה</h2>
+<section id="הגדרת-הגבול-של-פונקציה-דוגמה" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="הגדרת-הגבול-של-פונקציה-דוגמה"><span class="header-section-number">8.1</span> הגדרת הגבול של פונקציה + דוגמה</h2>
 <!-- מקור: הרצאה 10 -->
 <p>אם <span class="math inline">\(f(x)\)</span> פונקציה שמוגדרת בסביבה של <span class="math inline">\(x_0\)</span>, ואם <span class="math inline">\(L \in R\)</span></p>
 <p>אז נגיד כי הגבול של <span class="math inline">\(f(x)\)</span> בנקודה <span class="math inline">\(x_0\)</span> שווה ל-L, ונסמן זאת ע”י <span class="math inline">\(\lim_{x \to x_0} f(x) = L\)</span></p>
@@ -633,8 +645,8 @@ window.Quarto = {
 <p>לכן, לסיכום נבחר <span class="math inline">\(0 &lt; \delta &lt; min\{1, \frac{\varepsilon}{5}\}\)</span></p>
 <!-- מקור: הרצאה 11 -->
 </section>
-<section id="משפט-היינה" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-היינה">משפט היינה</h2>
+<section id="משפט-היינה" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="משפט-היינה"><span class="header-section-number">8.2</span> משפט היינה</h2>
 <section id="משפט-היינה-1" class="level3">
 <h3 class="anchored" data-anchor-id="משפט-היינה-1">משפט היינה</h3>
 <p>אם <span class="math inline">\(f(x)\)</span> מוגדרת בסביבה נקובה של <span class="math inline">\(x_0\)</span>, אז <span class="math inline">\(\lim_{x \to x_0} f(x) = L\)</span> אם</p>
@@ -676,8 +688,8 @@ window.Quarto = {
 <p>ולכן <span class="math display">\[\lim_{x \to 0} \sin\left(\frac{1}{x}\right)\]</span> לא קיים</p>
 </section>
 </section>
-<section id="אריתמטיקה-של-גבולות" class="level2">
-<h2 class="anchored" data-anchor-id="אריתמטיקה-של-גבולות">אריתמטיקה של גבולות</h2>
+<section id="אריתמטיקה-של-גבולות" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="אריתמטיקה-של-גבולות"><span class="header-section-number">8.3</span> אריתמטיקה של גבולות</h2>
 <section id="אריתמטיקה-של-גבולות-1" class="level3">
 <h3 class="anchored" data-anchor-id="אריתמטיקה-של-גבולות-1">אריתמטיקה של גבולות</h3>
 <p>אם <span class="math inline">\(f, g\)</span> פונקציות שמוגדרות בסביבה נקובה של <span class="math inline">\(x_0\)</span></p>
@@ -733,8 +745,8 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="משפט-הסנדוויץ" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-הסנדוויץ">משפט הסנדוויץ׳</h2>
+<section id="משפט-הסנדוויץ" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="משפט-הסנדוויץ"><span class="header-section-number">8.4</span> משפט הסנדוויץ׳</h2>
 <section id="משפט-כלל-הסנדויץ" class="level3">
 <h3 class="anchored" data-anchor-id="משפט-כלל-הסנדויץ">משפט כלל הסנדויץ’</h3>
 <p>אם <span class="math inline">\(f, g, h\)</span> פונקציות מוגדרות בסביבת הנקודה של <span class="math inline">\(x_0\)</span></p>
@@ -785,8 +797,8 @@ window.Quarto = {
 <p>ולכן מ”אפסה כפול חסומה”, נסיק: <span class="math display">\[\lim_{x \to 0} x \sin\left(\frac{1}{x}\right) = \boxed{0}\]</span></p>
 </section>
 </section>
-<section id="גבולות-חד-צדדיים" class="level2">
-<h2 class="anchored" data-anchor-id="גבולות-חד-צדדיים">גבולות חד-צדדיים</h2>
+<section id="גבולות-חד-צדדיים" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="גבולות-חד-צדדיים"><span class="header-section-number">8.5</span> גבולות חד-צדדיים</h2>
 <p>אם <span class="math inline">\(f\)</span> מוגדרת בסביבה מנוקבת ימנית של <span class="math inline">\(x_0\)</span> , כלומר ב- <span class="math inline">\((x_0 \,,\, x_0 + \square)\)</span></p>
 <p>אז נגיד כי <span class="math display">\[\lim_{x \to x_0^+} f(x) = L\]</span> אם לכל <span class="math inline">\(\varepsilon &gt; 0\)</span> קיימת <span class="math inline">\(\delta &gt; 0\)</span> ,</p>
 <p>כך שלכל <span class="math inline">\(x\)</span> המקיים: <span class="math inline">\(0 &lt; x - x_0 &lt; \delta\)</span> . כלומר: <span class="math inline">\(x_0 &lt; x &lt; x_0 + \delta\)</span> ,</p>
@@ -834,8 +846,9 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="prp-onesided-limit" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 8.1</strong></span> אם <span class="math inline">\(f\)</span> מוגדרת בסביבה מנוקבת של <span class="math inline">\(x_0\)</span> , אז <span class="math display">\[\lim_{x \to x_0} f(x)\]</span> קיים ושווה <span class="math inline">\(L\)</span></p>
+<div id="box-prp-onesided-limit" class="thmbox thmbox-proposition">
+<p><strong>טענה 8.5.1.</strong></p>
+<p>אם <span class="math inline">\(f\)</span> מוגדרת בסביבה מנוקבת של <span class="math inline">\(x_0\)</span> , אז <span class="math display">\[\lim_{x \to x_0} f(x)\]</span> קיים ושווה <span class="math inline">\(L\)</span></p>
 <p><span class="math inline">\(\Updownarrow\)</span></p>
 <p><span class="math display">\[\lim_{x \to x_0^+} f(x) = L = \lim_{x \to x_0^-} f(x)\]</span></p>
 </div>
@@ -871,8 +884,8 @@ window.Quarto = {
 <p>כלומר: <span class="math display">\[\boxed{A = 2}\]</span></p>
 </section>
 </section>
-<section id="הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" class="level2">
-<h2 class="anchored" data-anchor-id="הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2">הגבולות ה״מופלאים״: <span class="math inline">\(\frac{\sin x}{x}\)</span>, <span class="math inline">\(\frac{1-\cos x}{x^2}\)</span></h2>
+<section id="הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="הגבולות-המופלאים-fracsin-xx-frac1-cos-xx2"><span class="header-section-number">8.6</span> הגבולות ה״מופלאים״: <span class="math inline">\(\frac{\sin x}{x}\)</span>, <span class="math inline">\(\frac{1-\cos x}{x^2}\)</span></h2>
 <p>ניתן להשתמש בכל הגבולות הבאים:</p>
 <p><span class="math display">\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1 \qquad (1)\]</span></p>
 <p><span class="math display">\[\lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2} \qquad (2)\]</span></p>
@@ -881,8 +894,8 @@ window.Quarto = {
 <p><span class="math display">\[\lim_{x \to 0} \frac{a^x - 1}{x} = \ln(a) \qquad (5)\]</span> (<span class="math inline">\(a &gt; 0\)</span> קבוע)</p>
 <p><span class="math display">\[\lim_{x \to 0} \frac{(1 + x)^a - 1}{x} = a \qquad (6)\]</span> (<span class="math inline">\(a\)</span> קבוע)</p>
 </section>
-<section id="גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" class="level2">
-<h2 class="anchored" data-anchor-id="גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x">גבולות מופלאים נוספים: <span class="math inline">\((1+x)^{1/x}\)</span>, <span class="math inline">\(\frac{\ln(1+x)}{x}\)</span>, <span class="math inline">\(\frac{e^x-1}{x}\)</span>, <span class="math inline">\(\frac{(1+x)^a-1}{x}\)</span></h2>
+<section id="גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="גבולות-מופלאים-נוספים-1x1x-fracln1xx-fracex-1x-frac1xa-1x"><span class="header-section-number">8.7</span> גבולות מופלאים נוספים: <span class="math inline">\((1+x)^{1/x}\)</span>, <span class="math inline">\(\frac{\ln(1+x)}{x}\)</span>, <span class="math inline">\(\frac{e^x-1}{x}\)</span>, <span class="math inline">\(\frac{(1+x)^a-1}{x}\)</span></h2>
 <section id="הסבר-ל-3" class="level3">
 <h3 class="anchored" data-anchor-id="הסבר-ל-3">הסבר ל-(3)</h3>
 <p>ממשפט אוילר: <span class="math display">\[\lim_{n \to \infty} \underbrace{(1 + a_n)^{\frac{1}{a_n}}}_{f(a_n)} = \boxed{e}\]</span> אם <span class="math inline">\(a_n \to 0\)</span></p>
@@ -937,8 +950,8 @@ window.Quarto = {
 <!-- בדיקה: הסימון "נבול מופלא" כתוב כך במקור (כנראה "גבול מופלא") -->
 </section>
 </section>
-<section id="אינסוף-כגבול-וגבול-באינסוף" class="level2">
-<h2 class="anchored" data-anchor-id="אינסוף-כגבול-וגבול-באינסוף">אינסוף כגבול וגבול באינסוף</h2>
+<section id="אינסוף-כגבול-וגבול-באינסוף" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="אינסוף-כגבול-וגבול-באינסוף"><span class="header-section-number">8.8</span> אינסוף כגבול וגבול באינסוף</h2>
 <p><span class="math display">\[\lim_{x \to x_0} f(x) = \infty \qquad (1)\]</span></p>
 <p>אם לכל <span class="math inline">\(M &gt; 0\)</span> , קיימת <span class="math inline">\(\delta &gt; 0\)</span> , כך שלכל <span class="math inline">\(x\)</span> עבורו <span class="math inline">\(0 &lt; |x - x_0| &lt; \delta\)</span> מתקיים <span class="math inline">\(f(x) &gt; M\)</span> .</p>
 <p>לדוגמא: <span class="math display">\[f(x) = \frac{1}{x^2}\]</span></p>

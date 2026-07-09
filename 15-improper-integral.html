@@ -72,9 +72,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -156,6 +153,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -513,10 +525,10 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" id="toc-הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="nav-link active" data-scroll-target="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן">הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</a></li>
-  <li><a href="#דוגמאות-לחישוב-אינטגרל-מוכלל" id="toc-דוגמאות-לחישוב-אינטגרל-מוכלל" class="nav-link" data-scroll-target="#דוגמאות-לחישוב-אינטגרל-מוכלל">דוגמאות לחישוב אינטגרל מוכלל</a></li>
-  <li><a href="#מבחן-ההשוואה-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-לפונקציות-אי-שליליות">מבחן ההשוואה לפונקציות אי-שליליות</a></li>
-  <li><a href="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות">מבחן ההשוואה הגבולית לפונקציות אי-שליליות</a></li>
+  <li><a href="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" id="toc-הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="nav-link active" data-scroll-target="#הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן"><span class="header-section-number">15.1</span> הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</a></li>
+  <li><a href="#דוגמאות-לחישוב-אינטגרל-מוכלל" id="toc-דוגמאות-לחישוב-אינטגרל-מוכלל" class="nav-link" data-scroll-target="#דוגמאות-לחישוב-אינטגרל-מוכלל"><span class="header-section-number">15.2</span> דוגמאות לחישוב אינטגרל מוכלל</a></li>
+  <li><a href="#מבחן-ההשוואה-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-לפונקציות-אי-שליליות"><span class="header-section-number">15.3</span> מבחן ההשוואה לפונקציות אי-שליליות</a></li>
+  <li><a href="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" id="toc-מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="nav-link" data-scroll-target="#מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות"><span class="header-section-number">15.4</span> מבחן ההשוואה הגבולית לפונקציות אי-שליליות</a></li>
   </ul>
 </nav>
     </div>
@@ -542,26 +554,26 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן">הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</h2>
+<section id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="הגדרת-האינטגרל-המוכלל-מהסוג-הראשון-בקרן"><span class="header-section-number">15.1</span> הגדרת האינטגרל המוכלל (מהסוג הראשון — בקרן)</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="דוגמאות-לחישוב-אינטגרל-מוכלל" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמאות-לחישוב-אינטגרל-מוכלל">דוגמאות לחישוב אינטגרל מוכלל</h2>
+<section id="דוגמאות-לחישוב-אינטגרל-מוכלל" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="דוגמאות-לחישוב-אינטגרל-מוכלל"><span class="header-section-number">15.2</span> דוגמאות לחישוב אינטגרל מוכלל</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="מבחן-ההשוואה-לפונקציות-אי-שליליות" class="level2">
-<h2 class="anchored" data-anchor-id="מבחן-ההשוואה-לפונקציות-אי-שליליות">מבחן ההשוואה לפונקציות אי-שליליות</h2>
+<section id="מבחן-ההשוואה-לפונקציות-אי-שליליות" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="מבחן-ההשוואה-לפונקציות-אי-שליליות"><span class="header-section-number">15.3</span> מבחן ההשוואה לפונקציות אי-שליליות</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="level2">
-<h2 class="anchored" data-anchor-id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות">מבחן ההשוואה הגבולית לפונקציות אי-שליליות</h2>
+<section id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="מבחן-ההשוואה-הגבולית-לפונקציות-אי-שליליות"><span class="header-section-number">15.4</span> מבחן ההשוואה הגבולית לפונקציות אי-שליליות</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>

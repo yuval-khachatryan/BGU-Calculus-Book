@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,34 +526,34 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" id="toc-חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" class="nav-link active" data-scroll-target="#חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות">חלוקה של קטע, עובי החלוקה ובחירת נקודות</a></li>
-  <li><a href="#סכום-רימן" id="toc-סכום-רימן" class="nav-link" data-scroll-target="#סכום-רימן">סכום רימן</a>
+  <li><a href="#חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" id="toc-חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" class="nav-link active" data-scroll-target="#חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות"><span class="header-section-number">14.1</span> חלוקה של קטע, עובי החלוקה ובחירת נקודות</a></li>
+  <li><a href="#סכום-רימן" id="toc-סכום-רימן" class="nav-link" data-scroll-target="#סכום-רימן"><span class="header-section-number">14.2</span> סכום רימן</a>
   <ul class="collapse">
   <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא</a></li>
   <li><a href="#פיתוח-האינטואיציה" id="toc-פיתוח-האינטואיציה" class="nav-link" data-scroll-target="#פיתוח-האינטואיציה">פיתוח האינטואיציה</a></li>
   </ul></li>
-  <li><a href="#פונקציה-אינטגרבילית-בקטע" id="toc-פונקציה-אינטגרבילית-בקטע" class="nav-link" data-scroll-target="#פונקציה-אינטגרבילית-בקטע">פונקציה אינטגרבילית בקטע</a>
+  <li><a href="#פונקציה-אינטגרבילית-בקטע" id="toc-פונקציה-אינטגרבילית-בקטע" class="nav-link" data-scroll-target="#פונקציה-אינטגרבילית-בקטע"><span class="header-section-number">14.3</span> פונקציה אינטגרבילית בקטע</a>
   <ul class="collapse">
   <li><a href="#מהסכומים-והתחומים" id="toc-מהסכומים-והתחומים" class="nav-link" data-scroll-target="#מהסכומים-והתחומים">מהסכומים והתחומים</a></li>
   </ul></li>
-  <li><a href="#פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" id="toc-פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" class="nav-link" data-scroll-target="#פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית">פונקציית דיריכלה כפונקציה שאינה אינטגרבילית</a>
+  <li><a href="#פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" id="toc-פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" class="nav-link" data-scroll-target="#פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית"><span class="header-section-number">14.4</span> פונקציית דיריכלה כפונקציה שאינה אינטגרבילית</a>
   <ul class="collapse">
   <li><a href="#דוגמא-1" id="toc-דוגמא-1" class="nav-link" data-scroll-target="#דוגמא-1">דוגמא</a></li>
   </ul></li>
-  <li><a href="#משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" id="toc-משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית">משפט: כל פונקציה רציפה בקטע סגור אינטגרבילית</a>
+  <li><a href="#משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" id="toc-משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית"><span class="header-section-number">14.5</span> משפט: כל פונקציה רציפה בקטע סגור אינטגרבילית</a>
   <ul class="collapse">
   <li><a href="#משפט" id="toc-משפט" class="nav-link" data-scroll-target="#משפט">משפט</a></li>
   </ul></li>
-  <li><a href="#משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" id="toc-משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית">משפט: כל פונקציה מונוטונית בקטע סגור אינטגרבילית</a></li>
-  <li><a href="#משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" id="toc-משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית">משפט: פונקציה חסומה עם מספר סופי של נקודות אי-רציפות אינטגרבילית</a></li>
-  <li><a href="#המשפט-היסודי-של-החשבון-האינפיניטסימלי" id="toc-המשפט-היסודי-של-החשבון-האינפיניטסימלי" class="nav-link" data-scroll-target="#המשפט-היסודי-של-החשבון-האינפיניטסימלי">המשפט היסודי של החשבון האינפיניטסימלי</a></li>
-  <li><a href="#נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" id="toc-נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" class="nav-link" data-scroll-target="#נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל">נוסחת ניוטון-לייבניץ ומסקנות לגבי נגזרת של אינטגרל</a>
+  <li><a href="#משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" id="toc-משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית"><span class="header-section-number">14.6</span> משפט: כל פונקציה מונוטונית בקטע סגור אינטגרבילית</a></li>
+  <li><a href="#משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" id="toc-משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" class="nav-link" data-scroll-target="#משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית"><span class="header-section-number">14.7</span> משפט: פונקציה חסומה עם מספר סופי של נקודות אי-רציפות אינטגרבילית</a></li>
+  <li><a href="#המשפט-היסודי-של-החשבון-האינפיניטסימלי" id="toc-המשפט-היסודי-של-החשבון-האינפיניטסימלי" class="nav-link" data-scroll-target="#המשפט-היסודי-של-החשבון-האינפיניטסימלי"><span class="header-section-number">14.8</span> המשפט היסודי של החשבון האינפיניטסימלי</a></li>
+  <li><a href="#נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" id="toc-נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" class="nav-link" data-scroll-target="#נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל"><span class="header-section-number">14.9</span> נוסחת ניוטון-לייבניץ ומסקנות לגבי נגזרת של אינטגרל</a>
   <ul class="collapse">
   <li><a href="#הוכחת-המשפט" id="toc-הוכחת-המשפט" class="nav-link" data-scroll-target="#הוכחת-המשפט">הוכחת המשפט</a></li>
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות</a></li>
   </ul></li>
-  <li><a href="#דוגמה-גבול-עם-אינטגרל" id="toc-דוגמה-גבול-עם-אינטגרל" class="nav-link" data-scroll-target="#דוגמה-גבול-עם-אינטגרל">דוגמה: גבול עם אינטגרל</a></li>
-  <li><a href="#שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" id="toc-שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" class="nav-link" data-scroll-target="#שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה">שימושים: שטח, נפח גוף סיבוב ואורך עקומה</a></li>
+  <li><a href="#דוגמה-גבול-עם-אינטגרל" id="toc-דוגמה-גבול-עם-אינטגרל" class="nav-link" data-scroll-target="#דוגמה-גבול-עם-אינטגרל"><span class="header-section-number">14.10</span> דוגמה: גבול עם אינטגרל</a></li>
+  <li><a href="#שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" id="toc-שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" class="nav-link" data-scroll-target="#שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה"><span class="header-section-number">14.11</span> שימושים: שטח, נפח גוף סיבוב ואורך עקומה</a></li>
   </ul>
 </nav>
     </div>
@@ -567,8 +579,8 @@ window.Quarto = {
 </header>
 
 
-<section id="חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" class="level2">
-<h2 class="anchored" data-anchor-id="חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות">חלוקה של קטע, עובי החלוקה ובחירת נקודות</h2>
+<section id="חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="חלוקה-של-קטע-עובי-החלוקה-ובחירת-נקודות"><span class="header-section-number">14.1</span> חלוקה של קטע, עובי החלוקה ובחירת נקודות</h2>
 <p>אינטגרל מהצורה: <span class="math display">\[\int_b^a f(x)\,dx\]</span></p>
 <div style="text-align:center">
 <p>תרשים: השטח הכלוא בין גרף <span class="math inline">\(f\)</span> לציר ה-<span class="math inline">\(x\)</span> בקטע <span class="math inline">\([a,b]\)</span></p>
@@ -585,8 +597,8 @@ window.Quarto = {
 </div>
 <p>השטח שכלוא בין גרף הפונקציה של <span class="math inline">\(f\)</span>, לציר ה-<span class="math inline">\(x\)</span>, כאשר <span class="math inline">\(a \le x \le b\)</span>.</p>
 </section>
-<section id="סכום-רימן" class="level2">
-<h2 class="anchored" data-anchor-id="סכום-רימן">סכום רימן</h2>
+<section id="סכום-רימן" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="סכום-רימן"><span class="header-section-number">14.2</span> סכום רימן</h2>
 <section id="דוגמא" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמא">דוגמא</h3>
 <div style="text-align:center">
@@ -624,8 +636,8 @@ window.Quarto = {
 <p>(שטח מלבן)</p>
 </section>
 </section>
-<section id="פונקציה-אינטגרבילית-בקטע" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציה-אינטגרבילית-בקטע">פונקציה אינטגרבילית בקטע</h2>
+<section id="פונקציה-אינטגרבילית-בקטע" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="פונקציה-אינטגרבילית-בקטע"><span class="header-section-number">14.3</span> פונקציה אינטגרבילית בקטע</h2>
 <section id="מהסכומים-והתחומים" class="level3">
 <h3 class="anchored" data-anchor-id="מהסכומים-והתחומים">מהסכומים והתחומים</h3>
 <p>שטחי <span class="math inline">\(n\)</span> המלבנים יתקרבו לשטח שרצינו.</p>
@@ -652,8 +664,8 @@ window.Quarto = {
 <p>עבור <span class="math inline">\(I \in \mathbb{R}\)</span> (מספר) ואז <span class="math display">\[I = \int_a^b f(x)\,dx\]</span></p>
 </section>
 </section>
-<section id="פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית">פונקציית דיריכלה כפונקציה שאינה אינטגרבילית</h2>
+<section id="פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="פונקציית-דיריכלה-כפונקציה-שאינה-אינטגרבילית"><span class="header-section-number">14.4</span> פונקציית דיריכלה כפונקציה שאינה אינטגרבילית</h2>
 <section id="דוגמא-1" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמא-1">דוגמא</h3>
 <div style="text-align:center">
@@ -674,21 +686,21 @@ window.Quarto = {
 <!-- מקור: הרצאה 26 -->
 </section>
 </section>
-<section id="משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית">משפט: כל פונקציה רציפה בקטע סגור אינטגרבילית</h2>
+<section id="משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="משפט-כל-פונקציה-רציפה-בקטע-סגור-אינטגרבילית"><span class="header-section-number">14.5</span> משפט: כל פונקציה רציפה בקטע סגור אינטגרבילית</h2>
 <section id="משפט" class="level3">
 <h3 class="anchored" data-anchor-id="משפט">משפט</h3>
 <p>כל פונקציה <span class="math inline">\(f\)</span> שהיא רציפה ב- <span class="math inline">\([a,b]\)</span>, היא אינטגרבילית ב- <span class="math inline">\([a,b]\)</span>.</p>
 </section>
 </section>
-<section id="משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית">משפט: כל פונקציה מונוטונית בקטע סגור אינטגרבילית</h2>
+<section id="משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="משפט-כל-פונקציה-מונוטונית-בקטע-סגור-אינטגרבילית"><span class="header-section-number">14.6</span> משפט: כל פונקציה מונוטונית בקטע סגור אינטגרבילית</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית">משפט: פונקציה חסומה עם מספר סופי של נקודות אי-רציפות אינטגרבילית</h2>
+<section id="משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="משפט-פונקציה-חסומה-עם-מספר-סופי-של-נקודות-אי-רציפות-אינטגרבילית"><span class="header-section-number">14.7</span> משפט: פונקציה חסומה עם מספר סופי של נקודות אי-רציפות אינטגרבילית</h2>
 <div style="text-align:center">
 <p>תרשים: השטח המוצלל מתחת ל-<span class="math inline">\(f\)</span> בקטע <span class="math inline">\([a,b]\)</span>, המייצג את <span class="math inline">\(\int_a^b f\)</span></p>
 </div>
@@ -723,8 +735,8 @@ window.Quarto = {
 <p><span class="math display">\[\int_{-2}^{3} |x|\,dx = \int_{-2}^{-1} |x|\,dx + \int_{-1}^{0} |x|\,dx + \int_{0}^{1} |x|\,dx + \int_{1}^{2} |x|\,dx + \int_{2}^{3} |x|\,dx =\]</span></p>
 <p><span class="math display">\[= \int_{-2}^{-1} (-2)\,dx + \int_{-1}^{0} (-1)\,dx + \int_{0}^{1} 0\,dx + \int_{1}^{2} 1\,dx + \int_{2}^{3} 2\,dx = -2 \cdot 1 - .. = 0\]</span></p>
 </section>
-<section id="המשפט-היסודי-של-החשבון-האינפיניטסימלי" class="level2">
-<h2 class="anchored" data-anchor-id="המשפט-היסודי-של-החשבון-האינפיניטסימלי">המשפט היסודי של החשבון האינפיניטסימלי</h2>
+<section id="המשפט-היסודי-של-החשבון-האינפיניטסימלי" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="המשפט-היסודי-של-החשבון-האינפיניטסימלי"><span class="header-section-number">14.8</span> המשפט היסודי של החשבון האינפיניטסימלי</h2>
 <p><span class="math display">\[F(x) = \int_{a}^{x} f(t)dt : \text{השטח שמצטבר מתחת לגרף } f \text{ בין } a \text{ ל-x.}\]</span></p>
 <p>(פונקציה של השטח הצבור)</p>
 <p>זו פונקציה של <span class="math inline">\(x\)</span> כאשר <span class="math inline">\(a \leq x \leq b\)</span></p>
@@ -771,8 +783,8 @@ window.Quarto = {
 <p><span class="math display">\[\downarrow\]</span></p>
 <p><span class="math display">\[g'(2) = F'(4) \cdot 4 = \frac{\sin(4)}{4} \cdot 4 = \sin(4)\]</span></p>
 </section>
-<section id="נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" class="level2">
-<h2 class="anchored" data-anchor-id="נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל">נוסחת ניוטון-לייבניץ ומסקנות לגבי נגזרת של אינטגרל</h2>
+<section id="נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="נוסחת-ניוטון-לייבניץ-ומסקנות-לגבי-נגזרת-של-אינטגרל"><span class="header-section-number">14.9</span> נוסחת ניוטון-לייבניץ ומסקנות לגבי נגזרת של אינטגרל</h2>
 <p>אם ל- <span class="math inline">\(f(x)\)</span> יש קדומה <span class="math inline">\(F(x)\)</span> ב- <span class="math inline">\([a,b]\)</span>, אז</p>
 <p><span class="math display">\[\int_a^b f(x)dx = F(b) - F(a)\]</span></p>
 <section id="הוכחת-המשפט" class="level3">
@@ -799,7 +811,7 @@ window.Quarto = {
 <p><span class="math display">\[= \frac{1}{n}[F'(t_n) + \dots + F'(t_2) + F'(t_1)] = \frac{1}{n}[f(t_1) + \dots + f(t_n)] = \text{סכום רימן}\]</span></p>
 <!-- בדיקה: בצד שמאל כתוב "סכום רימן (כאשר n שאף לאינסוף)" -->
 <p>כך חיברנו בין מציאת פונקציה קדומה של <span class="math inline">\(f\)</span>, לבין החישוב של <span class="math inline">\(\int_a^b f(x)dx\)</span>.</p>
-<div id="rem-hagdara" class="definition proof remark">
+<div id="rem-hagdara" class="thmdef proof remark">
 <p><span class="proof-title"><em>הערה 14.1</em>. </span><strong>הערה:</strong></p>
 <p>האינטגרל המסוים מייצג “שטח נטו”, כלומר שטחים שנמצאים מעל ציר ה-x יתווספו בסימן חיובי, ושטחים שנמצאים מתחת לציר ה-x יוחסרו (סימן שלילי). זאת בניגוד לחישוב שטח גיאומטרי כולל, שבו היינו מחברים את הערכים המוחלטים של כל האזורים.</p>
 </div>
@@ -885,7 +897,7 @@ window.Quarto = {
 <p><span class="math display">\[= (-\cos(1) + 2\sin(1) + 2\cos(1)) - (-\cos(-1) - 2\sin(-1) + 2\cos(-1)) = \boxed{0}\]</span></p>
 <!-- בדיקה: מסומן "זוגיות" עם: $\cos(-\alpha) = \cos(\alpha)$ , $\sin(-\alpha) = -\sin(\alpha)$ -->
 <p>הפונקציה <span class="math inline">\(x^2 \sin(x)\)</span> אי-זוגית</p>
-<div id="rem-zugiut" class="definition proof remark">
+<div id="rem-zugiut" class="thmdef proof remark">
 <p><span class="proof-title"><em>הערה 14.2</em>. </span><strong>הערה:</strong></p>
 <div style="text-align:center">
 <p>תרשים: פונקציה זוגית (סימטרית, השטחים מצטברים) מול פונקציה אי-זוגית (השטחים מתבטלים)</p>
@@ -933,14 +945,14 @@ window.Quarto = {
 <!-- מקור: הרצאה 27 -->
 </section>
 </section>
-<section id="דוגמה-גבול-עם-אינטגרל" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמה-גבול-עם-אינטגרל">דוגמה: גבול עם אינטגרל</h2>
+<section id="דוגמה-גבול-עם-אינטגרל" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="דוגמה-גבול-עם-אינטגרל"><span class="header-section-number">14.10</span> דוגמה: גבול עם אינטגרל</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" class="level2">
-<h2 class="anchored" data-anchor-id="שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה">שימושים: שטח, נפח גוף סיבוב ואורך עקומה</h2>
+<section id="שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה" class="level2" data-number="14.11">
+<h2 data-number="14.11" class="anchored" data-anchor-id="שימושים-שטח-נפח-גוף-סיבוב-ואורך-עקומה"><span class="header-section-number">14.11</span> שימושים: שטח, נפח גוף סיבוב ואורך עקומה</h2>
 <ol start="5" type="1">
 <li>חשבו את השטח של חצי מעגל סביב 0 עם רדיוס 1.</li>
 </ol>

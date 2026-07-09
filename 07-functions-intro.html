@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,23 +526,23 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#מושג-הפונקציה" id="toc-מושג-הפונקציה" class="nav-link active" data-scroll-target="#מושג-הפונקציה">מושג הפונקציה</a>
+  <li><a href="#מושג-הפונקציה" id="toc-מושג-הפונקציה" class="nav-link active" data-scroll-target="#מושג-הפונקציה"><span class="header-section-number">7.1</span> מושג הפונקציה</a>
   <ul class="collapse">
   <li><a href="#חיבור" id="toc-חיבור" class="nav-link" data-scroll-target="#חיבור">חיבור</a></li>
   <li><a href="#חיסור" id="toc-חיסור" class="nav-link" data-scroll-target="#חיסור">חיסור</a></li>
   <li><a href="#כפל" id="toc-כפל" class="nav-link" data-scroll-target="#כפל">כפל</a></li>
   <li><a href="#חילוק" id="toc-חילוק" class="nav-link" data-scroll-target="#חילוק">חילוק</a></li>
   </ul></li>
-  <li><a href="#תחום-טווח-ותמונה-של-פונקציה" id="toc-תחום-טווח-ותמונה-של-פונקציה" class="nav-link" data-scroll-target="#תחום-טווח-ותמונה-של-פונקציה">תחום, טווח ותמונה של פונקציה</a></li>
-  <li><a href="#גרפים" id="toc-גרפים" class="nav-link" data-scroll-target="#גרפים">גרפים</a></li>
-  <li><a href="#תכונות-של-פונקציות-מונוטוניות" id="toc-תכונות-של-פונקציות-מונוטוניות" class="nav-link" data-scroll-target="#תכונות-של-פונקציות-מונוטוניות">תכונות של פונקציות: מונוטוניות</a></li>
-  <li><a href="#פונקציות-זוגיות-ואי-זוגיות" id="toc-פונקציות-זוגיות-ואי-זוגיות" class="nav-link" data-scroll-target="#פונקציות-זוגיות-ואי-זוגיות">פונקציות זוגיות ואי-זוגיות</a></li>
-  <li><a href="#פונקציות-מחזוריות" id="toc-פונקציות-מחזוריות" class="nav-link" data-scroll-target="#פונקציות-מחזוריות">פונקציות מחזוריות</a></li>
-  <li><a href="#הרכבת-פונקציות" id="toc-הרכבת-פונקציות" class="nav-link" data-scroll-target="#הרכבת-פונקציות">הרכבת פונקציות</a>
+  <li><a href="#תחום-טווח-ותמונה-של-פונקציה" id="toc-תחום-טווח-ותמונה-של-פונקציה" class="nav-link" data-scroll-target="#תחום-טווח-ותמונה-של-פונקציה"><span class="header-section-number">7.2</span> תחום, טווח ותמונה של פונקציה</a></li>
+  <li><a href="#גרפים" id="toc-גרפים" class="nav-link" data-scroll-target="#גרפים"><span class="header-section-number">7.3</span> גרפים</a></li>
+  <li><a href="#תכונות-של-פונקציות-מונוטוניות" id="toc-תכונות-של-פונקציות-מונוטוניות" class="nav-link" data-scroll-target="#תכונות-של-פונקציות-מונוטוניות"><span class="header-section-number">7.4</span> תכונות של פונקציות: מונוטוניות</a></li>
+  <li><a href="#פונקציות-זוגיות-ואי-זוגיות" id="toc-פונקציות-זוגיות-ואי-זוגיות" class="nav-link" data-scroll-target="#פונקציות-זוגיות-ואי-זוגיות"><span class="header-section-number">7.5</span> פונקציות זוגיות ואי-זוגיות</a></li>
+  <li><a href="#פונקציות-מחזוריות" id="toc-פונקציות-מחזוריות" class="nav-link" data-scroll-target="#פונקציות-מחזוריות"><span class="header-section-number">7.6</span> פונקציות מחזוריות</a></li>
+  <li><a href="#הרכבת-פונקציות" id="toc-הרכבת-פונקציות" class="nav-link" data-scroll-target="#הרכבת-פונקציות"><span class="header-section-number">7.7</span> הרכבת פונקציות</a>
   <ul class="collapse">
   <li><a href="#הרכבת-פונקציות-1" id="toc-הרכבת-פונקציות-1" class="nav-link" data-scroll-target="#הרכבת-פונקציות-1">הרכבת פונקציות</a></li>
   </ul></li>
-  <li><a href="#פונקציות-הפוכות" id="toc-פונקציות-הפוכות" class="nav-link" data-scroll-target="#פונקציות-הפוכות">פונקציות הפוכות</a>
+  <li><a href="#פונקציות-הפוכות" id="toc-פונקציות-הפוכות" class="nav-link" data-scroll-target="#פונקציות-הפוכות"><span class="header-section-number">7.8</span> פונקציות הפוכות</a>
   <ul class="collapse">
   <li><a href="#פונקציה-הפיכה-והופכית" id="toc-פונקציה-הפיכה-והופכית" class="nav-link" data-scroll-target="#פונקציה-הפיכה-והופכית">פונקציה הפיכה והופכית</a></li>
   <li><a href="#פונקציות-הפוכות-מוכרות" id="toc-פונקציות-הפוכות-מוכרות" class="nav-link" data-scroll-target="#פונקציות-הפוכות-מוכרות">פונקציות הפוכות מוכרות</a></li>
@@ -560,10 +572,11 @@ window.Quarto = {
 </header>
 
 
-<section id="מושג-הפונקציה" class="level2">
-<h2 class="anchored" data-anchor-id="מושג-הפונקציה">מושג הפונקציה</h2>
-<div id="def-funkcia" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 7.1</strong></span> פונקציה מ-<span class="math inline">\(A\)</span> ל-<span class="math inline">\(B\)</span> היא העתקה שמתאימה לכל איבר ב-<span class="math inline">\(A\)</span>, איבר ב-<span class="math inline">\(B\)</span>.</p>
+<section id="מושג-הפונקציה" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="מושג-הפונקציה"><span class="header-section-number">7.1</span> מושג הפונקציה</h2>
+<div id="box-def-funkcia" class="thmbox thmbox-definition">
+<p><strong>הגדרה 7.1.1.</strong></p>
+<p>פונקציה מ-<span class="math inline">\(A\)</span> ל-<span class="math inline">\(B\)</span> היא העתקה שמתאימה לכל איבר ב-<span class="math inline">\(A\)</span>, איבר ב-<span class="math inline">\(B\)</span>.</p>
 <p>נסמן <span class="math inline">\(f : A \to B\)</span>, ל-<span class="math inline">\(A\)</span> נקרא <u>התחום</u> שלה, ל-<span class="math inline">\(B\)</span> נקרא <u>הטווח</u> שלה.</p>
 </div>
 <p>דוגמאות:</p>
@@ -573,14 +586,16 @@ window.Quarto = {
 <li><p>הפונקציה <span class="math inline">\(f(x) = \lfloor x \rfloor\)</span> שנקראת פונקציית הערך השלם,</p>
 <p>מקיימת <span class="math inline">\(f : \mathbb{R} \to \mathbb{R}\)</span> שניתן לכתוב גם כך: <span class="math inline">\(f : \mathbb{R} \to \mathbb{Z}\)</span></p></li>
 </ul>
-<div id="def-tmuna" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 7.2</strong></span> התמונה של <span class="math inline">\(f : A \to B\)</span> מוגדרת על ידי:</p>
+<div id="box-def-tmuna" class="thmbox thmbox-definition">
+<p><strong>הגדרה 7.1.2.</strong></p>
+<p>התמונה של <span class="math inline">\(f : A \to B\)</span> מוגדרת על ידי:</p>
 <p><span class="math display">\[I_m(f) = (\{f(x) | x \in A\} = \{y \in B | f(x) = y\]</span> עבור <span class="math inline">\(x \in A\)</span> קיים <span class="math inline">\(\}\)</span></p>
 <p>כלומר, <span class="math inline">\(I_m(f)\)</span> היא קבוצת כל המספרים ש-<span class="math inline">\(f\)</span> מניעה אליהם.</p>
 <p>תמיד מתקיים: <span class="math inline">\(I_m(f) \subseteq B\)</span></p>
 </div>
-<div id="exm-tmuna" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 7.1</strong></span> <span class="math inline">\(f : \mathbb{R} \to \mathbb{R}\)</span> שנתונה על ידי <span class="math inline">\(f(x) = x^2\)</span>, לכן <span class="math inline">\(I_m(f) = [0, \infty)\)</span></p>
+<div id="box-exm-tmuna" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.3.</strong></p>
+<p><span class="math inline">\(f : \mathbb{R} \to \mathbb{R}\)</span> שנתונה על ידי <span class="math inline">\(f(x) = x^2\)</span>, לכן <span class="math inline">\(I_m(f) = [0, \infty)\)</span></p>
 <p>(כל המספרים אינם שליליים)</p>
 </div>
 <!-- מקור: הרצאה 10 -->
@@ -601,20 +616,20 @@ window.Quarto = {
 <p>אם <span class="math inline">\(f, g : R \to R\)</span>, אז הפונקציה <span class="math inline">\(\frac{f}{g}\)</span> מוגדרת ע”י <span class="math inline">\((\frac{f}{g})(x) = \frac{f(x)}{g(x)}\)</span>, <span class="math inline">\(g(x) \neq 0\)</span></p>
 </section>
 </section>
-<section id="תחום-טווח-ותמונה-של-פונקציה" class="level2">
-<h2 class="anchored" data-anchor-id="תחום-טווח-ותמונה-של-פונקציה">תחום, טווח ותמונה של פונקציה</h2>
+<section id="תחום-טווח-ותמונה-של-פונקציה" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="תחום-טווח-ותמונה-של-פונקציה"><span class="header-section-number">7.2</span> תחום, טווח ותמונה של פונקציה</h2>
 <div class="todo">
 <p>תחום, טווח ותמונה נדונים בחלקם בסעיף ״מושג הפונקציה״ לעיל. להשלמה ולסידור.</p>
 </div>
 </section>
-<section id="גרפים" class="level2">
-<h2 class="anchored" data-anchor-id="גרפים">גרפים</h2>
+<section id="גרפים" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="גרפים"><span class="header-section-number">7.3</span> גרפים</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="תכונות-של-פונקציות-מונוטוניות" class="level2">
-<h2 class="anchored" data-anchor-id="תכונות-של-פונקציות-מונוטוניות">תכונות של פונקציות: מונוטוניות</h2>
+<section id="תכונות-של-פונקציות-מונוטוניות" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="תכונות-של-פונקציות-מונוטוניות"><span class="header-section-number">7.4</span> תכונות של פונקציות: מונוטוניות</h2>
 <ul>
 <li><p>פונקציה מונוטונית עולה- לכל <span class="math inline">\(x,y \in A\)</span>, אם <span class="math inline">\(x \leq y\)</span> אז <span class="math inline">\(f(x) \leq f(y)\)</span></p></li>
 <li><p>פונקציה מונוטונית יורדת- לכל <span class="math inline">\(x,y \in A\)</span>, אם <span class="math inline">\(x \leq y\)</span> אז <span class="math inline">\(f(x) \geq f(y)\)</span></p></li>
@@ -685,8 +700,8 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="פונקציות-זוגיות-ואי-זוגיות" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציות-זוגיות-ואי-זוגיות">פונקציות זוגיות ואי-זוגיות</h2>
+<section id="פונקציות-זוגיות-ואי-זוגיות" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="פונקציות-זוגיות-ואי-זוגיות"><span class="header-section-number">7.5</span> פונקציות זוגיות ואי-זוגיות</h2>
 <p>פונקציה תיקרא זוגית, אם לכל <span class="math inline">\(x \in A\)</span> מתקיים <span class="math inline">\(f(x) = f(-x)\)</span></p>
 <p>לדוגמא:</p>
 <div style="text-align:center">
@@ -732,8 +747,8 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="פונקציות-מחזוריות" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציות-מחזוריות">פונקציות מחזוריות</h2>
+<section id="פונקציות-מחזוריות" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="פונקציות-מחזוריות"><span class="header-section-number">7.6</span> פונקציות מחזוריות</h2>
 <p>פונקציה <span class="math inline">\(f : R \to R\)</span> תיקרא מחזורית, עם מחזור <span class="math inline">\(0 &lt; T\)</span> אם <span class="math inline">\(f(x) = f(x + T)\)</span> לכל <span class="math inline">\(x \in R\)</span>.</p>
 <p>דוגמאות:</p>
 <div style="text-align:center">
@@ -769,8 +784,8 @@ window.Quarto = {
 <p>הפונקציה <span class="math inline">\(\cos(x)\)</span> לא חד חד ערכית בתחום <span class="math inline">\([-\frac{\pi}{2}, \frac{\pi}{2}]\)</span></p>
 <p>הפונקציה <span class="math inline">\(\cos(x)\)</span> מחזורית עם מחזור <span class="math inline">\(2\pi\)</span></p>
 </section>
-<section id="הרכבת-פונקציות" class="level2">
-<h2 class="anchored" data-anchor-id="הרכבת-פונקציות">הרכבת פונקציות</h2>
+<section id="הרכבת-פונקציות" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="הרכבת-פונקציות"><span class="header-section-number">7.7</span> הרכבת פונקציות</h2>
 <section id="הרכבת-פונקציות-1" class="level3">
 <h3 class="anchored" data-anchor-id="הרכבת-פונקציות-1">הרכבת פונקציות</h3>
 <p><span class="math display">\[(f \circ g)(x) = f(g(x)) \qquad \{f \circ g : R \setminus \{0\} \to R\}\]</span></p>
@@ -778,8 +793,8 @@ window.Quarto = {
 <p><span class="math display">\[(f \circ g)(x) = f(g(x)) = f(\ln x)^2 = \underline{(\ln x)^2}\]</span> <span class="math display">\[(g \circ f)(x) = g(f(x)) = g(x^2) = \underline{\ln(x^2)}\]</span></p>
 </section>
 </section>
-<section id="פונקציות-הפוכות" class="level2">
-<h2 class="anchored" data-anchor-id="פונקציות-הפוכות">פונקציות הפוכות</h2>
+<section id="פונקציות-הפוכות" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="פונקציות-הפוכות"><span class="header-section-number">7.8</span> פונקציות הפוכות</h2>
 <section id="פונקציה-הפיכה-והופכית" class="level3">
 <h3 class="anchored" data-anchor-id="פונקציה-הפיכה-והופכית">פונקציה הפיכה והופכית</h3>
 <ul>

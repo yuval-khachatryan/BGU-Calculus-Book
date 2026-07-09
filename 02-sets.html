@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,10 +526,10 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#איברים-והכלה" id="toc-איברים-והכלה" class="nav-link active" data-scroll-target="#איברים-והכלה">איברים והכלה</a></li>
-  <li><a href="#הכמתים-בשפה-של-תורת-הקבוצות" id="toc-הכמתים-בשפה-של-תורת-הקבוצות" class="nav-link" data-scroll-target="#הכמתים-בשפה-של-תורת-הקבוצות">הכמתים בשפה של תורת הקבוצות</a></li>
-  <li><a href="#הקבוצה-הריקה" id="toc-הקבוצה-הריקה" class="nav-link" data-scroll-target="#הקבוצה-הריקה">הקבוצה הריקה</a></li>
-  <li><a href="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש" id="toc-פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="nav-link" data-scroll-target="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש">פעולות על קבוצות: איחוד, חיתוך והפרש</a>
+  <li><a href="#איברים-והכלה" id="toc-איברים-והכלה" class="nav-link active" data-scroll-target="#איברים-והכלה"><span class="header-section-number">2.1</span> איברים והכלה</a></li>
+  <li><a href="#הכמתים-בשפה-של-תורת-הקבוצות" id="toc-הכמתים-בשפה-של-תורת-הקבוצות" class="nav-link" data-scroll-target="#הכמתים-בשפה-של-תורת-הקבוצות"><span class="header-section-number">2.2</span> הכמתים בשפה של תורת הקבוצות</a></li>
+  <li><a href="#הקבוצה-הריקה" id="toc-הקבוצה-הריקה" class="nav-link" data-scroll-target="#הקבוצה-הריקה"><span class="header-section-number">2.3</span> הקבוצה הריקה</a></li>
+  <li><a href="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש" id="toc-פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="nav-link" data-scroll-target="#פעולות-על-קבוצות-איחוד-חיתוך-והפרש"><span class="header-section-number">2.4</span> פעולות על קבוצות: איחוד, חיתוך והפרש</a>
   <ul class="collapse">
   <li><a href="#איחוד" id="toc-איחוד" class="nav-link" data-scroll-target="#איחוד">איחוד</a></li>
   <li><a href="#חיתוך" id="toc-חיתוך" class="nav-link" data-scroll-target="#חיתוך">חיתוך</a></li>
@@ -551,24 +563,27 @@ window.Quarto = {
 </header>
 
 
-<section id="איברים-והכלה" class="level2">
-<h2 class="anchored" data-anchor-id="איברים-והכלה">איברים והכלה</h2>
+<section id="איברים-והכלה" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="איברים-והכלה"><span class="header-section-number">2.1</span> איברים והכלה</h2>
 <p>אחד המושגים הבסיסיים ביותר במתמטיקה הוא המושג <strong>קבוצה</strong>. באופן אינטואיטיבי, קבוצה היא אוסף של איברים, וכל אוסף ״הגיוני״ ניתן לחשוב עליו כקבוצה. למשל, אפשר לדבר על קבוצת כל המרצים בקורס בחדו״א 1 למהנדסים, על קבוצת ראשי ממשלת ישראל שכיהנו עד 2026, על קבוצות של אותיות, על קבוצות של מספרים, וכן הלאה. ברוב הקורס נעסוק בקבוצות של אובייקטים מתמטיים, כמו מספרים.</p>
 <p>נתחיל בדוגמה פשוטה. קבוצות נהוג לסמן <strong>באותיות לועזיות גדולות</strong> (או בסימנים מיוחדים, כשמדובר בקבוצות מוכרות, כפי שנראה בהמשך), ואת איברי הקבוצה ניתן לתאר בכמה דרכים. הדרך הפשוטה ביותר היא רישום האיברים בתוך סוגריים מסולסלים. נסמן ב-<span class="math inline">\(A\)</span> את קבוצת שלוש האותיות הראשונות בא״ב האנגלי; הרישום המלא הוא <span class="math display">\[.A=\{a,\,b,\,c\}\]</span></p>
 <p>הקבוצה נקראת <span class="math inline">\(A\)</span>, ואיבריה הם האותיות <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> ו-<span class="math inline">\(c\)</span>.</p>
 <p>כדי לציין שאובייקט מסוים הוא איבר בקבוצה, משתמשים בסימן ההשתייכות <span class="math inline">\(\in\)</span>. הכתיב <span class="math inline">\(x \in X\)</span> נקרא ״<span class="math inline">\(x\)</span> שייך ל-<span class="math inline">\(X\)</span>״, ופירושו ש-<span class="math inline">\(x\)</span> הוא איבר של <span class="math inline">\(X\)</span>; הכתיב <span class="math inline">\(x \notin X\)</span> פירושו ש-<span class="math inline">\(x\)</span> אינו איבר של <span class="math inline">\(X\)</span>. כך, למשל, <span class="math inline">\(a \in A\)</span> ואילו <span class="math inline">\(d \notin A\)</span>.</p>
 <p>מה מאפיין קבוצה? אך ורק זהות איבריה. לפיכך, שתי קבוצות שוות זו לזו אם ורק אם הן מכילות בדיוק את אותם האיברים. בעזרת סימן ההשתייכות נוכל לנסח זאת באופן פורמלי.</p>
-<div id="def-set-equality" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> הן <strong>שוות</strong>, ונסמן <span class="math inline">\(A=B\)</span>, אם לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[,x \in A \leftrightarrow x \in B\]</span> כלומר, כל איבר של <span class="math inline">\(A\)</span> הוא איבר של <span class="math inline">\(B\)</span> ולהפך.</p>
+<div id="box-def-set-equality" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.1.1.</strong></p>
+<p>שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> הן <strong>שוות</strong>, ונסמן <span class="math inline">\(A=B\)</span>, אם לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[,x \in A \leftrightarrow x \in B\]</span> כלומר, כל איבר של <span class="math inline">\(A\)</span> הוא איבר של <span class="math inline">\(B\)</span> ולהפך.</p>
 </div>
 <p>מהגדרה זו נובע שברישום של קבוצה אין חשיבות לסדר האיברים ואין חשיבות לחזרות. כך, למשל, שלוש הקבוצות הבאות שוות זו לזו: <span class="math display">\[.\{a,a,b,c,c\}=\{a,b,c\}=\{b,c,a\}\]</span></p>
 <p>לעומת זאת, נתבונן בקבוצה <span class="math inline">\(B=\{a,\,b,\,d\}\)</span>. הקבוצות <span class="math inline">\(A=\{a,\,b,\,c\}\)</span> ו-<span class="math inline">\(B\)</span> <strong>אינן</strong> שוות. כדי להראות זאת, די למצוא אובייקט <strong>יחיד</strong> שעבורו השקילות <span class="math inline">\(x \in A \leftrightarrow x \in B\)</span> אינה מתקיימת — כלומר איבר ששייך לאחת הקבוצות אך לא לשנייה. ואכן, <span class="math inline">\(c \in A\)</span> אך <span class="math inline">\(c \notin B\)</span>: האות <span class="math inline">\(c\)</span> שייכת ל-<span class="math inline">\(A\)</span> אך אינה שייכת ל-<span class="math inline">\(B\)</span>, ולכן השקילות נכשלת עבור <span class="math inline">\(x=c\)</span>, <strong>ודי בכך</strong> כדי להסיק ש-<span class="math inline">\(A \neq B\)</span>. כלומר, <strong>מספיק איבר מבדיל אחד</strong> — אין צורך לבדוק את כל האיברים. במקרה זה קיים גם איבר מבדיל שני, שכן <span class="math inline">\(d \in B\)</span> אך <span class="math inline">\(d \notin A\)</span>, אך כאמור צד אחד מספיק; הצגנו את שניהם רק לשם ההמחשה.</p>
 <p>כעת נפנה למושג ה<strong>הכלה</strong>: מתי קבוצה אחת ״נמצאת בתוך״ קבוצה אחרת.</p>
-<div id="def-subset" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.2</strong></span> תהיינה <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> קבוצות. נאמר ש-<span class="math inline">\(B\)</span> <strong>מוכלת</strong> ב-<span class="math inline">\(A\)</span>, או ש-<span class="math inline">\(B\)</span> היא <strong>תת-קבוצה</strong> של <span class="math inline">\(A\)</span>, ונסמן <span class="math inline">\(B \subseteq A\)</span>, אם כל איבר של <span class="math inline">\(B\)</span> הוא גם איבר של <span class="math inline">\(A\)</span>; כלומר, לכל <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[.x \in B \to x \in A\]</span></p>
+<div id="box-def-subset" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.1.2.</strong></p>
+<p>תהיינה <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> קבוצות. נאמר ש-<span class="math inline">\(B\)</span> <strong>מוכלת</strong> ב-<span class="math inline">\(A\)</span>, או ש-<span class="math inline">\(B\)</span> היא <strong>תת-קבוצה</strong> של <span class="math inline">\(A\)</span>, ונסמן <span class="math inline">\(B \subseteq A\)</span>, אם כל איבר של <span class="math inline">\(B\)</span> הוא גם איבר של <span class="math inline">\(A\)</span>; כלומר, לכל <span class="math inline">\(x\)</span> מתקיים <span class="math display">\[.x \in B \to x \in A\]</span></p>
 </div>
-<div id="exm-subset" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.1</strong></span> נתבונן שוב בקבוצה <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>. הקבוצה <span class="math inline">\(\{a,\,b\}\)</span> היא תת-קבוצה של <span class="math inline">\(A\)</span>, כלומר <span class="math inline">\(\{a,\,b\} \subseteq A\)</span>, שכן כל איבר שלה שייך גם ל-<span class="math inline">\(A\)</span>: אכן <span class="math inline">\(a \in A\)</span> וגם <span class="math inline">\(b \in A\)</span>.</p>
+<div id="box-exm-subset" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.1.3.</strong></p>
+<p>נתבונן שוב בקבוצה <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>. הקבוצה <span class="math inline">\(\{a,\,b\}\)</span> היא תת-קבוצה של <span class="math inline">\(A\)</span>, כלומר <span class="math inline">\(\{a,\,b\} \subseteq A\)</span>, שכן כל איבר שלה שייך גם ל-<span class="math inline">\(A\)</span>: אכן <span class="math inline">\(a \in A\)</span> וגם <span class="math inline">\(b \in A\)</span>.</p>
 </div>
 <p>חשוב להבחין בין שני הסימנים <span class="math inline">\(\in\)</span> ו-<span class="math inline">\(\subseteq\)</span>, שכן ערבוב ביניהם הוא מקור נפוץ לבלבול. הסימן <span class="math inline">\(\in\)</span> מקשר <strong>אובייקט (איבר)</strong> לקבוצה: <span class="math inline">\(x \in A\)</span> פירושו ש-<span class="math inline">\(x\)</span> הוא אחד מאיברי <span class="math inline">\(A\)</span>. לעומתו, הסימן <span class="math inline">\(\subseteq\)</span> מקשר <strong>קבוצה</strong> לקבוצה: <span class="math inline">\(B \subseteq A\)</span> פירושו שכל איברי <span class="math inline">\(B\)</span> הם איברים של <span class="math inline">\(A\)</span>. כך, למשל, עבור <span class="math inline">\(A=\{a,\,b,\,c\}\)</span>:</p>
 <ul>
@@ -578,21 +593,24 @@ window.Quarto = {
 <li><span class="math inline">\(a \subseteq A\)</span> — <strong>חסר משמעות</strong>, שכן <span class="math inline">\(a\)</span> אינו קבוצה (אלא איבר), ואין מובן ל״הכלה״ של איבר.</li>
 </ul>
 <p>הקשר בין הכלה לשוויון נותן בידינו את שיטת ההוכחה החשובה ביותר לשוויון קבוצות.</p>
-<div id="prp-double-inclusion" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 2.1</strong></span> שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, <span class="math inline">\(A=B\)</span> אם ורק אם <span class="math inline">\(A \subseteq B\)</span> וגם <span class="math inline">\(B \subseteq A\)</span>.</p>
+<div id="box-prp-double-inclusion" class="thmbox thmbox-proposition">
+<p><strong>טענה 2.1.4.</strong></p>
+<p>שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, <span class="math inline">\(A=B\)</span> אם ורק אם <span class="math inline">\(A \subseteq B\)</span> וגם <span class="math inline">\(B \subseteq A\)</span>.</p>
 </div>
 <p>הטענה נובעת ישירות מהגדרת השוויון: התנאי <span class="math inline">\(x \in A \leftrightarrow x \in B\)</span> שקול לכך ששתי הגרירות מתקיימות — <span class="math inline">\(x \in A \to x \in B\)</span> (שהיא <span class="math inline">\(A \subseteq B\)</span>) ו-<span class="math inline">\(x \in B \to x \in A\)</span> (שהיא <span class="math inline">\(B \subseteq A\)</span>). <strong>זוהי הדרך הסטנדרטית והנפוצה ביותר להוכיח שוויון בין קבוצות</strong>: מוכיחים בנפרד את שתי ההכלות, <span class="math inline">\(A \subseteq B\)</span> ואז <span class="math inline">\(B \subseteq A\)</span>. שיטה זו שימושית במיוחד כאשר הקבוצות מוגדרות על ידי תכונה (בשיטת השומר) ולא על ידי רשימת איברים מפורשת — ובמקרים כאלה היא לרוב הדרך הטבעית ביותר.</p>
 <p>נחזור לעניין תיאור איבריה של קבוצה. אף על פי שהסימון בעזרת סוגריים מסולסלים הוא פשוט וחד-משמעי, הוא אינו תמיד נוח, ולעיתים אף אינו מספיק. כל עוד באוסף יש מעט איברים אין בכך בעיה, אך מה נעשה אם במקום 3 איברים יש 100,000? כתיבת כולם עלולה להיות מייגעת למדי. <strong>הכלל הוא שסימון נועד להקל על ההבנה ועל הניתוח של המידע, לא לסרבל אותם</strong>; <strong>אם סימון מסרבל במקום לפשט — אין בו צורך.</strong> בעיה שנייה, חמורה אף יותר, מתעוררת כאשר בקבוצה יש אינסוף איברים — למשל אוסף כל המספרים הטבעיים <span class="math inline">\(0,1,2,\dots\)</span>. במקרה כזה הסימון שהצגנו אינו מספיק כלל, שכן לא ניתן לכתוב אינסוף איברים בתוך סוגריים מסולסלים. לכן נזדקק לדרכים נוספות לתיאור קבוצות.</p>
 <p>מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב <span class="math inline">\(\mathbb{N}=\{0, 1, 2, \dots\}\)</span>; שלושת האיברים הראשונים <span class="math inline">\(0, 1, 2\)</span> כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה <a href="./03-number-systems.html#sec-number-systems">בסעיף על מערכות מספרים</a>.) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא <strong>שיטת השומר</strong> (סימון בונה-קבוצות), שאותה נציג כעת.</p>
-<div id="def-set-builder" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.3</strong></span> תהי <span class="math inline">\(X\)</span> קבוצה, ותהי <span class="math inline">\(P(x)\)</span> <strong>תכונה</strong> — טענה שכל אובייקט <span class="math inline">\(x\)</span> מקיים אותה או אינו מקיים אותה. הקבוצה <span class="math display">\[\{x \in X \mid P(x)\}\]</span> מוגדרת כקבוצת <strong>כל</strong> האיברים <span class="math inline">\(x\)</span> שב-<span class="math inline">\(X\)</span> המקיימים את התכונה <span class="math inline">\(P\)</span>. הקו האנכי <span class="math inline">\(\mid\)</span>, ה<strong>שומר</strong>, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט <span class="math inline">\(y\)</span> מתקיים ש-<span class="math inline">\(y\)</span> שייך לקבוצה אם ורק אם <span class="math inline">\(y \in X\)</span> והתכונה <span class="math inline">\(P(y)\)</span> מתקיימת. כאשר ה״עולם״ <span class="math inline">\(X\)</span> ברור מן ההקשר, נהוג לקצר ולכתוב <span class="math inline">\(\{x \mid P(x)\}\)</span>.</p>
+<div id="box-def-set-builder" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.1.5.</strong></p>
+<p>תהי <span class="math inline">\(X\)</span> קבוצה, ותהי <span class="math inline">\(P(x)\)</span> <strong>תכונה</strong> — טענה שכל אובייקט <span class="math inline">\(x\)</span> מקיים אותה או אינו מקיים אותה. הקבוצה <span class="math display">\[\{x \in X \mid P(x)\}\]</span> מוגדרת כקבוצת <strong>כל</strong> האיברים <span class="math inline">\(x\)</span> שב-<span class="math inline">\(X\)</span> המקיימים את התכונה <span class="math inline">\(P\)</span>. הקו האנכי <span class="math inline">\(\mid\)</span>, ה<strong>שומר</strong>, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט <span class="math inline">\(y\)</span> מתקיים ש-<span class="math inline">\(y\)</span> שייך לקבוצה אם ורק אם <span class="math inline">\(y \in X\)</span> והתכונה <span class="math inline">\(P(y)\)</span> מתקיימת. כאשר ה״עולם״ <span class="math inline">\(X\)</span> ברור מן ההקשר, נהוג לקצר ולכתוב <span class="math inline">\(\{x \mid P(x)\}\)</span>.</p>
 </div>
-<div id="exm-set-builder" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.2</strong></span> הקבוצה <span class="math inline">\(\{n \in \mathbb{N} \mid n &gt; 5\}\)</span> היא קבוצת כל המספרים הטבעיים הגדולים מ-<span class="math inline">\(5\)</span>, כלומר <span class="math display">\[.\{n \in \mathbb{N} \mid n &gt; 5\} = \{6, 7, 8, \dots\}\]</span> כך, <span class="math inline">\(7\)</span> שייך לקבוצה (שכן <span class="math inline">\(7 \in \mathbb{N}\)</span> וגם <span class="math inline">\(7 &gt; 5\)</span>), ואילו <span class="math inline">\(3\)</span> אינו שייך לה (שכן <span class="math inline">\(3\)</span> אינו גדול מ-<span class="math inline">\(5\)</span>).</p>
+<div id="box-exm-set-builder" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.1.6.</strong></p>
+<p>הקבוצה <span class="math inline">\(\{n \in \mathbb{N} \mid n &gt; 5\}\)</span> היא קבוצת כל המספרים הטבעיים הגדולים מ-<span class="math inline">\(5\)</span>, כלומר <span class="math display">\[.\{n \in \mathbb{N} \mid n &gt; 5\} = \{6, 7, 8, \dots\}\]</span> כך, <span class="math inline">\(7\)</span> שייך לקבוצה (שכן <span class="math inline">\(7 \in \mathbb{N}\)</span> וגם <span class="math inline">\(7 &gt; 5\)</span>), ואילו <span class="math inline">\(3\)</span> אינו שייך לה (שכן <span class="math inline">\(3\)</span> אינו גדול מ-<span class="math inline">\(5\)</span>).</p>
 </div>
 </section>
-<section id="הכמתים-בשפה-של-תורת-הקבוצות" class="level2">
-<h2 class="anchored" data-anchor-id="הכמתים-בשפה-של-תורת-הקבוצות">הכמתים בשפה של תורת הקבוצות</h2>
+<section id="הכמתים-בשפה-של-תורת-הקבוצות" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="הכמתים-בשפה-של-תורת-הקבוצות"><span class="header-section-number">2.2</span> הכמתים בשפה של תורת הקבוצות</h2>
 <p>בפרק על הלוגיקה הצגנו את ה<strong>כמתים</strong> ״לכל״ (<span class="math inline">\(\forall\)</span>) ו״קיים״ (<span class="math inline">\(\exists\)</span>) באופן לא-פורמלי, כאשר התחום שעליו הם פועלים תואר במילים (״כל איברי הקבוצה הנדונה״). כעת, משהגדרנו את סימן ההשתייכות <span class="math inline">\(\in\)</span>, נוכל לציין במפורש על איזו קבוצה פועל הכמת, ולכתוב טענות ״לכל״ ו״קיים״ בסימון קצר ומדויק. (להצגה המלאה של הכמתים ראו את <a href="./01-logic.html#sec-quantifiers">הסעיף על כמתים לוגיים</a> בפרק הראשון.)</p>
 <p>תהי <span class="math inline">\(A\)</span> קבוצה ותהי <span class="math inline">\(P(x)\)</span> תכונה. נכתוב:</p>
 <ul>
@@ -610,29 +628,32 @@ window.Quarto = {
 </ul>
 <p>לבסוף, נעיר שכבר נעזרנו בכמת ״לכל״ בפרק זה, גם אם לא בסימון המפורש: הגדרת שוויון הקבוצות אינה אלא <span class="math inline">\(\forall x\,(x \in A \leftrightarrow x \in B)\)</span>, והגדרת ההכלה אינה אלא <span class="math inline">\(\forall x\,(x \in B \to x \in A)\)</span>. הכמת ״לכל״ עומד, אם כן, בבסיס עצם המושגים של שוויון והכלה בין קבוצות.</p>
 </section>
-<section id="הקבוצה-הריקה" class="level2">
-<h2 class="anchored" data-anchor-id="הקבוצה-הריקה">הקבוצה הריקה</h2>
+<section id="הקבוצה-הריקה" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="הקבוצה-הריקה"><span class="header-section-number">2.3</span> הקבוצה הריקה</h2>
 <p>לעיתים נתקלים בקבוצה שאין בה אף איבר. למשל, קבוצת כל המספרים הטבעיים הקטנים מ-<span class="math inline">\(0\)</span> ריקה, וכן קבוצת הפתרונות הממשיים של המשוואה <span class="math inline">\(x^2 = -1\)</span>. קבוצה כזו נקראת ה<strong>קבוצה הריקה</strong>.</p>
-<div id="def-empty-set" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.4</strong></span> ה<strong>קבוצה הריקה</strong>, המסומנת <span class="math inline">\(\emptyset\)</span> (או <span class="math inline">\(\{\}\)</span>), היא הקבוצה שאין לה אף איבר: לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \notin \emptyset\)</span>.</p>
+<div id="box-def-empty-set" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.3.1.</strong></p>
+<p>ה<strong>קבוצה הריקה</strong>, המסומנת <span class="math inline">\(\emptyset\)</span> (או <span class="math inline">\(\{\}\)</span>), היא הקבוצה שאין לה אף איבר: לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \notin \emptyset\)</span>.</p>
 </div>
 <p>מכיוון שקבוצה נקבעת על ידי איבריה בלבד (כפי שקובעת הגדרת שוויון הקבוצות), יש <strong>בדיוק קבוצה ריקה אחת</strong> — כל שתי קבוצות נטולות איברים שוות זו לזו.</p>
 <p><strong>נכונות באופן ריק.</strong> מהי משמעותה של טענת ״לכל״ כאשר אין כלל איברים? נזכיר <a href="./01-logic.html#sec-quantifiers">מן הפרק על הלוגיקה</a> שטענה מן הצורה ״לכל <span class="math inline">\(x\)</span> ב-<span class="math inline">\(A\)</span> מתקיים <span class="math inline">\(P(x)\)</span>״ היא <strong>שקר</strong> רק אם קיימת <strong>דוגמה נגדית</strong> — איבר של <span class="math inline">\(A\)</span> שאינו מקיים את <span class="math inline">\(P\)</span>. אך בקבוצה הריקה אין אף איבר, ולכן אין דוגמה נגדית; לפיכך <strong>כל</strong> טענת ״לכל״ על הקבוצה הריקה היא <strong>אמת</strong>. אומרים שטענה כזו <strong>נכונה באופן ריק</strong> (vacuously true).</p>
 <p>כאן מסתתרת נקודה חשובה: טענת ״לכל״ <strong>אינה</strong> טוענת שקיים משהו. הפסוק ״לכל <span class="math inline">\(x \in \emptyset\)</span> מתקיים <span class="math inline">\(P(x)\)</span>״ אמת תמיד — לא משום שיש איברים המקיימים את <span class="math inline">\(P\)</span>, אלא דווקא משום שאין איברים כלל. לעומת זאת, טענת ״קיים״ על הקבוצה הריקה היא תמיד <strong>שקר</strong>, שכן אין אף איבר להצביע עליו. כך, על הקבוצה הריקה <strong>כל</strong> טענת ״לכל״ אמת ו<strong>כל</strong> טענת ״קיים״ שקר — המחשה חדה לכך ש<strong>״לכל״ אינו גורר ״קיים״</strong>.</p>
 <p>תוצאה מיידית של רעיון זה היא היחס בין הקבוצה הריקה לכל קבוצה אחרת.</p>
-<div id="prp-empty-subset" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 2.2</strong></span> הקבוצה הריקה מוכלת בכל קבוצה: לכל קבוצה <span class="math inline">\(A\)</span> מתקיים <span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
+<div id="box-prp-empty-subset" class="thmbox thmbox-proposition">
+<p><strong>טענה 2.3.2.</strong></p>
+<p>הקבוצה הריקה מוכלת בכל קבוצה: לכל קבוצה <span class="math inline">\(A\)</span> מתקיים <span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
 </div>
 <p><strong>הוכחה.</strong> לפי הגדרת ההכלה, <span class="math inline">\(\emptyset \subseteq A\)</span> פירושו שלכל <span class="math inline">\(x\)</span> מתקיים ״אם <span class="math inline">\(x \in \emptyset\)</span> אז <span class="math inline">\(x \in A\)</span>״. אך <span class="math inline">\(x \in \emptyset\)</span> הוא לעולם שקר, ולכן הגרירה אמת באופן ריק עבור כל <span class="math inline">\(x\)</span> (זהו הכלל ״מן השקר נובע הכול״ שראינו בפרק על הגרירה). מאחר שאין <span class="math inline">\(x\)</span> המפר את ההכלה, נובע ש-<span class="math inline">\(\emptyset \subseteq A\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 </section>
-<section id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="level2">
-<h2 class="anchored" data-anchor-id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש">פעולות על קבוצות: איחוד, חיתוך והפרש</h2>
+<section id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש"><span class="header-section-number">2.4</span> פעולות על קבוצות: איחוד, חיתוך והפרש</h2>
 <p>עד כה עסקנו בקבוצות נתונות. כעת נראה כיצד לבנות מהן קבוצות חדשות, בעזרת <strong>פעולות על קבוצות</strong>. שלוש הפעולות הבסיסיות הן ה<strong>איחוד</strong>, ה<strong>חיתוך</strong> וה<strong>הפרש</strong>. פעולות אלה אינן שרירותיות: כל אחת מהן מקבילה לאחד ה<a href="./01-logic.html#sec-connectives">קשרים הלוגיים</a> שראינו בפרק הקודם — ולמעשה נגדיר כל פעולה בעזרת הקשר המתאים, המופעל על פסוקי ההשתייכות <span class="math inline">\(x \in A\)</span> ו-<span class="math inline">\(x \in B\)</span>. לאורך הסעיף, <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> הן קבוצות כלשהן.</p>
 <p>כדי להמחיש פעולות אלה נשתמש ב<strong>דיאגרמות ון</strong> (על שם הלוגיקן ג׳ון ון). בדיאגרמה כזו כל קבוצה מצוירת כאזור במישור — לרוב עיגול — ונקודות שבתוכו מייצגות את איבריה; אזור החפיפה בין שני עיגולים מייצג את האיברים המשותפים לשתי הקבוצות, ומלבן מקיף (כשנזדקק לו) מייצג את ה״עולם״ שבתוכו אנו עובדים. את תוצאת הפעולה נדגיש בעזרת <strong>הצללה</strong> של האזור המתאים. חשוב לזכור: דיאגרמת ון היא כלי המחשה בלבד, לא הוכחה — היא מסייעת לאינטואיציה, אך ההגדרות הפורמליות הן הקובעות.</p>
 <section id="איחוד" class="level3">
 <h3 class="anchored" data-anchor-id="איחוד">איחוד</h3>
-<div id="def-union" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.5</strong></span> ה<strong>איחוד</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \cup B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> או ל-<span class="math inline">\(B\)</span> (או לשתיהן): <span class="math display">\[.A \cup B = \{x \mid x \in A \lor x \in B\}\]</span></p>
+<div id="box-def-union" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.4.1.</strong></p>
+<p>ה<strong>איחוד</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \cup B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> או ל-<span class="math inline">\(B\)</span> (או לשתיהן): <span class="math display">\[.A \cup B = \{x \mid x \in A \lor x \in B\}\]</span></p>
 </div>
 <p>הגדרה זו נשענת על הקשר <a href="./01-logic.html#sec-disjunction">״או״</a>: איבר שייך לאיחוד בדיוק כאשר הפסוק <span class="math inline">\(x \in A \lor x \in B\)</span> אמת. כזכור, ה״או״ הלוגי הוא <strong>מכליל</strong>, ולכן איבר השייך לשתי הקבוצות שייך גם לאיחוד.</p>
 <div id="fig-union" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -645,14 +666,16 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="exm-union" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.3</strong></span> עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \cup B = \{1,2,3,4,5,6\}\]</span></p>
+<div id="box-exm-union" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.4.2.</strong></p>
+<p>עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \cup B = \{1,2,3,4,5,6\}\]</span></p>
 </div>
 </section>
 <section id="חיתוך" class="level3">
 <h3 class="anchored" data-anchor-id="חיתוך">חיתוך</h3>
-<div id="def-intersection" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.6</strong></span> ה<strong>חיתוך</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \cap B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> <strong>וגם</strong> ל-<span class="math inline">\(B\)</span>: <span class="math display">\[.A \cap B = \{x \mid x \in A \land x \in B\}\]</span></p>
+<div id="box-def-intersection" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.4.3.</strong></p>
+<p>ה<strong>חיתוך</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \cap B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> <strong>וגם</strong> ל-<span class="math inline">\(B\)</span>: <span class="math display">\[.A \cap B = \{x \mid x \in A \land x \in B\}\]</span></p>
 </div>
 <p>כאן הפעולה נשענת על הקשר <a href="./01-logic.html#sec-conjunction">״וגם״</a>: איבר שייך לחיתוך רק אם הוא שייך לשתי הקבוצות בו-זמנית.</p>
 <div id="fig-intersection" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -665,14 +688,16 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="exm-intersection" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.4</strong></span> עבור אותן <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מן הדוגמה הקודמת, <span class="math display">\[.A \cap B = \{3,4\}\]</span> שכן רק <span class="math inline">\(3\)</span> ו-<span class="math inline">\(4\)</span> שייכים לשתי הקבוצות.</p>
+<div id="box-exm-intersection" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.4.4.</strong></p>
+<p>עבור אותן <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מן הדוגמה הקודמת, <span class="math display">\[.A \cap B = \{3,4\}\]</span> שכן רק <span class="math inline">\(3\)</span> ו-<span class="math inline">\(4\)</span> שייכים לשתי הקבוצות.</p>
 </div>
 </section>
 <section id="הפרש" class="level3">
 <h3 class="anchored" data-anchor-id="הפרש">הפרש</h3>
-<div id="def-difference" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.7</strong></span> ה<strong>הפרש</strong> ״<span class="math inline">\(A\)</span> פחות <span class="math inline">\(B\)</span>״, המסומן <span class="math inline">\(A \setminus B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> אך <strong>אינם</strong> שייכים ל-<span class="math inline">\(B\)</span>: <span class="math display">\[.A \setminus B = \{x \mid x \in A \land x \notin B\}\]</span></p>
+<div id="box-def-difference" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.4.5.</strong></p>
+<p>ה<strong>הפרש</strong> ״<span class="math inline">\(A\)</span> פחות <span class="math inline">\(B\)</span>״, המסומן <span class="math inline">\(A \setminus B\)</span>, הוא קבוצת כל האיברים השייכים ל-<span class="math inline">\(A\)</span> אך <strong>אינם</strong> שייכים ל-<span class="math inline">\(B\)</span>: <span class="math display">\[.A \setminus B = \{x \mid x \in A \land x \notin B\}\]</span></p>
 </div>
 <p>ההפרש משלב את הקשר ״וגם״ עם ה<a href="./01-logic.html#sec-negation">שלילה</a>: התנאי <span class="math inline">\(x \notin B\)</span> הוא בדיוק שלילת הפסוק <span class="math inline">\(x \in B\)</span>. שימו לב שההפרש <strong>אינו סימטרי</strong> — בדרך כלל <span class="math inline">\(A \setminus B \neq B \setminus A\)</span>.</p>
 <div id="fig-difference" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -685,14 +710,16 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="exm-difference" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.5</strong></span> עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \setminus B = \{1,2\}\]</span> ואילו <span class="math display">\[.B \setminus A = \{5,6\}\]</span> ואכן שני ההפרשים שונים זה מזה.</p>
+<div id="box-exm-difference" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.4.6.</strong></p>
+<p>עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \setminus B = \{1,2\}\]</span> ואילו <span class="math display">\[.B \setminus A = \{5,6\}\]</span> ואכן שני ההפרשים שונים זה מזה.</p>
 </div>
 </section>
 <section id="הפרש-סימטרי" class="level3">
 <h3 class="anchored" data-anchor-id="הפרש-סימטרי">הפרש סימטרי</h3>
-<div id="def-symmetric-difference" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.8</strong></span> ה<strong>הפרש הסימטרי</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \triangle B\)</span>, הוא קבוצת כל האיברים השייכים ל<strong>אחת</strong> מן הקבוצות בלבד — לזו או לזו, אך לא לשתיהן. באופן טבעי מגדירים אותו כאיחוד שני ההפרשים: <span class="math display">\[.A \triangle B = (A \setminus B) \cup (B \setminus A)\]</span></p>
+<div id="box-def-symmetric-difference" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.4.7.</strong></p>
+<p>ה<strong>הפרש הסימטרי</strong> של <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span>, המסומן <span class="math inline">\(A \triangle B\)</span>, הוא קבוצת כל האיברים השייכים ל<strong>אחת</strong> מן הקבוצות בלבד — לזו או לזו, אך לא לשתיהן. באופן טבעי מגדירים אותו כאיחוד שני ההפרשים: <span class="math display">\[.A \triangle B = (A \setminus B) \cup (B \setminus A)\]</span></p>
 </div>
 <p>כלומר, <span class="math inline">\(x \in A \triangle B\)</span> בדיוק כאשר <span class="math inline">\(x \in A \setminus B\)</span> או <span class="math inline">\(x \in B \setminus A\)</span>. השם ״הפרש סימטרי״ נובע מכך: זהו ההפרש, ״מסומטר״ על ידי איחוד <span class="math inline">\(A \setminus B\)</span> עם <span class="math inline">\(B \setminus A\)</span>. יש להפרש הסימטרי גם צורה שקולה תמציתית יותר — <strong>האיחוד ללא החיתוך</strong> — שאותה נוכיח בהמשך.</p>
 <div id="fig-symmetric-difference" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -705,12 +732,14 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="exm-symmetric-difference" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.6</strong></span> עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \triangle B = \{1,2,5,6\}\]</span> האיברים <span class="math inline">\(3\)</span> ו-<span class="math inline">\(4\)</span>, המשותפים לשתי הקבוצות, מושמטים, ונותרים רק אלה השייכים לאחת מהן בלבד.</p>
+<div id="box-exm-symmetric-difference" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.4.8.</strong></p>
+<p>עבור <span class="math inline">\(A = \{1,2,3,4\}\)</span> ו-<span class="math inline">\(B = \{3,4,5,6\}\)</span> מתקבל <span class="math display">\[.A \triangle B = \{1,2,5,6\}\]</span> האיברים <span class="math inline">\(3\)</span> ו-<span class="math inline">\(4\)</span>, המשותפים לשתי הקבוצות, מושמטים, ונותרים רק אלה השייכים לאחת מהן בלבד.</p>
 </div>
 <p>הצורה השקולה שהזכרנו — האיחוד ללא החיתוך — היא טענה הראויה להוכחה, וגם דוגמה יפה לשיטת ההכלה הכפולה.</p>
-<div id="prp-symmetric-difference" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 2.3</strong></span> לכל שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> מתקיים <span class="math display">\[.A \triangle B = (A \cup B) \setminus (A \cap B)\]</span></p>
+<div id="box-prp-symmetric-difference" class="thmbox thmbox-proposition">
+<p><strong>טענה 2.4.9.</strong></p>
+<p>לכל שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> מתקיים <span class="math display">\[.A \triangle B = (A \cup B) \setminus (A \cap B)\]</span></p>
 </div>
 <p><strong>הוכחה.</strong> נוכיח את השוויון ב<strong>שיטת ההכלה הכפולה</strong>: נראה שכל אחת מן הקבוצות מוכלת בשנייה.</p>
 <p><strong>כיוון ראשון</strong> — נוכיח ש-<span class="math inline">\(A \triangle B \subseteq (A \cup B) \setminus (A \cap B)\)</span>. יהי <span class="math inline">\(x\)</span> איבר כלשהו של <span class="math inline">\(A \triangle B = (A \setminus B) \cup (B \setminus A)\)</span>; עלינו להראות ש-<span class="math inline">\(x \in (A \cup B) \setminus (A \cap B)\)</span>. לפי הגדרת האיחוד, <span class="math inline">\(x \in A \setminus B\)</span> <strong>או</strong> <span class="math inline">\(x \in B \setminus A\)</span>. נבחן את שני המקרים:</p>
@@ -731,8 +760,9 @@ window.Quarto = {
 <section id="משלים" class="level3">
 <h3 class="anchored" data-anchor-id="משלים">משלים</h3>
 <p>לעיתים כל הקבוצות שבהן אנו דנים הן תת-קבוצות של קבוצה אחת גדולה — למשל, בקורס זה נעסוק כמעט תמיד בתת-קבוצות של הממשיים. קבוצה כזו, שכל האיברים הנדונים שייכים לה, נקראת <strong>קבוצה אוניברסלית</strong> (או ״עולם״) ומסומנת <span class="math inline">\(U\)</span>. חשוב להבין ש-<span class="math inline">\(U\)</span> אינה ״קבוצת הכול״ מוחלטת — אין דבר כזה — אלא <strong>תחום הדיון</strong> שבחרנו לעבוד בתוכו, והוא משתנה מהקשר להקשר. זהו בדיוק אותו ״עולם״ שכבר פגשנו בשיטת השומר, ולרוב הוא ברור מאליו מן ההקשר (אצלנו — הממשיים). ביחס לעולם כזה נגדיר את ה<strong>משלים</strong> של קבוצה.</p>
-<div id="def-complement" class="definition theorem">
-<p><span class="theorem-title"><strong>הגדרה 2.9</strong></span> תהי <span class="math inline">\(U\)</span> קבוצה אוניברסלית ותהי <span class="math inline">\(A \subseteq U\)</span>. ה<strong>משלים</strong> של <span class="math inline">\(A\)</span> (<strong>ביחס ל-</strong><span class="math inline">\(U\)</span>), המסומן <span class="math inline">\(A^{c}\)</span> (או <span class="math inline">\(\overline{A}\)</span>), הוא קבוצת כל איברי <span class="math inline">\(U\)</span> שאינם שייכים ל-<span class="math inline">\(A\)</span>: <span class="math display">\[.A^{c} = \{x \in U \mid x \notin A\} = U \setminus A\]</span></p>
+<div id="box-def-complement" class="thmbox thmbox-definition">
+<p><strong>הגדרה 2.4.10.</strong></p>
+<p>תהי <span class="math inline">\(U\)</span> קבוצה אוניברסלית ותהי <span class="math inline">\(A \subseteq U\)</span>. ה<strong>משלים</strong> של <span class="math inline">\(A\)</span> (<strong>ביחס ל-</strong><span class="math inline">\(U\)</span>), המסומן <span class="math inline">\(A^{c}\)</span> (או <span class="math inline">\(\overline{A}\)</span>), הוא קבוצת כל איברי <span class="math inline">\(U\)</span> שאינם שייכים ל-<span class="math inline">\(A\)</span>: <span class="math display">\[.A^{c} = \{x \in U \mid x \notin A\} = U \setminus A\]</span></p>
 </div>
 <p>במילים אחרות, המשלים אינו אלא ה<strong>הפרש מן העולם כולו</strong>, <span class="math inline">\(U \setminus A\)</span> — מקרה פרטי של פעולת ההפרש. הוא גם המקבילה הקבוצתית של ה<a href="./01-logic.html#sec-negation">שלילה</a>: מתקיים <span class="math inline">\(x \in A^{c}\)</span> אם ורק אם הפסוק <span class="math inline">\(x \in A\)</span> שקר.</p>
 <p>הדגשנו ״<strong>ביחס ל-</strong><span class="math inline">\(U\)</span>״ במתכוון, שכן המשלים <strong>תלוי בעולם</strong>: כך, המשלים של קבוצת המספרים הזוגיים הוא קבוצת האי-זוגיים כאשר <span class="math inline">\(U = \mathbb{N}\)</span>, אך קבוצה אחרת לגמרי כאשר <span class="math inline">\(U = \mathbb{R}\)</span>. מאחורי הסימון <span class="math inline">\(A^{c}\)</span> מסתתר, אם כן, עולם <span class="math inline">\(U\)</span> מסוים. כאשר העולם ברור מן ההקשר — וכך כמעט תמיד — משמיטים את ״ביחס ל-<span class="math inline">\(U\)</span>״ וכותבים בקצרה <span class="math inline">\(A^{c}\)</span>, אך יש לזכור שהוא תמיד עומד ברקע.</p>
@@ -746,12 +776,14 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="exm-complement" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 2.7</strong></span> נניח <span class="math inline">\(U = \{1, 2, \dots, 10\}\)</span> ו-<span class="math inline">\(A = \{1,2,3,4\}\)</span>. אז <span class="math display">\[.A^{c} = \{5,6,7,8,9,10\}\]</span></p>
+<div id="box-exm-complement" class="thmbox thmbox-example">
+<p><strong>דוגמה 2.4.11.</strong></p>
+<p>נניח <span class="math inline">\(U = \{1, 2, \dots, 10\}\)</span> ו-<span class="math inline">\(A = \{1,2,3,4\}\)</span>. אז <span class="math display">\[.A^{c} = \{5,6,7,8,9,10\}\]</span></p>
 </div>
 <p>לבסוף, בעזרת המשלים אפשר לנסח מחדש את ההפרש: להוציא מ-<span class="math inline">\(A\)</span> את איברי <span class="math inline">\(B\)</span> שקול להשאיר את איברי <span class="math inline">\(A\)</span> שנמצאים במשלים של <span class="math inline">\(B\)</span>.</p>
-<div id="prp-difference-complement" class="proposition theorem">
-<p><span class="theorem-title"><strong>טענה 2.4</strong></span> תהי <span class="math inline">\(U\)</span> קבוצה אוניברסלית ו-<span class="math inline">\(A, B \subseteq U\)</span>. אז <span class="math display">\[.A \setminus B = A \cap B^{c}\]</span></p>
+<div id="box-prp-difference-complement" class="thmbox thmbox-proposition">
+<p><strong>טענה 2.4.12.</strong></p>
+<p>תהי <span class="math inline">\(U\)</span> קבוצה אוניברסלית ו-<span class="math inline">\(A, B \subseteq U\)</span>. אז <span class="math display">\[.A \setminus B = A \cap B^{c}\]</span></p>
 </div>
 <p><strong>הוכחה.</strong> כאן כל צעד הוא שקילות, ולכן נוכיח את השוויון בשרשרת שקילויות אחת (במקום בשתי הכלות נפרדות): לכל <span class="math inline">\(x\)</span>, <span class="math display">\[.x \in A \setminus B \iff (x \in A \ \wedge\ x \notin B) \iff (x \in A \ \wedge\ x \in B^{c}) \iff x \in A \cap B^{c}\]</span> השקילות הראשונה היא הגדרת ההפרש, השנייה — הגדרת המשלים, והשלישית — הגדרת החיתוך. מאחר שלכל <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \in A \setminus B\)</span> אם ורק אם <span class="math inline">\(x \in A \cap B^{c}\)</span>, שתי הקבוצות שוות. <span class="math inline">\(\blacksquare\)</span></p>
 </section>

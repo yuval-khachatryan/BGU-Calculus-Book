@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,36 +526,36 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-האינטגרל-הלא-מסוים" id="toc-הגדרת-האינטגרל-הלא-מסוים" class="nav-link active" data-scroll-target="#הגדרת-האינטגרל-הלא-מסוים">הגדרת האינטגרל הלא-מסוים</a>
+  <li><a href="#הגדרת-האינטגרל-הלא-מסוים" id="toc-הגדרת-האינטגרל-הלא-מסוים" class="nav-link active" data-scroll-target="#הגדרת-האינטגרל-הלא-מסוים"><span class="header-section-number">13.1</span> הגדרת האינטגרל הלא-מסוים</a>
   <ul class="collapse">
   <li><a href="#אינטגרל-לא-מסוים" id="toc-אינטגרל-לא-מסוים" class="nav-link" data-scroll-target="#אינטגרל-לא-מסוים">אינטגרל לא מסוים</a></li>
   </ul></li>
-  <li><a href="#אינטגרלים-מיידיים" id="toc-אינטגרלים-מיידיים" class="nav-link" data-scroll-target="#אינטגרלים-מיידיים">אינטגרלים מיידיים</a>
+  <li><a href="#אינטגרלים-מיידיים" id="toc-אינטגרלים-מיידיים" class="nav-link" data-scroll-target="#אינטגרלים-מיידיים"><span class="header-section-number">13.2</span> אינטגרלים מיידיים</a>
   <ul class="collapse">
   <li><a href="#פונקציות-אלמנטריות-ונגזרותיהן" id="toc-פונקציות-אלמנטריות-ונגזרותיהן" class="nav-link" data-scroll-target="#פונקציות-אלמנטריות-ונגזרותיהן">פונקציות אלמנטריות ונגזרותיהן</a></li>
   <li><a href="#אינטגרלים-מיידיים-1" id="toc-אינטגרלים-מיידיים-1" class="nav-link" data-scroll-target="#אינטגרלים-מיידיים-1">אינטגרלים מיידיים</a></li>
   <li><a href="#טענה-סכום" id="toc-טענה-סכום" class="nav-link" data-scroll-target="#טענה-סכום">טענה (סכום)</a></li>
   <li><a href="#טענה-כפל-בקבוע" id="toc-טענה-כפל-בקבוע" class="nav-link" data-scroll-target="#טענה-כפל-בקבוע">טענה (כפל בקבוע)</a></li>
   </ul></li>
-  <li><a href="#אינטגרציה-בחלקים" id="toc-אינטגרציה-בחלקים" class="nav-link" data-scroll-target="#אינטגרציה-בחלקים">אינטגרציה בחלקים</a>
+  <li><a href="#אינטגרציה-בחלקים" id="toc-אינטגרציה-בחלקים" class="nav-link" data-scroll-target="#אינטגרציה-בחלקים"><span class="header-section-number">13.3</span> אינטגרציה בחלקים</a>
   <ul class="collapse">
   <li><a href="#שיטת-האינטגרציה-בחלקים" id="toc-שיטת-האינטגרציה-בחלקים" class="nav-link" data-scroll-target="#שיטת-האינטגרציה-בחלקים">שיטת האינטגרציה בחלקים</a></li>
   </ul></li>
-  <li><a href="#החלפת-משתנה-אינטגרציה-שיטת-ההצבה" id="toc-החלפת-משתנה-אינטגרציה-שיטת-ההצבה" class="nav-link" data-scroll-target="#החלפת-משתנה-אינטגרציה-שיטת-ההצבה">החלפת משתנה אינטגרציה — שיטת ההצבה</a>
+  <li><a href="#החלפת-משתנה-אינטגרציה-שיטת-ההצבה" id="toc-החלפת-משתנה-אינטגרציה-שיטת-ההצבה" class="nav-link" data-scroll-target="#החלפת-משתנה-אינטגרציה-שיטת-ההצבה"><span class="header-section-number">13.4</span> החלפת משתנה אינטגרציה — שיטת ההצבה</a>
   <ul class="collapse">
   <li><a href="#שיטת-ההצבה-כלל-השרשרת-מאחורה" id="toc-שיטת-ההצבה-כלל-השרשרת-מאחורה" class="nav-link" data-scroll-target="#שיטת-ההצבה-כלל-השרשרת-מאחורה">שיטת ההצבה / כלל השרשרת מאחורה</a></li>
   <li><a href="#שיטת-ההצבה-חזרה-והרחבה" id="toc-שיטת-ההצבה-חזרה-והרחבה" class="nav-link" data-scroll-target="#שיטת-ההצבה-חזרה-והרחבה">שיטת ההצבה: חזרה והרחבה</a></li>
   <li><a href="#שיטה-ראשונה" id="toc-שיטה-ראשונה" class="nav-link" data-scroll-target="#שיטה-ראשונה">שיטה ראשונה</a></li>
   </ul></li>
-  <li><a href="#הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" id="toc-הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" class="nav-link" data-scroll-target="#הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2">הצבות חשובות: <span class="math inline">\(a\sin x\)</span> באינטגרל של <span class="math inline">\(\sqrt{a^2-x^2}\)</span></a>
+  <li><a href="#הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" id="toc-הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" class="nav-link" data-scroll-target="#הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2"><span class="header-section-number">13.5</span> הצבות חשובות: <span class="math inline">\(a\sin x\)</span> באינטגרל של <span class="math inline">\(\sqrt{a^2-x^2}\)</span></a>
   <ul class="collapse">
   <li><a href="#שיטה-שנייה" id="toc-שיטה-שנייה" class="nav-link" data-scroll-target="#שיטה-שנייה">שיטה שנייה</a></li>
   </ul></li>
-  <li><a href="#הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" id="toc-הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" class="nav-link" data-scroll-target="#הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2">הצבת ויירשטראס (ההצבה האוניברסלית <span class="math inline">\(t=\tan(x/2)\)</span>)</a>
+  <li><a href="#הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" id="toc-הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" class="nav-link" data-scroll-target="#הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2"><span class="header-section-number">13.6</span> הצבת ויירשטראס (ההצבה האוניברסלית <span class="math inline">\(t=\tan(x/2)\)</span>)</a>
   <ul class="collapse">
   <li><a href="#הצבת-ויירשטראס" id="toc-הצבת-ויירשטראס" class="nav-link" data-scroll-target="#הצבת-ויירשטראס">הצבת ויירשטראס</a></li>
   </ul></li>
-  <li><a href="#אינטגרציה-של-פונקציות-רציונליות" id="toc-אינטגרציה-של-פונקציות-רציונליות" class="nav-link" data-scroll-target="#אינטגרציה-של-פונקציות-רציונליות">אינטגרציה של פונקציות רציונליות</a>
+  <li><a href="#אינטגרציה-של-פונקציות-רציונליות" id="toc-אינטגרציה-של-פונקציות-רציונליות" class="nav-link" data-scroll-target="#אינטגרציה-של-פונקציות-רציונליות"><span class="header-section-number">13.7</span> אינטגרציה של פונקציות רציונליות</a>
   <ul class="collapse">
   <li><a href="#אינטגרלים-של-פונקציות-רציונליות" id="toc-אינטגרלים-של-פונקציות-רציונליות" class="nav-link" data-scroll-target="#אינטגרלים-של-פונקציות-רציונליות">אינטגרלים של פונקציות רציונליות</a></li>
   <li><a href="#אינטגרלים-מסוימים" id="toc-אינטגרלים-מסוימים" class="nav-link" data-scroll-target="#אינטגרלים-מסוימים">אינטגרלים מסוימים</a></li>
@@ -578,8 +590,8 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-האינטגרל-הלא-מסוים" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-האינטגרל-הלא-מסוים">הגדרת האינטגרל הלא-מסוים</h2>
+<section id="הגדרת-האינטגרל-הלא-מסוים" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="הגדרת-האינטגרל-הלא-מסוים"><span class="header-section-number">13.1</span> הגדרת האינטגרל הלא-מסוים</h2>
 <p>האינטגרל הוא פעולה הפוכה לגזירה.</p>
 <section id="אינטגרל-לא-מסוים" class="level3">
 <h3 class="anchored" data-anchor-id="אינטגרל-לא-מסוים">אינטגרל לא מסוים</h3>
@@ -595,8 +607,8 @@ window.Quarto = {
 <!-- בדיקה: מתחת לאינטגרל כתוב "פונקציה קדומה של f(x)", ומתחת ל-C כתוב "C∈R, הקבוע של האינטגרציה" -->
 </section>
 </section>
-<section id="אינטגרלים-מיידיים" class="level2">
-<h2 class="anchored" data-anchor-id="אינטגרלים-מיידיים">אינטגרלים מיידיים</h2>
+<section id="אינטגרלים-מיידיים" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="אינטגרלים-מיידיים"><span class="header-section-number">13.2</span> אינטגרלים מיידיים</h2>
 <section id="פונקציות-אלמנטריות-ונגזרותיהן" class="level3">
 <h3 class="anchored" data-anchor-id="פונקציות-אלמנטריות-ונגזרותיהן">פונקציות אלמנטריות ונגזרותיהן</h3>
 <table class="caption-top table">
@@ -687,8 +699,8 @@ window.Quarto = {
 <p><span class="math display">\[\int (4x - 2x^5 + 2^x)dx = 4 \cdot \frac{x^2}{2} - 2 \cdot \frac{x^6}{6} + \frac{2^x}{\ln(2)} + C\]</span></p>
 </section>
 </section>
-<section id="אינטגרציה-בחלקים" class="level2">
-<h2 class="anchored" data-anchor-id="אינטגרציה-בחלקים">אינטגרציה בחלקים</h2>
+<section id="אינטגרציה-בחלקים" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="אינטגרציה-בחלקים"><span class="header-section-number">13.3</span> אינטגרציה בחלקים</h2>
 <section id="שיטת-האינטגרציה-בחלקים" class="level3">
 <h3 class="anchored" data-anchor-id="שיטת-האינטגרציה-בחלקים">שיטת האינטגרציה בחלקים</h3>
 <p>ניזכר כי:</p>
@@ -720,8 +732,8 @@ window.Quarto = {
 <!-- בדיקה: מתחת לסימונים: 1 מסומן f', ln(x) מסומן g, x·ln(x) מסומן f·g, ו-x·(1/x) מסומן f·g' -->
 </section>
 </section>
-<section id="החלפת-משתנה-אינטגרציה-שיטת-ההצבה" class="level2">
-<h2 class="anchored" data-anchor-id="החלפת-משתנה-אינטגרציה-שיטת-ההצבה">החלפת משתנה אינטגרציה — שיטת ההצבה</h2>
+<section id="החלפת-משתנה-אינטגרציה-שיטת-ההצבה" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="החלפת-משתנה-אינטגרציה-שיטת-ההצבה"><span class="header-section-number">13.4</span> החלפת משתנה אינטגרציה — שיטת ההצבה</h2>
 <section id="שיטת-ההצבה-כלל-השרשרת-מאחורה" class="level3">
 <h3 class="anchored" data-anchor-id="שיטת-ההצבה-כלל-השרשרת-מאחורה">שיטת ההצבה / כלל השרשרת מאחורה</h3>
 <p>אם ל-<span class="math inline">\(f(x)\)</span> יש קדומה <span class="math inline">\(F(x)\)</span>, כלומר <span class="math inline">\(\int f(x)dx = F(x)\)</span>,</p>
@@ -791,8 +803,8 @@ window.Quarto = {
 <p>נוסה להציב <span class="math inline">\(u = \sin(x)\)</span>, <span class="math inline">\(du = \cos(x)dx\)</span></p>
 </section>
 </section>
-<section id="הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" class="level2">
-<h2 class="anchored" data-anchor-id="הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2">הצבות חשובות: <span class="math inline">\(a\sin x\)</span> באינטגרל של <span class="math inline">\(\sqrt{a^2-x^2}\)</span></h2>
+<section id="הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="הצבות-חשובות-asin-x-באינטגרל-של-sqrta2-x2"><span class="header-section-number">13.5</span> הצבות חשובות: <span class="math inline">\(a\sin x\)</span> באינטגרל של <span class="math inline">\(\sqrt{a^2-x^2}\)</span></h2>
 <section id="שיטה-שנייה" class="level3">
 <h3 class="anchored" data-anchor-id="שיטה-שנייה">שיטה שנייה</h3>
 <p>נרצה לבצע חילוף משתנה, כלומר נרצה להציב <span class="math inline">\(x = g(t)\)</span> (חצי קימור),</p>
@@ -823,8 +835,8 @@ window.Quarto = {
 <!-- מקור: הרצאה 24 -->
 </section>
 </section>
-<section id="הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" class="level2">
-<h2 class="anchored" data-anchor-id="הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2">הצבת ויירשטראס (ההצבה האוניברסלית <span class="math inline">\(t=\tan(x/2)\)</span>)</h2>
+<section id="הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="הצבת-ויירשטראס-ההצבה-האוניברסלית-ttanx2"><span class="header-section-number">13.6</span> הצבת ויירשטראס (ההצבה האוניברסלית <span class="math inline">\(t=\tan(x/2)\)</span>)</h2>
 <section id="הצבת-ויירשטראס" class="level3">
 <h3 class="anchored" data-anchor-id="הצבת-ויירשטראס">הצבת ויירשטראס</h3>
 <p>עזרת לחשב אינטגרלים שיש בהם <span class="math inline">\(\sin(x), \cos(x)\)</span>: <span class="math inline">\(u = \tan(\frac{x}{2})\)</span></p>
@@ -837,8 +849,8 @@ window.Quarto = {
 <p><span class="math display">\[\int \frac{1}{\sin x} dx = \int \frac{1}{(\frac{2u}{1 + u^2})} \cdot \frac{2}{1 + u^2} du = \int \frac{1}{u} du = \ln(u) + C = \ln(\tan(\frac{x}{2})) + C\]</span></p>
 </section>
 </section>
-<section id="אינטגרציה-של-פונקציות-רציונליות" class="level2">
-<h2 class="anchored" data-anchor-id="אינטגרציה-של-פונקציות-רציונליות">אינטגרציה של פונקציות רציונליות</h2>
+<section id="אינטגרציה-של-פונקציות-רציונליות" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="אינטגרציה-של-פונקציות-רציונליות"><span class="header-section-number">13.7</span> אינטגרציה של פונקציות רציונליות</h2>
 <section id="אינטגרלים-של-פונקציות-רציונליות" class="level3">
 <h3 class="anchored" data-anchor-id="אינטגרלים-של-פונקציות-רציונליות">אינטגרלים של פונקציות רציונליות</h3>
 <p>אם</p>

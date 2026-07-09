@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,19 +526,19 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" id="toc-אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" class="nav-link active" data-scroll-target="#אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת">אינטואיציה גיאומטרית ופיזיקלית למושג הנגזרת</a></li>
-  <li><a href="#הגדרת-הנגזרת" id="toc-הגדרת-הנגזרת" class="nav-link" data-scroll-target="#הגדרת-הנגזרת">הגדרת הנגזרת</a></li>
-  <li><a href="#חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" id="toc-חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" class="nav-link" data-scroll-target="#חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x">חישובי נגזרת לפונקציות בסיסיות: <span class="math inline">\(C,\ x^a,\ \sin x,\ \cos x,\ e^x,\ \ln x,\ |x|\)</span></a>
+  <li><a href="#אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" id="toc-אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" class="nav-link active" data-scroll-target="#אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת"><span class="header-section-number">10.1</span> אינטואיציה גיאומטרית ופיזיקלית למושג הנגזרת</a></li>
+  <li><a href="#הגדרת-הנגזרת" id="toc-הגדרת-הנגזרת" class="nav-link" data-scroll-target="#הגדרת-הנגזרת"><span class="header-section-number">10.2</span> הגדרת הנגזרת</a></li>
+  <li><a href="#חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" id="toc-חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" class="nav-link" data-scroll-target="#חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x"><span class="header-section-number">10.3</span> חישובי נגזרת לפונקציות בסיסיות: <span class="math inline">\(C,\ x^a,\ \sin x,\ \cos x,\ e^x,\ \ln x,\ |x|\)</span></a>
   <ul class="collapse">
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות">דוגמאות:</a></li>
   </ul></li>
-  <li><a href="#הקשר-בין-גזירות-לרציפות" id="toc-הקשר-בין-גזירות-לרציפות" class="nav-link" data-scroll-target="#הקשר-בין-גזירות-לרציפות">הקשר בין גזירוּת לרציפות</a></li>
-  <li><a href="#אריתמטיקה-של-נגזרות" id="toc-אריתמטיקה-של-נגזרות" class="nav-link" data-scroll-target="#אריתמטיקה-של-נגזרות">אריתמטיקה של נגזרות</a></li>
-  <li><a href="#כלל-השרשרת" id="toc-כלל-השרשרת" class="nav-link" data-scroll-target="#כלל-השרשרת">כלל השרשרת</a></li>
-  <li><a href="#נגזרת-של-פונקציה-הפוכה" id="toc-נגזרת-של-פונקציה-הפוכה" class="nav-link" data-scroll-target="#נגזרת-של-פונקציה-הפוכה">נגזרת של פונקציה הפוכה</a></li>
-  <li><a href="#נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" id="toc-נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" class="nav-link" data-scroll-target="#נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x">נגזרות של <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(\log_a x\)</span>, <span class="math inline">\(\arctan x\)</span>, <span class="math inline">\(\arccos x\)</span>, <span class="math inline">\(\arcsin x\)</span></a></li>
-  <li><a href="#נוסחת-המשיק-והקירוב-הלינארי" id="toc-נוסחת-המשיק-והקירוב-הלינארי" class="nav-link" data-scroll-target="#נוסחת-המשיק-והקירוב-הלינארי">נוסחת המשיק והקירוב הלינארי</a></li>
-  <li><a href="#נגזרת-חד-צדדית" id="toc-נגזרת-חד-צדדית" class="nav-link" data-scroll-target="#נגזרת-חד-צדדית">נגזרת חד-צדדית</a></li>
+  <li><a href="#הקשר-בין-גזירות-לרציפות" id="toc-הקשר-בין-גזירות-לרציפות" class="nav-link" data-scroll-target="#הקשר-בין-גזירות-לרציפות"><span class="header-section-number">10.4</span> הקשר בין גזירוּת לרציפות</a></li>
+  <li><a href="#אריתמטיקה-של-נגזרות" id="toc-אריתמטיקה-של-נגזרות" class="nav-link" data-scroll-target="#אריתמטיקה-של-נגזרות"><span class="header-section-number">10.5</span> אריתמטיקה של נגזרות</a></li>
+  <li><a href="#כלל-השרשרת" id="toc-כלל-השרשרת" class="nav-link" data-scroll-target="#כלל-השרשרת"><span class="header-section-number">10.6</span> כלל השרשרת</a></li>
+  <li><a href="#נגזרת-של-פונקציה-הפוכה" id="toc-נגזרת-של-פונקציה-הפוכה" class="nav-link" data-scroll-target="#נגזרת-של-פונקציה-הפוכה"><span class="header-section-number">10.7</span> נגזרת של פונקציה הפוכה</a></li>
+  <li><a href="#נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" id="toc-נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" class="nav-link" data-scroll-target="#נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x"><span class="header-section-number">10.8</span> נגזרות של <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(\log_a x\)</span>, <span class="math inline">\(\arctan x\)</span>, <span class="math inline">\(\arccos x\)</span>, <span class="math inline">\(\arcsin x\)</span></a></li>
+  <li><a href="#נוסחת-המשיק-והקירוב-הלינארי" id="toc-נוסחת-המשיק-והקירוב-הלינארי" class="nav-link" data-scroll-target="#נוסחת-המשיק-והקירוב-הלינארי"><span class="header-section-number">10.9</span> נוסחת המשיק והקירוב הלינארי</a></li>
+  <li><a href="#נגזרת-חד-צדדית" id="toc-נגזרת-חד-צדדית" class="nav-link" data-scroll-target="#נגזרת-חד-צדדית"><span class="header-section-number">10.10</span> נגזרת חד-צדדית</a></li>
   </ul>
 </nav>
     </div>
@@ -552,8 +564,8 @@ window.Quarto = {
 </header>
 
 
-<section id="אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" class="level2">
-<h2 class="anchored" data-anchor-id="אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת">אינטואיציה גיאומטרית ופיזיקלית למושג הנגזרת</h2>
+<section id="אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="אינטואיציה-גיאומטרית-ופיזיקלית-למושג-הנגזרת"><span class="header-section-number">10.1</span> אינטואיציה גיאומטרית ופיזיקלית למושג הנגזרת</h2>
 <p><strong>משמעות פיזיקלית</strong></p>
 <p>זמן: <span class="math inline">\(f(t)\)</span> המודד מרחקים, כאשר <span class="math inline">\(t\)</span> הוא זמן.</p>
 <p>מרחק: <span class="math inline">\(f(x) - f(x_0)\)</span> המרחק בין פרקי הזמן <span class="math inline">\(x_0\)</span> ו- <span class="math inline">\(x\)</span>.</p>
@@ -577,13 +589,13 @@ window.Quarto = {
 <p>כלומר: <span class="math inline">\(\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}\)</span> הוא השיפוע של הישר המשיק לגרף הפונקציה ב- <span class="math inline">\((x_0, f(x_0))\)</span>.</p>
 <!-- מקור: הרצאה 17 -->
 </section>
-<section id="הגדרת-הנגזרת" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-הנגזרת">הגדרת הנגזרת</h2>
+<section id="הגדרת-הנגזרת" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="הגדרת-הנגזרת"><span class="header-section-number">10.2</span> הגדרת הנגזרת</h2>
 <p>תהי פונקציה <span class="math inline">\(f(x)\)</span> מוגדרת בסביבה של נקודה <span class="math inline">\(x_0\)</span>, נגיד כי <span class="math inline">\(f(x)\)</span> גזירה ב-<span class="math inline">\(x_0\)</span> אם קיים הגבול הבא: <span class="math display">\[\lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]</span></p>
 <p>ואז נגדיר את הנגזרת של <span class="math inline">\(f\)</span> בנקודה <span class="math inline">\(x_0\)</span> ע”י: <span class="math display">\[f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}\]</span></p>
 </section>
-<section id="חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" class="level2">
-<h2 class="anchored" data-anchor-id="חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x">חישובי נגזרת לפונקציות בסיסיות: <span class="math inline">\(C,\ x^a,\ \sin x,\ \cos x,\ e^x,\ \ln x,\ |x|\)</span></h2>
+<section id="חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="חישובי-נגזרת-לפונקציות-בסיסיות-c-xa-sin-x-cos-x-ex-ln-x-x"><span class="header-section-number">10.3</span> חישובי נגזרת לפונקציות בסיסיות: <span class="math inline">\(C,\ x^a,\ \sin x,\ \cos x,\ e^x,\ \ln x,\ |x|\)</span></h2>
 <section id="דוגמאות" class="level3">
 <h3 class="anchored" data-anchor-id="דוגמאות">דוגמאות:</h3>
 <p><strong>1)</strong> עבור הפונקציה הקבועה <span class="math inline">\(f(x) = C\)</span> (קבוע <span class="math inline">\(C\)</span>)</p>
@@ -620,10 +632,11 @@ window.Quarto = {
 <p><span class="math display">\[\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}\]</span></p>
 </section>
 </section>
-<section id="הקשר-בין-גזירות-לרציפות" class="level2">
-<h2 class="anchored" data-anchor-id="הקשר-בין-גזירות-לרציפות">הקשר בין גזירוּת לרציפות</h2>
-<div id="thm-gzira-retzifut" class="theorem">
-<p><span class="theorem-title"><strong>משפט 10.1</strong></span> אם <span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span>, אז <span class="math inline">\(f\)</span> רציפה ב- <span class="math inline">\(x_0\)</span>.</p>
+<section id="הקשר-בין-גזירות-לרציפות" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="הקשר-בין-גזירות-לרציפות"><span class="header-section-number">10.4</span> הקשר בין גזירוּת לרציפות</h2>
+<div id="box-thm-gzira-retzifut" class="thmbox thmbox-theorem">
+<p><strong>משפט 10.4.1.</strong></p>
+<p>אם <span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span>, אז <span class="math inline">\(f\)</span> רציפה ב- <span class="math inline">\(x_0\)</span>.</p>
 </div>
 <div style="text-align:center">
 <p>תרשים: גזירות גוררת רציפות, אך רציפות אינה גוררת גזירות</p>
@@ -669,10 +682,11 @@ window.Quarto = {
 <!-- בדיקה: הערות: חסומה, כלל הסנדוויץ' -->
 <p>לא קיים <span class="math inline">\(\lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0} D(x)\)</span> הפונקציה <strong>לא</strong> גזירה ב-0</p>
 </section>
-<section id="אריתמטיקה-של-נגזרות" class="level2">
-<h2 class="anchored" data-anchor-id="אריתמטיקה-של-נגזרות">אריתמטיקה של נגזרות</h2>
-<div id="thm-aritmetika-nagzeret" class="theorem">
-<p><span class="theorem-title"><strong>משפט 10.2</strong></span> אם <span class="math inline">\(f, g\)</span> פונקציות גזירות בנקודה <span class="math inline">\(x_0\)</span>, אז:</p>
+<section id="אריתמטיקה-של-נגזרות" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="אריתמטיקה-של-נגזרות"><span class="header-section-number">10.5</span> אריתמטיקה של נגזרות</h2>
+<div id="box-thm-aritmetika-nagzeret" class="thmbox thmbox-theorem">
+<p><strong>משפט 10.5.1.</strong></p>
+<p>אם <span class="math inline">\(f, g\)</span> פונקציות גזירות בנקודה <span class="math inline">\(x_0\)</span>, אז:</p>
 <p>א) הפונקציה <span class="math inline">\((f \pm g)\)</span> גזירה ב- <span class="math inline">\(x_0\)</span> ומתקיים: <span class="math inline">\((f \pm g)'(x_0) = f'(x_0) \pm g'(x_0)\)</span></p>
 <p>ב) הפונקציה <span class="math inline">\(f \cdot g\)</span> גזירה ב- <span class="math inline">\(x_0\)</span> ומתקיים: <span class="math inline">\((f \cdot g)'(x_0) = f'(x_0) \cdot g(x_0) + f(x_0) \cdot g'(x_0)\)</span></p>
 <p>ג) אם <span class="math inline">\(g(x_0) \neq 0\)</span> אז הפונקציה <span class="math inline">\(\frac{f}{g}\)</span> גזירה ב- <span class="math inline">\(x_0\)</span> ומתקיים: <span class="math inline">\(\left(\frac{f}{g}\right)'(x_0) = \frac{g(x_0) \cdot f'(x_0) - g'(x_0) \cdot f(x_0)}{g^2(x_0)}\)</span></p>
@@ -688,10 +702,11 @@ window.Quarto = {
 <p>הפונקציה <span class="math inline">\(\tan(x) = \frac{\sin(x)}{\cos(x)}\)</span> גזירה בכל נקודה <span class="math inline">\(x_0\)</span> בה <span class="math inline">\(\cos(x_0) \neq 0\)</span> כלומר <span class="math inline">\(x \neq \frac{\pi}{2} + \pi k\)</span></p>
 <p><span class="math display">\[(\tan(x))'(x_0) = \left(\frac{\sin(x)}{\cos(x)}\right)'(x_0) = \frac{\cos(x_0) \cos(x_0) - \sin(x_0) \cdot (-\sin(x_0))}{\cos^2(x_0)} = \frac{1}{\cos^2(x_0)}\]</span></p>
 </section>
-<section id="כלל-השרשרת" class="level2">
-<h2 class="anchored" data-anchor-id="כלל-השרשרת">כלל השרשרת</h2>
-<div id="thm-chain-rule" class="theorem">
-<p><span class="theorem-title"><strong>משפט 10.3</strong></span> <strong>כלל השרשרת</strong></p>
+<section id="כלל-השרשרת" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="כלל-השרשרת"><span class="header-section-number">10.6</span> כלל השרשרת</h2>
+<div id="box-thm-chain-rule" class="thmbox thmbox-theorem">
+<p><strong>משפט 10.6.1.</strong></p>
+<p><strong>כלל השרשרת</strong></p>
 <p>אם <span class="math inline">\(f\)</span> גזירה ב-<span class="math inline">\(x_0\)</span>, ואם <span class="math inline">\(g\)</span> גזירה ב-<span class="math inline">\(f(x_0)\)</span>, אז הפונקציה <span class="math inline">\(g \circ f\)</span> גזירה ב-<span class="math inline">\(x_0\)</span>, ומתקיים: <span class="math display">\[g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)(\]</span></p>
 </div>
 <p>דוגמאות:</p>
@@ -708,8 +723,8 @@ window.Quarto = {
 <!-- בדיקה: נכתב (2x)' = g(f(x))·f(x) מעל הנוסחה, ככל הנראה כוונה (2^x)' -->
 <p><span class="math display">\[(2^x)' = e^{x \ln(2)} \cdot \ln(2) = 2^x \cdot \ln(2)\]</span></p>
 </section>
-<section id="נגזרת-של-פונקציה-הפוכה" class="level2">
-<h2 class="anchored" data-anchor-id="נגזרת-של-פונקציה-הפוכה">נגזרת של פונקציה הפוכה</h2>
+<section id="נגזרת-של-פונקציה-הפוכה" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="נגזרת-של-פונקציה-הפוכה"><span class="header-section-number">10.7</span> נגזרת של פונקציה הפוכה</h2>
 <p>פונקציות הפיכות ידועות:</p>
 <p><span class="math display">\[\begin{array}{ccc}
 e^x &amp; \longleftrightarrow &amp; \ln(x) \\
@@ -719,8 +734,9 @@ a^x &amp; \longleftrightarrow &amp; \log_a(x) \\
 \tan(x) &amp; \longleftrightarrow &amp; \arctan(x) \\
 x^2 &amp; \longleftrightarrow &amp; \sqrt{x}
 \end{array}\]</span></p>
-<div id="thm-inverse-derivative" class="theorem">
-<p><span class="theorem-title"><strong>משפט 10.4</strong></span> <strong>נגזרת של פונקציה הופכית</strong></p>
+<div id="box-thm-inverse-derivative" class="thmbox thmbox-theorem">
+<p><strong>משפט 10.7.1.</strong></p>
+<p><strong>נגזרת של פונקציה הופכית</strong></p>
 <p>אם <span class="math inline">\(f\)</span> הפיכה וגזירה ב-<span class="math inline">\(x_0\)</span>, אז <span class="math inline">\(f^{-1}\)</span> גזירה ב-<span class="math inline">\(x_0 = f^{-1}(y)\)</span> ומתקיים: <span class="math display">\[(f^{-1})'(y) = \frac{1}{f'(x_0)} = \frac{1}{f'(f^{-1}(y))}\]</span></p>
 </div>
 <p>דוגמאות:</p>
@@ -745,20 +761,20 @@ x^2 &amp; \longleftrightarrow &amp; \sqrt{x}
 </figure>
 </div>
 </section>
-<section id="נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" class="level2">
-<h2 class="anchored" data-anchor-id="נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x">נגזרות של <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(\log_a x\)</span>, <span class="math inline">\(\arctan x\)</span>, <span class="math inline">\(\arccos x\)</span>, <span class="math inline">\(\arcsin x\)</span></h2>
+<section id="נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="נגזרות-של-sqrtx-log_a-x-arctan-x-arccos-x-arcsin-x"><span class="header-section-number">10.8</span> נגזרות של <span class="math inline">\(\sqrt{x}\)</span>, <span class="math inline">\(\log_a x\)</span>, <span class="math inline">\(\arctan x\)</span>, <span class="math inline">\(\arccos x\)</span>, <span class="math inline">\(\arcsin x\)</span></h2>
 <div class="todo">
 <p>נגזרות הפונקציות ההופכיות (<span class="math inline">\(\arctan\)</span> וכו’) נדונות עם ״נגזרת של פונקציה הפוכה״ לעיל. להשלמה.</p>
 </div>
 </section>
-<section id="נוסחת-המשיק-והקירוב-הלינארי" class="level2">
-<h2 class="anchored" data-anchor-id="נוסחת-המשיק-והקירוב-הלינארי">נוסחת המשיק והקירוב הלינארי</h2>
+<section id="נוסחת-המשיק-והקירוב-הלינארי" class="level2" data-number="10.9">
+<h2 data-number="10.9" class="anchored" data-anchor-id="נוסחת-המשיק-והקירוב-הלינארי"><span class="header-section-number">10.9</span> נוסחת המשיק והקירוב הלינארי</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
 </section>
-<section id="נגזרת-חד-צדדית" class="level2">
-<h2 class="anchored" data-anchor-id="נגזרת-חד-צדדית">נגזרת חד-צדדית</h2>
+<section id="נגזרת-חד-צדדית" class="level2" data-number="10.10">
+<h2 data-number="10.10" class="anchored" data-anchor-id="נגזרת-חד-צדדית"><span class="header-section-number">10.10</span> נגזרת חד-צדדית</h2>
 <p>פונקציה <span class="math inline">\(f\)</span> היא <u>גזירה מימין</u> ב-<span class="math inline">\(x_0\)</span>, אם הגבול הבא קיים: <span class="math display">\[\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = f'_+(x_0)\]</span></p>
 <p>פונקציה <span class="math inline">\(f\)</span> היא <u>גזירה משמאל</u> ב-<span class="math inline">\(x_0\)</span>, אם הגבול הבא קיים: <span class="math display">\[\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = f'_-(x_0)\]</span></p>
 <p>דוגמא:</p>
@@ -778,8 +794,9 @@ x^2 &amp; \longleftrightarrow &amp; \sqrt{x}
 </div>
 <p>מימין ל-0: <span class="math display">\[\lim_{x \to 0^+} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^+} \frac{|x|}{x} = 1\]</span></p>
 <p>משמאל ל-0: <span class="math display">\[\lim_{x \to 0^-} \frac{-x - 0}{x} = \lim_{x \to 0^-} \frac{-x}{x} = -1\]</span></p>
-<div id="thm-derivative-iff-one-sided" class="theorem">
-<p><span class="theorem-title"><strong>משפט 10.5</strong></span> הפונקציה <span class="math inline">\(f\)</span> <u>גזירה</u> ב-<span class="math inline">\(x_0\)</span>, אם ורק אם היא <u>רציפה</u> ב-<span class="math inline">\(x_0\)</span>, <u>גזירה מימין ומשמאל</u> ב-0, ומתקיים: <span class="math display">\[f'_+(x_0) = f'_-(x_0)\]</span></p>
+<div id="box-thm-derivative-iff-one-sided" class="thmbox thmbox-theorem">
+<p><strong>משפט 10.10.1.</strong></p>
+<p>הפונקציה <span class="math inline">\(f\)</span> <u>גזירה</u> ב-<span class="math inline">\(x_0\)</span>, אם ורק אם היא <u>רציפה</u> ב-<span class="math inline">\(x_0\)</span>, <u>גזירה מימין ומשמאל</u> ב-0, ומתקיים: <span class="math display">\[f'_+(x_0) = f'_-(x_0)\]</span></p>
 </div>
 <p>דוגמא:</p>
 <p>מצאו את <span class="math inline">\(A, B \in \mathbb{R}\)</span> כך שהפונקציה: <span class="math display">\[f(x) = \begin{cases} x^2 + A &amp; x &gt; 2 \\ B \cdot (x - 1) &amp; x \leq 2 \end{cases}\]</span> גזירה ב-2.</p>

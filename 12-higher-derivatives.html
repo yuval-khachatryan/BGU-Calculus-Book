@@ -73,9 +73,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-.theorem-title::after {
-  content: ".";
-}
 .todo {
   color: #8a8a8a;
   font-style: italic;
@@ -157,6 +154,21 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.thmbox {
+  border-inline-start: 4px solid #9ca3af;
+  background: #fafafa;
+  border-radius: 4px;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+}
+.thmbox > :first-child { margin-top: 0; }
+.thmbox > :last-child { margin-bottom: 0; }
+.thmbox-definition  { border-color: #3b82f6; background: #eff6ff; }
+.thmbox-theorem     { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-proposition { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
+.thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
+.thmbox-example     { border-color: #d97706; background: #fffbeb; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -514,17 +526,17 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים" id="toc-הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="nav-link active" data-scroll-target="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים">הגדרת הנגזרת מסדר גבוה וסימונים</a></li>
-  <li><a href="#דוגמאות-לנגזרת-מסדר-גבוה" id="toc-דוגמאות-לנגזרת-מסדר-גבוה" class="nav-link" data-scroll-target="#דוגמאות-לנגזרת-מסדר-גבוה">דוגמאות לנגזרת מסדר גבוה</a></li>
-  <li><a href="#פולינום-טיילור-ומקלורן" id="toc-פולינום-טיילור-ומקלורן" class="nav-link" data-scroll-target="#פולינום-טיילור-ומקלורן">פולינום טיילור ומקלורן</a>
+  <li><a href="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים" id="toc-הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="nav-link active" data-scroll-target="#הגדרת-הנגזרת-מסדר-גבוה-וסימונים"><span class="header-section-number">12.1</span> הגדרת הנגזרת מסדר גבוה וסימונים</a></li>
+  <li><a href="#דוגמאות-לנגזרת-מסדר-גבוה" id="toc-דוגמאות-לנגזרת-מסדר-גבוה" class="nav-link" data-scroll-target="#דוגמאות-לנגזרת-מסדר-גבוה"><span class="header-section-number">12.2</span> דוגמאות לנגזרת מסדר גבוה</a></li>
+  <li><a href="#פולינום-טיילור-ומקלורן" id="toc-פולינום-טיילור-ומקלורן" class="nav-link" data-scroll-target="#פולינום-טיילור-ומקלורן"><span class="header-section-number">12.3</span> פולינום טיילור ומקלורן</a>
   <ul class="collapse">
   <li><a href="#רעיון-ראשון---פולינום-טיילור" id="toc-רעיון-ראשון---פולינום-טיילור" class="nav-link" data-scroll-target="#רעיון-ראשון---פולינום-טיילור">רעיון ראשון - פולינום טיילור</a></li>
   </ul></li>
-  <li><a href="#מציאת-פולינום-מקלורן-מסדר-n" id="toc-מציאת-פולינום-מקלורן-מסדר-n" class="nav-link" data-scroll-target="#מציאת-פולינום-מקלורן-מסדר-n">מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></a>
+  <li><a href="#מציאת-פולינום-מקלורן-מסדר-n" id="toc-מציאת-פולינום-מקלורן-מסדר-n" class="nav-link" data-scroll-target="#מציאת-פולינום-מקלורן-מסדר-n"><span class="header-section-number">12.4</span> מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></a>
   <ul class="collapse">
   <li><a href="#פולינום-מקלורן" id="toc-פולינום-מקלורן" class="nav-link" data-scroll-target="#פולינום-מקלורן">פולינום מקלורן</a></li>
   </ul></li>
-  <li><a href="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" id="toc-סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="nav-link" data-scroll-target="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות">סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</a>
+  <li><a href="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" id="toc-סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="nav-link" data-scroll-target="#סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות"><span class="header-section-number">12.5</span> סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</a>
   <ul class="collapse">
   <li><a href="#רעיון-שני" id="toc-רעיון-שני" class="nav-link" data-scroll-target="#רעיון-שני">רעיון שני</a></li>
   <li><a href="#השארית" id="toc-השארית" class="nav-link" data-scroll-target="#השארית">השארית</a></li>
@@ -533,22 +545,22 @@ window.Quarto = {
   <li><a href="#השארית-בטיילור" id="toc-השארית-בטיילור" class="nav-link" data-scroll-target="#השארית-בטיילור">השארית בטיילור</a></li>
   <li><a href="#דוגמאות-1" id="toc-דוגמאות-1" class="nav-link" data-scroll-target="#דוגמאות-1">דוגמאות:</a></li>
   </ul></li>
-  <li><a href="#משפט-לגראנז-על-השארית" id="toc-משפט-לגראנז-על-השארית" class="nav-link" data-scroll-target="#משפט-לגראנז-על-השארית">משפט לגראנז’ על השארית</a>
+  <li><a href="#משפט-לגראנז-על-השארית" id="toc-משפט-לגראנז-על-השארית" class="nav-link" data-scroll-target="#משפט-לגראנז-על-השארית"><span class="header-section-number">12.6</span> משפט לגראנז’ על השארית</a>
   <ul class="collapse">
   <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא:</a></li>
   </ul></li>
-  <li><a href="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" id="toc-מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="nav-link" data-scroll-target="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי">מבחן הנגזרת השנייה לנקודות קיצון מקומי</a>
+  <li><a href="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" id="toc-מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="nav-link" data-scroll-target="#מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי"><span class="header-section-number">12.7</span> מבחן הנגזרת השנייה לנקודות קיצון מקומי</a>
   <ul class="collapse">
   <li><a href="#הסבר-רעיוני-למשפט" id="toc-הסבר-רעיוני-למשפט" class="nav-link" data-scroll-target="#הסבר-רעיוני-למשפט">הסבר רעיוני למשפט</a></li>
   </ul></li>
-  <li><a href="#קמירות-וקעירות-של-פונקציה" id="toc-קמירות-וקעירות-של-פונקציה" class="nav-link" data-scroll-target="#קמירות-וקעירות-של-פונקציה">קמירות וקעירות של פונקציה</a></li>
-  <li><a href="#נקודת-פיתול" id="toc-נקודת-פיתול" class="nav-link" data-scroll-target="#נקודת-פיתול">נקודת פיתול</a></li>
-  <li><a href="#אסימפטוטות-אנכיות-ומשופעות" id="toc-אסימפטוטות-אנכיות-ומשופעות" class="nav-link" data-scroll-target="#אסימפטוטות-אנכיות-ומשופעות">אסימפטוטות — אנכיות ומשופעות</a>
+  <li><a href="#קמירות-וקעירות-של-פונקציה" id="toc-קמירות-וקעירות-של-פונקציה" class="nav-link" data-scroll-target="#קמירות-וקעירות-של-פונקציה"><span class="header-section-number">12.8</span> קמירות וקעירות של פונקציה</a></li>
+  <li><a href="#נקודת-פיתול" id="toc-נקודת-פיתול" class="nav-link" data-scroll-target="#נקודת-פיתול"><span class="header-section-number">12.9</span> נקודת פיתול</a></li>
+  <li><a href="#אסימפטוטות-אנכיות-ומשופעות" id="toc-אסימפטוטות-אנכיות-ומשופעות" class="nav-link" data-scroll-target="#אסימפטוטות-אנכיות-ומשופעות"><span class="header-section-number">12.10</span> אסימפטוטות — אנכיות ומשופעות</a>
   <ul class="collapse">
   <li><a href="#אסימפטוטה-אנכית" id="toc-אסימפטוטה-אנכית" class="nav-link" data-scroll-target="#אסימפטוטה-אנכית">אסימפטוטה אנכית</a></li>
   <li><a href="#אסימפטוטה-משופעת" id="toc-אסימפטוטה-משופעת" class="nav-link" data-scroll-target="#אסימפטוטה-משופעת">אסימפטוטה משופעת</a></li>
   </ul></li>
-  <li><a href="#שרטוט-גרף-של-פונקציה" id="toc-שרטוט-גרף-של-פונקציה" class="nav-link" data-scroll-target="#שרטוט-גרף-של-פונקציה">שרטוט גרף של פונקציה</a></li>
+  <li><a href="#שרטוט-גרף-של-פונקציה" id="toc-שרטוט-גרף-של-פונקציה" class="nav-link" data-scroll-target="#שרטוט-גרף-של-פונקציה"><span class="header-section-number">12.11</span> שרטוט גרף של פונקציה</a></li>
   </ul>
 </nav>
     </div>
@@ -574,8 +586,8 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="level2">
-<h2 class="anchored" data-anchor-id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים">הגדרת הנגזרת מסדר גבוה וסימונים</h2>
+<section id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="הגדרת-הנגזרת-מסדר-גבוה-וסימונים"><span class="header-section-number">12.1</span> הגדרת הנגזרת מסדר גבוה וסימונים</h2>
 <p>נגזרת <span class="math inline">\(f\)</span> מסדר ח מסדר <span class="math inline">\(x_0\)</span>:</p>
 <p><span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
 <p><span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0\)</span></p>
@@ -616,14 +628,14 @@ window.Quarto = {
 <p><span class="math display">\[f^{(n)}(x) = (-1)^{n+1}\cdot(n-1)!\cdot(1+x)^{-n}\]</span></p>
 <p><span class="math display">\[f^{(n)}(x) = \frac{(-1)^{n+1}\cdot(n-1)!}{(1+x)^n}\]</span></p>
 </section>
-<section id="דוגמאות-לנגזרת-מסדר-גבוה" class="level2">
-<h2 class="anchored" data-anchor-id="דוגמאות-לנגזרת-מסדר-גבוה">דוגמאות לנגזרת מסדר גבוה</h2>
+<section id="דוגמאות-לנגזרת-מסדר-גבוה" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="דוגמאות-לנגזרת-מסדר-גבוה"><span class="header-section-number">12.2</span> דוגמאות לנגזרת מסדר גבוה</h2>
 <div class="todo">
 <p>דוגמאות לנגזרת מסדר גבוה (<span class="math inline">\(\sin x,\ e^x,\ xe^x\)</span>) מופיעות בסעיף ״הגדרת הנגזרת מסדר גבוה״ לעיל. להשלמה והפרדה.</p>
 </div>
 </section>
-<section id="פולינום-טיילור-ומקלורן" class="level2">
-<h2 class="anchored" data-anchor-id="פולינום-טיילור-ומקלורן">פולינום טיילור ומקלורן</h2>
+<section id="פולינום-טיילור-ומקלורן" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="פולינום-טיילור-ומקלורן"><span class="header-section-number">12.3</span> פולינום טיילור ומקלורן</h2>
 <section id="רעיון-ראשון---פולינום-טיילור" class="level3">
 <h3 class="anchored" data-anchor-id="רעיון-ראשון---פולינום-טיילור">רעיון ראשון - פולינום טיילור</h3>
 <p>נתונה פונקציה <span class="math inline">\(f(x)\)</span>, ידועות לנו הנגזרות שלה ב- <span class="math inline">\(x_0\)</span>: <span class="math inline">\(f^{(0)}(x_0), f^{(1)}(x_0), \ldots, f^{(n)}(x_0)\)</span></p>
@@ -659,8 +671,8 @@ window.Quarto = {
 <p><strong>*</strong> עבור <span class="math inline">\(x_0 = 0\)</span> פולינום טיילור נקרא “פולינום מקלורן”.</p>
 </section>
 </section>
-<section id="מציאת-פולינום-מקלורן-מסדר-n" class="level2">
-<h2 class="anchored" data-anchor-id="מציאת-פולינום-מקלורן-מסדר-n">מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></h2>
+<section id="מציאת-פולינום-מקלורן-מסדר-n" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="מציאת-פולינום-מקלורן-מסדר-n"><span class="header-section-number">12.4</span> מציאת פולינום מקלורן מסדר <span class="math inline">\(n\)</span></h2>
 <section id="פולינום-מקלורן" class="level3">
 <h3 class="anchored" data-anchor-id="פולינום-מקלורן">פולינום מקלורן</h3>
 <p>פולינום מקלורן של <span class="math inline">\(e^x\)</span> מסדר ח, לכל <span class="math inline">\(n \geq 0\)</span>:</p>
@@ -678,8 +690,8 @@ window.Quarto = {
 <p><span class="math display">\[P_5(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!}\]</span></p>
 </section>
 </section>
-<section id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="level2">
-<h2 class="anchored" data-anchor-id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות">סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</h2>
+<section id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="סימון-oxn-של-פיאנו-והשימוש-בו-לחישוב-גבולות"><span class="header-section-number">12.5</span> סימון <span class="math inline">\(o(x^n)\)</span> של פיאנו והשימוש בו לחישוב גבולות</h2>
 <section id="רעיון-שני" class="level3">
 <h3 class="anchored" data-anchor-id="רעיון-שני">רעיון שני</h3>
 <p>לעיתים, נשתמש ב- <span class="math inline">\(P_n(x)\)</span> במקום ב- <span class="math inline">\(f(x)\)</span>, לשתי מטרות:</p>
@@ -687,8 +699,9 @@ window.Quarto = {
 <p><strong>(2)</strong> קירובים ל- <span class="math inline">\(f(x)\)</span>.</p>
 <section id="חישובי-גבולות" class="level4">
 <h4 class="anchored" data-anchor-id="חישובי-גבולות">חישובי גבולות</h4>
-<div id="thm-taylor-limit" class="theorem">
-<p><span class="theorem-title"><strong>משפט 12.1</strong></span> משפט: (ללא הוכחה)</p>
+<div id="box-thm-taylor-limit" class="thmbox thmbox-theorem">
+<p><strong>משפט 12.5.1.</strong></p>
+<p>משפט: (ללא הוכחה)</p>
 <p>אם <span class="math inline">\(f\)</span> גזירה ב- <span class="math inline">\(x_0 = 0\)</span> מסדר ח, אז מתקיים:</p>
 <p><span class="math display">\[\lim_{x\to 0} \frac{f(x) - P_n(x)}{x^n} = 0\]</span></p>
 </div>
@@ -766,11 +779,12 @@ window.Quarto = {
 <p><span class="math display">\[= \frac{3}{4!} + \frac{1}{4} - \frac{1}{4!} = \boxed{\frac{2}{4!} + \frac{1}{4}}\]</span></p>
 </section>
 </section>
-<section id="משפט-לגראנז-על-השארית" class="level2">
-<h2 class="anchored" data-anchor-id="משפט-לגראנז-על-השארית">משפט לגראנז’ על השארית</h2>
+<section id="משפט-לגראנז-על-השארית" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="משפט-לגראנז-על-השארית"><span class="header-section-number">12.6</span> משפט לגראנז’ על השארית</h2>
 <p>חישוב ספרות אחרי הנקודה.</p>
-<div id="thm-lagrange-remainder" class="theorem">
-<p><span class="theorem-title"><strong>משפט 12.2</strong></span> אם <span class="math inline">\(f(x)\)</span> גזירה <span class="math inline">\((n+1)\)</span> פעמים בסביבת הנקודה <span class="math inline">\(x_0\)</span> , לכל <span class="math inline">\(x\)</span> בסביבת <span class="math inline">\(x_0\)</span> , אז קיימת נקודה <span class="math inline">\(c\)</span> בין <span class="math inline">\(x_0\)</span> ל-<span class="math inline">\(x\)</span> עבורה:</p>
+<div id="box-thm-lagrange-remainder" class="thmbox thmbox-theorem">
+<p><strong>משפט 12.6.1.</strong></p>
+<p>אם <span class="math inline">\(f(x)\)</span> גזירה <span class="math inline">\((n+1)\)</span> פעמים בסביבת הנקודה <span class="math inline">\(x_0\)</span> , לכל <span class="math inline">\(x\)</span> בסביבת <span class="math inline">\(x_0\)</span> , אז קיימת נקודה <span class="math inline">\(c\)</span> בין <span class="math inline">\(x_0\)</span> ל-<span class="math inline">\(x\)</span> עבורה:</p>
 <p><span class="math display">\[f(x) - P_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} \cdot (x - x_0)^{n+1}\]</span></p>
 </div>
 <p>(הנוסחה כוללת: מספר אקראי <span class="math inline">\(x_0\)</span> , הביטוי <span class="math inline">\(f(x) - P_n(x)\)</span> הוא השארית.)</p>
@@ -796,8 +810,8 @@ window.Quarto = {
 <!-- מקור: הרצאה 21b -->
 </section>
 </section>
-<section id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="level2">
-<h2 class="anchored" data-anchor-id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי">מבחן הנגזרת השנייה לנקודות קיצון מקומי</h2>
+<section id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="מבחן-הנגזרת-השנייה-לנקודות-קיצון-מקומי"><span class="header-section-number">12.7</span> מבחן הנגזרת השנייה לנקודות קיצון מקומי</h2>
 <ul>
 <li>אם <span class="math inline">\(f\)</span> גזירה ב-<span class="math inline">\(x_0\)</span> ו-<span class="math inline">\(f'(x_0) = 0\)</span>, אז <span class="math inline">\(x_0\)</span> נקודת קיצון.</li>
 </ul>
@@ -806,8 +820,9 @@ window.Quarto = {
 <li><p>אם <span class="math inline">\(f'(x) \geq 0\)</span> בקטע <span class="math inline">\(I\)</span> אז <span class="math inline">\(f\)</span> מונוטונית עולה ב-<span class="math inline">\(I\)</span>.</p>
 <p>אם <span class="math inline">\(f'(x) \leq 0\)</span> בקטע <span class="math inline">\(I\)</span> אז <span class="math inline">\(f\)</span> מונוטונית יורדת ב-<span class="math inline">\(I\)</span>.</p></li>
 </ul>
-<div id="thm-second-derivative-test" class="theorem">
-<p><span class="theorem-title"><strong>משפט 12.3</strong></span> <strong>מבחן הנגזרת השנייה לקיצון</strong></p>
+<div id="box-thm-second-derivative-test" class="thmbox thmbox-theorem">
+<p><strong>משפט 12.7.1.</strong></p>
+<p><strong>מבחן הנגזרת השנייה לקיצון</strong></p>
 <p>אם <span class="math inline">\(f\)</span> גזירה בסביבה של <span class="math inline">\(x_0\)</span> מסדר <span class="math inline">\(2\)</span>, ואם <span class="math inline">\(f'(x_0) = 0\)</span> ואם <span class="math inline">\(f^{(2)}(x_0) \neq 0\)</span></p>
 <p>אז <span class="math inline">\(x_0\)</span> נקודת קיצון מקומית של <span class="math inline">\(f\)</span>.</p>
 <p>לכן אם <span class="math inline">\(f^{(2)}(x_0) &gt; 0\)</span> אז <span class="math inline">\(x_0\)</span> נקודת מינימום מקומית,</p>
@@ -821,8 +836,9 @@ window.Quarto = {
 <p>נניח ש <span class="math inline">\(f^{(2)}(0) &gt; 0\)</span>: <span class="math display">\[f(x) = f(0) + \frac{f^{(2)}(0)}{2!}x^2 + o(x^2)\]</span></p>
 <p><span class="math display">\[.f(x) - f(0) = \frac{f^{(2)}(0)}{2!}x^2 + o(x^2) \geq 0\]</span></p>
 <p>כאשר <span class="math inline">\(\frac{f^{(2)}(0)}{2!}x^2 + o(x^2)\)</span> נזרקת אי-שלילי (חיובי), כי <span class="math inline">\(x^2\)</span> גדל יותר מהר מ-<span class="math inline">\(o(x^2)\)</span> קרוב ל-<span class="math inline">\(0\)</span>.</p>
-<div id="exm-critical-points" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 12.1</strong></span> <strong>דוגמא:</strong></p>
+<div id="box-exm-critical-points" class="thmbox thmbox-example">
+<p><strong>דוגמה 12.7.2.</strong></p>
+<p><strong>דוגמא:</strong></p>
 <p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> נמצא את כל נקודות הקיצון המקומי שלה.</p>
 <p>ב-<span class="math inline">\(\mathbb{R}\backslash\{0\}\)</span> הפונקציה <span class="math inline">\(f\)</span> גזירה ולכן נבדוק: <span class="math display">\[f'(x) = \left(x + \frac{1}{x}\right)' = 1 - \frac{1}{x^2}\]</span></p>
 <p><span class="math display">\[f'(x) = 0\]</span></p>
@@ -848,8 +864,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="קמירות-וקעירות-של-פונקציה" class="level2">
-<h2 class="anchored" data-anchor-id="קמירות-וקעירות-של-פונקציה">קמירות וקעירות של פונקציה</h2>
+<section id="קמירות-וקעירות-של-פונקציה" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="קמירות-וקעירות-של-פונקציה"><span class="header-section-number">12.8</span> קמירות וקעירות של פונקציה</h2>
 <p>נגיד כי פונקציה היא קמורה כלפי מטה בקטע <span class="math inline">\(I\)</span>, אם לכל <span class="math inline">\(2\)</span> נקודות <span class="math inline">\(x_1, x_2 \in I\)</span> נמצא הגרף של <span class="math inline">\(f\)</span> מעל המיתר שמחבר בין <span class="math inline">\((x_1, f(x_1)), (x_2, f(x_2))\)</span>.</p>
 <p>נגיד כי פונקציה היא קמורה כלפי מעלה בקטע <span class="math inline">\(I\)</span>, אם לכל <span class="math inline">\(2\)</span> נקודות <span class="math inline">\(x_1, x_2 \in I\)</span> נמצא הגרף של <span class="math inline">\(f\)</span> מתחת למיתר שמחבר בין <span class="math inline">\((x_1, f(x_1)), (x_2, f(x_2))\)</span>.</p>
 <div style="text-align:center">
@@ -865,12 +881,14 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="thm-convexity" class="theorem">
-<p><span class="theorem-title"><strong>משפט 12.4</strong></span> אם <span class="math inline">\(f\)</span> גזירה פעמיים בקטע <span class="math inline">\(I\)</span>, ואם <span class="math inline">\(f''(x) \leq 0\)</span> ב-<span class="math inline">\(I\)</span>, אז <span class="math inline">\(f\)</span> קמורה כלפי מטה ב-<span class="math inline">\(I\)</span>.</p>
+<div id="box-thm-convexity" class="thmbox thmbox-theorem">
+<p><strong>משפט 12.8.1.</strong></p>
+<p>אם <span class="math inline">\(f\)</span> גזירה פעמיים בקטע <span class="math inline">\(I\)</span>, ואם <span class="math inline">\(f''(x) \leq 0\)</span> ב-<span class="math inline">\(I\)</span>, אז <span class="math inline">\(f\)</span> קמורה כלפי מטה ב-<span class="math inline">\(I\)</span>.</p>
 <p>אם <span class="math inline">\(f\)</span> גזירה פעמיים בקטע <span class="math inline">\(I\)</span>, ואם <span class="math inline">\(f''(x) \geq 0\)</span> ב-<span class="math inline">\(I\)</span>, אז <span class="math inline">\(f\)</span> קמורה כלפי מעלה ב-<span class="math inline">\(I\)</span>.</p>
 </div>
-<div id="exm-convexity" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 12.2</strong></span> <strong>דוגמא:</strong></p>
+<div id="box-exm-convexity" class="thmbox thmbox-example">
+<p><strong>דוגמה 12.8.2.</strong></p>
+<p><strong>דוגמא:</strong></p>
 <p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> ← <span class="math inline">\(f^{(2)}(x) = \frac{2}{x^3}\)</span>.</p>
 <p>מתקיים: <span class="math inline">\(f^{(2)}(x) &gt; 0\)</span> לכל <span class="math inline">\(x &gt; 0\)</span> ו-<span class="math inline">\(f^{(2)}(x) &lt; 0\)</span> לכל <span class="math inline">\(x &lt; 0\)</span>.</p>
 <p>אז ב-<span class="math inline">\((0, \infty)\)</span> הפונקציה <span class="math inline">\(f\)</span> קמורה כלפי מעלה,</p>
@@ -907,19 +925,20 @@ window.Quarto = {
 </figure>
 </div>
 </section>
-<section id="נקודת-פיתול" class="level2">
-<h2 class="anchored" data-anchor-id="נקודת-פיתול">נקודת פיתול</h2>
+<section id="נקודת-פיתול" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="נקודת-פיתול"><span class="header-section-number">12.9</span> נקודת פיתול</h2>
 <div class="todo">
 <p>נקודת הפיתול מוזכרת בדיון על הקמירות לעיל. להשלמה.</p>
 </div>
 </section>
-<section id="אסימפטוטות-אנכיות-ומשופעות" class="level2">
-<h2 class="anchored" data-anchor-id="אסימפטוטות-אנכיות-ומשופעות">אסימפטוטות — אנכיות ומשופעות</h2>
+<section id="אסימפטוטות-אנכיות-ומשופעות" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="אסימפטוטות-אנכיות-ומשופעות"><span class="header-section-number">12.10</span> אסימפטוטות — אנכיות ומשופעות</h2>
 <section id="אסימפטוטה-אנכית" class="level3">
 <h3 class="anchored" data-anchor-id="אסימפטוטה-אנכית">אסימפטוטה אנכית</h3>
 <p>ל-<span class="math inline">\(f(x)\)</span> יש אסימפטוטה אנכית בנקודה <span class="math inline">\(x_0\)</span>, אם <span class="math display">\[\lim_{x \to x_0^+} f(x) = \pm\infty \quad \underline{\text{או}} \quad \lim_{x \to x_0^-} f(x) = \pm\infty\]</span></p>
-<div id="exm-vertical-asymptote" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 12.3</strong></span> <strong>דוגמא:</strong></p>
+<div id="box-exm-vertical-asymptote" class="thmbox thmbox-example">
+<p><strong>דוגמה 12.10.1.</strong></p>
+<p><strong>דוגמא:</strong></p>
 <p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span> רק <span class="math inline">\(x=0\)</span> אסימפטוטה אפשרית: <span class="math display">\[\lim_{x \to x_0^+} f(x) = \infty \quad , \quad \lim_{x \to x_0^-} f(x) = -\infty\]</span></p>
 </div>
 <div style="text-align:center">
@@ -942,8 +961,9 @@ window.Quarto = {
 <p>הנוסחאות עבור <span class="math inline">\(a, b\)</span>: <span class="math inline">\(\lim_{x \to \infty} (f(x) - (ax+b)) = 0\)</span> <span class="math display">\[\lim_{x \to \infty} \frac{f(x) - ax - b}{x} = 0 \quad \Rightarrow \quad \lim_{x \to \infty} \left(\frac{f(x)}{x} - a\right) = 0\]</span></p>
 <p><span class="math display">\[a = \lim_{x \to \infty} \frac{f(x)}{x}\]</span></p>
 <p><span class="math display">\[b = \lim_{x \to \infty} (f(x) - a(x))\]</span></p>
-<div id="exm-oblique-asymptote" class="example theorem">
-<p><span class="theorem-title"><strong>דוגמה 12.4</strong></span> <strong>דוגמא:</strong></p>
+<div id="box-exm-oblique-asymptote" class="thmbox thmbox-example">
+<p><strong>דוגמה 12.10.2.</strong></p>
+<p><strong>דוגמא:</strong></p>
 <p>עבור <span class="math inline">\(f(x) = \frac{x^2+1}{x}\)</span></p>
 <p>נבדוק: <span class="math display">\[a = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{f(x)}{x} = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{x^2+1}{x^2} = 1 \quad , \quad b = \lim_{\substack{x \to \infty \\ (-\infty)}} (f(x) - 1 \cdot x) = \lim_{\substack{x \to \infty \\ (-\infty)}} \frac{1}{x} = 0\]</span></p>
 <p>לכן ל-<span class="math inline">\(f\)</span> יש אסימפטוטה משופעת ב-<span class="math inline">\(\infty\)</span> וב-<span class="math inline">\((-\infty)\)</span>, שהיא <span class="math inline">\(y = x\)</span>.</p>
@@ -963,8 +983,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="שרטוט-גרף-של-פונקציה" class="level2">
-<h2 class="anchored" data-anchor-id="שרטוט-גרף-של-פונקציה">שרטוט גרף של פונקציה</h2>
+<section id="שרטוט-גרף-של-פונקציה" class="level2" data-number="12.11">
+<h2 data-number="12.11" class="anchored" data-anchor-id="שרטוט-גרף-של-פונקציה"><span class="header-section-number">12.11</span> שרטוט גרף של פונקציה</h2>
 <div class="todo">
 <p>תוכן בהכנה — להשלמה.</p>
 </div>
