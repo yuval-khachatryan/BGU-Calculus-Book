@@ -65,13 +65,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper left", fontsize=9)
 
-fig.savefig("c10_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c10_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -80,7 +80,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![המשיק כגבול של הישרים החותכים והשיפוע כנגזרת](c10_fig01.png){#fig-c06_fig03 width="62%" fig-align="center"}
+![המשיק כגבול של הישרים החותכים והשיפוע כנגזרת](figures/c10_fig01.png){#fig-c06_fig03 width="62%" fig-align="center"}
 :::
 
 כלומר: $\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$ הוא השיפוע של הישר המשיק לגרף הפונקציה ב- $(x_0, f(x_0))$.
@@ -164,7 +164,7 @@ $$\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$$
 
 ## הקשר בין גזירוּת לרציפות
 
-::: {#thm-gzira-retzifut .theorem}
+::: {#box-thm-gzira-retzifut .thmthm}
 אם $f$ גזירה ב- $x_0$, אז $f$ רציפה ב- $x_0$.
 :::
 
@@ -195,13 +195,13 @@ ax.annotate("", xy=(3.9, 2.1), xytext=(6.1, 2.1),
 ax.plot([4.85, 5.15], [1.9, 2.3], color="red", lw=2.5)
 ax.plot([4.85, 5.15], [2.3, 1.9], color="red", lw=2.5)
 
-fig.savefig("c10_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c10_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -210,7 +210,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גזירות גוררת רציפות, אך רציפות אינה גוררת גזירות](c10_fig02.png){#fig-c06_fig01 width="62%" fig-align="center"}
+![גזירות גוררת רציפות, אך רציפות אינה גוררת גזירות](figures/c10_fig02.png){#fig-c06_fig01 width="62%" fig-align="center"}
 :::
 
 **הוכחת הטענה:**
@@ -257,13 +257,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper left")
 
-fig.savefig("c10_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c10_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -272,7 +272,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![קו מקווקו אלכסוני העובר דרך הראשית](c10_fig03.png){#fig-c06_fig02 width="62%" fig-align="center"}
+![קו מקווקו אלכסוני העובר דרך הראשית](figures/c10_fig03.png){#fig-c06_fig02 width="62%" fig-align="center"}
 :::
 
 נשים לב כי $f(x) = x \cdot D(x)$
@@ -287,7 +287,7 @@ plt.close(fig)
 
 ## אריתמטיקה של נגזרות
 
-::: {#thm-aritmetika-nagzeret .theorem}
+::: {#box-thm-aritmetika-nagzeret .thmthm}
 אם $f, g$ פונקציות גזירות בנקודה $x_0$, אז:
 
 א) הפונקציה $(f \pm g)$ גזירה ב- $x_0$ ומתקיים: $(f \pm g)'(x_0) = f'(x_0) \pm g'(x_0)$
@@ -319,7 +319,7 @@ $$(\tan(x))'(x_0) = \left(\frac{\sin(x)}{\cos(x)}\right)'(x_0) = \frac{\cos(x_0)
 
 ## כלל השרשרת
 
-::: {#thm-chain-rule .theorem}
+::: {#box-thm-chain-rule .thmthm}
 **כלל השרשרת**
 
 אם $f$ גזירה ב-$x_0$, ואם $g$ גזירה ב-$f(x_0)$, אז הפונקציה $g \circ f$ גזירה ב-$x_0$, ומתקיים: $$g \circ f)'(x_0) = g'(f(x_0)) \cdot f'(x_0)($$
@@ -364,7 +364,7 @@ a^x & \longleftrightarrow & \log_a(x) \\
 x^2 & \longleftrightarrow & \sqrt{x}
 \end{array}$$
 
-::: {#thm-inverse-derivative .theorem}
+::: {#box-thm-inverse-derivative .thmthm}
 **נגזרת של פונקציה הופכית**
 
 אם $f$ הפיכה וגזירה ב-$x_0$, אז $f^{-1}$ גזירה ב-$x_0 = f^{-1}(y)$ ומתקיים: $$(f^{-1})'(y) = \frac{1}{f'(x_0)} = \frac{1}{f'(f^{-1}(y))}$$
@@ -418,13 +418,13 @@ ax.set_ylim(-0.3, 1.7)
 ax.set_aspect("equal")
 ax.axis("off")
 
-fig.savefig("c10_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c10_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -433,7 +433,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![משולש ישר-זווית עבור arctan(y)](c10_fig04.png){#fig-c06_fig04 width="62%" fig-align="center"}
+![משולש ישר-זווית עבור arctan(y)](figures/c10_fig04.png){#fig-c06_fig04 width="62%" fig-align="center"}
 :::
 
 ## נגזרות של $\sqrt{x}$, $\log_a x$, $\arctan x$, $\arccos x$, $\arcsin x$
@@ -478,13 +478,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper center")
 
-fig.savefig("c10_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c10_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c10_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -493,14 +493,14 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף \|x\| בצורת V עם קודקוד בראשית](c10_fig05.png){#fig-c06_fig05 width="62%" fig-align="center"}
+![גרף \|x\| בצורת V עם קודקוד בראשית](figures/c10_fig05.png){#fig-c06_fig05 width="62%" fig-align="center"}
 :::
 
 מימין ל-0: $$\lim_{x \to 0^+} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^+} \frac{|x|}{x} = 1$$
 
 משמאל ל-0: $$\lim_{x \to 0^-} \frac{-x - 0}{x} = \lim_{x \to 0^-} \frac{-x}{x} = -1$$
 
-::: {#thm-derivative-iff-one-sided .theorem}
+::: {#box-thm-derivative-iff-one-sided .thmthm}
 הפונקציה $f$ <u>גזירה</u> ב-$x_0$, אם ורק אם היא <u>רציפה</u> ב-$x_0$, <u>גזירה מימין ומשמאל</u> ב-0, ומתקיים: $$f'_+(x_0) = f'_-(x_0)$$
 :::
 

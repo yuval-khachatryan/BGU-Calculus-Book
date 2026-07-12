@@ -8,7 +8,7 @@
 
 (האיבר במקום ה-$n$ של הסדרה) <!-- בדיקה: הערה בכתב יד -->
 
-::: {#exm-sequences .example}
+::: {#box-exm-sequences .thmexm}
 הסדרה $a_n = n$ היא: $1,2,3,\dots$
 
 הסדרה $a_n = (-1)^n$ היא: $-1,1,-1,1,\dots$
@@ -24,7 +24,7 @@
 
 סדרה מתכנסת.
 
-::: {#exm-convergence .example}
+::: {#box-exm-convergence .thmexm}
 מתכנסת ל-$0$: $a_n = \frac{1}{n}$ : $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots$
 
 מתכנסת לאינסוף: $1,2,3,4,\dots$
@@ -38,7 +38,7 @@
 
 איברי הסדרה יהיו קרובים ל-$L$ (הגבול) כמה שנגדיר, החל ממקום מסוים.
 
-::: {#def-convergent-sequence .definition}
+::: {#box-def-convergent-sequence .thmdef}
 סדרה $(a_n)_{n=1}^{\infty}$ מתכנסת למספר $L \in R$, אם:
 
 לכל מספר $\varepsilon$ חיובי (השגיאה), קיים $N \in \mathbb{N}$ (מקום השגיאה) כך שלכל $n > N$ מתקיים $$|a_{n} - L| < \varepsilon$$
@@ -75,13 +75,13 @@ ax.plot(xs, [0]*len(xs), "o", color="tab:green", ms=6, zorder=4)
 ax.set_xlim(L-2, L+2)
 ax.set_ylim(-0.45, 0.6)
 ax.axis("off")
-fig.savefig("c06_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c06_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c06_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -90,7 +90,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![ציר מספרים עם הקטע $(L-1,\,L+1)$ סביב הגבול $L$ — כל איברי הסדרה נמצאים בקטע ממקום מסוים](c06_fig01.png){#fig-c02_fig01 width="62%" fig-align="center"}
+![ציר מספרים עם הקטע $(L-1,\,L+1)$ סביב הגבול $L$ — כל איברי הסדרה נמצאים בקטע ממקום מסוים](figures/c06_fig01.png){#fig-c02_fig01 width="62%" fig-align="center"}
 :::
 
 אם $(a_n)_{n=1}^{\infty}$ מתכנסת ל-$L$, נסמן זאת: $$\lim_{n \to \infty} a_n = L$$
@@ -179,13 +179,13 @@ ax.annotate(r"$+1$", xy=(1.0, 0), xytext=(1.0, 0.12), ha="center", fontsize=12, 
 ax.set_xlim(-2.1, 2.1)
 ax.set_ylim(-0.45, 0.4)
 ax.axis("off")
-fig.savefig("c06_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c06_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c06_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -194,7 +194,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני קטעים זרים על ציר המספרים — $\left(\tfrac12,\tfrac32\right)$ ו-$\left(-\tfrac32,-\tfrac12\right)$ — המראים שלא קיים $L$ יחיד, ומכאן הסתירה](c06_fig02.png){#fig-c02_fig02 width="62%" fig-align="center"}
+![שני קטעים זרים על ציר המספרים — $\left(\tfrac12,\tfrac32\right)$ ו-$\left(-\tfrac32,-\tfrac12\right)$ — המראים שלא קיים $L$ יחיד, ומכאן הסתירה](figures/c06_fig02.png){#fig-c02_fig02 width="62%" fig-align="center"}
 :::
 
 זאת סתירה, ולכן $\lim_{n \to \infty} (-1)^n$ לא קיים.
@@ -205,7 +205,7 @@ plt.close(fig)
 
 ### יחידות הגבול
 
-::: {#thm-limit-uniqueness .theorem}
+::: {#box-thm-limit-uniqueness .thmthm}
 אם $(a_n)_{n=1}^{\infty}$ סדרה המקיימת $a_n \to L_1$ וגם $a_n \to L_2$ אז $L_1 = L_2$
 
 כלומר, אם סדרה מתכנסת אז <u>הגבול</u> שלה הוא יחיד.
@@ -259,13 +259,13 @@ for x in (L1, L2):
 ax.set_xlim(-3.0, 3.0)
 ax.set_ylim(-0.4, 0.7)
 ax.axis("off")
-fig.savefig("c06_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c06_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c06_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -274,7 +274,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![שני קטעי $\varepsilon=\tfrac{d}{4}$ זרים סביב $L_1$ ו-$L_2$ במרחק $d$ — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה](c06_fig03.png){#fig-c02_fig05 width="62%" fig-align="center"}
+![שני קטעי $\varepsilon=\tfrac{d}{4}$ זרים סביב $L_1$ ו-$L_2$ במרחק $d$ — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה](figures/c06_fig03.png){#fig-c02_fig05 width="62%" fig-align="center"}
 :::
 
 ## חסימוּת של סדרה מתכנסת (וההיפך השגוי)
@@ -283,7 +283,7 @@ plt.close(fig)
 
 ### סדרה חסומה
 
-::: {#def-bounded-sequence .definition}
+::: {#box-def-bounded-sequence .thmdef}
 תהי $(a_n)_{n=1}^{\infty}$ סדרה, נגיד כי $a_n$ חסומה, אם קיימים $m,M \in R$ כך שלכל $n$: $$m \le a_n \le M$$
 :::
 
@@ -337,13 +337,13 @@ ax.set_xlim(-3.0, 3.0)
 ax.set_ylim(-1.3, 1.0)
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c06_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c06_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c06_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -352,7 +352,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)](c06_fig04.png){#fig-c02_fig03 width="62%" fig-align="center"}
+![סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)](figures/c06_fig04.png){#fig-c02_fig03 width="62%" fig-align="center"}
 :::
 
 - אם $(a_n)_{n=1}^{\infty}$ סדרה מתכנסת, אז היא חסומה.
@@ -404,13 +404,13 @@ for x, lab, col in [(-2.9, r"$m$", "purple"), (2.6, r"$M$", "purple")]:
 ax.set_xlim(-3.3, 3.0)
 ax.set_ylim(-0.4, 0.4)
 ax.axis("off")
-fig.savefig("c06_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c06_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c06_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c06_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -419,7 +419,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הזנב $a_n$ (עבור $n>N$) בקטע $(L-1,L+1)$, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין $m$ ל-$M$](c06_fig05.png){#fig-c02_fig04 width="62%" fig-align="center"}
+![הזנב $a_n$ (עבור $n>N$) בקטע $(L-1,L+1)$, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין $m$ ל-$M$](figures/c06_fig05.png){#fig-c02_fig04 width="62%" fig-align="center"}
 :::
 
 - סדרה <u>שאינה חסומה</u>, אז היא אינה מתכנסת.
@@ -430,7 +430,7 @@ plt.close(fig)
 
 מתוך סדרות מתכנסות, נייצר סדרות נוספות שהן מתכנסות, ע"י: $+$ , $-$ , $\cdot$ , $:$ .
 
-::: {#thm-sequence-arithmetic .theorem}
+::: {#box-thm-sequence-arithmetic .thmthm}
 אם $(a_n)_{n=1}^{\infty}$ , $(b_n)_{n=1}^{\infty}$ סדרות המקיימות $a_n \to L_1$ , $b_n \to L_2$ אז:
 
 (1) חיבור: הסדרה $(a_n + b_n)_{n=1}^{\infty}$ גם מתכנסת, ומתקיים $a_n + b_n \to L_1 + L_2$
@@ -444,7 +444,7 @@ plt.close(fig)
 
 ### דוגמאות
 
-::: {#exm-seq-rational-1 .example}
+::: {#box-exm-seq-rational-1 .thmexm}
 נראה כי הסדרה $\dfrac{3n-4}{n+2}$ מתכנסת, ונמצא לאן.
 
 הסדרה $b_n = n+2$ לא מתכנסת, כי היא לא חסומה.
@@ -454,7 +454,7 @@ plt.close(fig)
 $\dfrac{4}{n} \to 4 \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{2}{n} \to 2 \cdot \dfrac{1}{n} \to 0$
 :::
 
-::: {#exm-seq-rational-2 .example}
+::: {#box-exm-seq-rational-2 .thmexm}
 מצאו את הגבול של הסדרה $$a_n = \frac{8n+3}{n^2+1}$$
 
 נפשט ע"י חילוק בחזקה הכי גדולה במכנה: $$a_n = \frac{\dfrac{8}{n} + \dfrac{3}{n^2}}{1 + \dfrac{1}{n^2}} = \frac{\rightarrow 0}{\rightarrow 1} \to 0$$
@@ -466,13 +466,13 @@ $\dfrac{1}{n^2} = \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{8}{n}
 
 ## משפט הסנדוויץ׳; כפל אפסית בחסומה
 
-::: {#thm-piza-rachav .theorem}
+::: {#box-thm-piza-rachav .thmthm}
 משפט הפיצה
 
 אם $a_n \leq b_n$ לכל $n \geq 1$, ואם $a_n \to \infty$, אז $$\lim_{n\to\infty} b_n = \infty$$
 :::
 
-::: {#exm-piza-1 .example}
+::: {#box-exm-piza-1 .thmexm}
 דוגמא:
 
 האם הסדרה $b_n = n + (-1)^n$ מתכנסת במובן הרחב?
@@ -484,7 +484,7 @@ $\dfrac{1}{n^2} = \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{8}{n}
 אז מכלל הפיצה $$b_n \to \infty$$
 :::
 
-::: {#exm-piza-2 .example}
+::: {#box-exm-piza-2 .thmexm}
 דוגמא:
 
 האם הסדרה $b_n = \dfrac{n^2}{n!}$ מתכנסת במובן הרחב?
@@ -496,7 +496,7 @@ $$b_n = \frac{n^2}{n!} = \frac{n \cdots n}{1 \cdot 2 \cdots n} = \frac{n}{1} \cd
 לכן מכלל הפיצה $$b_n \to \infty$$
 :::
 
-::: {#exm-piza-3 .example}
+::: {#box-exm-piza-3 .thmexm}
 דוגמא:
 
 האם הסדרה $b_n = \left(1 + \dfrac{1}{n}\right)^{n^2}$ מתכנסת במובן הרחב?
@@ -510,7 +510,7 @@ $$a_n = \left(\left(1 + \frac{1}{n}\right)^n\right)^n > 2$$ לבן הם מספר
 הרי $2^n \to \infty$ לכן מכלל הפיצה: $$\boxed{a_n \to \infty}$$
 :::
 
-::: {#thm-piza-minf .theorem}
+::: {#box-thm-piza-minf .thmthm}
 כלל הפיצה ההפוכה
 
 אם $a_n \leq b_n$ לכל $n \geq 1$, ואם $b_n \to -\infty$, אז $$\lim_{n\to n} a_n = -\infty$$
@@ -668,7 +668,7 @@ $$\lim_{n \to \infty} a_n = \infty$$
 
 $$\lim_{n \to \infty} a_n = -\infty$$
 
-::: {#def-shlilit}
+::: {#box-def-shlilit}
 תהי סדרה $a_n$.
 
 מתקיים: $a_n \to -\infty$ אם ורק אם $-a_n \to \infty$
@@ -696,7 +696,7 @@ $$a_n = \frac{-n^2 - \sin(n)}{2n + 3} < \frac{-n^2 + 1}{2n + 3} < \frac{-n^2 + 1
 
 סדרה נקראת מתכנסת במובן הרחב, אם יש לה גבול ששווה למספר כלשהוא או אינסוף או מינוס אינסוף.
 
-::: {#thm-arithmetika-rachav .theorem}
+::: {#box-thm-arithmetika-rachav .thmthm}
 שאיפות:
 
 (א) אם $a_n \to \infty$, $b_n \to \infty$ אז $a_n + b_n \to \infty$
@@ -773,7 +773,7 @@ $$(-1, 2, -3, 4, -5, \ldots)$$
 - אם $L > 1$: $a_n \to \infty$
 - אם $L < 1$: $a_n \to 0$
 
-::: {#exm-mivchanim-1 .example}
+::: {#box-exm-mivchanim-1 .thmexm}
 דוגמאות:
 
 1)  חשבו את הגבול $$\lim_{n\to\infty} \frac{2^n}{n^2}$$
@@ -787,7 +787,7 @@ $$\frac{a_{n+1}}{a_n} = \frac{\left(\frac{2^{n+1}}{(n+1)^2}\right)}{\left(\frac{
 לכן לפי מבחן המנה נקבל: $$\boxed{\lim_{n\to\infty} \frac{2^n}{n^2} = \infty}$$
 :::
 
-::: {#exm-mivchanim-2 .example}
+::: {#box-exm-mivchanim-2 .thmexm}
 2)  הסדרה $a_n = 3^n$ היא $a_n \to \infty$, מדוע?
 
 בעזרת מבחן השורש:
@@ -804,7 +804,7 @@ $$\sqrt[n]{a_n} = 3 \xrightarrow[n\to\infty]{} 3$$ וגם $a_n > 0$
 
 אם $a_n$ חיובית, ואם $\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=L$ אז $\lim_{n\to\infty}\sqrt[n]{a_n}=L$
 
-::: {#exm-dalembert-root-n .example}
+::: {#box-exm-dalembert-root-n .thmexm}
 דוגמא:
 
 נבדוק מהו הגבול של הסדרה $\sqrt[n]{n}=\sqrt[n]{a_n}$ ?
@@ -864,13 +864,13 @@ $$a_n=a_1,a_2,a_3,a_4,\dots$$
 
 - $(a_{2^n})_{n=1}^{\infty}:a_2,a_4,a_8,\dots$
 
-::: {#def-partial-limit .definition}
+::: {#box-def-partial-limit .thmdef}
 אם $(a_{n_k})_{k=1}^{\infty}$ תת סדרה של $a_n$ , ואם היא מתכנסת ל-$L$, אז נקרא ל-$L$ גבול חלקי של $a_n$ .
 
 $$a_{n_k}=a_{n_1},a_{n_2},a_{n_3},\dots \qquad a_{n_k}\xrightarrow[k\to\infty]{}L$$
 :::
 
-::: {#exm-minus-one-power-n .example}
+::: {#box-exm-minus-one-power-n .thmexm}
 דוגמא:
 
 לסדרה $a_n=(-1)^n$ יש שני גבולות חלקיים: $1$ , $-1$
@@ -886,7 +886,7 @@ $$a_n=-1,1,-1,1,-1,1,\dots \qquad a_{2n}\to\boxed{1} \quad,\quad a_{2n-1}\to\box
 
 אם מצאנו כי יש מספר של תתי סדרות של $a_n$, שהן <u>מכסות את הסדרה כולה</u>, וידוע לנו לאן הן מתכנסות, אז אלו כל הגבולות החלקיים של $a_n$.
 
-::: {#exm-gvulot-chelkiim .example}
+::: {#box-exm-gvulot-chelkiim .thmexm}
 מצאו את כל הגבולות החלקיים של הסדרה:
 
 $$a_n = (\frac{\cos(\frac{\pi}{2} \cdot n) \cdot 2n}{3n + 4} + \frac{\sin(\frac{\pi}{2} \cdot n) \cdot (2n^2 + n - 3)}{3n^2 + 5n})^2$$
@@ -934,13 +934,13 @@ $$a_{4n+3} = (\frac{1 \cdot 2n}{3n + 4} + \frac{0 \cdot (2n^2 + n - 3)}{3n^2 + 5
 
 ## משפט בולצאנו–ויירשטראס (ללא הוכחה)
 
-::: {#thm-chsuma-monotonit .theorem}
+::: {#box-thm-chsuma-monotonit .thmthm}
 **משפט החסומה והמונוטונית**
 
 אם $a_n$ סדרה חסומה, אז קיימת לה תת סדרה שמתכנסת למספר במובן הרחב.
 :::
 
-::: {#thm-hitkansut-monotoniot .theorem}
+::: {#box-thm-hitkansut-monotoniot .thmthm}
 **משפט התכנסות הסדרות המונוטוניות**
 
 אם $a_n$ סדרה מונוטונית, אז היא מתכנסת במובן הרחב.
@@ -950,19 +950,19 @@ $$a_{4n+3} = (\frac{1 \cdot 2n}{3n + 4} + \frac{0 \cdot (2n^2 + n - 3)}{3n^2 + 5
 אבל אם $a_n$ לא חסומה, אז $a_n \to \infty$ עולה, או $a_n \to -\infty$ יורדת.
 :::
 
-::: {#thm-sandvich .theorem}
+::: {#box-thm-sandvich .thmthm}
 **משפט הסנדוויץ' החזק**
 
 אם $a_n$ סדרה מתכנסת ל-$L$ ו-$m \le a_n \le M$ אזי $m \le L \le M$.
 :::
 
-::: {#thm-gvul-e .theorem}
+::: {#box-thm-gvul-e .thmthm}
 **הגבול** $e$
 
 אם $a_n \to 0$ אזי $(1 + a_n)^{\frac{1}{a_n}} \to e$ או $(1 + \frac{1}{n})^n \to e$
 :::
 
-::: {#exm-gvul-e .example}
+::: {#box-exm-gvul-e .thmexm}
 לאן מתכנסת הסדרה $(1 - \frac{1}{n})^n$
 
 $$(1 - \frac{1}{n})^n \to \frac{1}{e}$$
@@ -970,13 +970,13 @@ $$(1 - \frac{1}{n})^n \to \frac{1}{e}$$
 ולכן $\frac{1}{(1 - \frac{1}{n})^n}$ ונקבל: $(1 - \frac{1}{n})^{-n} \to e$ כי: נציב את $a_n = -\frac{1}{n}$
 :::
 
-::: {#thm-gvul-shoresh .theorem}
+::: {#box-thm-gvul-shoresh .thmthm}
 **משפט גבול שורש**
 
 $$\sqrt[n]{q} \to 1$$ לכל קבוע $0 < q$
 :::
 
-::: {#exm-gvul-shoresh .example}
+::: {#box-exm-gvul-shoresh .thmexm}
 $$\sqrt[n]{2} = 2^{\frac{1}{n}} \to 2^0 = 1$$
 :::
 

@@ -2,85 +2,49 @@
 theorem-numbering.lua
 
 One shared, section-scoped counter for every theorem-like box. Definitions,
-theorems, propositions, examples (and lemmas/corollaries) are numbered
+theorems, propositions and examples are numbered
+
     chapter.section.item        e.g.  2.4.1, 2.4.2, 2.4.3, 2.5.1, ...
-in a single running sequence per "##" section — instead of Quarto's default
-of a separate counter per type.
 
-The chapter number is read from the input filename (NN-slug.qmd), so it stays
-correct automatically when chapters are reordered. The book has no
-@-cross-references to these boxes, so we simply (re)title each box and hand its
-styling to CSS classes (.thmbox / .thmbox-<type>); the crossref class is removed
-so Quarto does not also number it.
+as a single running sequence per "##" section, instead of Quarto's default of a
+separate counter per type.
 
-Wire it in _quarto.yml:
-    filters:
-      - theorem-numbering.lua
-      - quarto
+Why custom classes: Quarto's own crossref runs before any user filter and would
+number these boxes per-type and strip their classes, so we can't intercept the
+standard .definition/.theorem/... classes. Instead the boxes use classes Quarto
+does NOT recognise (.thmdef/.thmthm/.thmprp/.thmexm/.thmlem/.thmcor), so Quarto
+leaves them untouched and this filter owns them completely: it prepends the
+title and applies the styling classes (.thmbox / .thmbox-<type>, defined in
+_styles.html for HTML). Because that happens at the content level, the numbering
+is identical in HTML and PDF.
+
+The chapter number is read from the input filename (NN-slug.qmd) via Quarto's
+quarto.doc.input_file, so it stays correct automatically when chapters are
+reordered. There are no @-cross-references to these boxes.
 ]]
 
-local PREFIX = {
-  definition  = "הגדרה",
-  theorem     = "משפט",
-  proposition = "טענה",
-  lemma       = "למה",
-  corollary   = "מסקנה",
-  example     = "דוגמה",
+local BOX = {
+  thmdef = { word = "הגדרה", css = "definition"  },
+  thmthm = { word = "משפט",  css = "theorem"     },
+  thmprp = { word = "טענה",  css = "proposition" },
+  thmexm = { word = "דוגמה", css = "example"     },
+  thmlem = { word = "למה",   css = "lemma"       },
+  thmcor = { word = "מסקנה", css = "corollary"   },
 }
 
 -- chapter number "NN" from the input file basename  NN-slug.qmd
 local function chapter_number()
-  -- >>> DEBUG (temporary): dump the paths the filter can see to thmdebug.txt.
-  local dbg = io.open("thmdebug.txt", "a")
-  if dbg then
-    dbg:write("quarto.doc.input_file = "
-      .. tostring(quarto and quarto.doc and quarto.doc.input_file) .. "\n")
-    if PANDOC_STATE and PANDOC_STATE.input_files then
-      for i, f in ipairs(PANDOC_STATE.input_files) do
-        dbg:write("PANDOC_STATE.input_files[" .. i .. "] = " .. tostring(f) .. "\n")
-      end
-    end
-    dbg:write("----\n")
-    dbg:close()
-  end
-  -- <<< DEBUG
-
-  local files = {}
-  if quarto and quarto.doc and quarto.doc.input_file then
-    files[#files + 1] = quarto.doc.input_file
-  end
-  if PANDOC_STATE and PANDOC_STATE.input_files then
-    for _, f in ipairs(PANDOC_STATE.input_files) do files[#files + 1] = f end
-  end
-  for _, f in ipairs(files) do
-    local base = tostring(f):match("([^/\\]+)$") or tostring(f)
-    local nn = base:match("^(%d%d)%-")
-    if nn then return nn end
-  end
+  local f = quarto and quarto.doc and quarto.doc.input_file
+  if not f then return nil end
+  local base = tostring(f):match("([^/\\]+)$") or tostring(f)
+  local nn = base:match("^(%d%d)%-")
+  if nn then return tostring(tonumber(nn)) end   -- "03" -> "3"
   return nil
 end
 
 function Pandoc(doc)
   local chap = chapter_number()
-
-  -- >>> DEBUG: dump the top-level block structure the filter actually receives
-  local dbg = io.open("thmdebug.txt", "a")
-  if dbg then
-    dbg:write("=== Pandoc chap=" .. tostring(chap) .. " nblocks=" .. #doc.blocks .. "\n")
-    for _, b in ipairs(doc.blocks) do
-      if b.t == "Header" then
-        dbg:write("  Header level=" .. tostring(b.level) .. "\n")
-      elseif b.t == "Div" then
-        dbg:write("  Div classes=[" .. table.concat(b.classes, ",") .. "]\n")
-      else
-        dbg:write("  " .. tostring(b.t) .. "\n")
-      end
-    end
-    dbg:close()
-  end
-  -- <<< DEBUG
-
-  if not chap then return doc end   -- unknown chapter: leave Quarto's numbering
+  if not chap then return doc end   -- unknown chapter: leave boxes as-is
 
   local section, item = 0, 0
   for _, b in ipairs(doc.blocks) do
@@ -88,18 +52,18 @@ function Pandoc(doc)
       section = section + 1
       item = 0
     elseif b.t == "Div" then
-      local kind
+      local box
       for _, c in ipairs(b.classes) do
-        if PREFIX[c] then kind = c; break end
+        if BOX[c] then box = BOX[c]; break end
       end
-      if kind and section > 0 then
+      if box then
         item = item + 1
         local num = chap .. "." .. section .. "." .. item
         local title = pandoc.Para({
-          pandoc.Strong({ pandoc.Str(PREFIX[kind] .. " " .. num .. ".") })
+          pandoc.Strong({ pandoc.Str(box.word .. " " .. num .. ".") })
         })
         table.insert(b.content, 1, title)
-        b.classes = { "thmbox", "thmbox-" .. kind }   -- keep identifier, restyle
+        b.classes = { "thmbox", "thmbox-" .. box.css }   -- keep identifier, restyle
       end
     end
   end

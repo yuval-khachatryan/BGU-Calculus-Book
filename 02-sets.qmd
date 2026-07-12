@@ -12,7 +12,7 @@
 
 מה מאפיין קבוצה? אך ורק זהות איבריה. לפיכך, שתי קבוצות שוות זו לזו אם ורק אם הן מכילות בדיוק את אותם האיברים. בעזרת סימן ההשתייכות נוכל לנסח זאת באופן פורמלי.
 
-::: {#def-set-equality .definition}
+::: {#box-def-set-equality .thmdef}
 שתי קבוצות $A$ ו-$B$ הן **שוות**, ונסמן $A=B$, אם לכל אובייקט $x$ מתקיים $$,x \in A \leftrightarrow x \in B$$ כלומר, כל איבר של $A$ הוא איבר של $B$ ולהפך.
 :::
 
@@ -22,11 +22,11 @@
 
 כעת נפנה למושג ה**הכלה**: מתי קבוצה אחת ״נמצאת בתוך״ קבוצה אחרת.
 
-::: {#def-subset .definition}
+::: {#box-def-subset .thmdef}
 תהיינה $A$ ו-$B$ קבוצות. נאמר ש-$B$ **מוכלת** ב-$A$, או ש-$B$ היא **תת-קבוצה** של $A$, ונסמן $B \subseteq A$, אם כל איבר של $B$ הוא גם איבר של $A$; כלומר, לכל $x$ מתקיים $$.x \in B \to x \in A$$
 :::
 
-::: {#exm-subset .example}
+::: {#box-exm-subset .thmexm}
 נתבונן שוב בקבוצה $A=\{a,\,b,\,c\}$. הקבוצה $\{a,\,b\}$ היא תת-קבוצה של $A$, כלומר $\{a,\,b\} \subseteq A$, שכן כל איבר שלה שייך גם ל-$A$: אכן $a \in A$ וגם $b \in A$.
 :::
 
@@ -39,7 +39,7 @@
 
 הקשר בין הכלה לשוויון נותן בידינו את שיטת ההוכחה החשובה ביותר לשוויון קבוצות.
 
-::: {#prp-double-inclusion .proposition}
+::: {#box-prp-double-inclusion .thmprp}
 שתי קבוצות $A$ ו-$B$ שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, $A=B$ אם ורק אם $A \subseteq B$ וגם $B \subseteq A$.
 :::
 
@@ -49,11 +49,11 @@
 
 מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב $\mathbb{N}=\{0, 1, 2, \dots\}$; שלושת האיברים הראשונים $0, 1, 2$ כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה [בסעיף על מערכות מספרים](03-number-systems.qmd#sec-number-systems).) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא **שיטת השומר** (סימון בונה-קבוצות), שאותה נציג כעת.
 
-::: {#def-set-builder .definition}
+::: {#box-def-set-builder .thmdef}
 תהי $X$ קבוצה, ותהי $P(x)$ **תכונה** — טענה שכל אובייקט $x$ מקיים אותה או אינו מקיים אותה. הקבוצה $$\{x \in X \mid P(x)\}$$ מוגדרת כקבוצת **כל** האיברים $x$ שב-$X$ המקיימים את התכונה $P$. הקו האנכי $\mid$, ה**שומר**, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט $y$ מתקיים ש-$y$ שייך לקבוצה אם ורק אם $y \in X$ והתכונה $P(y)$ מתקיימת. כאשר ה״עולם״ $X$ ברור מן ההקשר, נהוג לקצר ולכתוב $\{x \mid P(x)\}$.
 :::
 
-::: {#exm-set-builder .example}
+::: {#box-exm-set-builder .thmexm}
 הקבוצה $\{n \in \mathbb{N} \mid n > 5\}$ היא קבוצת כל המספרים הטבעיים הגדולים מ-$5$, כלומר $$.\{n \in \mathbb{N} \mid n > 5\} = \{6, 7, 8, \dots\}$$ כך, $7$ שייך לקבוצה (שכן $7 \in \mathbb{N}$ וגם $7 > 5$), ואילו $3$ אינו שייך לה (שכן $3$ אינו גדול מ-$5$).
 :::
 
@@ -82,7 +82,7 @@
 
 לעיתים נתקלים בקבוצה שאין בה אף איבר. למשל, קבוצת כל המספרים הטבעיים הקטנים מ-$0$ ריקה, וכן קבוצת הפתרונות הממשיים של המשוואה $x^2 = -1$. קבוצה כזו נקראת ה**קבוצה הריקה**.
 
-::: {#def-empty-set .definition}
+::: {#box-def-empty-set .thmdef}
 ה**קבוצה הריקה**, המסומנת $\emptyset$ (או $\{\}$), היא הקבוצה שאין לה אף איבר: לכל אובייקט $x$ מתקיים $x \notin \emptyset$.
 :::
 
@@ -94,7 +94,7 @@
 
 תוצאה מיידית של רעיון זה היא היחס בין הקבוצה הריקה לכל קבוצה אחרת.
 
-::: {#prp-empty-subset .proposition}
+::: {#box-prp-empty-subset .thmprp}
 הקבוצה הריקה מוכלת בכל קבוצה: לכל קבוצה $A$ מתקיים $\emptyset \subseteq A$.
 :::
 
@@ -108,7 +108,7 @@
 
 ### איחוד
 
-::: {#def-union .definition}
+::: {#box-def-union .thmdef}
 ה**איחוד** של $A$ ו-$B$, המסומן $A \cup B$, הוא קבוצת כל האיברים השייכים ל-$A$ או ל-$B$ (או לשתיהן): $$.A \cup B = \{x \mid x \in A \lor x \in B\}$$
 :::
 
@@ -143,13 +143,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c02_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{figures/c02_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -160,16 +160,16 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: האיחוד $A \cup B$ הוא האזור המוצלל.](c02_fig01.png){#fig-union width="50%" fig-align="center"}
+![דיאגרמת ון: האיחוד $A \cup B$ הוא האזור המוצלל.](figures/c02_fig01.png){#fig-union width="50%" fig-align="center"}
 :::
 
-::: {#exm-union .example}
+::: {#box-exm-union .thmexm}
 עבור $A = \{1,2,3,4\}$ ו-$B = \{3,4,5,6\}$ מתקבל $$.A \cup B = \{1,2,3,4,5,6\}$$
 :::
 
 ### חיתוך
 
-::: {#def-intersection .definition}
+::: {#box-def-intersection .thmdef}
 ה**חיתוך** של $A$ ו-$B$, המסומן $A \cap B$, הוא קבוצת כל האיברים השייכים ל-$A$ **וגם** ל-$B$: $$.A \cap B = \{x \mid x \in A \land x \in B\}$$
 :::
 
@@ -204,13 +204,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c02_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{figures/c02_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -221,16 +221,16 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: החיתוך $A \cap B$ הוא האזור המשותף המוצלל.](c02_fig02.png){#fig-intersection width="50%" fig-align="center"}
+![דיאגרמת ון: החיתוך $A \cap B$ הוא האזור המשותף המוצלל.](figures/c02_fig02.png){#fig-intersection width="50%" fig-align="center"}
 :::
 
-::: {#exm-intersection .example}
+::: {#box-exm-intersection .thmexm}
 עבור אותן $A = \{1,2,3,4\}$ ו-$B = \{3,4,5,6\}$ מן הדוגמה הקודמת, $$.A \cap B = \{3,4\}$$ שכן רק $3$ ו-$4$ שייכים לשתי הקבוצות.
 :::
 
 ### הפרש
 
-::: {#def-difference .definition}
+::: {#box-def-difference .thmdef}
 ה**הפרש** ״$A$ פחות $B$״, המסומן $A \setminus B$, הוא קבוצת כל האיברים השייכים ל-$A$ אך **אינם** שייכים ל-$B$: $$.A \setminus B = \{x \mid x \in A \land x \notin B\}$$
 :::
 
@@ -265,13 +265,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c02_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{figures/c02_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -282,16 +282,16 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: ההפרש $A \setminus B$ הוא החלק של $A$ שאינו ב-$B$ (האזור המוצלל).](c02_fig03.png){#fig-difference width="50%" fig-align="center"}
+![דיאגרמת ון: ההפרש $A \setminus B$ הוא החלק של $A$ שאינו ב-$B$ (האזור המוצלל).](figures/c02_fig03.png){#fig-difference width="50%" fig-align="center"}
 :::
 
-::: {#exm-difference .example}
+::: {#box-exm-difference .thmexm}
 עבור $A = \{1,2,3,4\}$ ו-$B = \{3,4,5,6\}$ מתקבל $$.A \setminus B = \{1,2\}$$ ואילו $$.B \setminus A = \{5,6\}$$ ואכן שני ההפרשים שונים זה מזה.
 :::
 
 ### הפרש סימטרי
 
-::: {#def-symmetric-difference .definition}
+::: {#box-def-symmetric-difference .thmdef}
 ה**הפרש הסימטרי** של $A$ ו-$B$, המסומן $A \triangle B$, הוא קבוצת כל האיברים השייכים ל**אחת** מן הקבוצות בלבד — לזו או לזו, אך לא לשתיהן. באופן טבעי מגדירים אותו כאיחוד שני ההפרשים: $$.A \triangle B = (A \setminus B) \cup (B \setminus A)$$
 :::
 
@@ -326,13 +326,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c02_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{figures/c02_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -343,16 +343,16 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: ההפרש הסימטרי $A \triangle B$ הוא כל מה ששייך לאחת הקבוצות בלבד (האזור המוצלל).](c02_fig04.png){#fig-symmetric-difference width="50%" fig-align="center"}
+![דיאגרמת ון: ההפרש הסימטרי $A \triangle B$ הוא כל מה ששייך לאחת הקבוצות בלבד (האזור המוצלל).](figures/c02_fig04.png){#fig-symmetric-difference width="50%" fig-align="center"}
 :::
 
-::: {#exm-symmetric-difference .example}
+::: {#box-exm-symmetric-difference .thmexm}
 עבור $A = \{1,2,3,4\}$ ו-$B = \{3,4,5,6\}$ מתקבל $$.A \triangle B = \{1,2,5,6\}$$ האיברים $3$ ו-$4$, המשותפים לשתי הקבוצות, מושמטים, ונותרים רק אלה השייכים לאחת מהן בלבד.
 :::
 
 הצורה השקולה שהזכרנו — האיחוד ללא החיתוך — היא טענה הראויה להוכחה, וגם דוגמה יפה לשיטת ההכלה הכפולה.
 
-::: {#prp-symmetric-difference .proposition}
+::: {#box-prp-symmetric-difference .thmprp}
 לכל שתי קבוצות $A$ ו-$B$ מתקיים $$.A \triangle B = (A \cup B) \setminus (A \cap B)$$
 :::
 
@@ -380,7 +380,7 @@ plt.close(fig)
 
 לעיתים כל הקבוצות שבהן אנו דנים הן תת-קבוצות של קבוצה אחת גדולה — למשל, בקורס זה נעסוק כמעט תמיד בתת-קבוצות של הממשיים. קבוצה כזו, שכל האיברים הנדונים שייכים לה, נקראת **קבוצה אוניברסלית** (או ״עולם״) ומסומנת $U$. חשוב להבין ש-$U$ אינה ״קבוצת הכול״ מוחלטת — אין דבר כזה — אלא **תחום הדיון** שבחרנו לעבוד בתוכו, והוא משתנה מהקשר להקשר. זהו בדיוק אותו ״עולם״ שכבר פגשנו בשיטת השומר, ולרוב הוא ברור מאליו מן ההקשר (אצלנו — הממשיים). ביחס לעולם כזה נגדיר את ה**משלים** של קבוצה.
 
-::: {#def-complement .definition}
+::: {#box-def-complement .thmdef}
 תהי $U$ קבוצה אוניברסלית ותהי $A \subseteq U$. ה**משלים** של $A$ (**ביחס ל-**$U$), המסומן $A^{c}$ (או $\overline{A}$), הוא קבוצת כל איברי $U$ שאינם שייכים ל-$A$: $$.A^{c} = \{x \in U \mid x \notin A\} = U \setminus A$$
 :::
 
@@ -417,13 +417,13 @@ ax.set_xlim(xs[0], xs[-1])
 ax.set_ylim(ys[0], ys[-1])
 ax.set_aspect("equal")
 ax.axis("off")
-fig.savefig("c02_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c02_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{c02_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.5\linewidth]{figures/c02_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -434,16 +434,16 @@ plt.close(fig)
 ::::
 
 ::: {.content-visible when-format="html"}
-![דיאגרמת ון: המשלים $A^{c}$ הוא כל מה שבתוך העולם $U$ ומחוץ ל-$A$ (האזור המוצלל).](c02_fig05.png){#fig-complement width="50%" fig-align="center"}
+![דיאגרמת ון: המשלים $A^{c}$ הוא כל מה שבתוך העולם $U$ ומחוץ ל-$A$ (האזור המוצלל).](figures/c02_fig05.png){#fig-complement width="50%" fig-align="center"}
 :::
 
-::: {#exm-complement .example}
+::: {#box-exm-complement .thmexm}
 נניח $U = \{1, 2, \dots, 10\}$ ו-$A = \{1,2,3,4\}$. אז $$.A^{c} = \{5,6,7,8,9,10\}$$
 :::
 
 לבסוף, בעזרת המשלים אפשר לנסח מחדש את ההפרש: להוציא מ-$A$ את איברי $B$ שקול להשאיר את איברי $A$ שנמצאים במשלים של $B$.
 
-::: {#prp-difference-complement .proposition}
+::: {#box-prp-difference-complement .thmprp}
 תהי $U$ קבוצה אוניברסלית ו-$A, B \subseteq U$. אז $$.A \setminus B = A \cap B^{c}$$
 :::
 

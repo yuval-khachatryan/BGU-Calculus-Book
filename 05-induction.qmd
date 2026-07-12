@@ -6,7 +6,7 @@
 
 לכל מספר טבעי $n$, מתקיים \_\_\_\_\_\_\_\_\_.
 
-::: {#exm-induction-statements .example}
+::: {#box-exm-induction-statements .thmexm}
 לכל מספר $n \in N$ מתקיים: $2^n + n \leq 3^n$
 
 לכל מספר $n \in N$ מתקיים: $1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$
@@ -26,7 +26,7 @@
 
 2)  נניח כי הטענה נכונה עבור $n$ כללי, ואז נראה כי הטענה נכונה עבור $n+1$.
 
-::: {#exm-induction-sum-squares .example}
+::: {#box-exm-induction-sum-squares .thmexm}
 נוכיח באינדוקציה כי מתקיים: $1^2 + 2^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$ לכל $n \in N$.
 
 **פתרון:**

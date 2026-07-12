@@ -10,7 +10,7 @@
 
 אינטואיטיבית, ״סדר״ הוא דרך להשוות בין איברים ולקבוע מי ״גדול״ ומי ״קטן״. נפרמל את המושג.
 
-::: {#def-order .definition}
+::: {#box-def-order .thmdef}
 יהי $>$ **יחס** על קבוצה $X$ — כלומר, לכל שני איברים $a, b \in X$ נקבע אם הטענה ״$a > b$״ אמת או לא. נאמר ש-$>$ הוא **יחס סדר** אם לכל $a, b, c \in X$ מתקיימות שלוש התכונות:
 
 1.  **אי-רפלקסיביות:** לא מתקיים $a > a$ (אף איבר אינו גדול מעצמו).
@@ -22,13 +22,13 @@
 
 כעת נגדיר סדר קונקרטי על $\mathbb{N}$, בעזרת החיבור בלבד.
 
-::: {#def-natural-order .definition}
+::: {#box-def-natural-order .thmdef}
 עבור $a, b \in \mathbb{N}$ נאמר ש-$a$ **גדול מ-**$b$, ונכתוב $a > b$, אם קיים מספר טבעי $n \neq 0$ כך ש-$$.a = b + n$$
 :::
 
 במילים: $a > b$ פירושו שאפשר להגיע מ-$b$ ל-$a$ על ידי הוספת כמות **חיובית**. כך, למשל, $5 > 3$ שכן $5 = 3 + 2$ ו-$2 \neq 0$.
 
-::: {#prp-natural-order-is-order .proposition}
+::: {#box-prp-natural-order-is-order .thmprp}
 היחס $>$ שהגדרנו על $\mathbb{N}$ הוא יחס סדר.
 :::
 
@@ -44,7 +44,7 @@
 
 ### אין מספר טבעי מקסימלי
 
-::: {#prp-no-max-natural .proposition}
+::: {#box-prp-no-max-natural .thmprp}
 לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל $n \in \mathbb{N}$ קיים $m \in \mathbb{N}$ כך ש-$m > n$. בפרט, אין ב-$\mathbb{N}$ איבר מקסימלי.
 :::
 
@@ -54,11 +54,11 @@
 
 תכונה יסודית נוספת של הטבעיים היא שאי אפשר ״לרדת בהם לנצח״: כל אוסף לא-ריק של מספרים טבעיים מכיל איבר **קטן ביותר**. תחילה נגדיר במדויק מהו איבר כזה.
 
-::: {#def-minimum .definition}
+::: {#box-def-minimum .thmdef}
 תהי $S \subseteq \mathbb{N}$. איבר $m \in S$ נקרא **מינימום** של $S$ אם כל איברי $S$ גדולים ממנו או שווים לו — כלומר, לכל $s \in S$ מתקיים $s > m$ או $s = m$.
 :::
 
-::: {#prp-well-ordering .proposition}
+::: {#box-prp-well-ordering .thmprp}
 **(עקרון הסדר הטוב)** לכל קבוצה לא-ריקה $S \subseteq \mathbb{N}$ קיים מינימום.
 :::
 
@@ -86,7 +86,7 @@
 
 #### הוכחות
 
-::: {#prp-sqrt2-irrational .proposition}
+::: {#box-prp-sqrt2-irrational .thmprp}
 $$.\sqrt{2} \notin \mathbb{Q}$$
 :::
 

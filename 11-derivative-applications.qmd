@@ -51,13 +51,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.text(0.15, 1.45, r"red: local max,  blue: local min", fontsize=9)
 
-fig.savefig("c11_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -66,7 +66,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![פונקציה גלית עם חמש נקודות קיצון מקומיות](c11_fig01.png){#fig-c06_fig06 width="62%" fig-align="center"}
+![פונקציה גלית עם חמש נקודות קיצון מקומיות](figures/c11_fig01.png){#fig-c06_fig06 width="62%" fig-align="center"}
 :::
 
 דוגמאות:
@@ -95,13 +95,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper center")
 
-fig.savefig("c11_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -110,7 +110,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הפרבולה x\^2 עם מינימום בראשית](c11_fig02.png){#fig-c06_fig07 width="62%" fig-align="center"}
+![הפרבולה x\^2 עם מינימום בראשית](figures/c11_fig02.png){#fig-c06_fig07 width="62%" fig-align="center"}
 :::
 
 לפונקציה $f(x) = |x|$ יש <u>רק</u> את נקודת הקיצון המקומי: $x_0 = 0$
@@ -137,13 +137,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper center")
 
-fig.savefig("c11_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -152,7 +152,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף \|x\| בצורת V, מינימום בראשית](c11_fig03.png){#fig-c06_fig08 width="62%" fig-align="center"}
+![גרף \|x\| בצורת V, מינימום בראשית](figures/c11_fig03.png){#fig-c06_fig08 width="62%" fig-align="center"}
 :::
 
 לפונקציה $f(x) = x^3$ אין נקודות קיצון מקומי.
@@ -179,13 +179,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper left")
 
-fig.savefig("c11_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -194,10 +194,10 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף x\^3 העולה דרך הראשית עם נקודת פיתול](c11_fig04.png){#fig-c06_fig09 width="62%" fig-align="center"}
+![גרף x\^3 העולה דרך הראשית עם נקודת פיתול](figures/c11_fig04.png){#fig-c06_fig09 width="62%" fig-align="center"}
 :::
 
-::: {#thm-fermat .theorem}
+::: {#box-thm-fermat .thmthm}
 **פרמה**
 
 אם $f(x)$ פונקציה ו-$x_0$ נקודת קיצון מקומי, ואם $f$ גזירה ב-$x_0$ אז $f'(x_0) = 0$
@@ -253,7 +253,7 @@ $$f'(x_0) = \lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}$$
 
 ### דוגמא:
 
-::: {#exm-max-min-x3-3x .example}
+::: {#box-exm-max-min-x3-3x .thmexm}
 מצאו את הערך המקסימלי והמינימלי של הפונקציה $f(x) = x^3 - 3x$ בקטע $[-2,2]$ .
 
 **פתרון:**
@@ -303,13 +303,13 @@ ax.set_yticks([-2, -1, 1, 2])
 ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
-fig.savefig("c11_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -318,12 +318,12 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף הפונקציה $f(x)=x^3-3x$ בקטע $[-2,2]$ עם נקודות מקסימום (אדום) ומינימום (כחול)](c11_fig05.png){#fig-c07_fig01 width="62%" fig-align="center"}
+![גרף הפונקציה $f(x)=x^3-3x$ בקטע $[-2,2]$ עם נקודות מקסימום (אדום) ומינימום (כחול)](figures/c11_fig05.png){#fig-c07_fig01 width="62%" fig-align="center"}
 :::
 
 ## משפט רול
 
-::: {#thm-rolle .theorem}
+::: {#box-thm-rolle .thmthm}
 אם $f(x)$ רציפה ב- $[a,b]$ ואם $f(x)$ גזירה ב- (a,b) ואם $f(a) = f(b)$ , אז קיימת $c \in (a,b)$ עבורה $f'(c) = 0$
 :::
 
@@ -355,13 +355,13 @@ ax.set_yticks([])
 ax.set_xlabel(r"$x$")
 ax.set_ylim(-0.5, yc + 1)
 ax.grid(alpha=0.3)
-fig.savefig("c11_fig06.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig06.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig06.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig06.png}\hss}\endL\par
 \medskip
 ```
 
@@ -370,7 +370,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![פונקציה קעורה כלפי מטה מעל $[a,b]$ עם $f(a)=f(b)$ ונקודת מקסימום ביניהן (משפט רול)](c11_fig06.png){#fig-c07_fig02 width="62%" fig-align="center"}
+![פונקציה קעורה כלפי מטה מעל $[a,b]$ עם $f(a)=f(b)$ ונקודת מקסימום ביניהן (משפט רול)](figures/c11_fig06.png){#fig-c07_fig02 width="62%" fig-align="center"}
 :::
 
 ### הוכחת משפט רול
@@ -383,13 +383,13 @@ plt.close(fig)
 
 ## משפט לגראנז'
 
-::: {#thm-lagrange .theorem}
+::: {#box-thm-lagrange .thmthm}
 אם $f(x)$ רציפה ב- $[a,b]$ וגזירה ב- (a,b) , אז קיימת נקודה $c \in (a,b)$ עבורה: $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
 :::
 
 ### דוגמא:
 
-::: {#exm-lagrange-sin-sqrt .example}
+::: {#box-exm-lagrange-sin-sqrt .thmexm}
 חשבו את הגבול של $$\lim_{n \to \infty} (\sin \sqrt{n+1} - \sin \sqrt{n})$$
 
 **פתרון:**
@@ -460,13 +460,13 @@ ax.set_ylabel(r"$y$")
 ax.legend(loc="upper right", fontsize=9)
 ax.grid(alpha=0.3)
 ax.set_ylim(0, fa + 1)
-fig.savefig("c11_fig07.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig07.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig07.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig07.png}\hss}\endL\par
 \medskip
 ```
 
@@ -475,12 +475,12 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![הוכחת משפט לגראנג' — המיתר $g(x)$ בין הקצוות, העקומה $f(x)$ מתחתיו, ומשיק מקווקו ב-$c$ המקביל למיתר](c11_fig07.png){#fig-c07_fig03 width="62%" fig-align="center"}
+![הוכחת משפט לגראנג' — המיתר $g(x)$ בין הקצוות, העקומה $f(x)$ מתחתיו, ומשיק מקווקו ב-$c$ המקביל למיתר](figures/c11_fig07.png){#fig-c07_fig03 width="62%" fig-align="center"}
 :::
 
 ## מסקנות ממשפט לגראנז' — מונוטוניות
 
-::: {#thm-monotone-derivative .theorem}
+::: {#box-thm-monotone-derivative .thmthm}
 מסקנה ממשפט לגראנג'
 
 אם $f(x)$ גזירה ב- $I = (a,b)$, אז:
@@ -559,13 +559,13 @@ ax.set_yticks([])
 ax.set_xlabel(r"$x$")
 ax.set_ylim(-0.25, 1.25)
 ax.grid(alpha=0.3)
-fig.savefig("c11_fig08.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c11_fig08.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{c11_fig08.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c11_fig08.png}\hss}\endL\par
 \medskip
 ```
 
@@ -574,7 +574,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![עקומה מקווקוות (פרבולה הפוכה) מעל הקטע $\left[0,\frac{\pi}{2}\right]$ עם הנקודות $c$, $x_0$, $d$ (תרגיל היחידות)](c11_fig08.png){#fig-c07_fig04 width="62%" fig-align="center"}
+![עקומה מקווקוות (פרבולה הפוכה) מעל הקטע $\left[0,\frac{\pi}{2}\right]$ עם הנקודות $c$, $x_0$, $d$ (תרגיל היחידות)](figures/c11_fig08.png){#fig-c07_fig04 width="62%" fig-align="center"}
 :::
 
 **פתרון:**
