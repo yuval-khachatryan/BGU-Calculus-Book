@@ -530,7 +530,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#יחס-סדר" id="toc-יחס-סדר" class="nav-link" data-scroll-target="#יחס-סדר">יחס סדר</a></li>
   <li><a href="#הסדר-על-הטבעיים" id="toc-הסדר-על-הטבעיים" class="nav-link" data-scroll-target="#הסדר-על-הטבעיים">הסדר על הטבעיים</a></li>
-  <li><a href="#אין-מספר-טבעי-מקסימלי" id="toc-אין-מספר-טבעי-מקסימלי" class="nav-link" data-scroll-target="#אין-מספר-טבעי-מקסימלי">אין מספר טבעי מקסימלי</a></li>
+  <li><a href="#אין-מספר-טבעי-גדול-ביותר" id="toc-אין-מספר-טבעי-גדול-ביותר" class="nav-link" data-scroll-target="#אין-מספר-טבעי-גדול-ביותר">אין מספר טבעי גדול ביותר</a></li>
   <li><a href="#עקרון-הסדר-הטוב" id="toc-עקרון-הסדר-הטוב" class="nav-link" data-scroll-target="#עקרון-הסדר-הטוב">עקרון הסדר הטוב</a></li>
   </ul></li>
   <li><a href="#המספרים-השלמים" id="toc-המספרים-השלמים" class="nav-link" data-scroll-target="#המספרים-השלמים"><span class="header-section-number">3.2</span> המספרים השלמים</a></li>
@@ -618,22 +618,27 @@ window.Quarto = {
 <p><strong>הגדרה 3.1.5.</strong></p>
 <p>נכתוב <span class="math inline">\(a \le b\)</span> (ונאמר ״<span class="math inline">\(a\)</span> <strong>קטן או שווה ל-</strong><span class="math inline">\(b\)</span>״) אם <span class="math inline">\(a &lt; b\)</span> או <span class="math inline">\(a = b\)</span>. באופן דומה, <span class="math inline">\(a \ge b\)</span> פירושו <span class="math inline">\(b \le a\)</span>.</p>
 </div>
-</section>
-<section id="אין-מספר-טבעי-מקסימלי" class="level3">
-<h3 class="anchored" data-anchor-id="אין-מספר-טבעי-מקסימלי">אין מספר טבעי מקסימלי</h3>
-<div id="box-prp-no-max-natural" class="thmbox thmbox-proposition">
-<p><strong>טענה 3.1.6.</strong></p>
-<p>לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל <span class="math inline">\(n \in \mathbb{N}\)</span> קיים <span class="math inline">\(m \in \mathbb{N}\)</span> כך ש-<span class="math inline">\(n &lt; m\)</span>. בפרט, אין ב-<span class="math inline">\(\mathbb{N}\)</span> איבר מקסימלי.</p>
+<p>בעזרת ההשוואה אפשר לדבר על האיבר ה<strong>קטן ביותר</strong> וה<strong>גדול ביותר</strong> בקבוצה:</p>
+<div id="box-def-min-max" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.6.</strong></p>
+<p>תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span> קבוצה לא-ריקה, ויהי <span class="math inline">\(m \in S\)</span>.</p>
+<ul>
+<li><span class="math inline">\(m\)</span> הוא ה<strong>מינימום</strong> של <span class="math inline">\(S\)</span>, ומסמנים <span class="math inline">\(m = \min S\)</span>, אם הוא קטן או שווה לכל אברי <span class="math inline">\(S\)</span>: לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(m \le s\)</span>.</li>
+<li><span class="math inline">\(m\)</span> הוא ה<strong>מקסימום</strong> של <span class="math inline">\(S\)</span>, ומסמנים <span class="math inline">\(m = \max S\)</span>, אם הוא גדול או שווה לכל אברי <span class="math inline">\(S\)</span>: לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(s \le m\)</span>.</li>
+</ul>
 </div>
-<p><strong>הוכחה.</strong> יהי <span class="math inline">\(n \in \mathbb{N}\)</span>, ונבחר <span class="math inline">\(m = n + 1\)</span>. מאחר ש-<span class="math inline">\(m = n + 1\)</span> ו-<span class="math inline">\(1 \neq 0\)</span>, מתקיים לפי ההגדרה <span class="math inline">\(n &lt; m\)</span> (העד הוא <span class="math inline">\(1\)</span>). לפיכך לכל טבעי יש טבעי גדול ממנו, ואין מספר טבעי הגדול מכולם. <span class="math inline">\(\blacksquare\)</span></p>
+</section>
+<section id="אין-מספר-טבעי-גדול-ביותר" class="level3">
+<h3 class="anchored" data-anchor-id="אין-מספר-טבעי-גדול-ביותר">אין מספר טבעי גדול ביותר</h3>
+<div id="box-prp-no-max-natural" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.1.7.</strong></p>
+<p>ל-<span class="math inline">\(\mathbb{N}\)</span> אין מקסימום.</p>
+</div>
+<p><strong>הוכחה.</strong> נניח בשלילה שקיים ל-<span class="math inline">\(\mathbb{N}\)</span> מקסימום. נסמן <span class="math inline">\(N=\max\mathbb{N}\)</span>. לפי הגדרת המקסימום לכל <span class="math inline">\(n \in \mathbb{N}\)</span> מתקיים <span class="math inline">\(n \le N\)</span> . אבל <span class="math inline">\(N + 1\in\mathbb{N}\)</span> וגם <span class="math inline">\(N + 1 &gt; N\)</span> וזאת סתירה.</p>
 </section>
 <section id="עקרון-הסדר-הטוב" class="level3">
 <h3 class="anchored" data-anchor-id="עקרון-הסדר-הטוב">עקרון הסדר הטוב</h3>
-<p>תכונה יסודית נוספת של הטבעיים היא שאי אפשר ״לרדת בהם לנצח״: כל אוסף לא-ריק של מספרים טבעיים מכיל איבר <strong>קטן ביותר</strong>. תחילה נגדיר במדויק מהו איבר כזה.</p>
-<div id="box-def-minimum" class="thmbox thmbox-definition">
-<p><strong>הגדרה 3.1.7.</strong></p>
-<p>תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span>. איבר <span class="math inline">\(m \in S\)</span> נקרא <strong>מינימום</strong> של <span class="math inline">\(S\)</span> אם הוא קטן או שווה לכל אברי <span class="math inline">\(S\)</span> — כלומר, לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(m \le s\)</span>.</p>
-</div>
+<p>תכונה יסודית נוספת של הטבעיים היא שאי אפשר ״לרדת בהם לנצח״: לכל אוסף לא-ריק של מספרים טבעיים יש <strong>מינימום</strong> — לא רק לקבוצות סופיות, אלא לכל תת-קבוצה, גם אינסופית.</p>
 <p>נתחיל דווקא מן המקרה הפשוט של קבוצה <strong>סופית</strong>.</p>
 <div id="box-lem-finite-min" class="thmbox thmbox-lemma">
 <p><strong>למה 3.1.8.</strong></p>
@@ -661,7 +666,7 @@ window.Quarto = {
 <p><strong>טענה 3.1.9.</strong></p>
 <p><strong>(עקרון הסדר הטוב)</strong> לכל קבוצה לא-ריקה <span class="math inline">\(S \subseteq \mathbb{N}\)</span> קיים מינימום.</p>
 </div>
-<p><strong>הוכחה.</strong> ניקח איבר כלשהו <span class="math inline">\(x \in S\)</span>, ונביט בקבוצה <span class="math inline">\(T = S \cap \{0, 1, \dots, x\}\)</span> — אברי <span class="math inline">\(S\)</span> שאינם גדולים מ-<span class="math inline">\(x\)</span>. הקבוצה <span class="math inline">\(T\)</span> <strong>סופית</strong> (שכן היא מוכלת ב-<span class="math inline">\(\{0, 1, \dots, x\}\)</span>) ו<strong>אינה ריקה</strong> (שכן <span class="math inline">\(x \in T\)</span>), ולכן לפי הלמה יש לה מינימום <span class="math inline">\(m\)</span>. נראה ש-<span class="math inline">\(m\)</span> הוא המינימום של <strong>כל</strong> <span class="math inline">\(S\)</span>. יהי <span class="math inline">\(s \in S\)</span>. אם <span class="math inline">\(s \le x\)</span>, אז <span class="math inline">\(s \in T\)</span> ולכן <span class="math inline">\(m \le s\)</span>; ואם <span class="math inline">\(s &gt; x\)</span>, אז <span class="math inline">\(m \le x &lt; s\)</span>. בכל מקרה <span class="math inline">\(m \le s\)</span>, ומאחר ש-<span class="math inline">\(m \in S\)</span>, הוא המינימום של <span class="math inline">\(S\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>הוכחה.</strong> ניקח איבר כלשהו <span class="math inline">\(x \in S\)</span>, ונביט בקבוצה <span class="math inline">\(T = S \cap \{0, 1, \dots, x\}\)</span> — אברי <span class="math inline">\(S\)</span> שאינם גדולים מ-<span class="math inline">\(x\)</span>. הקבוצה <span class="math inline">\(T\)</span> <strong>סופית</strong> (שכן היא מוכלת ב-<span class="math inline">\(\{0, 1, \dots, x\}\)</span>) ו<strong>אינה ריקה</strong> (שכן <span class="math inline">\(x \in T\)</span>), ולכן לפי הלמה יש לה מינימום, <span class="math inline">\(m = \min T\)</span>. נראה ש-<span class="math inline">\(m\)</span> הוא גם המינימום של <strong>כל</strong> <span class="math inline">\(S\)</span>. יהי <span class="math inline">\(s \in S\)</span>. אם <span class="math inline">\(s \le x\)</span>, אז <span class="math inline">\(s \in T\)</span> ולכן <span class="math inline">\(m \le s\)</span>; ואם <span class="math inline">\(s &gt; x\)</span>, אז <span class="math inline">\(m \le x &lt; s\)</span>. בכל מקרה <span class="math inline">\(m \le s\)</span>, ומאחר ש-<span class="math inline">\(m \in S\)</span>, נובע ש-<span class="math inline">\(m = \min S\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 <p>עקרון הסדר הטוב נראה כמעט מובן מאליו — ובכל זאת הוא רב-עוצמה. בפרק על האינדוקציה נראה שממנו <strong>נובע</strong> אחד הכלים המרכזיים של המתמטיקה: <strong>עקרון האינדוקציה</strong>. לא אחת מוצגת האינדוקציה כמעין ״קסם״, או כאקסיומה שיש לקבל באמונה; כאן נראה שאין בה קסם כלל — היא אינה אלא הצד השני של עקרון הסדר הטוב, ונוכיח אותה ממנו <a href="./05-induction.html">בפרק על האינדוקציה</a>.</p>
 </section>
 </section>
