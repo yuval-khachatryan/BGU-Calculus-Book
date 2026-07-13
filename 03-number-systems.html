@@ -672,15 +672,81 @@ window.Quarto = {
 </section>
 <section id="המספרים-השלמים" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="המספרים-השלמים"><span class="header-section-number">3.2</span> המספרים השלמים</h2>
+<p>המספרים הטבעיים מצוינים לספירה, אך יש בהם מגבלה אחת: לא תמיד אפשר <strong>לחסר</strong>. ההפרש <span class="math inline">\(a - b\)</span> הוא מספר טבעי רק כאשר <span class="math inline">\(a \ge b\)</span>; אחרת — למשל <span class="math inline">\(3 - 5\)</span> — אין לו תשובה בתוך <span class="math inline">\(\mathbb{N}\)</span>. כדי שהחיסור יהיה תמיד אפשרי, מרחיבים את <span class="math inline">\(\mathbb{N}\)</span>: לכל מספר טבעי <span class="math inline">\(n\)</span> מוסיפים את ה<strong>נגדי</strong> שלו, <span class="math inline">\(-n\)</span>. כך מתקבלת מערכת המספרים ה<strong>שלמים</strong>.</p>
+<div id="box-def-integers" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.2.1.</strong></p>
+<p>מערכת המספרים ה<strong>שלמים</strong> מורכבת מן המספרים הטבעיים, מנגדיהם (המספרים ה<strong>שליליים</strong>), ומ-<span class="math inline">\(0\)</span>: <span class="math display">\[.\mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\}\]</span> ה<strong>נגדי</strong> של מספר <span class="math inline">\(a\)</span>, המסומן <span class="math inline">\(-a\)</span>, הוא המספר היחיד שסכומו עם <span class="math inline">\(a\)</span> הוא אפס: <span class="math display">\[.a + (-a) = 0\]</span></p>
+</div>
+<p>הנגדי הוא בדיוק מה שהופך את החיסור לאפשרי תמיד — מגדירים <span class="math inline">\(a - b = a + (-b)\)</span>, ולביטוי יש כעת משמעות לכל <span class="math inline">\(a, b \in \mathbb{Z}\)</span>. המספרים הטבעיים יושבים בתוך השלמים (הם השלמים שאינם שליליים), ולכן <span class="math inline">\(\mathbb{N} \subseteq \mathbb{Z}\)</span>.</p>
+<p>בתוך השלמים נבחין ב<strong>חיוביים</strong> (הגדולים מ-<span class="math inline">\(0\)</span>) ונסמן את קבוצתם <span class="math inline">\(\mathbb{Z}^{+} = \{1, 2, 3, \dots\}\)</span> — אלה בדיוק הטבעיים פרט ל-<span class="math inline">\(0\)</span>. ואגב כך, <strong>האם</strong> <span class="math inline">\(0\)</span> הוא מספר טבעי? זו שאלה של מוסכמה, לא של אמת מתמטית: יש מקורות הרואים בטבעיים את ״מספרי הספירה״ <span class="math inline">\(1, 2, 3, \dots\)</span> (בלי <span class="math inline">\(0\)</span>), ואחרים כוללים גם את <span class="math inline">\(0\)</span>. בספר זה בחרנו לכלול את <span class="math inline">\(0\)</span>, ולכן <span class="math inline">\(\mathbb{N} = \{0, 1, 2, \dots\}\)</span> ואילו <span class="math inline">\(\mathbb{Z}^{+} = \{1, 2, 3, \dots\}\)</span>.</p>
+<p>גם הסדר מתרחב לשלמים, בדיוק כפי שהגדרנו אותו על הטבעיים — רק שהצעד נלקח מ-<span class="math inline">\(\mathbb{Z}^{+}\)</span>:</p>
+<div id="box-def-integer-order" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.2.2.</strong></p>
+<p>עבור <span class="math inline">\(a, b \in \mathbb{Z}\)</span> נאמר ש-<span class="math inline">\(a &lt; b\)</span> אם קיים <span class="math inline">\(m \in \mathbb{Z}^{+}\)</span> כך ש-<span class="math inline">\(a + m = b\)</span>.</p>
+</div>
+<p>זו הרחבה מדויקת של הסדר על <span class="math inline">\(\mathbb{N}\)</span> (שם הצעד היה טבעי חיובי, כאן שלם חיובי — אותה קבוצה <span class="math inline">\(\mathbb{Z}^{+}\)</span>), והיא נותנת את הסדר המוכר <span class="math inline">\(\dots &lt; -2 &lt; -1 &lt; 0 &lt; 1 &lt; 2 &lt; \dots\)</span>.</p>
+<p>נשים לב שתכונה חשובה של טבעיים לא מתקיימת. לשלמים אין מינימום — אפשר לרדת בהם לנצח (<span class="math inline">\(-1, -2, -3, \dots\)</span>), ולכן עקרון הסדר הטוב <strong>אינו</strong> מתקיים ב-<span class="math inline">\(\mathbb{Z}\)</span>; למעשה הוא תכונה מיוחדת של המספרים הטבעיים ולא מתקיימת בשאר קבוצות של מספרים שנדבר עליהם.</p>
+<p>שני מאפיינים של הסדר על <span class="math inline">\(\mathbb{Z}\)</span> ילוו אותנו לאורך הקורס (ובפרט ישמשו מיד להגדרת הסדר על הרציונליים):</p>
+<div id="box-prp-integer-order-props" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.2.3.</strong></p>
+<p>לכל <span class="math inline">\(a, b, c, d \in \mathbb{Z}\)</span>:</p>
+<ol type="1">
+<li>אם <span class="math inline">\(a &lt; b\)</span> ו-<span class="math inline">\(m \in \mathbb{Z}^{+}\)</span>, אז <span class="math inline">\(m a &lt; m b\)</span> (כפל בחיובי שומר על הכיוון).</li>
+<li>אם <span class="math inline">\(a &lt; b\)</span> וגם <span class="math inline">\(c &lt; d\)</span>, אז <span class="math inline">\(a + c &lt; b + d\)</span>.</li>
+</ol>
+</div>
 <div class="todo">
-<p>תוכן בהכנה — להשלמה.</p>
+<p>הוכחה — להשלמה.</p>
+</div>
+<p>לבסוף, שני מושגים על השלמים שנצטרך בהמשך (בעיקר כשנעסוק בשברים מצומצמים):</p>
+<div id="box-def-divides" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.2.4.</strong></p>
+<p>עבור <span class="math inline">\(a, b \in \mathbb{Z}\)</span> נאמר ש-<span class="math inline">\(a\)</span> <strong>מחלק</strong> את <span class="math inline">\(b\)</span>, ונכתוב <span class="math inline">\(a \mid b\)</span>, אם קיים <span class="math inline">\(k \in \mathbb{Z}\)</span> כך ש-<span class="math inline">\(b = a \cdot k\)</span>.</p>
+</div>
+<div id="box-def-gcd" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.2.5.</strong></p>
+<p>ה<strong>מחלק המשותף המקסימלי</strong> של שני שלמים <span class="math inline">\(a, b\)</span> שאינם שניהם אפס, המסומן <span class="math inline">\(\gcd(a,b)\)</span>, הוא השלם החיובי הגדול ביותר המחלק גם את <span class="math inline">\(a\)</span> וגם את <span class="math inline">\(b\)</span>.</p>
+</div>
+<p><strong>קיום.</strong> המחלקים המשותפים של <span class="math inline">\(a\)</span> ו-<span class="math inline">\(b\)</span> הם קבוצה <strong>סופית</strong> ולא-ריקה של טבעיים (<span class="math inline">\(1\)</span> תמיד ביניהם), ולכן יש להם מקסימום — כפי שראינו זה עתה בעקרון הסדר הטוב.</p>
+<div class="todo">
+<p>הוכחה מלאה — להשלמה.</p>
+</div>
+<p>כאשר <span class="math inline">\(\gcd(a, b) = 1\)</span> — כלומר, המחלק המשותף היחיד של <span class="math inline">\(a\)</span> ו-<span class="math inline">\(b\)</span> הוא <span class="math inline">\(1\)</span> — אומרים ש-<span class="math inline">\(a\)</span> ו-<span class="math inline">\(b\)</span> <strong>זרים</strong> (זה לזה).</p>
+<p>חלוקת שני מספרים במחלק המשותף המקסימלי שלהם הופכת אותם לזרים — עובדה שנזדקק לה מיד, כשנדבר על שברים מצומצמים:</p>
+<div id="box-thm-gcd-coprime" class="thmbox thmbox-theorem">
+<p><strong>משפט 3.2.6.</strong></p>
+<p>יהיו <span class="math inline">\(a, b \in \mathbb{Z}\)</span> שאינם שניהם אפס, ויהי <span class="math inline">\(m = \gcd(a, b)\)</span>. אז <span class="math inline">\(\frac{a}{m}\)</span> ו-<span class="math inline">\(\frac{b}{m}\)</span> שלמים זרים, כלומר <span class="math inline">\(\gcd\left(\frac{a}{m},\, \frac{b}{m}\right) = 1\)</span>.</p>
+</div>
+<div class="todo">
+<p>הוכחה — להשלמה.</p>
 </div>
 </section>
 <section id="המספרים-הרציונליים" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="המספרים-הרציונליים"><span class="header-section-number">3.3</span> המספרים הרציונליים</h2>
-<div class="todo">
-<p>תוכן בהכנה — להשלמה.</p>
+<p>השלמים פתרו את החיסור, אך נותרה בהם מגבלה דומה — הפעם ב<strong>חילוק</strong>. המנה <span class="math inline">\(a / b\)</span> היא מספר שלם רק כאשר <span class="math inline">\(b\)</span> מחלק את <span class="math inline">\(a\)</span> בדיוק; אחרת — למשל <span class="math inline">\(3 / 2\)</span> — אין לה תשובה בתוך <span class="math inline">\(\mathbb{Z}\)</span>. כדי שהחילוק (בכל מספר שאינו אפס) יהיה תמיד אפשרי, מרחיבים שוב ומוסיפים את ה<strong>שברים</strong>. כך מתקבלת מערכת המספרים ה<strong>רציונליים</strong>.</p>
+<div id="box-def-rationals" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.3.1.</strong></p>
+<p>מערכת המספרים ה<strong>רציונליים</strong> היא קבוצת כל השברים: <span class="math display">\[.\mathbb{Q} = \left\{ \frac{m}{n} \;\middle|\; m \in \mathbb{Z},\ n \in \mathbb{Z}^{+} \right\}\]</span> המספר <span class="math inline">\(m\)</span> נקרא ה<strong>מונה</strong>, והמספר <span class="math inline">\(n\)</span> נקרא ה<strong>מכנה</strong>.</p>
 </div>
+<p>כל מספר שלם <span class="math inline">\(m\)</span> מזדהה עם השבר <span class="math inline">\(\frac{m}{1}\)</span> (שהרי <span class="math inline">\(\frac{m}{1} = m\)</span>), ולכן אפשר לראות את <span class="math inline">\(\mathbb{Z}\)</span> כתת-קבוצה של <span class="math inline">\(\mathbb{Q}\)</span> ולכתוב <span class="math inline">\(\mathbb{Z} \subseteq \mathbb{Q}\)</span>.</p>
+<p>מהו הסדר על <span class="math inline">\(\mathbb{Q}\)</span>? מאחר ש-<span class="math inline">\(\mathbb{Q}\)</span> מכיל את <span class="math inline">\(\mathbb{Z}\)</span>, נרצה שהסדר עליו יסכים עם הסדר על <span class="math inline">\(\mathbb{Z}\)</span> וימשיך להתנהג כמותו — ובפרט, שכפל בחיובי ישמר את כיוון אי-השוויון, כפי שראינו זה עתה על השלמים. דרישה זו קובעת את ההגדרה: כדי להשוות <span class="math inline">\(\frac{a}{b}\)</span> ל-<span class="math inline">\(\frac{c}{d}\)</span>, נכפול את שניהם במספר החיובי <span class="math inline">\(bd\)</span> ונקבל שני <strong>שלמים</strong>, <span class="math inline">\(ad\)</span> ו-<span class="math inline">\(bc\)</span>; מאחר שכפל בחיובי אינו הופך אי-שוויון, <span class="math inline">\(\frac{a}{b} &lt; \frac{c}{d}\)</span> חייב לפרש <span class="math inline">\(ad &lt; bc\)</span>:</p>
+<div id="box-def-rational-order" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.3.2.</strong></p>
+<p>עבור <span class="math inline">\(\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}\)</span> (עם <span class="math inline">\(b, d \in \mathbb{Z}^{+}\)</span>) נאמר ש-<span class="math inline">\(\frac{a}{b} &lt; \frac{c}{d}\)</span> אם <span class="math inline">\(ad &lt; bc\)</span>.</p>
+</div>
+<div id="box-prp-rational-order-is-order" class="thmbox thmbox-proposition">
+<p><strong>טענה 3.3.3.</strong></p>
+<p>היחס <span class="math inline">\(&lt;\)</span> שהגדרנו על <span class="math inline">\(\mathbb{Q}\)</span> מוגדר היטב (אינו תלוי בבחירת השברים המייצגים) והוא יחס סדר.</p>
+</div>
+<div class="todo">
+<p>הוכחה — להשלמה.</p>
+</div>
+<p>שברים שונים יכולים לייצג את <strong>אותו</strong> מספר: <span class="math inline">\(\frac{1}{2} = \frac{2}{4} = \frac{3}{6}\)</span>. באופן כללי, <span class="math inline">\(\frac{m}{n} = \frac{p}{q}\)</span> בדיוק כאשר <span class="math inline">\(m \cdot q = n \cdot p\)</span>. ה״נציג הפשוט ביותר״ של רציונלי הוא השבר המצומצם:</p>
+<div id="box-def-reduced-fraction" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.3.4.</strong></p>
+<p>שבר <span class="math inline">\(\frac{m}{n}\)</span> (עם <span class="math inline">\(n \in \mathbb{Z}^{+}\)</span>) נקרא <strong>מצומצם</strong> אם המונה והמכנה <strong>זרים</strong>, כלומר <span class="math inline">\(\gcd(m, n) = 1\)</span>.</p>
+</div>
+<p>לכל רציונלי יש הצגה מצומצמת: בהינתן שבר כלשהו <span class="math inline">\(\frac{m}{n}\)</span>, נחלק את המונה ואת המכנה ב-<span class="math inline">\(\gcd(m, n)\)</span> — וכפי שראינו על השלמים, התוצאה היא מונה ומכנה זרים, כלומר שבר מצומצם.</p>
 </section>
 <section id="המספרים-הממשיים" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="המספרים-הממשיים"><span class="header-section-number">3.4</span> המספרים הממשיים</h2>
