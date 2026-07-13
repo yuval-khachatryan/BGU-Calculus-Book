@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; מערכות מספרים: \mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R} – חשבון אינפיניטסימלי 1 להנדסה</title>
+<title>3&nbsp; מערכות מספרים: \mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{R} – חשבון דיפרנציאלי ואינטגרלי 1 להנדסה</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -282,7 +282,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">חשבון אינפיניטסימלי 1 להנדסה</a> 
+      <a href="./">חשבון דיפרנציאלי ואינטגרלי 1 להנדסה</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="הצג/הסתר מצב קריאה">
   <div class="quarto-reader-toggle-btn">
@@ -569,58 +569,100 @@ window.Quarto = {
 <p>בפרק זה נסקור את מערכות המספרים המרכזיות — הטבעיים <span class="math inline">\(\mathbb{N}\)</span>, השלמים <span class="math inline">\(\mathbb{Z}\)</span>, הרציונליים <span class="math inline">\(\mathbb{Q}\)</span> והממשיים <span class="math inline">\(\mathbb{R}\)</span> — הבנויות זו על גבי זו: <span class="math display">\[.\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}\]</span> כל מערכת מרחיבה את קודמתה כדי לאפשר פעולות שלא היו אפשריות קודם (חיסור, חילוק, פתרון משוואות). לא נבנה את המערכות מן היסוד, אלא נניח את האריתמטיקה המוכרת ונתמקד בתכונות המבניות החשובות.</p>
 <section id="sec-naturals" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-naturals"><span class="header-section-number">3.1</span> המספרים הטבעיים</h2>
-<p><strong>מניין וסימון.</strong> המספרים הטבעיים צומחים באופן טבעי מן הצורך <strong>לספור</strong> — כמה סטודנטים בכיתה, כמה ספרים על המדף, כמה ימים נותרו עד המבחן. אלה המספרים <span class="math inline">\(0, 1, 2, 3, \dots\)</span>, ואת קבוצתם מסמנים באות <span class="math inline">\(\mathbb{N}\)</span>: <span class="math display">\[.\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}\]</span> לא נבנה את <span class="math inline">\(\mathbb{N}\)</span> מן היסוד; נניח שהחיבור והכפל ותכונותיהם המוכרות ידועים לנו — ובכללן החילופיות והקיבוציות, העובדה ש-<span class="math inline">\(0\)</span> הוא איבר האפס של החיבור, וכן ה<strong>צמצום</strong>: אם <span class="math inline">\(a + n = a\)</span> אז <span class="math inline">\(n = 0\)</span>. על בסיס האריתמטיקה הזו נגדיר את ה<strong>סדר</strong> על <span class="math inline">\(\mathbb{N}\)</span> ונחקור את תכונותיו.</p>
+<p><strong>מניין וסימון.</strong> המספרים הטבעיים צומחים באופן טבעי מן הצורך <strong>לספור</strong> — כמה סטודנטים בכיתה, כמה ספרים על המדף, כמה ימים נותרו עד המבחן. אלה המספרים <span class="math inline">\(0, 1, 2, 3, \dots\)</span>, ואת קבוצתם מסמנים באות <span class="math inline">\(\mathbb{N}\)</span>: <span class="math display">\[.\mathbb{N} = \{0, 1, 2, 3, 4, 5, \dots\}\]</span> לא נבנה את <span class="math inline">\(\mathbb{N}\)</span> מן היסוד; נניח שהחיבור והכפל ותכונותיהם המוכרות ידועים לנו — ובכללן החילופיות והקיבוציות, העובדה ש-<span class="math inline">\(0\)</span> הוא איבר האפס של החיבור, וכן ה<strong>צמצום</strong>: אם <span class="math inline">\(a + n = a\)</span> אז <span class="math inline">\(n = 0\)</span>. על בסיס האריתמטיקה הזו נחקור את תכונותיו המבניות של <span class="math inline">\(\mathbb{N}\)</span>.</p>
+<p><strong>העוקב.</strong> בבסיס הטבעיים עומד רעיון פשוט אחד: לכל מספר <span class="math inline">\(n\)</span> יש <strong>עוקב</strong> — המספר הבא אחריו, <span class="math inline">\(n+1\)</span>.</p>
+<div id="box-def-successor" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.1.</strong></p>
+<p>ה<strong>עוקב</strong> של מספר טבעי <span class="math inline">\(n\)</span> הוא המספר <span class="math inline">\(n + 1\)</span>.</p>
+</div>
+<p>החל מ-<span class="math inline">\(0\)</span>, ובמעבר חוזר ונשנה אל העוקב, נוצרים כל הטבעיים בזה אחר זה: <span class="math inline">\(0\)</span>, אחריו <span class="math inline">\(1\)</span>, אחריו <span class="math inline">\(2\)</span>, וכן הלאה. (שני מספרים שההפרש ביניהם <span class="math inline">\(1\)</span> נקראים <strong>עוקבים</strong>.) התקדמות זו — צעד אחר צעד — היא שתעמוד ביסוד שני הרעיונות המרכזיים של הפרק: הסדר, שפירושו ״להגיע מ-<span class="math inline">\(a\)</span> ל-<span class="math inline">\(b\)</span> בצעדים קדימה״, ובהמשך גם עקרון האינדוקציה.</p>
 <section id="יחס-סדר" class="level3">
 <h3 class="anchored" data-anchor-id="יחס-סדר">יחס סדר</h3>
-<p>אינטואיטיבית, ״סדר״ הוא דרך להשוות בין איברים ולקבוע מי ״גדול״ ומי ״קטן״. נפרמל את המושג.</p>
+<p>השוואה בין גדלים עומדת בלב החשבון הדיפרנציאלי והאינטגרלי. גבולות, נגזרות ואינטגרלים עוסקים כולם בשאלות של ״כמה קרוב״, ״כמה מהר״ ו״כמה גדול״ — בגדלים ההולכים וקטנים, בגדלים הגדלים ללא גבול, ובערכים המתקרבים זה לזה. כל אלה נשענים על פעולה אחת פשוטה: השוואה, ההחלטה מי גדול ומי קטן. לכן כדאי לעצור כבר עכשיו ולברר במדויק מהו היחס ״קטן מ״. נתחיל, כרגיל, מן האינטואיציה.</p>
+<p>נתאר את התכונות באמצעות היחס ״קטן מ״ (<span class="math inline">\(&lt;\)</span>); היחס ״גדול מ״ הוא כמובן התמונה המשוקפת שלו. ראשית, מספר אינו קטן מעצמו — כלומר לעולם לא מתקיים <span class="math inline">\(a &lt; a\)</span>; תכונה זו נקראת <strong>אי-רפלקסיביות</strong>. שנית, אם <span class="math inline">\(a\)</span> קטן מ-<span class="math inline">\(b\)</span>, לא ייתכן שגם <span class="math inline">\(b\)</span> קטן מ-<span class="math inline">\(a\)</span>; זוהי <strong>אנטי-סימטריות</strong>. ולבסוף, אם <span class="math inline">\(a\)</span> קטן מ-<span class="math inline">\(b\)</span> ו-<span class="math inline">\(b\)</span> קטן מ-<span class="math inline">\(c\)</span>, אז בהכרח <span class="math inline">\(a\)</span> קטן מ-<span class="math inline">\(c\)</span> — זוהי <strong>טרנזיטיביות</strong>. מסתבר ששלוש אלו הן בדיוק מה שנדרש: כל יחס המקיים אותן ראוי להיקרא יחס סדר — וזו בדיוק ההגדרה הבאה.</p>
 <div id="box-def-order" class="thmbox thmbox-definition">
-<p><strong>הגדרה 3.1.1.</strong></p>
-<p>יהי <span class="math inline">\(&gt;\)</span> <strong>יחס</strong> על קבוצה <span class="math inline">\(X\)</span> — כלומר, לכל שני איברים <span class="math inline">\(a, b \in X\)</span> נקבע אם הטענה ״<span class="math inline">\(a &gt; b\)</span>״ אמת או לא. נאמר ש-<span class="math inline">\(&gt;\)</span> הוא <strong>יחס סדר</strong> אם לכל <span class="math inline">\(a, b, c \in X\)</span> מתקיימות שלוש התכונות:</p>
+<p><strong>הגדרה 3.1.2.</strong></p>
+<p>יהי <span class="math inline">\(&lt;\)</span> <strong>יחס</strong> על קבוצה <span class="math inline">\(X\)</span> — כלומר, לכל שני איברים <span class="math inline">\(a, b \in X\)</span> נקבע אם הטענה ״<span class="math inline">\(a &lt; b\)</span>״ אמת או לא. נאמר ש-<span class="math inline">\(&lt;\)</span> הוא <strong>יחס סדר</strong> אם לכל <span class="math inline">\(a, b, c \in X\)</span> מתקיימות שלוש התכונות:</p>
 <ol type="1">
-<li><strong>אי-רפלקסיביות:</strong> לא מתקיים <span class="math inline">\(a &gt; a\)</span> (אף איבר אינו גדול מעצמו).</li>
-<li><strong>אנטי-סימטריות:</strong> אם <span class="math inline">\(a &gt; b\)</span>, אז לא מתקיים <span class="math inline">\(b &gt; a\)</span>.</li>
-<li><strong>טרנזיטיביות:</strong> אם <span class="math inline">\(a &gt; b\)</span> וגם <span class="math inline">\(b &gt; c\)</span>, אז <span class="math inline">\(a &gt; c\)</span>.</li>
+<li><strong>אי-רפלקסיביות:</strong> לא מתקיים <span class="math inline">\(a &lt; a\)</span> (אף איבר אינו קטן מעצמו).</li>
+<li><strong>אנטי-סימטריות:</strong> אם <span class="math inline">\(a &lt; b\)</span>, אז לא מתקיים <span class="math inline">\(b &lt; a\)</span>.</li>
+<li><strong>טרנזיטיביות:</strong> אם <span class="math inline">\(a &lt; b\)</span> וגם <span class="math inline">\(b &lt; c\)</span>, אז <span class="math inline">\(a &lt; c\)</span>.</li>
 </ol>
 </div>
+<p><strong>הערה — סדרים רבים על אותה קבוצה.</strong> ההגדרה קובעת מתי יחס הוא יחס סדר, אך אינה מציינת סדר <em>יחיד</em>: את אותה קבוצה אפשר לסדר בדרכים רבות ושונות, וכל אחת מהן היא יחס סדר לגיטימי בפני עצמו. סוכן ביטוח, למשל, יכול לסדר את לקוחותיו לפי סדר הא״ב של שמותיהם, לפי הוותק שלהם כלקוחות, או לפי כמה כסף אפשר להוציא מהם — שלוש דרכים תקפות באותה מידה, שכל אחת משרתת מטרה אחרת.</p>
 </section>
 <section id="הסדר-על-הטבעיים" class="level3">
 <h3 class="anchored" data-anchor-id="הסדר-על-הטבעיים">הסדר על הטבעיים</h3>
 <p>כעת נגדיר סדר קונקרטי על <span class="math inline">\(\mathbb{N}\)</span>, בעזרת החיבור בלבד.</p>
 <div id="box-def-natural-order" class="thmbox thmbox-definition">
-<p><strong>הגדרה 3.1.2.</strong></p>
-<p>עבור <span class="math inline">\(a, b \in \mathbb{N}\)</span> נאמר ש-<span class="math inline">\(a\)</span> <strong>גדול מ-</strong><span class="math inline">\(b\)</span>, ונכתוב <span class="math inline">\(a &gt; b\)</span>, אם קיים מספר טבעי <span class="math inline">\(n \neq 0\)</span> כך ש-<span class="math display">\[.a = b + n\]</span></p>
+<p><strong>הגדרה 3.1.3.</strong></p>
+<p>עבור <span class="math inline">\(a, b \in \mathbb{N}\)</span> נאמר ש-<span class="math inline">\(a\)</span> <strong>קטן מ-</strong><span class="math inline">\(b\)</span>, ונכתוב <span class="math inline">\(a &lt; b\)</span>, אם קיים מספר טבעי <span class="math inline">\(n \neq 0\)</span> כך ש-<span class="math display">\[.b = a + n\]</span></p>
 </div>
-<p>במילים: <span class="math inline">\(a &gt; b\)</span> פירושו שאפשר להגיע מ-<span class="math inline">\(b\)</span> ל-<span class="math inline">\(a\)</span> על ידי הוספת כמות <strong>חיובית</strong>. כך, למשל, <span class="math inline">\(5 &gt; 3\)</span> שכן <span class="math inline">\(5 = 3 + 2\)</span> ו-<span class="math inline">\(2 \neq 0\)</span>.</p>
+<p>במילים: <span class="math inline">\(a &lt; b\)</span> פירושו שאפשר להגיע מ-<span class="math inline">\(a\)</span> ל-<span class="math inline">\(b\)</span> על ידי הוספת כמות <strong>חיובית</strong>. כך, למשל, <span class="math inline">\(3 &lt; 5\)</span> שכן <span class="math inline">\(5 = 3 + 2\)</span> ו-<span class="math inline">\(2 \neq 0\)</span>.</p>
 <div id="box-prp-natural-order-is-order" class="thmbox thmbox-proposition">
-<p><strong>טענה 3.1.3.</strong></p>
-<p>היחס <span class="math inline">\(&gt;\)</span> שהגדרנו על <span class="math inline">\(\mathbb{N}\)</span> הוא יחס סדר.</p>
+<p><strong>טענה 3.1.4.</strong></p>
+<p>היחס <span class="math inline">\(&lt;\)</span> שהגדרנו על <span class="math inline">\(\mathbb{N}\)</span> הוא יחס סדר.</p>
 </div>
-<p><strong>הוכחה.</strong> נבדוק את שלוש התכונות. נשתמש בשתי עובדות בסיסיות על חיבור מספרים טבעיים: (i) אם <span class="math inline">\(a + n = a\)</span> אז <span class="math inline">\(n = 0\)</span> (צמצום); (ii) אם <span class="math inline">\(m + n = 0\)</span> אז <span class="math inline">\(m = 0\)</span> וגם <span class="math inline">\(n = 0\)</span> (סכום של טבעיים מתאפס רק אם שני המחוברים אפס).</p>
-<p><strong>אי-רפלקסיביות.</strong> נניח בשלילה ש-<span class="math inline">\(a &gt; a\)</span>. אז קיים <span class="math inline">\(n \neq 0\)</span> עם <span class="math inline">\(a = a + n\)</span>, ולפי (i) נובע <span class="math inline">\(n = 0\)</span> — סתירה. לכן לא מתקיים <span class="math inline">\(a &gt; a\)</span>.</p>
-<p><strong>אנטי-סימטריות.</strong> נניח בשלילה ש-<span class="math inline">\(a &gt; b\)</span> וגם <span class="math inline">\(b &gt; a\)</span>. אז <span class="math inline">\(a = b + n\)</span> ו-<span class="math inline">\(b = a + m\)</span> עבור <span class="math inline">\(n, m \neq 0\)</span>. נציב את השני בראשון: <span class="math inline">\(a = (a + m) + n = a + (m + n)\)</span>; לפי (i) נובע <span class="math inline">\(m + n = 0\)</span>, ולפי (ii) <span class="math inline">\(m = n = 0\)</span> — בסתירה לכך ש-<span class="math inline">\(n, m \neq 0\)</span>. לכן אי אפשר ששתי הטענות יתקיימו יחד.</p>
-<p><strong>טרנזיטיביות.</strong> נניח <span class="math inline">\(a &gt; b\)</span> וגם <span class="math inline">\(b &gt; c\)</span>. אז <span class="math inline">\(a = b + n\)</span> ו-<span class="math inline">\(b = c + m\)</span> עבור <span class="math inline">\(n, m \neq 0\)</span>. נציב: <span class="math inline">\(a = (c + m) + n = c + (m + n)\)</span>. מאחר ש-<span class="math inline">\(m \neq 0\)</span>, גם <span class="math inline">\(m + n \neq 0\)</span> (אחרת, לפי (ii), היה <span class="math inline">\(m = 0\)</span>). לכן <span class="math inline">\(a &gt; c\)</span>, עם העד <span class="math inline">\(m + n\)</span>.</p>
-<p>הוכחנו את שלוש התכונות, ולכן <span class="math inline">\(&gt;\)</span> הוא יחס סדר על <span class="math inline">\(\mathbb{N}\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>הוכחה.</strong> נבדוק את שלוש התכונות. נשתמש בשתי עובדות בסיסיות על חיבור מספרים טבעיים:</p>
+<ol type="i">
+<li>אם <span class="math inline">\(a + n = a\)</span>, אז <span class="math inline">\(n = 0\)</span> (צמצום);</li>
+<li>אם <span class="math inline">\(m + n = 0\)</span>, אז <span class="math inline">\(m = 0\)</span> וגם <span class="math inline">\(n = 0\)</span> (סכום של טבעיים מתאפס רק אם שני המחוברים אפס).</li>
+</ol>
+<p><strong>אי-רפלקסיביות.</strong> נניח בשלילה ש-<span class="math inline">\(a &lt; a\)</span>. אז קיים <span class="math inline">\(n \neq 0\)</span> עם <span class="math inline">\(a = a + n\)</span>, ולפי (i) נובע <span class="math inline">\(n = 0\)</span> — סתירה. לכן לא מתקיים <span class="math inline">\(a &lt; a\)</span>.</p>
+<p><strong>אנטי-סימטריות.</strong> נניח בשלילה ש-<span class="math inline">\(a &lt; b\)</span> וגם <span class="math inline">\(b &lt; a\)</span>. אז קיים <span class="math inline">\(n \neq 0\)</span> כך ש-<span class="math inline">\(b = a + n\)</span>, וקיים <span class="math inline">\(m \neq 0\)</span> כך ש-<span class="math inline">\(a = b + m\)</span>. נציב את הראשון בשני: <span class="math inline">\(a = (a + n) + m = a + (n + m)\)</span>. מאחר ש-<span class="math inline">\(n \neq 0\)</span>, גם <span class="math inline">\(n + m \neq 0\)</span> (לפי (ii)); אך השוויון <span class="math inline">\(a = a + (n + m)\)</span> פירושו בדיוק <span class="math inline">\(a &lt; a\)</span> — בסתירה לאי-רפלקסיביות.</p>
+<p><strong>טרנזיטיביות.</strong> נניח <span class="math inline">\(a &lt; b\)</span> וגם <span class="math inline">\(b &lt; c\)</span>. אז <span class="math inline">\(b = a + n\)</span> ו-<span class="math inline">\(c = b + m\)</span> עבור <span class="math inline">\(n, m \neq 0\)</span>. נציב: <span class="math inline">\(c = (a + n) + m = a + (n + m)\)</span>. מאחר ש-<span class="math inline">\(n \neq 0\)</span>, גם <span class="math inline">\(n + m \neq 0\)</span> (אחרת, לפי (ii), היה <span class="math inline">\(n = 0\)</span>). לכן <span class="math inline">\(a &lt; c\)</span>, עם העד <span class="math inline">\(n + m\)</span>.</p>
+<p>הוכחנו את שלוש התכונות, ולכן <span class="math inline">\(&lt;\)</span> הוא יחס סדר על <span class="math inline">\(\mathbb{N}\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p>לצד שלוש התכונות הללו, הסדר על <span class="math inline">\(\mathbb{N}\)</span> מקיים תכונה חשובה נוספת — <strong>טריכוטומיה</strong>: כל שני מספרים טבעיים ניתנים להשוואה, ובאופן חד-משמעי. כלומר, לכל <span class="math inline">\(a, b \in \mathbb{N}\)</span> מתקיים <strong>בדיוק אחד</strong> מן השלושה: <span class="math inline">\(a &lt; b\)</span>, או <span class="math inline">\(a = b\)</span>, או <span class="math inline">\(a &gt; b\)</span> (כאשר <span class="math inline">\(a &gt; b\)</span> הוא קיצור ל-<span class="math inline">\(b &lt; a\)</span>).</p>
+<p>עד כה עסקנו ביחס ה״חמור״ <span class="math inline">\(&lt;\)</span>. לעיתים נוח לאפשר גם שוויון:</p>
+<div id="box-def-leq" class="thmbox thmbox-definition">
+<p><strong>הגדרה 3.1.5.</strong></p>
+<p>נכתוב <span class="math inline">\(a \le b\)</span> (ונאמר ״<span class="math inline">\(a\)</span> <strong>קטן או שווה ל-</strong><span class="math inline">\(b\)</span>״) אם <span class="math inline">\(a &lt; b\)</span> או <span class="math inline">\(a = b\)</span>. באופן דומה, <span class="math inline">\(a \ge b\)</span> פירושו <span class="math inline">\(b \le a\)</span>.</p>
+</div>
 </section>
 <section id="אין-מספר-טבעי-מקסימלי" class="level3">
 <h3 class="anchored" data-anchor-id="אין-מספר-טבעי-מקסימלי">אין מספר טבעי מקסימלי</h3>
 <div id="box-prp-no-max-natural" class="thmbox thmbox-proposition">
-<p><strong>טענה 3.1.4.</strong></p>
-<p>לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל <span class="math inline">\(n \in \mathbb{N}\)</span> קיים <span class="math inline">\(m \in \mathbb{N}\)</span> כך ש-<span class="math inline">\(m &gt; n\)</span>. בפרט, אין ב-<span class="math inline">\(\mathbb{N}\)</span> איבר מקסימלי.</p>
+<p><strong>טענה 3.1.6.</strong></p>
+<p>לכל מספר טבעי קיים מספר טבעי הגדול ממנו: לכל <span class="math inline">\(n \in \mathbb{N}\)</span> קיים <span class="math inline">\(m \in \mathbb{N}\)</span> כך ש-<span class="math inline">\(n &lt; m\)</span>. בפרט, אין ב-<span class="math inline">\(\mathbb{N}\)</span> איבר מקסימלי.</p>
 </div>
-<p><strong>הוכחה.</strong> יהי <span class="math inline">\(n \in \mathbb{N}\)</span>, ונבחר <span class="math inline">\(m = n + 1\)</span>. מאחר ש-<span class="math inline">\(m = n + 1\)</span> ו-<span class="math inline">\(1 \neq 0\)</span>, מתקיים לפי ההגדרה <span class="math inline">\(m &gt; n\)</span> (העד הוא <span class="math inline">\(1\)</span>). לפיכך לכל טבעי יש טבעי גדול ממנו, ואין מספר טבעי הגדול מכולם. <span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>הוכחה.</strong> יהי <span class="math inline">\(n \in \mathbb{N}\)</span>, ונבחר <span class="math inline">\(m = n + 1\)</span>. מאחר ש-<span class="math inline">\(m = n + 1\)</span> ו-<span class="math inline">\(1 \neq 0\)</span>, מתקיים לפי ההגדרה <span class="math inline">\(n &lt; m\)</span> (העד הוא <span class="math inline">\(1\)</span>). לפיכך לכל טבעי יש טבעי גדול ממנו, ואין מספר טבעי הגדול מכולם. <span class="math inline">\(\blacksquare\)</span></p>
 </section>
 <section id="עקרון-הסדר-הטוב" class="level3">
 <h3 class="anchored" data-anchor-id="עקרון-הסדר-הטוב">עקרון הסדר הטוב</h3>
 <p>תכונה יסודית נוספת של הטבעיים היא שאי אפשר ״לרדת בהם לנצח״: כל אוסף לא-ריק של מספרים טבעיים מכיל איבר <strong>קטן ביותר</strong>. תחילה נגדיר במדויק מהו איבר כזה.</p>
 <div id="box-def-minimum" class="thmbox thmbox-definition">
-<p><strong>הגדרה 3.1.5.</strong></p>
-<p>תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span>. איבר <span class="math inline">\(m \in S\)</span> נקרא <strong>מינימום</strong> של <span class="math inline">\(S\)</span> אם כל איברי <span class="math inline">\(S\)</span> גדולים ממנו או שווים לו — כלומר, לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(s &gt; m\)</span> או <span class="math inline">\(s = m\)</span>.</p>
+<p><strong>הגדרה 3.1.7.</strong></p>
+<p>תהי <span class="math inline">\(S \subseteq \mathbb{N}\)</span>. איבר <span class="math inline">\(m \in S\)</span> נקרא <strong>מינימום</strong> של <span class="math inline">\(S\)</span> אם הוא קטן או שווה לכל אברי <span class="math inline">\(S\)</span> — כלומר, לכל <span class="math inline">\(s \in S\)</span> מתקיים <span class="math inline">\(m \le s\)</span>.</p>
 </div>
+<p>נתחיל דווקא מן המקרה הפשוט של קבוצה <strong>סופית</strong>.</p>
+<div id="box-lem-finite-min" class="thmbox thmbox-lemma">
+<p><strong>למה 3.1.8.</strong></p>
+<p>לכל קבוצה <strong>סופית</strong> ולא-ריקה של מספרים טבעיים יש מינימום.</p>
+</div>
+<p>זוהי עובדה מובנת מאליה: בהינתן רשימה סופית של מספרים, סורקים אותה ובוחרים את הקטן ביותר. מי שמעוניין לראות כיצד עושים זאת במדויק:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="כיצד מוצאים את המינימום">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">הערה</span>כיצד מוצאים את המינימום
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>נסמן את אברי הקבוצה <span class="math inline">\(x_1, x_2, \dots, x_n\)</span>, ונחזיק ״מינימום רץ״ שנעדכן תוך מעבר על האברים. נתחיל מ-<span class="math inline">\(m_1 = x_1\)</span>, ובכל צעד נשווה את המינימום הנוכחי לאיבר הבא ונשמור את הקטן מביניהם: <span class="math display">\[m_k = \min\{x_k,\, m_{k-1}\}\]</span> (המינימום של שני מספרים הוא פשוט הקטן שבהם — וכאן נכנסת הטריכוטומיה לפעולה). לאורך כל הדרך <span class="math inline">\(m_k\)</span> שומר על תכונה אחת: הוא הקטן מבין <span class="math inline">\(x_1, \dots, x_k\)</span>. התכונה נכונה בתחילה (<span class="math inline">\(m_1 = x_1\)</span>), וכל השוואה שומרת עליה. לאחר <span class="math inline">\(n-1\)</span> השוואות התהליך נעצר, ו-<span class="math inline">\(m_n\)</span> הוא הקטן מבין <strong>כל</strong> אברי הקבוצה — המינימום המבוקש.</p>
+</div>
+</div>
+</div>
+<p>מן הלמה נובע העיקרון הכללי, גם עבור קבוצות אינסופיות:</p>
 <div id="box-prp-well-ordering" class="thmbox thmbox-proposition">
-<p><strong>טענה 3.1.6.</strong></p>
+<p><strong>טענה 3.1.9.</strong></p>
 <p><strong>(עקרון הסדר הטוב)</strong> לכל קבוצה לא-ריקה <span class="math inline">\(S \subseteq \mathbb{N}\)</span> קיים מינימום.</p>
 </div>
-<p>עקרון זה הוא תכונה יסודית של <span class="math inline">\(\mathbb{N}\)</span>, ולעת עתה נסתפק באזכורו. הוא קשור קשר הדוק ל<strong>עקרון האינדוקציה</strong> — למעשה השניים <strong>שקולים</strong>, ומכל אחד מהם אפשר לגזור את השני. את האינדוקציה, ואת הקשר בין השניים, נפתח <a href="./05-induction.html">בפרק על האינדוקציה</a>.</p>
+<p><strong>הוכחה.</strong> ניקח איבר כלשהו <span class="math inline">\(x \in S\)</span>, ונביט בקבוצה <span class="math inline">\(T = S \cap \{0, 1, \dots, x\}\)</span> — אברי <span class="math inline">\(S\)</span> שאינם גדולים מ-<span class="math inline">\(x\)</span>. הקבוצה <span class="math inline">\(T\)</span> <strong>סופית</strong> (שכן היא מוכלת ב-<span class="math inline">\(\{0, 1, \dots, x\}\)</span>) ו<strong>אינה ריקה</strong> (שכן <span class="math inline">\(x \in T\)</span>), ולכן לפי הלמה יש לה מינימום <span class="math inline">\(m\)</span>. נראה ש-<span class="math inline">\(m\)</span> הוא המינימום של <strong>כל</strong> <span class="math inline">\(S\)</span>. יהי <span class="math inline">\(s \in S\)</span>; לפי הטריכוטומיה, או <span class="math inline">\(s \le x\)</span> — ואז <span class="math inline">\(s \in T\)</span>, ולכן <span class="math inline">\(m \le s\)</span>; או <span class="math inline">\(s &gt; x\)</span> — ואז <span class="math inline">\(m \le x &lt; s\)</span>. בכל מקרה <span class="math inline">\(m \le s\)</span>, ומאחר ש-<span class="math inline">\(m \in S\)</span>, הוא המינימום של <span class="math inline">\(S\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p>עקרון הסדר הטוב נראה כמעט מובן מאליו — ובכל זאת הוא רב-עוצמה. בפרק על האינדוקציה נראה שממנו <strong>נובע</strong> אחד הכלים המרכזיים של המתמטיקה: <strong>עקרון האינדוקציה</strong>. לא אחת מוצגת האינדוקציה כמעין ״קסם״, או כאקסיומה שיש לקבל באמונה; כאן נראה שאין בה קסם כלל — היא אינה אלא הצד השני של עקרון הסדר הטוב, ונוכיח אותה ממנו <a href="./05-induction.html">בפרק על האינדוקציה</a>.</p>
 </section>
 </section>
 <section id="המספרים-השלמים" class="level2" data-number="3.2">
