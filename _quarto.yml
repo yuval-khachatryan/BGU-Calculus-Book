@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "חשבון אינפיניטסימלי 1 להנדסה"
+  title: "חשבון דיפרנציאלי ואינטגרלי 1 להנדסה"
   subtitle: "טיוטה — מבוססת על מחברת ההרצאות, כתיב גולמי לעריכה"
   author: "יובל חצ׳טריאן-רזיאל"
   output-file: "Book_Draft"
@@ -80,6 +80,16 @@ format:
   pdf:
     pdf-engine: xelatex
     keep-tex: true
+    include-in-header:
+      text: |
+        % Quarto renders callouts as an `enhanced` tcolorbox, which is broken in
+        % RTL (bidi): a diagonal line appears and every page after it shifts left.
+        % Render callout content as a plain block instead. (HTML is unaffected.)
+        \AtBeginDocument{\renewenvironment{tcolorbox}[1][]{\par\smallskip}{\par\smallskip}}
+        % In RTL (babel bidi=basic), hyperref colored links bleed their blue color
+        % and clickable box across the whole line. Turn link coloring off in the PDF
+        % (links still work/navigate; they just render as normal black text).
+        \AtBeginDocument{\hypersetup{hidelinks}}
     mainfont: Arial
     sansfont: Arial
     monofont: "Courier New"

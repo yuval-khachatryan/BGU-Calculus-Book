@@ -1,4 +1,4 @@
-# חשבון אינפיניטסימלי 1 — הנדסת מכונות (BGU-Calculus-Book)
+# חשבון דיפרנציאלי ואינטגרלי 1 — הנדסת מכונות (BGU-Calculus-Book)
 
 Working repository for the Hebrew calculus textbook (RTL), built as a **Quarto book**.
 
