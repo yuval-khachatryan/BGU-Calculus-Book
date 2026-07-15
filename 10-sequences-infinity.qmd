@@ -1,0 +1,207 @@
+# גבולות אינסופיים וסדרי גודל
+
+## אינסוף כגבול
+
+הסדרה $a_n$ מתכנסת לאינסוף, אם לכל $M > 0$ , קיים N טבעי, כך שלכל $n > N$
+
+מתקיים: $a_n > M$
+
+$$\lim_{n \to \infty} a_n = \infty$$
+
+דוגמאות: $a_n = n, a_n = n+1, a_n = n^2$
+
+<!-- מקור: הרצאה 6 -->
+
+הסדרה $a_n$ מתכנסת לאינסוף, אם לכל $M > 0$, קיים $N$ טבעי, כך שלכל $n > \mathbb{N}$
+
+מתקיים: $$a_n > M$$
+
+$$\lim_{n \to \infty} a_n = \infty$$
+
+דוגמאות: $a_n = n, a_n = n + 1, a_n = n^2$
+
+הסדרה $a_n$ מתכנסת למינוס אינסוף, אם לכל $M < 0$, קיים $N$ טבעי, כך שלכל $n > \mathbb{N}$
+
+מתקיים: $$a_n < M$$
+
+$$\lim_{n \to \infty} a_n = -\infty$$
+
+::: {#box-def-shlilit}
+תהי סדרה $a_n$.
+
+מתקיים: $a_n \to -\infty$ אם ורק אם $-a_n \to \infty$
+:::
+
+דוגמא: $$\lim_{n \to \infty} \frac{-n^2 - \sin(n)}{2n + 3} = -\infty$$
+
+נראה לפי הגדרה שמתקיים
+
+פתרון:
+
+יהי $M < 0$, אז ננסה להבין מתי $a_n < M$
+
+$$a_n = \frac{-n^2 - \sin(n)}{2n + 3}$$
+
+$$-1 \le \sin(n) \le 1 \longrightarrow -\sin(n) < 1$$
+
+$$a_n = \frac{-n^2 - \sin(n)}{2n + 3} < \frac{-n^2 + 1}{2n + 3} < \frac{-n^2 + 1}{2n + n} = \frac{-n^2 + 1}{3 \cdot n} = \frac{-n}{3} + \frac{1}{3n} < -\frac{n}{3} + 1$$
+
+<!-- הערה בכתב יד: הערה שלילי ועדיין גדולה את המכנה -->
+
+נרצה לדרוש: $-\frac{n}{3} + 1 < M \quad\leftarrow\quad -\frac{n}{3} < M - 1 \quad\leftarrow\quad n > -3(M-1)$
+
+לכן נבחר: $N = \lfloor -3(M-1) \rfloor + 1$ וכך לכל $n > N$: $a_n < M$
+
+סדרה נקראת מתכנסת במובן הרחב, אם יש לה גבול ששווה למספר כלשהוא או אינסוף או מינוס אינסוף.
+
+::: {#box-thm-arithmetika-rachav .thmthm}
+שאיפות:
+
+(א) אם $a_n \to \infty$, $b_n \to \infty$ אז $a_n + b_n \to \infty$
+
+(ב) אם $a_n \to \infty$, $b_n \to \infty$ אז $a_n \cdot b_n \to \infty$
+
+(ג) אם $a_n \to \infty$, $b_n \to L$ ($L > 0$) אז $a_n + b_n \to \infty$
+
+(ד) אם $a_n \to \infty$, $b_n \to L$ ($L > 0$) אז $a_n \cdot b_n \to \infty$
+
+(ה) אם $a_n \to \infty$, $b_n \to L$ ($L < 0$) אז $a_n \cdot b_n \to -\infty$
+
+(ו) אם $a_n \to \infty$ אז $\frac{1}{a_n} \to 0$
+
+(ז) אם $a_n \to -\infty$ אז $\frac{1}{a_n} \to 0$
+
+(ח) אם $a_n \to 0$, וגם $a_n > 0$ אז $\frac{1}{a_n} \to \infty$
+
+(ט) אם $a_n \to 0$, וגם $a_n < 0$ אז $\frac{1}{a_n} \to -\infty$
+:::
+
+$\star$ אין חוקיות ל $\infty - \infty$:
+
+| $a_n \to \infty$ | $b_n \to \infty$ | $a_n - b_n$ |
+|:----------------:|:----------------:|:-----------:|
+|        n         |       n+1        |     -1      |
+|       n+L        |        n         |      L      |
+|      $n^2$       |        n         |  $\infty$   |
+
+$$n^2 - n \to \infty$$
+
+$$\underset{\to \infty}{n^2} - \underset{\to \infty}{n} = n(n-1)$$
+
+$\star$ אין חוקיות ל $\infty \cdot 0$:
+
+| $a_n \to \infty$ | $b_n \to \infty$ | $a_n \cdot b_n$ |
+|:--:|:--:|:--:|
+| n | $\frac{1}{n}$ | 1 |
+| n | $\frac{L}{n}$ | L ($L \in \mathbb{R}$) |
+| $n^2$ | $\frac{1}{n} \Big/ -\frac{1}{n}$ | $\infty \Big/ -\infty$ |
+| n | $\frac{(-1)^n}{n}$ | $(-1)^n$ — לא מתכנסת אפילו במובן הרחב |
+
+$\star$
+
+|     $a_n \to 0$      |      $\frac{1}{a_n}$       |
+|:--------------------:|:--------------------------:|
+| $a_n = \frac{1}{n}$  |          $\infty$          |
+| $a_n = -\frac{1}{n}$ |         $-\infty$          |
+|  $\frac{(-1)^n}{n}$  | לא מתכנסת אפילו במובן הרחב |
+
+עבור $a_n = \frac{(-1)^n}{n}$
+
+נראה כי $\frac{1}{a_n} = \frac{n}{(-1)^n} = (-1)^n \cdot n$
+
+$$(-1, 2, -3, 4, -5, \ldots)$$
+
+<!-- מקור: הרצאה 7 -->
+
+## מבחן המנה ומבחן השורש
+
+
+
+### מבחן המנה
+
+אם $a_n > 0$, ואם $\displaystyle\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = L$, אז:
+
+- אם $L > 1$: $a_n \to \infty$
+- אם $L < 1$: $a_n \to 0$
+
+### מבחן השורש
+
+אם $a_n > 0$, ואם $\displaystyle\lim_{n\to\infty} \sqrt[n]{a_n} = L$, אז:
+
+- אם $L > 1$: $a_n \to \infty$
+- אם $L < 1$: $a_n \to 0$
+
+::: {#box-exm-mivchanim-1 .thmexm}
+דוגמאות:
+
+1)  חשבו את הגבול $$\lim_{n\to\infty} \frac{2^n}{n^2}$$
+
+נסמן: $$a_n = \frac{2^n}{n^2}$$
+
+נסתכל על מבחן המנה:
+
+$$\frac{a_{n+1}}{a_n} = \frac{\left(\frac{2^{n+1}}{(n+1)^2}\right)}{\left(\frac{2^n}{n^2}\right)} = \frac{n^2}{2^n} \cdot \frac{2^{n+1}}{(n+1)^2} = 2 \cdot \frac{n^2}{(n+1)^2} = 2 \cdot \frac{1}{\left(\frac{n+1}{n}\right)^2} = 2 \cdot \frac{1}{\left(1 + \frac{1}{n}\right)^2} \to 2$$
+
+לכן לפי מבחן המנה נקבל: $$\boxed{\lim_{n\to\infty} \frac{2^n}{n^2} = \infty}$$
+:::
+
+::: {#box-exm-mivchanim-2 .thmexm}
+2)  הסדרה $a_n = 3^n$ היא $a_n \to \infty$, מדוע?
+
+בעזרת מבחן השורש:
+
+$$\sqrt[n]{a_n} = 3 \xrightarrow[n\to\infty]{} 3$$ וגם $a_n > 0$
+
+- $q > 1$: $q^n \to \infty$
+- $0 < q < 1$: $q^n \to 0$
+:::
+
+<!-- מקור: הרצאה 8 -->
+
+משפט דלאמבר:
+
+אם $a_n$ חיובית, ואם $\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=L$ אז $\lim_{n\to\infty}\sqrt[n]{a_n}=L$
+
+::: {#box-exm-dalembert-root-n .thmexm}
+דוגמא:
+
+נבדוק מהו הגבול של הסדרה $\sqrt[n]{n}=\sqrt[n]{a_n}$ ?
+
+$$(1,\sqrt{2},\sqrt[3]{3},\sqrt[4]{4},\dots)$$
+
+פתרון:
+
+נסמן: $a_n=n$ ונרצה לבדוק לאן מתכנסת הסדרה $\sqrt[n]{a_n}$
+
+ננסה להשתמש במשפט דלאמבר ונבדוק:
+
+$$\frac{a_{n+1}}{a_n}=\frac{n+1}{n}=\frac{n}{n}+\frac{1}{n}=1+\frac{1}{n}\longrightarrow 1$$
+
+ולכן מדלאמבר נקבל $\sqrt[n]{a_n}=\sqrt[n]{n}\longrightarrow \boxed{1}$
+:::
+
+### אריתמטיקה של חזקות בשאיפות
+
+אם $a_n\to L$ ואם $(a_n>0, L>0)$ $\quad b_n\to x$ $\quad (x\in R)$ אז $a_n^{b_n}\to L^x$
+
+דוגמאות:
+
+- $\left(1+\frac{1}{n}\right)^{1+\frac{1}{n}}\Rightarrow 1^1=\boxed{1}$
+
+  <!-- בדיקה: הערה בכתב יד מתחת לדוגמא -->
+
+- $\left(1+\frac{1}{n}\right)^{\frac{2n^2+n+1}{3n-5}}=\left(1+\frac{1}{n}\right)^{n\cdot\left(\frac{2n^2+n+1}{3n-5}\right)}=\left(\left(1+\frac{1}{n}\right)^n\right)^{\frac{2n^2+n+1}{3n-5}}\longrightarrow e^{\frac{2}{3}}$
+
+  <!-- בדיקה: מסומן מתחת לסוגריים $\longrightarrow e$ , והערה בכתב יד -->
+
+## יחסי הגדילה הבסיסיים: $n^k \ll k^n \ll n! \ll n^n$
+
+### סדר שואף לאינסוף בסדרות
+
+סדרות שמתכנסות לאינסוף לפי שאיפה יותר "חזקה": $n^2<2^n<<n!<<n^n$
+
+$$\frac{n^2}{n!},\frac{n!}{2^n},\frac{2^n}{n^2}\to\infty$$
+
+$$(x>0),\; n^x<<q^n<<n!<<n^n$$
+
+<!-- מקור: הרצאה 8 -->

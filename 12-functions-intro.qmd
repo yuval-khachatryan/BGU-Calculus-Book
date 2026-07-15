@@ -108,13 +108,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 3)
 ax.set_ylim(-1, 9)
-fig.savefig("figures/c07_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -123,7 +123,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף הפרבולה $f(x)=x^2$ עם נקודה $x$ על ציר $X$ והערך $f(x)$ המתאים](figures/c07_fig01.png){#fig-c03_fig01 width="62%" fig-align="center"}
+![גרף הפרבולה $f(x)=x^2$ עם נקודה $x$ על ציר $X$ והערך $f(x)$ המתאים](figures/c12_fig01.png){#fig-c03_fig01 width="62%" fig-align="center"}
 :::
 
 דוגמא נוספת:
@@ -153,13 +153,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 4)
 ax.set_ylim(-3.5, 3.5)
-fig.savefig("figures/c07_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -168,7 +168,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף פונקציית הערך השלם $f(x)=\lfloor x \rfloor$ (פונקציית מדרגות) עם הנקודות $x_1, x_2$](figures/c07_fig02.png){#fig-c03_fig02 width="62%" fig-align="center"}
+![גרף פונקציית הערך השלם $f(x)=\lfloor x \rfloor$ (פונקציית מדרגות) עם הנקודות $x_1, x_2$](figures/c12_fig02.png){#fig-c03_fig02 width="62%" fig-align="center"}
 :::
 
 הפונקציה מונוטונית עולה, אבל היא לא חד חד ערכית.
@@ -205,13 +205,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 3)
 ax.set_ylim(-1, 9)
-fig.savefig("figures/c07_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -220,7 +220,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $f(x)=x^2$ עם נקודה $x$ שלילית על ציר $X$ והערך $f(x)$ המתאים](figures/c07_fig03.png){#fig-c03_fig03 width="62%" fig-align="center"}
+![גרף $f(x)=x^2$ עם נקודה $x$ שלילית על ציר $X$ והערך $f(x)$ המתאים](figures/c12_fig03.png){#fig-c03_fig03 width="62%" fig-align="center"}
 :::
 
 $f(x) = x^2$ בתחום ב-$\mathbb{R}$ היא לא חד חד ערכית.
@@ -251,13 +251,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 3)
 ax.set_ylim(-1, 9)
-fig.savefig("figures/c07_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -266,7 +266,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $f(x)=x^2$ עם הנקודות $-x$ ו-$x$ בעלות אותו ערך $f(x)$](figures/c07_fig04.png){#fig-c03_fig04 width="62%" fig-align="center"}
+![גרף $f(x)=x^2$ עם הנקודות $-x$ ו-$x$ בעלות אותו ערך $f(x)$](figures/c12_fig04.png){#fig-c03_fig04 width="62%" fig-align="center"}
 :::
 
 ## פונקציות זוגיות ואי-זוגיות
@@ -301,13 +301,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 3)
 ax.set_ylim(-1, 9)
-fig.savefig("figures/c07_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -316,7 +316,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף הפונקציה הזוגית $f(x)=x^2$ - הנקודות $-x$ ו-$x$ בעלות אותו גובה](figures/c07_fig05.png){#fig-c03_fig07 width="62%" fig-align="center"}
+![גרף הפונקציה הזוגית $f(x)=x^2$ - הנקודות $-x$ ו-$x$ בעלות אותו גובה](figures/c12_fig05.png){#fig-c03_fig07 width="62%" fig-align="center"}
 :::
 
 פונקציה תיקרא אי זוגית, אם לכל $x \in A$ מתקיים $f(-x) = -f(x)$
@@ -352,13 +352,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-2, 2)
 ax.set_ylim(-8, 8)
-fig.savefig("figures/c07_fig06.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig06.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig06.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig06.png}\hss}\endL\par
 \medskip
 ```
 
@@ -367,7 +367,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף הפונקציה האי-זוגית $f(x)=x^3$ - הנקודות $-x$ ו-$x$ בעלות ערכים נגדיים](figures/c07_fig06.png){#fig-c03_fig08 width="62%" fig-align="center"}
+![גרף הפונקציה האי-זוגית $f(x)=x^3$ - הנקודות $-x$ ו-$x$ בעלות ערכים נגדיים](figures/c12_fig06.png){#fig-c03_fig08 width="62%" fig-align="center"}
 :::
 
 \* דוגמא לפונקציה שהיא לא זוגית ולא אי זוגית: $f(x) = x + 1$
@@ -395,13 +395,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-3, 3)
 ax.set_ylim(-3, 4)
-fig.savefig("figures/c07_fig07.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig07.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig07.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig07.png}\hss}\endL\par
 \medskip
 ```
 
@@ -410,7 +410,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף הישר $f(x)=x+1$](figures/c07_fig07.png){#fig-c03_fig09 width="62%" fig-align="center"}
+![גרף הישר $f(x)=x+1$](figures/c12_fig07.png){#fig-c03_fig09 width="62%" fig-align="center"}
 :::
 
 ## פונקציות מחזוריות
@@ -445,13 +445,13 @@ ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_ylim(-1.5, 1.6)
-fig.savefig("figures/c07_fig08.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig08.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig08.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig08.png}\hss}\endL\par
 \medskip
 ```
 
@@ -460,7 +460,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $f(x)=\sin x$ עם נקודת מקסימום $(\frac{\pi}{2},1)$ ונקודת מינימום $(\frac{3\pi}{2},-1)$](figures/c07_fig08.png){#fig-c03_fig05 width="62%" fig-align="center"}
+![גרף $f(x)=\sin x$ עם נקודת מקסימום $(\frac{\pi}{2},1)$ ונקודת מינימום $(\frac{3\pi}{2},-1)$](figures/c12_fig08.png){#fig-c03_fig05 width="62%" fig-align="center"}
 :::
 
 הפונקציה $\sin(x)$ מונוטונית עולה וחד חד ערכית בתחום $[-\frac{\pi}{2}, \frac{\pi}{2}]$
@@ -496,13 +496,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.set_xlim(-2*np.pi, 2*np.pi)
 ax.set_ylim(-1.5, 1.6)
-fig.savefig("figures/c07_fig09.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig09.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig09.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig09.png}\hss}\endL\par
 \medskip
 ```
 
@@ -511,7 +511,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $f(x)=\cos x$ עם נקודת מקסימום $(0,1)$ ונקודת מינימום $(\pi,-1)$](figures/c07_fig09.png){#fig-c03_fig06 width="62%" fig-align="center"}
+![גרף $f(x)=\cos x$ עם נקודת מקסימום $(0,1)$ ונקודת מינימום $(\pi,-1)$](figures/c12_fig09.png){#fig-c03_fig06 width="62%" fig-align="center"}
 :::
 
 הפונקציה $\cos(x)$ מונוטונית יורדת וחד חד ערכית בתחום $[0, \pi]$
@@ -583,13 +583,13 @@ ax.set_xlabel("$x$"); ax.set_ylabel("$y$")
 ax.grid(alpha=0.3)
 
 fig.tight_layout()
-fig.savefig("figures/c07_fig10.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig10.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig10.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig10.png}\hss}\endL\par
 \medskip
 ```
 
@@ -598,7 +598,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $\sin(x)$ על $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ והופכיתו $\arcsin(x)$ על $[-1,1]$](figures/c07_fig10.png){#fig-c05_fig03 width="62%" fig-align="center"}
+![גרף $\sin(x)$ על $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ והופכיתו $\arcsin(x)$ על $[-1,1]$](figures/c12_fig10.png){#fig-c05_fig03 width="62%" fig-align="center"}
 :::
 
 3)  פונקציה $\tan(x) : \left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right) \to R$
@@ -641,13 +641,13 @@ ax.set_xlabel("$x$"); ax.set_ylabel("$y$")
 ax.grid(alpha=0.3)
 
 fig.tight_layout()
-fig.savefig("figures/c07_fig11.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c12_fig11.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c07_fig11.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c12_fig11.png}\hss}\endL\par
 \medskip
 ```
 
@@ -656,7 +656,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף $\tan(x)$ עם אסימפטוטות אנכיות, והופכיתו $\arctan(x)$ עם אסימפטוטות אופקיות ב-$\pm\frac{\pi}{2}$](figures/c07_fig11.png){#fig-c05_fig04 width="62%" fig-align="center"}
+![גרף $\tan(x)$ עם אסימפטוטות אנכיות, והופכיתו $\arctan(x)$ עם אסימפטוטות אופקיות ב-$\pm\frac{\pi}{2}$](figures/c12_fig11.png){#fig-c05_fig04 width="62%" fig-align="center"}
 :::
 
 4)  פונקציה $f(x) = e^x$

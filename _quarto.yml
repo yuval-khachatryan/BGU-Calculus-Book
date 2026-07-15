@@ -20,34 +20,39 @@ book:
         - 05-induction.qmd
     - part: "חלק 2: סדרות"
       chapters:
-        - 06-sequences.qmd
+        - 06-sequences-intro.qmd
+        - 07-sequences-limit.qmd
+        - 08-sequences-arithmetic.qmd
+        - 09-sequences-monotone.qmd
+        - 10-sequences-infinity.qmd
+        - 11-sequences-subsequences.qmd
     - part: "חלק 3: מבוא לפונקציות"
       chapters:
-        - 07-functions-intro.qmd
+        - 12-functions-intro.qmd
     - part: "חלק 4: גבולות של פונקציות"
       chapters:
-        - 08-function-limits.qmd
+        - 13-function-limits.qmd
     - part: "חלק 5: רציפות"
       chapters:
-        - 09-continuity.qmd
+        - 14-continuity.qmd
     - part: "חלק 6: הנגזרת"
       chapters:
-        - 10-derivative.qmd
+        - 15-derivative.qmd
     - part: "חלק 7: שימושים של הנגזרת"
       chapters:
-        - 11-derivative-applications.qmd
+        - 16-derivative-applications.qmd
     - part: "חלק 8: נגזרות מסדר גבוה וחקירת פונקציות"
       chapters:
-        - 12-higher-derivatives.qmd
+        - 17-higher-derivatives.qmd
     - part: "חלק 9: האינטגרל הלא-מסוים"
       chapters:
-        - 13-indefinite-integral.qmd
+        - 18-indefinite-integral.qmd
     - part: "חלק 10: האינטגרל המסוים"
       chapters:
-        - 14-definite-integral.qmd
+        - 19-definite-integral.qmd
     - part: "חלק 11: האינטגרל המוכלל"
       chapters:
-        - 15-improper-integral.qmd
+        - 20-improper-integral.qmd
 
 lang: he
 dir: rtl

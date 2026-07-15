@@ -1,0 +1,93 @@
+# אריתמטיקה של גבולות ומשפט הסנדוויץ׳
+
+## אריתמטיקה של גבולות
+
+### כלי להראות התכנסות של סדרה ומציאת גבול - אריתמטיקה
+
+מתוך סדרות מתכנסות, נייצר סדרות נוספות שהן מתכנסות, ע"י: $+$ , $-$ , $\cdot$ , $:$ .
+
+::: {#box-thm-sequence-arithmetic .thmthm}
+אם $(a_n)_{n=1}^{\infty}$ , $(b_n)_{n=1}^{\infty}$ סדרות המקיימות $a_n \to L_1$ , $b_n \to L_2$ אז:
+
+(1) חיבור: הסדרה $(a_n + b_n)_{n=1}^{\infty}$ גם מתכנסת, ומתקיים $a_n + b_n \to L_1 + L_2$
+
+(2) חיסור: הסדרה $(a_n - b_n)_{n=1}^{\infty}$ גם מתכנסת, ומתקיים $a_n - b_n \to L_1 - L_2$
+
+(3) כפל: הסדרה $(a_n \cdot b_n)_{n=1}^{\infty}$ גם מתכנסת, ומתקיים $a_n \cdot b_n \to L_1 \cdot L_2$
+
+(4) חילוק: הסדרה $\dfrac{a_n}{b_n}$ גם מתכנסת, ומתקיים $\dfrac{a_n}{b_n} \to \dfrac{L_1}{L_2}$ (רק כאשר $L_2 \ne 0$)
+:::
+
+### דוגמאות
+
+::: {#box-exm-seq-rational-1 .thmexm}
+נראה כי הסדרה $\dfrac{3n-4}{n+2}$ מתכנסת, ונמצא לאן.
+
+הסדרה $b_n = n+2$ לא מתכנסת, כי היא לא חסומה.
+
+נפשט את $a_n$ לפי החזקה הכי גדולה. כלומר, נחלק ב-ח את המונה ואת המכנה: $$a_n = \frac{3 - \dfrac{4}{n}}{1 + \dfrac{2}{n}} = \frac{\rightarrow 3}{\rightarrow 1} \to 3$$
+
+$\dfrac{4}{n} \to 4 \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{2}{n} \to 2 \cdot \dfrac{1}{n} \to 0$
+:::
+
+::: {#box-exm-seq-rational-2 .thmexm}
+מצאו את הגבול של הסדרה $$a_n = \frac{8n+3}{n^2+1}$$
+
+נפשט ע"י חילוק בחזקה הכי גדולה במכנה: $$a_n = \frac{\dfrac{8}{n} + \dfrac{3}{n^2}}{1 + \dfrac{1}{n^2}} = \frac{\rightarrow 0}{\rightarrow 1} \to 0$$
+
+$\dfrac{1}{n^2} = \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{8}{n} \to 8 \cdot \dfrac{1}{n} \to 0$ , $\quad$ $\dfrac{3}{n^2} = 3 \cdot \dfrac{1}{n} \cdot \dfrac{1}{n} \to 0$
+:::
+
+<!-- מקור: הרצאה 5 -->
+
+## משפט הסנדוויץ׳; כפל אפסית בחסומה
+
+::: {#box-thm-piza-rachav .thmthm}
+משפט הפיצה
+
+אם $a_n \leq b_n$ לכל $n \geq 1$, ואם $a_n \to \infty$, אז $$\lim_{n\to\infty} b_n = \infty$$
+:::
+
+::: {#box-exm-piza-1 .thmexm}
+דוגמא:
+
+האם הסדרה $b_n = n + (-1)^n$ מתכנסת במובן הרחב?
+
+**פתרון:**
+
+נראה כי $b_n \to \infty$ מתקיים $b_n \geq n - 1$ אם נסתכל על $n - 1 \xrightarrow[\to\infty]{} \infty$
+
+אז מכלל הפיצה $$b_n \to \infty$$
+:::
+
+::: {#box-exm-piza-2 .thmexm}
+דוגמא:
+
+האם הסדרה $b_n = \dfrac{n^2}{n!}$ מתכנסת במובן הרחב?
+
+**פתרון:**
+
+$$b_n = \frac{n^2}{n!} = \frac{n \cdots n}{1 \cdot 2 \cdots n} = \frac{n}{1} \cdot \underbrace{\frac{n}{2}}_{\geq 1} \cdots \cdots \underbrace{\frac{n}{n}}_{\geq 1} \geq n \geq n \cdot 1 \cdots \cdots 1$$
+
+לכן מכלל הפיצה $$b_n \to \infty$$
+:::
+
+::: {#box-exm-piza-3 .thmexm}
+דוגמא:
+
+האם הסדרה $b_n = \left(1 + \dfrac{1}{n}\right)^{n^2}$ מתכנסת במובן הרחב?
+
+$$\left(1 + \frac{1}{n}\right)^{n^2} = \left(1 + \frac{1}{n}\right)^{n \cdot n} = \left(\left(1 + \frac{1}{n}\right)^n\right)^n$$
+
+$$\left(1 + \frac{1}{n}\right)^n \to e$$ כאשר $\left(1 + \frac{1}{n}\right)^n > 2$ באשר הם מספר מאוחרים מסוים
+
+$$a_n = \left(\left(1 + \frac{1}{n}\right)^n\right)^n > 2$$ לבן הם מספר מאוחרים מסוים
+
+הרי $2^n \to \infty$ לכן מכלל הפיצה: $$\boxed{a_n \to \infty}$$
+:::
+
+::: {#box-thm-piza-minf .thmthm}
+כלל הפיצה ההפוכה
+
+אם $a_n \leq b_n$ לכל $n \geq 1$, ואם $b_n \to -\infty$, אז $$\lim_{n\to n} a_n = -\infty$$
+:::

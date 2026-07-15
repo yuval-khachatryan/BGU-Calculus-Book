@@ -65,13 +65,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper left", fontsize=9)
 
-fig.savefig("figures/c10_fig01.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c15_fig01.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig01.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c15_fig01.png}\hss}\endL\par
 \medskip
 ```
 
@@ -80,7 +80,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![המשיק כגבול של הישרים החותכים והשיפוע כנגזרת](figures/c10_fig01.png){#fig-c06_fig03 width="62%" fig-align="center"}
+![המשיק כגבול של הישרים החותכים והשיפוע כנגזרת](figures/c15_fig01.png){#fig-c06_fig03 width="62%" fig-align="center"}
 :::
 
 כלומר: $\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$ הוא השיפוע של הישר המשיק לגרף הפונקציה ב- $(x_0, f(x_0))$.
@@ -195,13 +195,13 @@ ax.annotate("", xy=(3.9, 2.1), xytext=(6.1, 2.1),
 ax.plot([4.85, 5.15], [1.9, 2.3], color="red", lw=2.5)
 ax.plot([4.85, 5.15], [2.3, 1.9], color="red", lw=2.5)
 
-fig.savefig("figures/c10_fig02.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c15_fig02.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig02.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c15_fig02.png}\hss}\endL\par
 \medskip
 ```
 
@@ -210,7 +210,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גזירות גוררת רציפות, אך רציפות אינה גוררת גזירות](figures/c10_fig02.png){#fig-c06_fig01 width="62%" fig-align="center"}
+![גזירות גוררת רציפות, אך רציפות אינה גוררת גזירות](figures/c15_fig02.png){#fig-c06_fig01 width="62%" fig-align="center"}
 :::
 
 **הוכחת הטענה:**
@@ -257,13 +257,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper left")
 
-fig.savefig("figures/c10_fig03.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c15_fig03.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig03.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c15_fig03.png}\hss}\endL\par
 \medskip
 ```
 
@@ -272,7 +272,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![קו מקווקו אלכסוני העובר דרך הראשית](figures/c10_fig03.png){#fig-c06_fig02 width="62%" fig-align="center"}
+![קו מקווקו אלכסוני העובר דרך הראשית](figures/c15_fig03.png){#fig-c06_fig02 width="62%" fig-align="center"}
 :::
 
 נשים לב כי $f(x) = x \cdot D(x)$
@@ -418,13 +418,13 @@ ax.set_ylim(-0.3, 1.7)
 ax.set_aspect("equal")
 ax.axis("off")
 
-fig.savefig("figures/c10_fig04.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c15_fig04.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig04.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c15_fig04.png}\hss}\endL\par
 \medskip
 ```
 
@@ -433,7 +433,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![משולש ישר-זווית עבור arctan(y)](figures/c10_fig04.png){#fig-c06_fig04 width="62%" fig-align="center"}
+![משולש ישר-זווית עבור arctan(y)](figures/c15_fig04.png){#fig-c06_fig04 width="62%" fig-align="center"}
 :::
 
 ## נגזרות של $\sqrt{x}$, $\log_a x$, $\arctan x$, $\arccos x$, $\arcsin x$
@@ -478,13 +478,13 @@ ax.set_ylabel(r"$y$")
 ax.grid(alpha=0.3)
 ax.legend(loc="upper center")
 
-fig.savefig("figures/c10_fig05.png", dpi=150, bbox_inches="tight")
+fig.savefig("figures/c15_fig05.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 ```
 
 ```{=latex}
 \par\medskip
-\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c10_fig05.png}\hss}\endL\par
+\noindent\beginL\hbox to \linewidth{\hss\includegraphics[width=0.62\linewidth]{figures/c15_fig05.png}\hss}\endL\par
 \medskip
 ```
 
@@ -493,7 +493,7 @@ plt.close(fig)
 :::
 
 ::: {.content-visible when-format="html"}
-![גרף \|x\| בצורת V עם קודקוד בראשית](figures/c10_fig05.png){#fig-c06_fig05 width="62%" fig-align="center"}
+![גרף \|x\| בצורת V עם קודקוד בראשית](figures/c15_fig05.png){#fig-c06_fig05 width="62%" fig-align="center"}
 :::
 
 מימין ל-0: $$\lim_{x \to 0^+} \frac{|x| - |0|}{x - 0} = \lim_{x \to 0^+} \frac{|x|}{x} = 1$$
