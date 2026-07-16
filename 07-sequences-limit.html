@@ -169,6 +169,34 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
+.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
+.optional {
+  border-inline-start: 4px solid #c9a227;
+  background: #fbf7ec;
+  border-radius: 4px;
+  padding: 0.6rem 1rem 0.8rem;
+  margin: 1rem 0;
+}
+.optional::before {
+  content: "קריאת רשות";
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #b08900;
+  margin-bottom: 0.4rem;
+}
+.optional > .thmbox { background: #fffdf7; }
+details.thmcollapse { margin: 1rem 0; }
+details.thmcollapse > summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.2rem 0;
+}
+details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
+details.thmcollapse > .optional::before { display: none; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -705,18 +733,23 @@ window.Quarto = {
 </section>
 <section id="פיתוח-עשרוני-כסדרה" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="פיתוח-עשרוני-כסדרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה</h2>
+<details class="thmcollapse"><summary>קריאת רשות</summary>
+<div class="optional foldable">
 <p>בפרק המבוא ראינו את סדרת הקירובים העשרוניים של <span class="math inline">\(\sqrt{2}\)</span>. כעת, משהוגדרה ההתכנסות, נטפל בפיתוח העשרוני במדויק. כדוגמה, נענה על השאלה: האם <span class="math inline">\(0.999\dots = 1\)</span>? אחרי שראינו הגדרה של המושג גבול, התשובה היא ״כן״ — שני הסימונים מתארים את אותו מספר. הסיבה: <span class="math inline">\(0.999\dots\)</span> הוא קיצור לסדרת הקירובים <span class="math inline">\(0.9,\ 0.99,\ 0.999,\ \dots\)</span>, המתכנסת ל-<span class="math inline">\(1\)</span>.</p>
 <div id="box-def-decimal-expansion" class="thmbox thmbox-definition">
-<p><strong>הגדרה 7.4.1.</strong></p>
+<p><strong>הגדרה.</strong></p>
 <p>יהי <span class="math inline">\(a&gt;0\)</span> ממשי. נגדיר <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a> סדרת ספרות <span class="math inline">\(\{a_n\}_{n=1}^\infty\)</span> (עם <span class="math inline">\(a_n \in \{0,1,\dots,9\}\)</span>, ו-<span class="math inline">\(a_0\)</span> שלם כלשהו): <span class="math inline">\(a_0\)</span> הוא <strong>המספר השלם הגדול ביותר הקטן ממש מ-</strong><span class="math inline">\(a\)</span>, ובהינתן <span class="math inline">\(a_0,\dots,a_n\)</span>, <span class="math display">\[a_{n+1} = \max\left\{k \in \{0,\dots,9\} \;\middle|\; a_0.a_1\dots a_n + \frac{k}{10^{n+1}} &lt; a\right\}.\]</span> הביטוי <span class="math inline">\(a_0.a_1a_2\dots\)</span> נקרא ה<strong>פיתוח העשרוני</strong> של <span class="math inline">\(a\)</span> (עבור <span class="math inline">\(a&lt;0\)</span> לוקחים את הפיתוח של <span class="math inline">\(-a\)</span> עם סימן מינוס, ועבור <span class="math inline">\(a=0\)</span> את הסדרה הקבועה <span class="math inline">\(0\)</span>). נסמן <span class="math inline">\(t_n = a_0.a_1\dots a_n\)</span>, ונקרא ל-<span class="math inline">\(\{t_n\}\)</span> <strong>סדרת הקירובים העשרוניים</strong> של <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="box-prp-decimal-convergence" class="thmbox thmbox-proposition">
-<p><strong>טענה 7.4.2.</strong></p>
+<p><strong>טענה.</strong></p>
 <p>יהי <span class="math inline">\(a\in\mathbb{R}\)</span>, ותהי <span class="math inline">\(\{t_n\}\)</span> סדרת הקירובים העשרוניים שלו. אז <span class="math inline">\(\lim\limits_{n\to\infty} t_n = a\)</span>; במילים אחרות, <span class="math inline">\(a = a_0.a_1a_2\dots\)</span>.</p>
 </div>
-<p><strong>הוכחה.</strong> נניח <span class="math inline">\(a&gt;0\)</span> (המקרים <span class="math inline">\(a&lt;0\)</span> ו-<span class="math inline">\(a=0\)</span> דומים). לפי בניית הספרות, לכל <span class="math inline">\(n\)</span> מתקיים <span class="math inline">\(t_n &lt; a \le t_n + \frac{1}{10^n}\)</span>, ולכן <span class="math inline">\(|t_n - a| \le \frac{1}{10^n}\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>. לפי <a href="./03-number-systems.html#box-thm-archimedes"><strong>תכונת ארכימדס</strong></a> (לכל ממשי חיובי קיים מספר טבעי הגדול ממנו) קיים <span class="math inline">\(N\)</span> כך ש-<span class="math inline">\(10^N &gt; \frac{1}{\varepsilon}\)</span>, כלומר <span class="math inline">\(\frac{1}{10^N} &lt; \varepsilon\)</span>. לכן לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|t_n - a| \le \frac{1}{10^n} \le \frac{1}{10^N} &lt; \varepsilon\)</span>, כנדרש. <span class="math inline">\(\blacksquare\)</span></p>
+<div class="thmbox thmbox-proof">
+<p><strong>הוכחה.</strong></p>
+<p>נניח <span class="math inline">\(a&gt;0\)</span> (המקרים <span class="math inline">\(a&lt;0\)</span> ו-<span class="math inline">\(a=0\)</span> דומים). לפי בניית הספרות, לכל <span class="math inline">\(n\)</span> מתקיים <span class="math inline">\(t_n &lt; a \le t_n + \frac{1}{10^n}\)</span>, ולכן <span class="math inline">\(|t_n - a| \le \frac{1}{10^n}\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>. לפי <a href="./03-number-systems.html#box-thm-archimedes"><strong>תכונת ארכימדס</strong></a> (לכל ממשי חיובי קיים מספר טבעי הגדול ממנו) קיים <span class="math inline">\(N\)</span> כך ש-<span class="math inline">\(10^N &gt; \frac{1}{\varepsilon}\)</span>, כלומר <span class="math inline">\(\frac{1}{10^N} &lt; \varepsilon\)</span>. לכן לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|t_n - a| \le \frac{1}{10^n} \le \frac{1}{10^N} &lt; \varepsilon\)</span>, כנדרש.</p>
+</div>
 <div id="box-exm-expansion-25" class="thmbox thmbox-example">
-<p><strong>דוגמה 7.4.3.</strong></p>
+<p><strong>דוגמה.</strong></p>
 <p>הפיתוח העשרוני של <span class="math inline">\(2.5\)</span> הוא <span class="math inline">\(2.4999\dots\)</span>, וסדרת הקירובים שלו היא <span class="math inline">\(2,\ 2.4,\ 2.49,\ 2.499,\ \dots\)</span> — המתכנסת ל-<span class="math inline">\(2.5\)</span>.</p>
 </div>
 <div style="text-align:center">
@@ -733,6 +766,8 @@ window.Quarto = {
 </figure>
 </div>
 <p>כעת נשוב לשאלה שפתחנו בה. לפי הגדרת הפיתוח, הפיתוח של <span class="math inline">\(1\)</span> הוא <span class="math inline">\(0.999\dots\)</span>: המספר השלם הגדול ביותר הקטן ממש מ-<span class="math inline">\(1\)</span> הוא <span class="math inline">\(a_0 = 0\)</span>, ובכל שלב הספרה הגדולה ביותר ששומרת על הקירוב קטן ממש מ-<span class="math inline">\(1\)</span> היא <span class="math inline">\(9\)</span>. סדרת הקירובים <span class="math inline">\(0,\ 0.9,\ 0.99,\ \dots\)</span> מתכנסת ל-<span class="math inline">\(1\)</span>, ולכן <span class="math display">\[0.999\dots = \lim_{n\to\infty} t_n = 1.\]</span> שני הסימונים <span class="math inline">\(0.999\dots\)</span> ו-<span class="math inline">\(1.000\dots\)</span> מתארים אפוא את אותו מספר ממשי.</p>
+</div>
+</details>
 
 
 </section>

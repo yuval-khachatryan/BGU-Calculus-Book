@@ -169,6 +169,34 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
+.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
+.optional {
+  border-inline-start: 4px solid #c9a227;
+  background: #fbf7ec;
+  border-radius: 4px;
+  padding: 0.6rem 1rem 0.8rem;
+  margin: 1rem 0;
+}
+.optional::before {
+  content: "קריאת רשות";
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #b08900;
+  margin-bottom: 0.4rem;
+}
+.optional > .thmbox { background: #fffdf7; }
+details.thmcollapse { margin: 1rem 0; }
+details.thmcollapse > summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.2rem 0;
+}
+details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
+details.thmcollapse > .optional::before { display: none; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -841,8 +869,9 @@ window.Quarto = {
 <p><span class="math display">\[= \frac{1}{n}[F'(t_n) + \dots + F'(t_2) + F'(t_1)] = \frac{1}{n}[f(t_1) + \dots + f(t_n)] = \text{סכום רימן}\]</span></p>
 <!-- בדיקה: בצד שמאל כתוב "סכום רימן (כאשר n שאף לאינסוף)" -->
 <p>כך חיברנו בין מציאת פונקציה קדומה של <span class="math inline">\(f\)</span>, לבין החישוב של <span class="math inline">\(\int_a^b f(x)dx\)</span>.</p>
-<div id="rem-hagdara" class="thmdef proof remark">
-<p><span class="proof-title"><em>הערה 19.1</em>. </span><strong>הערה:</strong></p>
+<div id="rem-hagdara" class="thmbox thmbox-definition proof remark">
+<p><span class="proof-title"><em>הערה 19.1</em>. </span><strong>הגדרה 19.9.1.</strong></p>
+<p><strong>הערה:</strong></p>
 <p>האינטגרל המסוים מייצג “שטח נטו”, כלומר שטחים שנמצאים מעל ציר ה-x יתווספו בסימן חיובי, ושטחים שנמצאים מתחת לציר ה-x יוחסרו (סימן שלילי). זאת בניגוד לחישוב שטח גיאומטרי כולל, שבו היינו מחברים את הערכים המוחלטים של כל האזורים.</p>
 </div>
 <div style="text-align:center">
@@ -927,8 +956,9 @@ window.Quarto = {
 <p><span class="math display">\[= (-\cos(1) + 2\sin(1) + 2\cos(1)) - (-\cos(-1) - 2\sin(-1) + 2\cos(-1)) = \boxed{0}\]</span></p>
 <!-- בדיקה: מסומן "זוגיות" עם: $\cos(-\alpha) = \cos(\alpha)$ , $\sin(-\alpha) = -\sin(\alpha)$ -->
 <p>הפונקציה <span class="math inline">\(x^2 \sin(x)\)</span> אי-זוגית</p>
-<div id="rem-zugiut" class="thmdef proof remark">
-<p><span class="proof-title"><em>הערה 19.2</em>. </span><strong>הערה:</strong></p>
+<div id="rem-zugiut" class="thmbox thmbox-definition proof remark">
+<p><span class="proof-title"><em>הערה 19.2</em>. </span><strong>הגדרה 19.9.2.</strong></p>
+<p><strong>הערה:</strong></p>
 <div style="text-align:center">
 <p>תרשים: פונקציה זוגית (סימטרית, השטחים מצטברים) מול פונקציה אי-זוגית (השטחים מתבטלים)</p>
 </div>

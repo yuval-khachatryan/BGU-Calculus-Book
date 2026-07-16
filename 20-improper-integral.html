@@ -168,6 +168,34 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
+.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
+.optional {
+  border-inline-start: 4px solid #c9a227;
+  background: #fbf7ec;
+  border-radius: 4px;
+  padding: 0.6rem 1rem 0.8rem;
+  margin: 1rem 0;
+}
+.optional::before {
+  content: "קריאת רשות";
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #b08900;
+  margin-bottom: 0.4rem;
+}
+.optional > .thmbox { background: #fffdf7; }
+details.thmcollapse { margin: 1rem 0; }
+details.thmcollapse > summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #475569;
+  padding: 0.2rem 0;
+}
+details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
+details.thmcollapse > .optional::before { display: none; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
