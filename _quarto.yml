@@ -22,7 +22,7 @@ book:
       chapters:
         - 06-sequences-intro.qmd
         - 07-sequences-limit.qmd
-        - 08-sequences-arithmetic.qmd
+        - 08-sequences-properties.qmd
         - 09-sequences-monotone.qmd
         - 10-sequences-infinity.qmd
         - 11-sequences-subsequences.qmd

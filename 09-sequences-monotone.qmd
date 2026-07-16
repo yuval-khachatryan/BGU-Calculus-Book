@@ -46,7 +46,7 @@ $a_n$ מתכנסת $\not\Leftarrow$ $a_n$ מונוטונית
 
 **דוגמא:**
 
-נתונה סדרה $(a_n)_{n=1}^{\infty}$ באופן הרקורסיבי הבא:
+נתונה סדרה $(a_n)_{n=1}^{\infty}$ [באופן הרקורסיבי](05-induction.qmd#sec-recursive-definition) הבא:
 
 $$a_1 = 1$$
 
