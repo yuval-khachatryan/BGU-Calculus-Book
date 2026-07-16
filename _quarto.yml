@@ -95,6 +95,10 @@ format:
         % and clickable box across the whole line. Turn link coloring off in the PDF
         % (links still work/navigate; they just render as normal black text).
         \AtBeginDocument{\hypersetup{hidelinks}}
+        % optional-reading blocks: a coloured label, deliberately NOT a framed box
+        % (framed/tcolorbox environments re-trigger the RTL breakage above).
+        \definecolor{optionalaccent}{HTML}{9A7B1F}
+        \newenvironment{optionalbox}{\par\medskip\noindent{\color{optionalaccent}\rule{\linewidth}{1.2pt}}\par\smallskip\noindent{\bfseries\color{optionalaccent}קריאת רשות}\par\smallskip}{\par\smallskip\noindent{\color{optionalaccent}\rule{\linewidth}{1.2pt}}\par\medskip}
     mainfont: Arial
     sansfont: Arial
     monofont: "Courier New"
