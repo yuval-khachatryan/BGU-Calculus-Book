@@ -33,7 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./08-sequences-arithmetic.html" rel="next">
+<link href="./08-sequences-properties.html" rel="next">
 <link href="./06-sequences-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -369,8 +369,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-sequences-arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">אריתמטיקה של גבולות ומשפט הסנדוויץ׳</span></span></a>
+  <a href="./08-sequences-properties.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">תכונות של גבולות</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -556,23 +556,13 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#הגדרת-הגבול" id="toc-הגדרת-הגבול" class="nav-link active" data-scroll-target="#הגדרת-הגבול"><span class="header-section-number">7.1</span> הגדרת הגבול</a>
+  <li><a href="#סדרות" id="toc-סדרות" class="nav-link active" data-scroll-target="#סדרות"><span class="header-section-number">7.1</span> סדרות</a></li>
+  <li><a href="#גבול-של-סדרה" id="toc-גבול-של-סדרה" class="nav-link" data-scroll-target="#גבול-של-סדרה"><span class="header-section-number">7.2</span> גבול של סדרה</a></li>
+  <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות"><span class="header-section-number">7.3</span> דוגמאות</a>
   <ul class="collapse">
-  <li><a href="#סדרות-של-מספרים" id="toc-סדרות-של-מספרים" class="nav-link" data-scroll-target="#סדרות-של-מספרים">סדרות של מספרים</a></li>
-  <li><a href="#גבול-של-סדרה" id="toc-גבול-של-סדרה" class="nav-link" data-scroll-target="#גבול-של-סדרה">גבול של סדרה</a></li>
-  <li><a href="#דוגמא" id="toc-דוגמא" class="nav-link" data-scroll-target="#דוגמא">דוגמא:</a></li>
-  <li><a href="#דוגמא-נוספת" id="toc-דוגמא-נוספת" class="nav-link" data-scroll-target="#דוגמא-נוספת">דוגמא נוספת:</a></li>
-  <li><a href="#דוגמא-לסדרה-לא-מתכנסת" id="toc-דוגמא-לסדרה-לא-מתכנסת" class="nav-link" data-scroll-target="#דוגמא-לסדרה-לא-מתכנסת">דוגמא לסדרה לא מתכנסת:</a></li>
+  <li><a href="#דוגמאות-נוספות" id="toc-דוגמאות-נוספות" class="nav-link" data-scroll-target="#דוגמאות-נוספות">דוגמאות נוספות</a></li>
   </ul></li>
-  <li><a href="#יחידות-הגבול" id="toc-יחידות-הגבול" class="nav-link" data-scroll-target="#יחידות-הגבול"><span class="header-section-number">7.2</span> יחידות הגבול</a>
-  <ul class="collapse">
-  <li><a href="#יחידות-הגבול-1" id="toc-יחידות-הגבול-1" class="nav-link" data-scroll-target="#יחידות-הגבול-1">יחידות הגבול</a></li>
-  </ul></li>
-  <li><a href="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" id="toc-חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="nav-link" data-scroll-target="#חסימות-של-סדרה-מתכנסת-וההיפך-השגוי"><span class="header-section-number">7.3</span> חסימוּת של סדרה מתכנסת (וההיפך השגוי)</a>
-  <ul class="collapse">
-  <li><a href="#סדרה-חסומה" id="toc-סדרה-חסומה" class="nav-link" data-scroll-target="#סדרה-חסומה">סדרה חסומה</a></li>
-  <li><a href="#הקשר-בין-התכנסות-לחסימות-של-סדרה" id="toc-הקשר-בין-התכנסות-לחסימות-של-סדרה" class="nav-link" data-scroll-target="#הקשר-בין-התכנסות-לחסימות-של-סדרה">הקשר בין התכנסות לחסימות של סדרה</a></li>
-  </ul></li>
+  <li><a href="#פיתוח-עשרוני-כסדרה" id="toc-פיתוח-עשרוני-כסדרה" class="nav-link" data-scroll-target="#פיתוח-עשרוני-כסדרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה</a></li>
   </ul>
 </nav>
     </div>
@@ -598,199 +588,153 @@ window.Quarto = {
 </header>
 
 
-<section id="הגדרת-הגבול" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="הגדרת-הגבול"><span class="header-section-number">7.1</span> הגדרת הגבול</h2>
-<section id="סדרות-של-מספרים" class="level3">
-<h3 class="anchored" data-anchor-id="סדרות-של-מספרים">סדרות של מספרים</h3>
-<p>סדרה היא אוסף אינסופי של מספרים ממשיים, עם חשיבות לסדר. <span class="math display">\[a_1, a_2, a_3, \dots, a_n, \dots\]</span></p>
-<p>(האיבר במקום ה-<span class="math inline">\(n\)</span> של הסדרה) <!-- בדיקה: הערה בכתב יד --></p>
+<section id="סדרות" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="סדרות"><span class="header-section-number">7.1</span> סדרות</h2>
+<div id="box-def-sequence" class="thmbox thmbox-definition">
+<p><strong>הגדרה 7.1.1.</strong></p>
+<p><strong>סדרה (ממשית)</strong> היא אוסף <strong>אינסופי</strong> של מספרים ממשיים, שבו יש <strong>חשיבות לסדר</strong> ו<strong>חזרות מותרות</strong> (ראו את הדיון על ההבדל בין סדרה לקבוצה <a href="./06-sequences-intro.html">בפרק המבוא</a>): <span class="math display">\[a_0, a_1, a_2, \dots, a_n, \dots\]</span> <span class="math inline">\(a_n\)</span> הוא ה<strong>איבר</strong> שבמקום <span class="math inline">\(n\)</span>, ו-<span class="math inline">\(n\)</span> הוא ה<strong>אינדקס</strong> הרץ על המספרים הטבעיים. את הסדרה כולה נסמן בקיצור <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="ההגדרה הפורמלית: סדרה כפונקציה">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">הערה</span>ההגדרה הפורמלית: סדרה כפונקציה
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>פורמלית, סדרה ממשית <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span> היא <strong>פונקציה</strong> <span class="math inline">\(a:\mathbb{N}\to\mathbb{R}\)</span> — לכל מספר טבעי <span class="math inline">\(n\)</span> מותאם ערך ממשי יחיד <span class="math inline">\(a_n = a(n)\)</span>. הצגה זו הופכת את ״הסדר״ ואת ״האינסופיות״ למדויקים. אין הכרח להתחיל את האינדקס ב-<span class="math inline">\(0\)</span>: סדרה <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> היא פונקציה מ-<span class="math inline">\(\{1,2,3,\dots\}\)</span>, וכן הלאה — נשתמש בשני הסימונים לפי הנוחות.</p>
+</div>
+</div>
+</div>
+<p>הנה כמה דוגמאות:</p>
 <div id="box-exm-sequences" class="thmbox thmbox-example">
-<p><strong>דוגמה 7.1.1.</strong></p>
-<p>הסדרה <span class="math inline">\(a_n = n\)</span> היא: <span class="math inline">\(1,2,3,\dots\)</span></p>
-<p>הסדרה <span class="math inline">\(a_n = (-1)^n\)</span> היא: <span class="math inline">\(-1,1,-1,1,\dots\)</span></p>
-<p>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> היא: <span class="math inline">\(8,8,8,8,\dots\)</span></p>
-<p>בדרך רקורסיבית:</p>
-<p>נגדיר: <span class="math inline">\(a_1 = 1\)</span>, <span class="math inline">\(a_{n+1} = (n+1) \cdot a_n\)</span> לכל <span class="math inline">\(n \geq 1\)</span> <span class="math display">\[a_3 = 3 \cdot a_2 = 3 \cdot 2 \cdot 1 = 6\]</span></p>
+<p><strong>דוגמה 7.1.2.</strong></p>
+<ul>
+<li><span class="math inline">\(a_n = n\)</span> נותנת <span class="math inline">\(0, 1, 2, 3, \dots\)</span></li>
+<li><span class="math inline">\(a_n = (-1)^n\)</span> נותנת <span class="math inline">\(1, -1, 1, -1, \dots\)</span></li>
+<li>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> נותנת <span class="math inline">\(8, 8, 8, 8, \dots\)</span></li>
+<li>אפשר להגדיר סדרה גם <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a>: <span class="math inline">\(a_0 = 1\)</span> ו-<span class="math inline">\(a_{n+1} = (n+1)\,a_n\)</span> נותנת <span class="math inline">\(1, 1, 2, 6, 24, \dots\)</span> . כלומר <span class="math inline">\(a_n = n!\)</span>.</li>
+</ul>
 </div>
 </section>
-<section id="גבול-של-סדרה" class="level3">
-<h3 class="anchored" data-anchor-id="גבול-של-סדרה">גבול של סדרה</h3>
-<p>סדרה מתכנסת.</p>
-<div id="box-exm-convergence" class="thmbox thmbox-example">
-<p><strong>דוגמה 7.1.2.</strong></p>
-<p>מתכנסת ל-<span class="math inline">\(0\)</span>: <span class="math inline">\(a_n = \frac{1}{n}\)</span> : <span class="math inline">\(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots\)</span></p>
-<p>מתכנסת לאינסוף: <span class="math inline">\(1,2,3,4,\dots\)</span></p>
-<p>סדרה <em>לא</em> מתכנסת: <span class="math inline">\(-1,1,-1,1,-1,\dots\)</span></p>
+<section id="גבול-של-סדרה" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="גבול-של-סדרה"><span class="header-section-number">7.2</span> גבול של סדרה</h2>
+<p>מהו הערך שסדרה <strong>מתקרבת</strong> אליו? הרעיון: איברי הסדרה נעשים קרובים לערך <span class="math inline">\(L\)</span> כרצוננו — קרובים ככל שנדרוש — החל ממקום מסוים והלאה.</p>
+<div id="box-def-convergence" class="thmbox thmbox-definition">
+<p><strong>הגדרה 7.2.1.</strong></p>
+<p>תהי <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span> סדרה. נאמר שהסדרה <strong>מתכנסת</strong>, או שיש לה <strong>גבול</strong>, אם קיים <span class="math inline">\(L\in\mathbb{R}\)</span> כך שלכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\in\mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[|a_n - L| &lt; \varepsilon\]</span> במקרה זה נאמר שהסדרה <strong>שואפת</strong> (או <strong>מתכנסת</strong>) ל-<span class="math inline">\(L\)</span>, ונסמן <span class="math inline">\(\lim\limits_{n\to\infty}a_n=L\)</span> או <span class="math inline">\(a_n \to L\)</span>. אם אין לסדרה גבול, נאמר שהיא <strong>מתבדרת</strong>.</p>
 </div>
-<!-- מקור: הרצאה 3 -->
-<p>סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת למספר <span class="math inline">\(L \in R\)</span>:</p>
-<p>איברי הסדרה יהיו קרובים ל-<span class="math inline">\(L\)</span> (הגבול) כמה שנגדיר, החל ממקום מסוים.</p>
-<div id="box-def-convergent-sequence" class="thmbox thmbox-definition">
-<p><strong>הגדרה 7.1.3.</strong></p>
-<p>סדרה <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת למספר <span class="math inline">\(L \in R\)</span>, אם:</p>
-<p>לכל מספר <span class="math inline">\(\varepsilon\)</span> חיובי (השגיאה), קיים <span class="math inline">\(N \in \mathbb{N}\)</span> (מקום השגיאה) כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[|a_{n} - L| &lt; \varepsilon\]</span></p>
-</div>
-<p>נניח, עבור <span class="math inline">\(\varepsilon = 1\)</span>: קיים <span class="math inline">\(N_1 \in \mathbb{N}\)</span> כך (שהחל ממנו) לכל <span class="math inline">\(n &gt; N_1\)</span> <span class="math display">\[|a_n - L| &lt; 1\]</span></p>
+<p>שימו לב למספר פרטים בהגדרה:</p>
+<ol type="1">
+<li>התנאי מתקיים <strong>לכל</strong> מספר חיובי <span class="math inline">\(\varepsilon&gt;0\)</span>.</li>
+<li>האינדקס <span class="math inline">\(N\)</span> תלוי ב-<span class="math inline">\(\varepsilon\)</span>, אך תמיד קיים — ככל שנדרוש דיוק רב יותר (כלומר <span class="math inline">\(\varepsilon\)</span> קטן יותר), ייתכן שנצטרך להתקדם רחוק יותר בסדרה.</li>
+<li>לכל <span class="math inline">\(\varepsilon&gt;0\)</span>, מספר האיברים המקיימים <span class="math inline">\(|a_n - L| \geq \varepsilon\)</span> הוא <strong>סופי</strong>.</li>
+<li>ההתכנסות אינה תלויה באיברים הראשונים של הסדרה — ״חשוב מה שקורה בסוף״.</li>
+</ol>
 <div style="text-align:center">
-<p>תרשים: ציר מספרים עם הקטע <span class="math inline">\((L-1,\,L+1)\)</span> סביב הגבול <span class="math inline">\(L\)</span> — כל איברי הסדרה נמצאים בקטע ממקום מסוים</p>
+<p>תרשים: ציר מספרים עם הקטע <span class="math inline">\((L-\varepsilon,\,L+\varepsilon)\)</span> סביב הגבול <span class="math inline">\(L\)</span> — כל איברי הסדרה נמצאים בקטע החל ממקום מסוים</p>
 </div>
-<div id="fig-c02_fig01" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-seq-eps-band" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-c02_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-seq-eps-band-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figures/c07_fig01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c02_fig01-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-תרשים&nbsp;7.1: ציר מספרים עם הקטע <span class="math inline">\((L-1,\,L+1)\)</span> סביב הגבול <span class="math inline">\(L\)</span> — כל איברי הסדרה נמצאים בקטע ממקום מסוים
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seq-eps-band-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;7.1: ציר מספרים עם הקטע <span class="math inline">\((L-\varepsilon,\,L+\varepsilon)\)</span> סביב הגבול <span class="math inline">\(L\)</span> — כל איברי הסדרה נמצאים בקטע החל ממקום מסוים
 </figcaption>
 </figure>
 </div>
-<p>אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> מתכנסת ל-<span class="math inline">\(L\)</span>, נסמן זאת: <span class="math display">\[\lim_{n \to \infty} a_n = L\]</span></p>
 </section>
-<section id="דוגמא" class="level3">
-<h3 class="anchored" data-anchor-id="דוגמא">דוגמא:</h3>
-<p>עבור <span class="math inline">\(a_n = \dfrac{1}{n}\)</span> מתקיים <span class="math display">\[\lim_{n \to \infty} a_n = 0\]</span></p>
-<p>נראה כי</p>
-<p>נרצה להראות שלכל <span class="math inline">\(\varepsilon &gt; 0\)</span>, קיים <span class="math inline">\(N \in \mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[\left|\dfrac{1}{n} - 0\right| &lt; \varepsilon\]</span></p>
-<p>(עבור <span class="math inline">\(\varepsilon = 1\)</span>, ניקח <span class="math inline">\(N = 1\)</span> ואכן לכל <span class="math inline">\(n &gt; 1\)</span>: <span class="math inline">\(\left|\dfrac{1}{n} - 0\right| &lt; 1\)</span>)</p>
-<p>יהי <span class="math inline">\(\varepsilon &gt; 0\)</span>, נחפש <span class="math inline">\(N \in \mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> יתקיים <span class="math display">\[\left|\dfrac{1}{n} - 0\right| &lt; \varepsilon\]</span></p>
-<p>מתקיים אם ורק אם <span class="math inline">\(n &gt; \dfrac{1}{\varepsilon}\)</span> <span class="math display">\[\dfrac{1}{n} = \left|\dfrac{1}{n}\right| = \left|\dfrac{1}{n} - 0\right| &lt; \varepsilon\]</span></p>
-<blockquote class="blockquote">
-<p><strong>הערה (מהמקור):</strong> תזכיר: ערך מוחלט ב’ זה אותו מקום בהגדרה.</p>
-</blockquote>
-<p>לכל <span class="math inline">\(x \in R\)</span> נסמן ע”י <span class="math inline">\(\lfloor x \rfloor\)</span> את הערך השלם של <span class="math inline">\(x\)</span>, כעיגול כלפי מטה למספר שלם.</p>
-<p>לכן ניקח: <span class="math inline">\(N = \left\lfloor \dfrac{1}{\varepsilon} \right\rfloor + 1\)</span> והראנו שלכל <span class="math inline">\(n &gt; N\)</span>: <span class="math display">\[|a_{n} - 0| &lt; \varepsilon\]</span></p>
-</section>
-<section id="דוגמא-נוספת" class="level3">
-<h3 class="anchored" data-anchor-id="דוגמא-נוספת">דוגמא נוספת:</h3>
-<p>עבור הסדרה <span class="math inline">\(a_n = \dfrac{3 \cdot n - 4}{n + 2}\)</span> נראה כי: <span class="math display">\[\lim_{n \to \infty} \left(\dfrac{3n - 4}{n + 2}\right) = 3\]</span></p>
-<p>נראה זאת לפי ההגדרה:</p>
-<p>יהי <span class="math inline">\(\varepsilon &gt; 0\)</span>, נחפש <span class="math inline">\(N \in \mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[\left|\dfrac{3n - 4}{n + 2} - 3\right| &lt; \varepsilon\]</span></p>
-<p>נפשט את הביטוי: <span class="math display">\[\left|\dfrac{3n - 4}{n + 2} - 3\right| = \left|\dfrac{3n - 4 - 3(n + 2)}{n + 2}\right| = \left|\dfrac{-4 - 6}{n + 2}\right| = \dfrac{10}{n + 2} &lt; \varepsilon\]</span></p>
-<p>נרצה: <span class="math display">\[\dfrac{10}{n + 2} &lt; \varepsilon\]</span></p>
-<p>מתקיים: <span class="math display">\[\dfrac{10}{n + 2} &lt; \dfrac{10}{n} &lt; \varepsilon\]</span></p>
-<blockquote class="blockquote">
-<p><strong>הערה (מהמקור):</strong> מקטינים את המכנה כדי להגדיל את האיבר.</p>
-</blockquote>
-<p>לכן נבחר <span class="math inline">\(N = \left\lfloor \dfrac{10}{\varepsilon} \right\rfloor + 1\)</span> ואז בוודאות לכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[\left|\dfrac{3n - 4}{n + 2} - 3\right| &lt; \varepsilon\]</span></p>
-</section>
-<section id="דוגמא-לסדרה-לא-מתכנסת" class="level3">
-<h3 class="anchored" data-anchor-id="דוגמא-לסדרה-לא-מתכנסת">דוגמא לסדרה לא מתכנסת:</h3>
-<p>נראה כי הסדרה <span class="math inline">\(a_n = (-1)^n\)</span> לא מתכנסת, כלומר לכל <span class="math inline">\(L \in R\)</span>, נראה כי <span class="math display">\[\lim_{n \to \infty} a_n \neq L\]</span></p>
-<p>נניח בשלילה כי <span class="math inline">\(\lim_{n \to \infty} (-1)^n = L\)</span> עבור <span class="math inline">\(L \in R\)</span>.</p>
-<p>לכן עבור <span class="math inline">\(\varepsilon = \dfrac{1}{2}\)</span>, מהגדרת הגבול נובע שקיים <span class="math inline">\(N \in \mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים: <span class="math display">\[\left|(-1)^n - L\right| &lt; \dfrac{1}{2}\]</span></p>
-<p>בפרט עבור <span class="math inline">\(n &gt; N\)</span> זוגי (<span class="math inline">\(n = 2 \cdot N\)</span> כמו) מתקיים: <span class="math display">\[\left|(-1)^n - L\right| &lt; \dfrac{1}{2}\]</span></p>
-<p>כלומר <span class="math inline">\(|1 - L| &lt; \dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(-\dfrac{1}{2} &lt; 1 - L \le \dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(-\dfrac{3}{2} &lt; -L &lt; -\dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(\boxed{\dfrac{1}{2} &lt; L &lt; \dfrac{3}{2}}\)</span></p>
-<p>בדומה, נבחר <span class="math inline">\(n &gt; N\)</span> אי-זוגי (<span class="math inline">\(n = 2 \cdot N + 1\)</span> כמו) מתקיים: <span class="math display">\[\left|(-1)^n - L\right| &lt; \dfrac{1}{2}\]</span></p>
-<p>כלומר <span class="math inline">\(|-1 - L| &lt; \dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(|L + 1| &lt; \dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(-\dfrac{1}{2} &lt; L + 1 &lt; \dfrac{1}{2}\)</span> <span class="math inline">\(\Leftarrow\)</span> <span class="math inline">\(\boxed{-\dfrac{3}{2} &lt; L &lt; -\dfrac{1}{2}}\)</span></p>
+<section id="דוגמאות" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="דוגמאות"><span class="header-section-number">7.3</span> דוגמאות</h2>
+<p>נציג שלוש דוגמאות בסיסיות: סדרה קבועה (התכנסות מיידית), סדרה מתחלפת (התבדרות), וסדרה שמתכנסת ״באמת״ אך אינה קבועה.</p>
+<div id="box-exm-constant-seq" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.3.1.</strong></p>
+<p>הסדרה הקבועה <span class="math inline">\(a_n = 1\)</span> (כלומר <span class="math inline">\(1, 1, 1, \dots\)</span>) מתכנסת, וגבולה — באופן לא מפתיע — הוא <span class="math inline">\(1\)</span>: לכל <span class="math inline">\(\varepsilon&gt;0\)</span> ולכל <span class="math inline">\(n\)</span> מתקיים <span class="math inline">\(|a_n - 1| = |1-1| = 0 &lt; \varepsilon\)</span>, כך שאותו <span class="math inline">\(N\)</span> מתאים לכל <span class="math inline">\(\varepsilon\)</span>. זהו מקרה <strong>חריג</strong>: כאשר הסדרה אינה קבועה, בדרך כלל <span class="math inline">\(N\)</span> תלוי ב-<span class="math inline">\(\varepsilon\)</span>.</p>
+</div>
+<div id="box-exm-pm-one" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.3.2.</strong></p>
+<p>הסדרה <span class="math inline">\(a_n = (-1)^n\)</span>, כלומר <span class="math inline">\(1, -1, 1, -1, \dots\)</span>, <strong>מתבדרת</strong>. נניח בשלילה שיש לה גבול <span class="math inline">\(L\)</span>. אז לכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\)</span> כך שלכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|a_n - L| &lt; \varepsilon\)</span>. ניקח <span class="math inline">\(\varepsilon = 1\)</span>. לכל <span class="math inline">\(n&gt;N\)</span> <strong>זוגי</strong> מתקיים <span class="math inline">\(a_n = 1\)</span>, ולכן <span class="math inline">\(|1 - L| &lt; 1\)</span>; לכל <span class="math inline">\(n&gt;N\)</span> <strong>אי-זוגי</strong> מתקיים <span class="math inline">\(a_n = -1\)</span>, ולכן <span class="math inline">\(|L - (-1)| &lt; 1\)</span>. לפי אי-שוויון המשולש, <span class="math display">\[2 = |1 - (-1)| \le |1 - L| + |L - (-1)| &lt; 1 + 1 = 2,\]</span> כלומר <span class="math inline">\(2 &lt; 2\)</span> — סתירה. לכן הסדרה מתבדרת.</p>
+</div>
 <div style="text-align:center">
-<p>תרשים: שני קטעים זרים על ציר המספרים — <span class="math inline">\(\left(\tfrac12,\tfrac32\right)\)</span> ו-<span class="math inline">\(\left(-\tfrac32,-\tfrac12\right)\)</span> — המראים שלא קיים <span class="math inline">\(L\)</span> יחיד, ומכאן הסתירה</p>
+<p>תרשים: הסדרה <span class="math inline">\(a_n = (-1)^n\)</span> — איבריה קופצים בין שני קווים, ולכן אינם מתקרבים לקו אחד</p>
 </div>
-<div id="fig-c02_fig02" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-seq-pm-one" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-c02_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/c07_fig02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+<div aria-describedby="fig-seq-pm-one-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/c07_fig02.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c02_fig02-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-תרשים&nbsp;7.2: שני קטעים זרים על ציר המספרים — <span class="math inline">\(\left(\tfrac12,\tfrac32\right)\)</span> ו-<span class="math inline">\(\left(-\tfrac32,-\tfrac12\right)\)</span> — המראים שלא קיים <span class="math inline">\(L\)</span> יחיד, ומכאן הסתירה
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seq-pm-one-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;7.2: הסדרה <span class="math inline">\(a_n = (-1)^n\)</span>
 </figcaption>
 </figure>
 </div>
-<p>זאת סתירה, ולכן <span class="math inline">\(\lim_{n \to \infty} (-1)^n\)</span> לא קיים.</p>
-<!-- מקור: הרצאה 4 -->
-</section>
-</section>
-<section id="יחידות-הגבול" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="יחידות-הגבול"><span class="header-section-number">7.2</span> יחידות הגבול</h2>
-<section id="יחידות-הגבול-1" class="level3">
-<h3 class="anchored" data-anchor-id="יחידות-הגבול-1">יחידות הגבול</h3>
-<div id="box-thm-limit-uniqueness" class="thmbox thmbox-theorem">
-<p><strong>משפט 7.2.1.</strong></p>
-<p>אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה המקיימת <span class="math inline">\(a_n \to L_1\)</span> וגם <span class="math inline">\(a_n \to L_2\)</span> אז <span class="math inline">\(L_1 = L_2\)</span></p>
-<p>כלומר, אם סדרה מתכנסת אז <u>הגבול</u> שלה הוא יחיד.</p>
+<div id="box-exm-one-frac-n" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.3.3.</strong></p>
+<p>הסדרה <span class="math inline">\(a_n = 1 + \dfrac{\sin(n)}{n}\)</span> (עבור <span class="math inline">\(n \ge 1\)</span>) מתכנסת, וגבולה <span class="math inline">\(1\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>. קיים <span class="math inline">\(N\)</span> כך ש-<span class="math inline">\(N \ge \dfrac{1}{\varepsilon}\)</span>, ולכן לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(\dfrac{1}{n} &lt; \dfrac{1}{N} \le \varepsilon\)</span>. לכן <span class="math display">\[|a_n - 1| = \left|\frac{\sin(n)}{n}\right| \le \frac{1}{n} &lt; \varepsilon,\]</span> כנדרש.</p>
 </div>
-<p><strong>הוכחה:</strong></p>
-<p>נניח בשלילה: <span class="math inline">\(L_1 \ne L_2\)</span></p>
-<p>נסמן את המרחק: <span class="math inline">\(d = |L_1 - L_2| &gt; 0\)</span></p>
-<p>נבחר: <span class="math inline">\(\varepsilon = \dfrac{d}{4}\)</span></p>
-<p><span class="math inline">\(a_n\)</span> עבור <span class="math inline">\(n &gt; max\{N_1, N_2\}\)</span> <span class="math inline">\(\leftarrow\)</span> סתירה</p>
 <div style="text-align:center">
-<p>תרשים: שני קטעי <span class="math inline">\(\varepsilon=\tfrac{d}{4}\)</span> זרים סביב <span class="math inline">\(L_1\)</span> ו-<span class="math inline">\(L_2\)</span> במרחק <span class="math inline">\(d\)</span> — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה</p>
+<p>תרשים: התכנסות הסדרה <span class="math inline">\(a_n = 1 + \frac{\sin(n)}{n}\)</span> אל <span class="math inline">\(1\)</span> — הנקודות נעשות צפופות סביב קו הגבול</p>
 </div>
-<div id="fig-c02_fig05" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-seq-sin-n" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-c02_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/c07_fig03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+<div aria-describedby="fig-seq-sin-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/c07_fig03.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c02_fig05-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-תרשים&nbsp;7.3: שני קטעי <span class="math inline">\(\varepsilon=\tfrac{d}{4}\)</span> זרים סביב <span class="math inline">\(L_1\)</span> ו-<span class="math inline">\(L_2\)</span> במרחק <span class="math inline">\(d\)</span> — איבר אחד אינו יכול להיות בשניהם, ומכאן הסתירה
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seq-sin-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;7.3: התכנסות הסדרה <span class="math inline">\(a_n = 1 + \frac{\sin(n)}{n}\)</span>
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-<section id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="חסימות-של-סדרה-מתכנסת-וההיפך-השגוי"><span class="header-section-number">7.3</span> חסימוּת של סדרה מתכנסת (וההיפך השגוי)</h2>
-<section id="סדרה-חסומה" class="level3">
-<h3 class="anchored" data-anchor-id="סדרה-חסומה">סדרה חסומה</h3>
-<div id="box-def-bounded-sequence" class="thmbox thmbox-definition">
-<p><strong>הגדרה 7.3.1.</strong></p>
-<p>תהי <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה, נגיד כי <span class="math inline">\(a_n\)</span> חסומה, אם קיימים <span class="math inline">\(m,M \in R\)</span> כך שלכל <span class="math inline">\(n\)</span>: <span class="math display">\[m \le a_n \le M\]</span></p>
+<p>נשים לב: הגדרת ההתכנסות בודקת רק את <strong>קיום</strong> הגבול, לא את <strong>מהירות</strong> ההתקרבות אליו. שתי סדרות יכולות להתכנס לאותו גבול בקצבים שונים מאוד.</p>
+<section id="דוגמאות-נוספות" class="level3">
+<h3 class="anchored" data-anchor-id="דוגמאות-נוספות">דוגמאות נוספות</h3>
+<div id="box-exm-one-over-n" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.3.4.</strong></p>
+<p>עבור <span class="math inline">\(a_n = \dfrac{1}{n}\)</span> מתקיים <span class="math inline">\(\lim\limits_{n\to\infty} a_n = 0\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>; נבחר <span class="math inline">\(N = \left\lfloor \dfrac{1}{\varepsilon}\right\rfloor + 1\)</span>. אז לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(n &gt; \dfrac{1}{\varepsilon}\)</span>, ולכן <span class="math inline">\(\left|\dfrac{1}{n} - 0\right| = \dfrac{1}{n} &lt; \varepsilon\)</span>.</p>
 </div>
-<p>דוגמאות:</p>
-<ul>
-<li><p><span class="math inline">\(a_n = \dfrac{1}{n}\)</span> סדרה חסומה, כי: <span class="math inline">\(0 \le a_n \le 1\)</span> לכל ח.</p></li>
-<li><p><span class="math inline">\(a_n = (-1)^n\)</span> סדרה חסומה, כי: <span class="math inline">\(-1 \le (-1)^n \le 1\)</span> לכל ח.</p></li>
-<li><p><span class="math inline">\(a_n = n\)</span> <u>לא</u> סדרה חסומה, כי: לכל <span class="math inline">\(M\)</span>, יהיה <span class="math inline">\(a_n &gt; M\)</span></p>
-<p>למשל, ניקח את <span class="math inline">\(n = \lfloor M \rfloor + 1\)</span> עבורו <span class="math inline">\(a_n = n &gt; M\)</span></p></li>
-</ul>
+<div id="box-exm-seq-3n-4" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.3.5.</strong></p>
+<p>עבור <span class="math inline">\(a_n = \dfrac{3n-4}{n+2}\)</span> מתקיים <span class="math inline">\(\lim\limits_{n\to\infty} a_n = 3\)</span>. נפשט: <span class="math display">\[\left|\frac{3n-4}{n+2} - 3\right| = \left|\frac{3n-4-3(n+2)}{n+2}\right| = \frac{10}{n+2} &lt; \frac{10}{n}.\]</span> יהי <span class="math inline">\(\varepsilon&gt;0\)</span>; נבחר <span class="math inline">\(N = \left\lfloor \dfrac{10}{\varepsilon}\right\rfloor + 1\)</span>. אז לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(\dfrac{10}{n} &lt; \varepsilon\)</span>, ולכן <span class="math inline">\(\left|a_n - 3\right| &lt; \varepsilon\)</span>.</p>
+</div>
 </section>
-<section id="הקשר-בין-התכנסות-לחסימות-של-סדרה" class="level3">
-<h3 class="anchored" data-anchor-id="הקשר-בין-התכנסות-לחסימות-של-סדרה">הקשר בין התכנסות לחסימות של סדרה</h3>
-<ul>
-<li><p>סדרה חסומה לא גורר שהיא מתכנסת.</p>
-<p>לדוגמא: <span class="math inline">\(a_n = (-1)^n\)</span></p></li>
-</ul>
+</section>
+<section id="פיתוח-עשרוני-כסדרה" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="פיתוח-עשרוני-כסדרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה</h2>
+<p>בפרק המבוא ראינו את סדרת הקירובים העשרוניים של <span class="math inline">\(\sqrt{2}\)</span>. כעת, משהוגדרה ההתכנסות, נטפל בפיתוח העשרוני במדויק. כדוגמה, נענה על השאלה: האם <span class="math inline">\(0.999\dots = 1\)</span>? אחרי שראינו הגדרה של המושג גבול, התשובה היא ״כן״ — שני הסימונים מתארים את אותו מספר. הסיבה: <span class="math inline">\(0.999\dots\)</span> הוא קיצור לסדרת הקירובים <span class="math inline">\(0.9,\ 0.99,\ 0.999,\ \dots\)</span>, המתכנסת ל-<span class="math inline">\(1\)</span>.</p>
+<div id="box-def-decimal-expansion" class="thmbox thmbox-definition">
+<p><strong>הגדרה 7.4.1.</strong></p>
+<p>יהי <span class="math inline">\(a&gt;0\)</span> ממשי. נגדיר <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a> סדרת ספרות <span class="math inline">\(\{a_n\}_{n=1}^\infty\)</span> (עם <span class="math inline">\(a_n \in \{0,1,\dots,9\}\)</span>, ו-<span class="math inline">\(a_0\)</span> שלם כלשהו): <span class="math inline">\(a_0\)</span> הוא <strong>המספר השלם הגדול ביותר הקטן ממש מ-</strong><span class="math inline">\(a\)</span>, ובהינתן <span class="math inline">\(a_0,\dots,a_n\)</span>, <span class="math display">\[a_{n+1} = \max\left\{k \in \{0,\dots,9\} \;\middle|\; a_0.a_1\dots a_n + \frac{k}{10^{n+1}} &lt; a\right\}.\]</span> הביטוי <span class="math inline">\(a_0.a_1a_2\dots\)</span> נקרא ה<strong>פיתוח העשרוני</strong> של <span class="math inline">\(a\)</span> (עבור <span class="math inline">\(a&lt;0\)</span> לוקחים את הפיתוח של <span class="math inline">\(-a\)</span> עם סימן מינוס, ועבור <span class="math inline">\(a=0\)</span> את הסדרה הקבועה <span class="math inline">\(0\)</span>). נסמן <span class="math inline">\(t_n = a_0.a_1\dots a_n\)</span>, ונקרא ל-<span class="math inline">\(\{t_n\}\)</span> <strong>סדרת הקירובים העשרוניים</strong> של <span class="math inline">\(a\)</span>.</p>
+</div>
+<div id="box-prp-decimal-convergence" class="thmbox thmbox-proposition">
+<p><strong>טענה 7.4.2.</strong></p>
+<p>יהי <span class="math inline">\(a\in\mathbb{R}\)</span>, ותהי <span class="math inline">\(\{t_n\}\)</span> סדרת הקירובים העשרוניים שלו. אז <span class="math inline">\(\lim\limits_{n\to\infty} t_n = a\)</span>; במילים אחרות, <span class="math inline">\(a = a_0.a_1a_2\dots\)</span>.</p>
+</div>
+<p><strong>הוכחה.</strong> נניח <span class="math inline">\(a&gt;0\)</span> (המקרים <span class="math inline">\(a&lt;0\)</span> ו-<span class="math inline">\(a=0\)</span> דומים). לפי בניית הספרות, לכל <span class="math inline">\(n\)</span> מתקיים <span class="math inline">\(t_n &lt; a \le t_n + \frac{1}{10^n}\)</span>, ולכן <span class="math inline">\(|t_n - a| \le \frac{1}{10^n}\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>. לפי <a href="./03-number-systems.html#box-thm-archimedes"><strong>תכונת ארכימדס</strong></a> (לכל ממשי חיובי קיים מספר טבעי הגדול ממנו) קיים <span class="math inline">\(N\)</span> כך ש-<span class="math inline">\(10^N &gt; \frac{1}{\varepsilon}\)</span>, כלומר <span class="math inline">\(\frac{1}{10^N} &lt; \varepsilon\)</span>. לכן לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|t_n - a| \le \frac{1}{10^n} \le \frac{1}{10^N} &lt; \varepsilon\)</span>, כנדרש. <span class="math inline">\(\blacksquare\)</span></p>
+<div id="box-exm-expansion-25" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.4.3.</strong></p>
+<p>הפיתוח העשרוני של <span class="math inline">\(2.5\)</span> הוא <span class="math inline">\(2.4999\dots\)</span>, וסדרת הקירובים שלו היא <span class="math inline">\(2,\ 2.4,\ 2.49,\ 2.499,\ \dots\)</span> — המתכנסת ל-<span class="math inline">\(2.5\)</span>.</p>
+</div>
 <div style="text-align:center">
-<p>תרשים: סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)</p>
+<p>תרשים: התכנסות הקירובים העשרוניים הסופיים של <span class="math inline">\(2.5\)</span></p>
 </div>
-<div id="fig-c02_fig03" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-seq-decimal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-c02_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/c07_fig04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
+<div aria-describedby="fig-seq-decimal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/c07_fig04.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c02_fig03-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-תרשים&nbsp;7.4: סדרה מתכנסת גוררת חסומה, אך סדרה חסומה אינה גוררת מתכנסת (אין גרירה הדדית)
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seq-decimal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+תרשים&nbsp;7.4: התכנסות הקירובים העשרוניים הסופיים של <span class="math inline">\(2.5\)</span>
 </figcaption>
 </figure>
 </div>
-<ul>
-<li><p>אם <span class="math inline">\((a_n)_{n=1}^{\infty}\)</span> סדרה מתכנסת, אז היא חסומה.</p>
-<p><span class="math inline">\(\downarrow\)</span> הוכחת הטענה</p>
-<p>נסמן <span class="math inline">\(a_n \to L\)</span>. מהגדרת הגבול, נבחר <span class="math inline">\(\varepsilon = 1\)</span>, אז קיים <span class="math inline">\(N\)</span> כך שלכל <span class="math inline">\(n&gt;N\)</span> מתקיים: <span class="math display">\[|a_n - L| &lt; 1 \ \leftarrow \ L-1 &lt; a_n &lt; L+1\]</span></p>
-<p>כלומר, בשביל לחסום את <u>כל</u> איברי הסדרה <u>מלמעלה</u>, ניקח: <span class="math inline">\(M = max\{L+1, a_1, \ldots, a_N\}\)</span></p>
-<p>ואז בוודאות <u>לכל ח</u>: <span class="math inline">\(a_n \le M\)</span></p>
-<p>ובשביל לחסום את <u>כל</u> איברי הסדרה <u>מלמטה</u>, ניקח: <span class="math inline">\(m = min\{L-1, a_1, \ldots, a_N\}\)</span></p>
-<p>ואז בוודאות <u>לכל ח</u>: <span class="math inline">\(m \le a_n\)</span></p></li>
-</ul>
-<div style="text-align:center">
-<p>תרשים: הזנב <span class="math inline">\(a_n\)</span> (עבור <span class="math inline">\(n&gt;N\)</span>) בקטע <span class="math inline">\((L-1,L+1)\)</span>, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין <span class="math inline">\(m\)</span> ל-<span class="math inline">\(M\)</span></p>
-</div>
-<div id="fig-c02_fig04" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-c02_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/c07_fig05.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:62.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c02_fig04-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-תרשים&nbsp;7.5: הזנב <span class="math inline">\(a_n\)</span> (עבור <span class="math inline">\(n&gt;N\)</span>) בקטע <span class="math inline">\((L-1,L+1)\)</span>, והאיברים הראשונים שמחוץ לו — כל הסדרה חסומה בין <span class="math inline">\(m\)</span> ל-<span class="math inline">\(M\)</span>
-</figcaption>
-</figure>
-</div>
-<ul>
-<li>סדרה <u>שאינה חסומה</u>, אז היא אינה מתכנסת.</li>
-</ul>
+<p>כעת נשוב לשאלה שפתחנו בה. לפי הגדרת הפיתוח, הפיתוח של <span class="math inline">\(1\)</span> הוא <span class="math inline">\(0.999\dots\)</span>: המספר השלם הגדול ביותר הקטן ממש מ-<span class="math inline">\(1\)</span> הוא <span class="math inline">\(a_0 = 0\)</span>, ובכל שלב הספרה הגדולה ביותר ששומרת על הקירוב קטן ממש מ-<span class="math inline">\(1\)</span> היא <span class="math inline">\(9\)</span>. סדרת הקירובים <span class="math inline">\(0,\ 0.9,\ 0.99,\ \dots\)</span> מתכנסת ל-<span class="math inline">\(1\)</span>, ולכן <span class="math display">\[0.999\dots = \lim_{n\to\infty} t_n = 1.\]</span> שני הסימונים <span class="math inline">\(0.999\dots\)</span> ו-<span class="math inline">\(1.000\dots\)</span> מתארים אפוא את אותו מספר ממשי.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1201,8 +1145,8 @@ window.Quarto = {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./08-sequences-arithmetic.html" class="pagination-link" aria-label="אריתמטיקה של גבולות ומשפט הסנדוויץ׳">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">אריתמטיקה של גבולות ומשפט הסנדוויץ׳</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./08-sequences-properties.html" class="pagination-link" aria-label="תכונות של גבולות">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">תכונות של גבולות</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

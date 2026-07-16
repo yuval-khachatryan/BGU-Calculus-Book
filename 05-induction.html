@@ -369,8 +369,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-sequences-arithmetic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">אריתמטיקה של גבולות ומשפט הסנדוויץ׳</span></span></a>
+  <a href="./08-sequences-properties.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">תכונות של גבולות</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -558,6 +558,7 @@ window.Quarto = {
   <ul>
   <li><a href="#עקרון-האינדוקציה" id="toc-עקרון-האינדוקציה" class="nav-link active" data-scroll-target="#עקרון-האינדוקציה"><span class="header-section-number">5.1</span> עקרון האינדוקציה</a></li>
   <li><a href="#שלבי-האינדוקציה" id="toc-שלבי-האינדוקציה" class="nav-link" data-scroll-target="#שלבי-האינדוקציה"><span class="header-section-number">5.2</span> שלבי האינדוקציה</a></li>
+  <li><a href="#sec-recursive-definition" id="toc-sec-recursive-definition" class="nav-link" data-scroll-target="#sec-recursive-definition"><span class="header-section-number">5.3</span> הגדרה רקורסיבית</a></li>
   </ul>
 </nav>
     </div>
@@ -616,6 +617,12 @@ window.Quarto = {
 </ol>
 <p>ונראה כי: <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+1+1)(2(n+1)+1)}{6}\]</span> <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \frac{(n+1)(n+2)(2n+3)}{6}\]</span></p>
 <p>נעבוד על אגף שמאל: <span class="math display">\[1^2 + \dots + n^2 + (n+1)^2 = \underbrace{\frac{n(n+1)(2n+1)}{6}}_{\text{הנחת האינדוקציה}} + (n+1)^2 =\]</span> <span class="math display">\[= \frac{(n+1)[n(2n+1) + 6(n+1)]}{6} = \frac{(n+1)[2n^2 + 7n + 6]}{6} = \frac{(n+1) \cdot [n+2][2n+3]}{6}\]</span></p>
+</div>
+</section>
+<section id="sec-recursive-definition" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-recursive-definition"><span class="header-section-number">5.3</span> הגדרה רקורסיבית</h2>
+<div class="todo">
+<p>הגדרה רקורסיבית (בנסיגה) — הגדרת אובייקט לכל <span class="math inline">\(n\)</span> באמצעות ערך התחלתי וכלל מעבר מ-<span class="math inline">\(n\)</span> ל-<span class="math inline">\(n+1\)</span>; ההגדרה תקפה מכוח עקרון האינדוקציה. להשלמה.</p>
 </div>
 
 
