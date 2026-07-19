@@ -168,11 +168,11 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
-.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof       { border-color: #94a3b8; background: #f1f5f9; }
 .thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
 .optional {
   border-inline-start: 4px solid #c9a227;
-  background: #fbf7ec;
+  background: #f1f5f9;
   border-radius: 4px;
   padding: 0.6rem 1rem 0.8rem;
   margin: 1rem 0;
@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
   color: #b08900;
   margin-bottom: 0.4rem;
 }
-.optional > .thmbox { background: #fffdf7; }
+.optional > .thmbox { background: #ffffff; }
 details.thmcollapse { margin: 1rem 0; }
 details.thmcollapse > summary {
   cursor: pointer;
@@ -196,6 +196,24 @@ details.thmcollapse > summary {
 }
 details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
 details.thmcollapse > .optional::before { display: none; }
+/* Enrichment box (.extra): non-foldable, gray box; the section heading becomes a gray
+   header bar. Quarto merges the div into <section class="... extra">, so we style .extra. */
+.extra {
+  border: 1px solid #9ca3af;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  padding: 0.7rem 0.9rem;
+}
+.extra > h2, .extra > h3 {
+  background: #d1d5db;
+  color: #374151;
+  font-size: 1.25rem;
+  margin: -0.7rem -0.9rem 0.8rem;
+  padding: 0.45rem 0.8rem;
+  border-bottom: 1px solid #9ca3af;
+}
+.extra > :last-child { margin-bottom: 0; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {

@@ -169,25 +169,28 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
-.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof       { border-color: #94a3b8; background: #f1f5f9; }
 .thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
-.optional {
-  border-inline-start: 4px solid #c9a227;
-  background: #fbf7ec;
-  border-radius: 4px;
-  padding: 0.6rem 1rem 0.8rem;
-  margin: 1rem 0;
+/* Optional box (.optional): foldable, collapsed by default; same gray look as .extra,
+   but the gray bar is the clickable <summary>. */
+details.thmoptional {
+  border: 1px solid #9ca3af;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  overflow: hidden;
 }
-.optional::before {
-  content: "קריאת רשות";
-  display: block;
-  font-size: 0.78rem;
+details.thmoptional > summary {
+  background: #d1d5db;
+  color: #374151;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  color: #b08900;
-  margin-bottom: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
 }
-.optional > .thmbox { background: #fffdf7; }
+details.thmoptional[open] > summary { border-bottom: 1px solid #9ca3af; }
+details.thmoptional > .optional { padding: 0.7rem 0.9rem; }
+details.thmoptional > .optional > :first-child { margin-top: 0; }
+details.thmoptional > .optional > :last-child { margin-bottom: 0; }
 details.thmcollapse { margin: 1rem 0; }
 details.thmcollapse > summary {
   cursor: pointer;
@@ -196,7 +199,24 @@ details.thmcollapse > summary {
   padding: 0.2rem 0;
 }
 details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
-details.thmcollapse > .optional::before { display: none; }
+/* Enrichment box (.extra): non-foldable, gray box; the section heading becomes a gray
+   header bar. Quarto merges the div into <section class="... extra">, so we style .extra. */
+.extra {
+  border: 1px solid #9ca3af;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  padding: 0.7rem 0.9rem;
+}
+.extra > h2, .extra > h3 {
+  background: #d1d5db;
+  color: #374151;
+  font-size: 1.25rem;
+  margin: -0.7rem -0.9rem 0.8rem;
+  padding: 0.45rem 0.8rem;
+  border-bottom: 1px solid #9ca3af;
+}
+.extra > :last-child { margin-bottom: 0; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -590,7 +610,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#דוגמאות-נוספות" id="toc-דוגמאות-נוספות" class="nav-link" data-scroll-target="#דוגמאות-נוספות">דוגמאות נוספות</a></li>
   </ul></li>
-  <li><a href="#פיתוח-עשרוני-כסדרה" id="toc-פיתוח-עשרוני-כסדרה" class="nav-link" data-scroll-target="#פיתוח-עשרוני-כסדרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה</a></li>
+  <li><a href="#פיתוח-עשרוני-כסדרה-העשרה" id="toc-פיתוח-עשרוני-כסדרה-העשרה" class="nav-link" data-scroll-target="#פיתוח-עשרוני-כסדרה-העשרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה (העשרה)</a></li>
   </ul>
 </nav>
     </div>
@@ -620,7 +640,7 @@ window.Quarto = {
 <h2 data-number="7.1" class="anchored" data-anchor-id="סדרות"><span class="header-section-number">7.1</span> סדרות</h2>
 <div id="box-def-sequence" class="thmbox thmbox-definition">
 <p><strong>הגדרה 7.1.1.</strong></p>
-<p><strong>סדרה (ממשית)</strong> היא אוסף <strong>אינסופי</strong> של מספרים ממשיים, שבו יש <strong>חשיבות לסדר</strong> ו<strong>חזרות מותרות</strong> (ראו את הדיון על ההבדל בין סדרה לקבוצה <a href="./06-sequences-intro.html">בפרק המבוא</a>): <span class="math display">\[a_0, a_1, a_2, \dots, a_n, \dots\]</span> <span class="math inline">\(a_n\)</span> הוא ה<strong>איבר</strong> שבמקום <span class="math inline">\(n\)</span>, ו-<span class="math inline">\(n\)</span> הוא ה<strong>אינדקס</strong> הרץ על המספרים הטבעיים. את הסדרה כולה נסמן בקיצור <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span>.</p>
+<p><strong>סדרה (ממשית)</strong> היא אוסף <strong>אינסופי</strong> של מספרים ממשיים, שבו יש <strong>חשיבות לסדר</strong> ו<strong>חזרות מותרות</strong> (ראו את הדיון על ההבדל בין סדרה לקבוצה <a href="./06-sequences-intro.html">בפרק המבוא</a>): <span class="math display">\[a_1, a_2, a_3, \dots, a_n, \dots\]</span> <span class="math inline">\(a_n\)</span> הוא ה<strong>איבר</strong> שבמקום <span class="math inline">\(n\)</span>, ו-<span class="math inline">\(n\)</span> הוא ה<strong>אינדקס</strong> הרץ על המספרים הטבעיים. את הסדרה כולה נסמן בקיצור <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled" title="ההגדרה הפורמלית: סדרה כפונקציה">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -634,7 +654,7 @@ window.Quarto = {
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>פורמלית, סדרה ממשית <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span> היא <strong>פונקציה</strong> <span class="math inline">\(a:\mathbb{N}\to\mathbb{R}\)</span> — לכל מספר טבעי <span class="math inline">\(n\)</span> מותאם ערך ממשי יחיד <span class="math inline">\(a_n = a(n)\)</span>. הצגה זו הופכת את ״הסדר״ ואת ״האינסופיות״ למדויקים. אין הכרח להתחיל את האינדקס ב-<span class="math inline">\(0\)</span>: סדרה <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> היא פונקציה מ-<span class="math inline">\(\{1,2,3,\dots\}\)</span>, וכן הלאה — נשתמש בשני הסימונים לפי הנוחות.</p>
+<p>פורמלית, סדרה ממשית <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> היא <strong>פונקציה</strong> <span class="math inline">\(a:\mathbb{N}\to\mathbb{R}\)</span> — לכל מספר טבעי <span class="math inline">\(n\)</span> מותאם ערך ממשי יחיד <span class="math inline">\(a_n = a(n)\)</span>. הצגה זו הופכת את ״הסדר״ ואת ״האינסופיות״ למדויקים. האינדקס רץ על המספרים הטבעיים <span class="math inline">\(\mathbb{N} = \{1, 2, 3, \dots\}\)</span>, ולכן סדרה מתחילה כברירת מחדל מ-<span class="math inline">\(a_1\)</span>; רק כאשר יצוין במפורש נתחיל את האינדקס במקום אחר (למשל <span class="math inline">\(a_0\)</span>).</p>
 </div>
 </div>
 </div>
@@ -642,10 +662,10 @@ window.Quarto = {
 <div id="box-exm-sequences" class="thmbox thmbox-example">
 <p><strong>דוגמה 7.1.2.</strong></p>
 <ul>
-<li><span class="math inline">\(a_n = n\)</span> נותנת <span class="math inline">\(0, 1, 2, 3, \dots\)</span></li>
-<li><span class="math inline">\(a_n = (-1)^n\)</span> נותנת <span class="math inline">\(1, -1, 1, -1, \dots\)</span></li>
+<li><span class="math inline">\(a_n = n\)</span> נותנת <span class="math inline">\(1, 2, 3, 4, \dots\)</span></li>
+<li><span class="math inline">\(a_n = (-1)^n\)</span> נותנת <span class="math inline">\(-1, 1, -1, 1, \dots\)</span></li>
 <li>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> נותנת <span class="math inline">\(8, 8, 8, 8, \dots\)</span></li>
-<li>אפשר להגדיר סדרה גם <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a>: <span class="math inline">\(a_0 = 1\)</span> ו-<span class="math inline">\(a_{n+1} = (n+1)\,a_n\)</span> נותנת <span class="math inline">\(1, 1, 2, 6, 24, \dots\)</span> . כלומר <span class="math inline">\(a_n = n!\)</span>.</li>
+<li>אפשר להגדיר סדרה גם <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a>: <span class="math inline">\(a_1 = 1\)</span> ו-<span class="math inline">\(a_{n+1} = (n+1)\,a_n\)</span> נותנת <span class="math inline">\(1, 2, 6, 24, \dots\)</span> . כלומר <span class="math inline">\(a_n = n!\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -654,7 +674,7 @@ window.Quarto = {
 <p>מהו הערך שסדרה <strong>מתקרבת</strong> אליו? הרעיון: איברי הסדרה נעשים קרובים לערך <span class="math inline">\(L\)</span> כרצוננו — קרובים ככל שנדרוש — החל ממקום מסוים והלאה.</p>
 <div id="box-def-convergence" class="thmbox thmbox-definition">
 <p><strong>הגדרה 7.2.1.</strong></p>
-<p>תהי <span class="math inline">\(\{a_n\}_{n=0}^{\infty}\)</span> סדרה. נאמר שהסדרה <strong>מתכנסת</strong>, או שיש לה <strong>גבול</strong>, אם קיים <span class="math inline">\(L\in\mathbb{R}\)</span> כך שלכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\in\mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[|a_n - L| &lt; \varepsilon\]</span> במקרה זה נאמר שהסדרה <strong>שואפת</strong> (או <strong>מתכנסת</strong>) ל-<span class="math inline">\(L\)</span>, ונסמן <span class="math inline">\(\lim\limits_{n\to\infty}a_n=L\)</span> או <span class="math inline">\(a_n \to L\)</span>. אם אין לסדרה גבול, נאמר שהיא <strong>מתבדרת</strong>.</p>
+<p>תהי <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> סדרה. נאמר שהסדרה <strong>מתכנסת</strong>, או שיש לה <strong>גבול</strong>, אם קיים <span class="math inline">\(L\in\mathbb{R}\)</span> כך שלכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\in\mathbb{N}\)</span> כך שלכל <span class="math inline">\(n &gt; N\)</span> מתקיים <span class="math display">\[|a_n - L| &lt; \varepsilon\]</span> במקרה זה נאמר שהסדרה <strong>שואפת</strong> (או <strong>מתכנסת</strong>) ל-<span class="math inline">\(L\)</span>, ונסמן <span class="math inline">\(\lim\limits_{n\to\infty}a_n=L\)</span> או <span class="math inline">\(a_n \to L\)</span>. אם אין לסדרה גבול, נאמר שהיא <strong>מתבדרת</strong>.</p>
 </div>
 <p>שימו לב למספר פרטים בהגדרה:</p>
 <ol type="1">
@@ -686,7 +706,7 @@ window.Quarto = {
 </div>
 <div id="box-exm-pm-one" class="thmbox thmbox-example">
 <p><strong>דוגמה 7.3.2.</strong></p>
-<p>הסדרה <span class="math inline">\(a_n = (-1)^n\)</span>, כלומר <span class="math inline">\(1, -1, 1, -1, \dots\)</span>, <strong>מתבדרת</strong>. נניח בשלילה שיש לה גבול <span class="math inline">\(L\)</span>. אז לכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\)</span> כך שלכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|a_n - L| &lt; \varepsilon\)</span>. ניקח <span class="math inline">\(\varepsilon = 1\)</span>. לכל <span class="math inline">\(n&gt;N\)</span> <strong>זוגי</strong> מתקיים <span class="math inline">\(a_n = 1\)</span>, ולכן <span class="math inline">\(|1 - L| &lt; 1\)</span>; לכל <span class="math inline">\(n&gt;N\)</span> <strong>אי-זוגי</strong> מתקיים <span class="math inline">\(a_n = -1\)</span>, ולכן <span class="math inline">\(|L - (-1)| &lt; 1\)</span>. לפי אי-שוויון המשולש, <span class="math display">\[2 = |1 - (-1)| \le |1 - L| + |L - (-1)| &lt; 1 + 1 = 2,\]</span> כלומר <span class="math inline">\(2 &lt; 2\)</span> — סתירה. לכן הסדרה מתבדרת.</p>
+<p>הסדרה <span class="math inline">\(a_n = (-1)^n\)</span>, כלומר <span class="math inline">\(-1, 1, -1, 1, \dots\)</span>, <strong>מתבדרת</strong>. נניח בשלילה שיש לה גבול <span class="math inline">\(L\)</span>. אז לכל <span class="math inline">\(\varepsilon&gt;0\)</span> קיים <span class="math inline">\(N\)</span> כך שלכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|a_n - L| &lt; \varepsilon\)</span>. ניקח <span class="math inline">\(\varepsilon = 1\)</span>. לכל <span class="math inline">\(n&gt;N\)</span> <strong>זוגי</strong> מתקיים <span class="math inline">\(a_n = 1\)</span>, ולכן <span class="math inline">\(|1 - L| &lt; 1\)</span>; לכל <span class="math inline">\(n&gt;N\)</span> <strong>אי-זוגי</strong> מתקיים <span class="math inline">\(a_n = -1\)</span>, ולכן <span class="math inline">\(|L - (-1)| &lt; 1\)</span>. לפי אי-שוויון המשולש, <span class="math display">\[2 = |1 - (-1)| \le |1 - L| + |L - (-1)| &lt; 1 + 1 = 2,\]</span> כלומר <span class="math inline">\(2 &lt; 2\)</span> — סתירה. לכן הסדרה מתבדרת.</p>
 </div>
 <div style="text-align:center">
 <p>תרשים: הסדרה <span class="math inline">\(a_n = (-1)^n\)</span> — איבריה קופצים בין שני קווים, ולכן אינם מתקרבים לקו אחד</p>
@@ -731,17 +751,15 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="פיתוח-עשרוני-כסדרה" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="פיתוח-עשרוני-כסדרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה</h2>
-<details class="thmcollapse"><summary>קריאת רשות</summary>
-<div class="optional foldable">
+<section id="פיתוח-עשרוני-כסדרה-העשרה" class="level2 extra" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="פיתוח-עשרוני-כסדרה-העשרה"><span class="header-section-number">7.4</span> פיתוח עשרוני כסדרה (העשרה)</h2>
 <p>בפרק המבוא ראינו את סדרת הקירובים העשרוניים של <span class="math inline">\(\sqrt{2}\)</span>. כעת, משהוגדרה ההתכנסות, נטפל בפיתוח העשרוני במדויק. כדוגמה, נענה על השאלה: האם <span class="math inline">\(0.999\dots = 1\)</span>? אחרי שראינו הגדרה של המושג גבול, התשובה היא ״כן״ — שני הסימונים מתארים את אותו מספר. הסיבה: <span class="math inline">\(0.999\dots\)</span> הוא קיצור לסדרת הקירובים <span class="math inline">\(0.9,\ 0.99,\ 0.999,\ \dots\)</span>, המתכנסת ל-<span class="math inline">\(1\)</span>.</p>
 <div id="box-def-decimal-expansion" class="thmbox thmbox-definition">
-<p><strong>הגדרה.</strong></p>
+<p><strong>הגדרה 7.4.1.</strong></p>
 <p>יהי <span class="math inline">\(a&gt;0\)</span> ממשי. נגדיר <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a> סדרת ספרות <span class="math inline">\(\{a_n\}_{n=1}^\infty\)</span> (עם <span class="math inline">\(a_n \in \{0,1,\dots,9\}\)</span>, ו-<span class="math inline">\(a_0\)</span> שלם כלשהו): <span class="math inline">\(a_0\)</span> הוא <strong>המספר השלם הגדול ביותר הקטן ממש מ-</strong><span class="math inline">\(a\)</span>, ובהינתן <span class="math inline">\(a_0,\dots,a_n\)</span>, <span class="math display">\[a_{n+1} = \max\left\{k \in \{0,\dots,9\} \;\middle|\; a_0.a_1\dots a_n + \frac{k}{10^{n+1}} &lt; a\right\}.\]</span> הביטוי <span class="math inline">\(a_0.a_1a_2\dots\)</span> נקרא ה<strong>פיתוח העשרוני</strong> של <span class="math inline">\(a\)</span> (עבור <span class="math inline">\(a&lt;0\)</span> לוקחים את הפיתוח של <span class="math inline">\(-a\)</span> עם סימן מינוס, ועבור <span class="math inline">\(a=0\)</span> את הסדרה הקבועה <span class="math inline">\(0\)</span>). נסמן <span class="math inline">\(t_n = a_0.a_1\dots a_n\)</span>, ונקרא ל-<span class="math inline">\(\{t_n\}\)</span> <strong>סדרת הקירובים העשרוניים</strong> של <span class="math inline">\(a\)</span>.</p>
 </div>
 <div id="box-prp-decimal-convergence" class="thmbox thmbox-proposition">
-<p><strong>טענה.</strong></p>
+<p><strong>טענה 7.4.2.</strong></p>
 <p>יהי <span class="math inline">\(a\in\mathbb{R}\)</span>, ותהי <span class="math inline">\(\{t_n\}\)</span> סדרת הקירובים העשרוניים שלו. אז <span class="math inline">\(\lim\limits_{n\to\infty} t_n = a\)</span>; במילים אחרות, <span class="math inline">\(a = a_0.a_1a_2\dots\)</span>.</p>
 </div>
 <div class="thmbox thmbox-proof">
@@ -749,7 +767,7 @@ window.Quarto = {
 <p>נניח <span class="math inline">\(a&gt;0\)</span> (המקרים <span class="math inline">\(a&lt;0\)</span> ו-<span class="math inline">\(a=0\)</span> דומים). לפי בניית הספרות, לכל <span class="math inline">\(n\)</span> מתקיים <span class="math inline">\(t_n &lt; a \le t_n + \frac{1}{10^n}\)</span>, ולכן <span class="math inline">\(|t_n - a| \le \frac{1}{10^n}\)</span>. יהי <span class="math inline">\(\varepsilon&gt;0\)</span>. לפי <a href="./03-number-systems.html#box-thm-archimedes"><strong>תכונת ארכימדס</strong></a> (לכל ממשי חיובי קיים מספר טבעי הגדול ממנו) קיים <span class="math inline">\(N\)</span> כך ש-<span class="math inline">\(10^N &gt; \frac{1}{\varepsilon}\)</span>, כלומר <span class="math inline">\(\frac{1}{10^N} &lt; \varepsilon\)</span>. לכן לכל <span class="math inline">\(n&gt;N\)</span> מתקיים <span class="math inline">\(|t_n - a| \le \frac{1}{10^n} \le \frac{1}{10^N} &lt; \varepsilon\)</span>, כנדרש.</p>
 </div>
 <div id="box-exm-expansion-25" class="thmbox thmbox-example">
-<p><strong>דוגמה.</strong></p>
+<p><strong>דוגמה 7.4.3.</strong></p>
 <p>הפיתוח העשרוני של <span class="math inline">\(2.5\)</span> הוא <span class="math inline">\(2.4999\dots\)</span>, וסדרת הקירובים שלו היא <span class="math inline">\(2,\ 2.4,\ 2.49,\ 2.499,\ \dots\)</span> — המתכנסת ל-<span class="math inline">\(2.5\)</span>.</p>
 </div>
 <div style="text-align:center">
@@ -766,11 +784,9 @@ window.Quarto = {
 </figure>
 </div>
 <p>כעת נשוב לשאלה שפתחנו בה. לפי הגדרת הפיתוח, הפיתוח של <span class="math inline">\(1\)</span> הוא <span class="math inline">\(0.999\dots\)</span>: המספר השלם הגדול ביותר הקטן ממש מ-<span class="math inline">\(1\)</span> הוא <span class="math inline">\(a_0 = 0\)</span>, ובכל שלב הספרה הגדולה ביותר ששומרת על הקירוב קטן ממש מ-<span class="math inline">\(1\)</span> היא <span class="math inline">\(9\)</span>. סדרת הקירובים <span class="math inline">\(0,\ 0.9,\ 0.99,\ \dots\)</span> מתכנסת ל-<span class="math inline">\(1\)</span>, ולכן <span class="math display">\[0.999\dots = \lim_{n\to\infty} t_n = 1.\]</span> שני הסימונים <span class="math inline">\(0.999\dots\)</span> ו-<span class="math inline">\(1.000\dots\)</span> מתארים אפוא את אותו מספר ממשי.</p>
-</div>
-</details>
-
-
 </section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

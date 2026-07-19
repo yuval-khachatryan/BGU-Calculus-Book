@@ -169,25 +169,28 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-lemma       { border-color: #0d9488; background: #f0fdfa; }
 .thmbox-corollary   { border-color: #16a34a; background: #f0fdf4; }
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
-.thmbox-proof       { border-color: #cbd5e1; background: #fbfbfc; }
+.thmbox-proof       { border-color: #94a3b8; background: #f1f5f9; }
 .thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
-.optional {
-  border-inline-start: 4px solid #c9a227;
-  background: #fbf7ec;
-  border-radius: 4px;
-  padding: 0.6rem 1rem 0.8rem;
-  margin: 1rem 0;
+/* Optional box (.optional): foldable, collapsed by default; same gray look as .extra,
+   but the gray bar is the clickable <summary>. */
+details.thmoptional {
+  border: 1px solid #9ca3af;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  overflow: hidden;
 }
-.optional::before {
-  content: "קריאת רשות";
-  display: block;
-  font-size: 0.78rem;
+details.thmoptional > summary {
+  background: #d1d5db;
+  color: #374151;
   font-weight: 700;
-  letter-spacing: 0.03em;
-  color: #b08900;
-  margin-bottom: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
 }
-.optional > .thmbox { background: #fffdf7; }
+details.thmoptional[open] > summary { border-bottom: 1px solid #9ca3af; }
+details.thmoptional > .optional { padding: 0.7rem 0.9rem; }
+details.thmoptional > .optional > :first-child { margin-top: 0; }
+details.thmoptional > .optional > :last-child { margin-bottom: 0; }
 details.thmcollapse { margin: 1rem 0; }
 details.thmcollapse > summary {
   cursor: pointer;
@@ -196,7 +199,24 @@ details.thmcollapse > summary {
   padding: 0.2rem 0;
 }
 details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
-details.thmcollapse > .optional::before { display: none; }
+/* Enrichment box (.extra): non-foldable, gray box; the section heading becomes a gray
+   header bar. Quarto merges the div into <section class="... extra">, so we style .extra. */
+.extra {
+  border: 1px solid #9ca3af;
+  border-radius: 0;
+  margin: 1.5rem 0;
+  background: #ffffff;
+  padding: 0.7rem 0.9rem;
+}
+.extra > h2, .extra > h3 {
+  background: #d1d5db;
+  color: #374151;
+  font-size: 1.25rem;
+  margin: -0.7rem -0.9rem 0.8rem;
+  padding: 0.45rem 0.8rem;
+  border-bottom: 1px solid #9ca3af;
+}
+.extra > :last-child { margin-bottom: 0; }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -658,8 +678,8 @@ window.Quarto = {
 <p>שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> שוות אם ורק אם כל אחת מהן מוכלת בשנייה; כלומר, <span class="math inline">\(A=B\)</span> אם ורק אם <span class="math inline">\(A \subseteq B\)</span> וגם <span class="math inline">\(B \subseteq A\)</span>.</p>
 </div>
 <p>הטענה נובעת ישירות מהגדרת השוויון: התנאי <span class="math inline">\(x \in A \leftrightarrow x \in B\)</span> שקול לכך ששתי הגרירות מתקיימות — <span class="math inline">\(x \in A \to x \in B\)</span> (שהיא <span class="math inline">\(A \subseteq B\)</span>) ו-<span class="math inline">\(x \in B \to x \in A\)</span> (שהיא <span class="math inline">\(B \subseteq A\)</span>). <strong>זוהי הדרך הסטנדרטית והנפוצה ביותר להוכיח שוויון בין קבוצות</strong>: מוכיחים בנפרד את שתי ההכלות, <span class="math inline">\(A \subseteq B\)</span> ואז <span class="math inline">\(B \subseteq A\)</span>. שיטה זו שימושית במיוחד כאשר הקבוצות מוגדרות על ידי תכונה (בשיטת השומר) ולא על ידי רשימת איברים מפורשת — ובמקרים כאלה היא לרוב הדרך הטבעית ביותר.</p>
-<p>נחזור לעניין תיאור איבריה של קבוצה. אף על פי שהסימון בעזרת סוגריים מסולסלים הוא פשוט וחד-משמעי, הוא אינו תמיד נוח, ולעיתים אף אינו מספיק. כל עוד באוסף יש מעט איברים אין בכך בעיה, אך מה נעשה אם במקום 3 איברים יש 100,000? כתיבת כולם עלולה להיות מייגעת למדי. <strong>הכלל הוא שסימון נועד להקל על ההבנה ועל הניתוח של המידע, לא לסרבל אותם</strong>; <strong>אם סימון מסרבל במקום לפשט — אין בו צורך.</strong> בעיה שנייה, חמורה אף יותר, מתעוררת כאשר בקבוצה יש אינסוף איברים — למשל אוסף כל המספרים הטבעיים <span class="math inline">\(0,1,2,\dots\)</span>. במקרה כזה הסימון שהצגנו אינו מספיק כלל, שכן לא ניתן לכתוב אינסוף איברים בתוך סוגריים מסולסלים. לכן נזדקק לדרכים נוספות לתיאור קבוצות.</p>
-<p>מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב <span class="math inline">\(\mathbb{N}=\{0, 1, 2, \dots\}\)</span>; שלושת האיברים הראשונים <span class="math inline">\(0, 1, 2\)</span> כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה <a href="./03-number-systems.html#sec-number-systems">בסעיף על מערכות מספרים</a>.) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא <strong>שיטת השומר</strong> (סימון בונה-קבוצות), שאותה נציג כעת.</p>
+<p>נחזור לעניין תיאור איבריה של קבוצה. אף על פי שהסימון בעזרת סוגריים מסולסלים הוא פשוט וחד-משמעי, הוא אינו תמיד נוח, ולעיתים אף אינו מספיק. כל עוד באוסף יש מעט איברים אין בכך בעיה, אך מה נעשה אם במקום 3 איברים יש 100,000? כתיבת כולם עלולה להיות מייגעת למדי. <strong>הכלל הוא שסימון נועד להקל על ההבנה ועל הניתוח של המידע, לא לסרבל אותם</strong>; <strong>אם סימון מסרבל במקום לפשט — אין בו צורך.</strong> בעיה שנייה, חמורה אף יותר, מתעוררת כאשר בקבוצה יש אינסוף איברים — למשל אוסף כל המספרים הטבעיים <span class="math inline">\(1,2,3,\dots\)</span>. במקרה כזה הסימון שהצגנו אינו מספיק כלל, שכן לא ניתן לכתוב אינסוף איברים בתוך סוגריים מסולסלים. לכן נזדקק לדרכים נוספות לתיאור קבוצות.</p>
+<p>מהן האפשרויות? כאשר ההקשר ברור, לעיתים אפשר שלא לרשום את כל האיברים אלא להסתפק בכמה מהם ובשלוש נקודות. למשל, את קבוצת המספרים הטבעיים, המוכרת לכולכם, נהוג לכתוב <span class="math inline">\(\mathbb{N}=\{1, 2, 3, \dots\}\)</span>; שלושת האיברים הראשונים <span class="math inline">\(1, 2, 3\)</span> כבר מבהירים את התבנית, ושלוש הנקודות מציינות שהרשימה נמשכת באותו אופן. (בקבוצה זו נדון בהרחבה <a href="./03-number-systems.html#sec-number-systems">בסעיף על מערכות מספרים</a>.) דרך שנייה, נוחה לעיתים יותר — בפרט להגדרת קבוצות ותת-קבוצות באמצעות תכונה או נוסחה — היא <strong>שיטת השומר</strong> (סימון בונה-קבוצות), שאותה נציג כעת.</p>
 <div id="box-def-set-builder" class="thmbox thmbox-definition">
 <p><strong>הגדרה 2.1.5.</strong></p>
 <p>תהי <span class="math inline">\(X\)</span> קבוצה, ותהי <span class="math inline">\(P(x)\)</span> <strong>תכונה</strong> — טענה שכל אובייקט <span class="math inline">\(x\)</span> מקיים אותה או אינו מקיים אותה. הקבוצה <span class="math display">\[\{x \in X \mid P(x)\}\]</span> מוגדרת כקבוצת <strong>כל</strong> האיברים <span class="math inline">\(x\)</span> שב-<span class="math inline">\(X\)</span> המקיימים את התכונה <span class="math inline">\(P\)</span>. הקו האנכי <span class="math inline">\(\mid\)</span>, ה<strong>שומר</strong>, נקרא ״כך ש-״ (או ״שעבורם״), והוא מפריד בין שם האיבר לבין התנאי שעליו לקיים. כלומר, לכל אובייקט <span class="math inline">\(y\)</span> מתקיים ש-<span class="math inline">\(y\)</span> שייך לקבוצה אם ורק אם <span class="math inline">\(y \in X\)</span> והתכונה <span class="math inline">\(P(y)\)</span> מתקיימת. כאשר ה״עולם״ <span class="math inline">\(X\)</span> ברור מן ההקשר, נהוג לקצר ולכתוב <span class="math inline">\(\{x \mid P(x)\}\)</span>.</p>
@@ -680,7 +700,7 @@ window.Quarto = {
 <p>הצירוף <span class="math inline">\(x \in A\)</span> שליד הכמת מצמצם את הדיון לאיברי <span class="math inline">\(A\)</span> בלבד. למעשה, אלה קיצורים לביטויים שכבר מוכרים לנו: הטענה <span class="math inline">\(\forall x \in A,\ P(x)\)</span> שקולה ל-<span class="math inline">\(\forall x\,(x \in A \to P(x))\)</span>, והטענה <span class="math inline">\(\exists x \in A,\ P(x)\)</span> שקולה ל-<span class="math inline">\(\exists x\,(x \in A \land P(x))\)</span>. שימו לב לקשר בין הכמתים לקשרים הלוגיים: הכמת <span class="math inline">\(\forall\)</span> נשען על הגרירה <span class="math inline">\(\to\)</span> (״לכל איבר: אם הוא ב-<span class="math inline">\(A\)</span>, אז הוא מקיים את <span class="math inline">\(P\)</span>״), ואילו הכמת <span class="math inline">\(\exists\)</span> נשען על ה״וגם״ <span class="math inline">\(\land\)</span> (״קיים איבר שהוא ב-<span class="math inline">\(A\)</span> <strong>וגם</strong> מקיים את <span class="math inline">\(P\)</span>״).</p>
 <p>נדגים:</p>
 <ul>
-<li><span class="math inline">\(\forall n \in \mathbb{N},\ n \ge 0\)</span> — אמת, שכן כל מספר טבעי הוא אי-שלילי;</li>
+<li><span class="math inline">\(\forall n \in \mathbb{N},\ n \ge 1\)</span> — אמת, שכן כל מספר טבעי הוא חיובי;</li>
 <li><span class="math inline">\(\exists n \in \mathbb{N},\ n &gt; 5\)</span> — אמת, למשל עבור <span class="math inline">\(n = 6\)</span>;</li>
 <li><span class="math inline">\(\forall x \in \mathbb{R},\ x^{2} \ge 0\)</span> — אמת, שכן ריבוע של מספר ממשי לעולם אינו שלילי;</li>
 <li><span class="math inline">\(\exists x \in \mathbb{R},\ x^{2} = 4\)</span> — אמת, למשל עבור <span class="math inline">\(x = 2\)</span>;</li>
@@ -690,7 +710,7 @@ window.Quarto = {
 </section>
 <section id="הקבוצה-הריקה" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="הקבוצה-הריקה"><span class="header-section-number">2.3</span> הקבוצה הריקה</h2>
-<p>לעיתים נתקלים בקבוצה שאין בה אף איבר. למשל, קבוצת כל המספרים הטבעיים הקטנים מ-<span class="math inline">\(0\)</span> ריקה, וכן קבוצת הפתרונות הממשיים של המשוואה <span class="math inline">\(x^2 = -1\)</span>. קבוצה כזו נקראת ה<strong>קבוצה הריקה</strong>.</p>
+<p>לעיתים נתקלים בקבוצה שאין בה אף איבר. למשל, קבוצת כל המספרים הטבעיים הקטנים מ-<span class="math inline">\(1\)</span> ריקה, וכן קבוצת הפתרונות הממשיים של המשוואה <span class="math inline">\(x^2 = -1\)</span>. קבוצה כזו נקראת ה<strong>קבוצה הריקה</strong>.</p>
 <div id="box-def-empty-set" class="thmbox thmbox-definition">
 <p><strong>הגדרה 2.3.1.</strong></p>
 <p>ה<strong>קבוצה הריקה</strong>, המסומנת <span class="math inline">\(\emptyset\)</span> (או <span class="math inline">\(\{\}\)</span>), היא הקבוצה שאין לה אף איבר: לכל אובייקט <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \notin \emptyset\)</span>.</p>
@@ -703,7 +723,10 @@ window.Quarto = {
 <p><strong>טענה 2.3.2.</strong></p>
 <p>הקבוצה הריקה מוכלת בכל קבוצה: לכל קבוצה <span class="math inline">\(A\)</span> מתקיים <span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
 </div>
-<p><strong>הוכחה.</strong> לפי הגדרת ההכלה, <span class="math inline">\(\emptyset \subseteq A\)</span> פירושו שלכל <span class="math inline">\(x\)</span> מתקיים ״אם <span class="math inline">\(x \in \emptyset\)</span> אז <span class="math inline">\(x \in A\)</span>״. אך <span class="math inline">\(x \in \emptyset\)</span> הוא לעולם שקר, ולכן הגרירה אמת באופן ריק עבור כל <span class="math inline">\(x\)</span> (זהו הכלל ״מן השקר נובע הכול״ שראינו בפרק על הגרירה). מאחר שאין <span class="math inline">\(x\)</span> המפר את ההכלה, נובע ש-<span class="math inline">\(\emptyset \subseteq A\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<div class="thmbox thmbox-proof">
+<p><strong>הוכחה.</strong></p>
+<p>לפי הגדרת ההכלה, <span class="math inline">\(\emptyset \subseteq A\)</span> פירושו שלכל <span class="math inline">\(x\)</span> מתקיים ״אם <span class="math inline">\(x \in \emptyset\)</span> אז <span class="math inline">\(x \in A\)</span>״. אך <span class="math inline">\(x \in \emptyset\)</span> הוא לעולם שקר, ולכן הגרירה אמת באופן ריק עבור כל <span class="math inline">\(x\)</span> (זהו הכלל ״מן השקר נובע הכול״ שראינו בפרק על הגרירה). מאחר שאין <span class="math inline">\(x\)</span> המפר את ההכלה, נובע ש-<span class="math inline">\(\emptyset \subseteq A\)</span>.</p>
+</div>
 </section>
 <section id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="פעולות-על-קבוצות-איחוד-חיתוך-והפרש"><span class="header-section-number">2.4</span> פעולות על קבוצות: איחוד, חיתוך והפרש</h2>
@@ -801,7 +824,9 @@ window.Quarto = {
 <p><strong>טענה 2.4.9.</strong></p>
 <p>לכל שתי קבוצות <span class="math inline">\(A\)</span> ו-<span class="math inline">\(B\)</span> מתקיים <span class="math display">\[.A \triangle B = (A \cup B) \setminus (A \cap B)\]</span></p>
 </div>
-<p><strong>הוכחה.</strong> נוכיח את השוויון ב<strong>שיטת ההכלה הכפולה</strong>: נראה שכל אחת מן הקבוצות מוכלת בשנייה.</p>
+<div class="thmbox thmbox-proof">
+<p><strong>הוכחה.</strong></p>
+<p>נוכיח את השוויון ב<strong>שיטת ההכלה הכפולה</strong>: נראה שכל אחת מן הקבוצות מוכלת בשנייה.</p>
 <p><strong>כיוון ראשון</strong> — נוכיח ש-<span class="math inline">\(A \triangle B \subseteq (A \cup B) \setminus (A \cap B)\)</span>. יהי <span class="math inline">\(x\)</span> איבר כלשהו של <span class="math inline">\(A \triangle B = (A \setminus B) \cup (B \setminus A)\)</span>; עלינו להראות ש-<span class="math inline">\(x \in (A \cup B) \setminus (A \cap B)\)</span>. לפי הגדרת האיחוד, <span class="math inline">\(x \in A \setminus B\)</span> <strong>או</strong> <span class="math inline">\(x \in B \setminus A\)</span>. נבחן את שני המקרים:</p>
 <ul>
 <li>אם <span class="math inline">\(x \in A \setminus B\)</span>, אז <span class="math inline">\(x \in A\)</span> (ולכן <span class="math inline">\(x \in A \cup B\)</span>) וגם <span class="math inline">\(x \notin B\)</span> (ולכן <span class="math inline">\(x \notin A \cap B\)</span>).</li>
@@ -814,7 +839,8 @@ window.Quarto = {
 <li>אם <span class="math inline">\(x \in B\)</span>, אז באותו אופן <span class="math inline">\(x \notin A\)</span>, ולכן <span class="math inline">\(x \in B \setminus A\)</span>.</li>
 </ul>
 <p>בשני המקרים <span class="math inline">\(x \in (A \setminus B) \cup (B \setminus A) = A \triangle B\)</span>. לכן <span class="math inline">\((A \cup B) \setminus (A \cap B) \subseteq A \triangle B\)</span>.</p>
-<p>משתי ההכלות נובע, לפי שיטת ההכלה הכפולה, ש-<span class="math inline">\(A \triangle B = (A \cup B) \setminus (A \cap B)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p>משתי ההכלות נובע, לפי שיטת ההכלה הכפולה, ש-<span class="math inline">\(A \triangle B = (A \cup B) \setminus (A \cap B)\)</span>.</p>
+</div>
 <p><strong>הערה על מבנה ההוכחה.</strong> זהו המבנה הסטנדרטי להוכחת שוויון קבוצות: כדי להראות <span class="math inline">\(S \subseteq T\)</span> בוחרים איבר <strong>כלשהו</strong> <span class="math inline">\(x \in S\)</span> ומראים, צעד אחר צעד לפי ההגדרות, ש-<span class="math inline">\(x \in T\)</span>; ומכיוון ש-<span class="math inline">\(x\)</span> שרירותי, הדבר תקף לכל איברי <span class="math inline">\(S\)</span>. כאשר כל צעד הוא <strong>שקילות</strong> (״אם ורק אם״), אפשר לקצר ולאחד את שני הכיוונים לשרשרת שקילויות אחת — כפי שנעשה מיד בטענה על ההפרש והמשלים.</p>
 </section>
 <section id="משלים" class="level3">
@@ -845,7 +871,10 @@ window.Quarto = {
 <p><strong>טענה 2.4.12.</strong></p>
 <p>תהי <span class="math inline">\(U\)</span> קבוצה אוניברסלית ו-<span class="math inline">\(A, B \subseteq U\)</span>. אז <span class="math display">\[.A \setminus B = A \cap B^{c}\]</span></p>
 </div>
-<p><strong>הוכחה.</strong> כאן כל צעד הוא שקילות, ולכן נוכיח את השוויון בשרשרת שקילויות אחת (במקום בשתי הכלות נפרדות): לכל <span class="math inline">\(x\)</span>, <span class="math display">\[.x \in A \setminus B \iff (x \in A \ \wedge\ x \notin B) \iff (x \in A \ \wedge\ x \in B^{c}) \iff x \in A \cap B^{c}\]</span> השקילות הראשונה היא הגדרת ההפרש, השנייה — הגדרת המשלים, והשלישית — הגדרת החיתוך. מאחר שלכל <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \in A \setminus B\)</span> אם ורק אם <span class="math inline">\(x \in A \cap B^{c}\)</span>, שתי הקבוצות שוות. <span class="math inline">\(\blacksquare\)</span></p>
+<div class="thmbox thmbox-proof">
+<p><strong>הוכחה.</strong></p>
+<p>כאן כל צעד הוא שקילות, ולכן נוכיח את השוויון בשרשרת שקילויות אחת (במקום בשתי הכלות נפרדות): לכל <span class="math inline">\(x\)</span>, <span class="math display">\[.x \in A \setminus B \iff (x \in A \ \wedge\ x \notin B) \iff (x \in A \ \wedge\ x \in B^{c}) \iff x \in A \cap B^{c}\]</span> השקילות הראשונה היא הגדרת ההפרש, השנייה — הגדרת המשלים, והשלישית — הגדרת החיתוך. מאחר שלכל <span class="math inline">\(x\)</span> מתקיים <span class="math inline">\(x \in A \setminus B\)</span> אם ורק אם <span class="math inline">\(x \in A \cap B^{c}\)</span>, שתי הקבוצות שוות.</p>
+</div>
 </section>
 <section id="תרגילים" class="level3">
 <h3 class="anchored" data-anchor-id="תרגילים">תרגילים</h3>
