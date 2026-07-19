@@ -68,13 +68,20 @@ process = function(blocks, in_optional)
       out[#out + 1] = b
     elseif b.t == "Div" then
       local orig       = b.classes
-      local do_collapse = has_class(orig, "foldable")   -- NB: not "collapse" (Bootstrap owns that; it sets display:none)
+      local do_collapse = has_class(orig, "foldable") or has_class(orig, "optional")   -- NB: not "collapse" (Bootstrap owns that; it sets display:none)
       local is_proof    = has_class(orig, "thmproof")
 
       if is_proof then
         table.insert(b.content, 1, label_para("הוכחה."))
         b.content = process(b.content, in_optional)
         b.classes = { "thmbox", "thmbox-proof" }
+      elseif has_class(orig, "extra") then
+        -- Enrichment ("העשרה"): NOT foldable, and part of the running text. Its heading
+        -- stays a real numbered section (Quarto's makeSections merges the .extra div into
+        -- that <section>), and its boxes are numbered normally (in_optional = false) so
+        -- they keep the running theorem numbers. The gray "box" look is pure CSS on .extra.
+        b.content = process(b.content, false)
+        -- keep the .extra class for HTML/CSS
       elseif has_class(orig, "optional") then
         b.content = process(b.content, true)
         if not is_html then
@@ -102,12 +109,14 @@ process = function(blocks, in_optional)
 
       if do_collapse and is_html then
         local summary = "הצג/הסתר"
+        local attrs = ' class="thmcollapse"'
         if is_proof then
           summary = "הוכחה"
         elseif has_class(orig, "optional") then
-          summary = "קריאת רשות"
+          summary = (b.attributes and b.attributes.title) or "קריאת רשות"
+          attrs = ' class="thmcollapse thmoptional"'   -- collapsed by default (no "open")
         end
-        out[#out + 1] = pandoc.RawBlock("html", '<details class="thmcollapse"><summary>' .. summary .. '</summary>')
+        out[#out + 1] = pandoc.RawBlock("html", '<details' .. attrs .. '><summary>' .. summary .. '</summary>')
         out[#out + 1] = b
         out[#out + 1] = pandoc.RawBlock("html", '</details>')
       else

@@ -30,3 +30,5 @@ __pycache__/
 .debug
 pdf-link-fix-ideas.md
 chapter-split-plan.md
+
+session_dump.jsonl
