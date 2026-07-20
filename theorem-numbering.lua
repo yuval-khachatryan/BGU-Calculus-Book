@@ -70,11 +70,28 @@ process = function(blocks, in_optional)
       local orig       = b.classes
       local do_collapse = has_class(orig, "foldable") or has_class(orig, "optional")   -- NB: not "collapse" (Bootstrap owns that; it sets display:none)
       local is_proof    = has_class(orig, "thmproof")
+      local is_remark   = has_class(orig, "thmrem")
 
       if is_proof then
         table.insert(b.content, 1, label_para("הוכחה."))
         b.content = process(b.content, in_optional)
         b.classes = { "thmbox", "thmbox-proof" }
+      elseif is_remark then
+        -- Remark box: NUMBERED (chapter.section.item) like the other boxes; an optional
+        -- title= is folded into the label. Change `word` to rename the label everywhere.
+        local word = "הערה"
+        local text
+        if in_optional then
+          text = word
+        else
+          item = item + 1
+          text = word .. " " .. chap .. "." .. section .. "." .. item
+        end
+        local t = b.attributes and b.attributes.title
+        text = (t and t ~= "") and (text .. " (" .. t .. ").") or (text .. ".")
+        table.insert(b.content, 1, label_para(text))
+        b.content = process(b.content, in_optional)
+        b.classes = { "thmbox", "thmbox-remark" }
       elseif has_class(orig, "extra") then
         -- Enrichment ("העשרה"): NOT foldable, and part of the running text. Its heading
         -- stays a real numbered section (Quarto's makeSections merges the .extra div into
