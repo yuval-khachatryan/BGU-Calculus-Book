@@ -154,6 +154,36 @@ ul.task-list li input[type="checkbox"] {
   font-weight: bold;
   min-height: 1.2em;
 }
+.seq-quiz, .formula-quiz {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0;
+}
+.seq-quiz .seq-label, .formula-quiz .seq-label { min-width: 12rem; }
+.seq-quiz .seq-input, .formula-quiz .seq-input {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  font: inherit;
+  direction: ltr;
+  text-align: left;
+  min-width: 16rem;
+}
+.seq-quiz .seq-input.correct, .formula-quiz .seq-input.correct { border-color: #28a745; background: #d4edda; }
+.seq-quiz .seq-input.incorrect, .formula-quiz .seq-input.incorrect { border-color: #dc3545; background: #f8d7da; }
+.seq-quiz .seq-check, .formula-quiz .seq-check {
+  padding: 0.25rem 0.9rem;
+  cursor: pointer;
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  background: #f5f5f5;
+  font: inherit;
+  color: inherit;
+}
+.seq-quiz .seq-check:hover, .formula-quiz .seq-check:hover { background: #ececec; }
+.seq-quiz .seq-feedback, .formula-quiz .seq-feedback { font-weight: bold; min-height: 1.2em; }
 .thmbox {
   border-inline-start: 4px solid #9ca3af;
   background: #fafafa;
@@ -171,6 +201,8 @@ ul.task-list li input[type="checkbox"] {
 .thmbox-example     { border-color: #d97706; background: #fffbeb; }
 .thmbox-proof       { border-color: #94a3b8; background: #f1f5f9; }
 .thmbox-proof > p:first-child > strong { font-weight: 600; color: #64748b; }
+.thmbox-remark      { border-color: #cbd5e1; background: #f8fafc; }
+.thmbox-remark > p:first-child > strong { font-weight: 600; color: #64748b; }
 /* Optional box (.optional): foldable, collapsed by default; same gray look as .extra,
    but the gray bar is the clickable <summary>. */
 details.thmoptional {
@@ -208,10 +240,11 @@ details.thmcollapse[open] > summary { margin-bottom: 0.4rem; }
   background: #ffffff;
   padding: 0.7rem 0.9rem;
 }
-.extra > h2, .extra > h3 {
+.extra > h2, .extra > h3, .extra > .extra-title {
   background: #d1d5db;
   color: #374151;
   font-size: 1.25rem;
+  font-weight: 700;
   margin: -0.7rem -0.9rem 0.8rem;
   padding: 0.45rem 0.8rem;
   border-bottom: 1px solid #9ca3af;
@@ -261,6 +294,94 @@ document.addEventListener("DOMContentLoaded", function () {
     function check() {
       input.classList.remove("correct", "incorrect");
       if (eqSet(normSet(input.value), answer)) {
+        input.classList.add("correct");
+        if (feedback) feedback.textContent = "✓ נכון!";
+      } else {
+        input.classList.add("incorrect");
+        if (feedback) feedback.textContent = "✗ נסו שוב";
+      }
+    }
+    if (btn) btn.addEventListener("click", check);
+    if (input) input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Evaluate one entered term as arithmetic (whitelisted chars only: digits + - * / ^ ( ) . )
+  function evalTerm(s) {
+    s = String(s).trim();
+    if (!s) return null;
+    if (!/^[0-9+\-*/^().\s]+$/.test(s)) return null;
+    try {
+      var v = Function('"use strict"; return (' + s.replace(/\^/g, "**") + ');')();
+      return (typeof v === "number" && isFinite(v)) ? v : null;
+    } catch (e) { return null; }
+  }
+  function parseSeq(str) { return String(str || "").split(",").map(evalTerm); }
+  function eqSeq(a, b) {
+    if (a.length !== b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] == null || b[i] == null || Math.abs(a[i] - b[i]) > 1e-9) return false;
+    }
+    return true;
+  }
+  document.querySelectorAll(".seq-quiz").forEach(function (q) {
+    var answer = parseSeq(q.getAttribute("data-answer"));
+    var input = q.querySelector(".seq-input");
+    var feedback = q.querySelector(".seq-feedback");
+    var btn = q.querySelector(".seq-check");
+    function check() {
+      input.classList.remove("correct", "incorrect");
+      if (eqSeq(parseSeq(input.value), answer)) {
+        input.classList.add("correct");
+        if (feedback) feedback.textContent = "✓ נכון!";
+      } else {
+        input.classList.add("incorrect");
+        if (feedback) feedback.textContent = "✗ נסו שוב";
+      }
+    }
+    if (btn) btn.addEventListener("click", check);
+    if (input) input.addEventListener("keydown", function (e) { if (e.key === "Enter") check(); });
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Build n -> value from a formula in n (whitelisted: digits, n, + - * / ^ ( ) . )
+  function makeFormula(s) {
+    s = String(s || "").trim();
+    if (!s || !/^[0-9n+\-*/^().\s]+$/.test(s)) return null;
+    s = s.replace(/(\d)\s*([n(])/g, "$1*$2")     // 2n, 2(  -> 2*n, 2*(
+         .replace(/([n)])\s*([n(])/g, "$1*$2")   // )n, )(, n(  -> insert *
+         .replace(/\^/g, "**");
+    try {
+      var f = Function("n", '"use strict"; return (' + s + ");");
+      var t = f(1);
+      return (typeof t === "number" && isFinite(t)) ? f : null;
+    } catch (e) { return null; }
+  }
+  function parseTargets(str) {
+    return String(str || "").split(",").map(function (t) {
+      t = t.trim();
+      if (!/^-?[0-9]+(?:\/[0-9]+)?$/.test(t)) return NaN;
+      var p = t.split("/");
+      return p.length === 2 ? Number(p[0]) / Number(p[1]) : Number(p[0]);
+    });
+  }
+  document.querySelectorAll(".formula-quiz").forEach(function (q) {
+    var targets = parseTargets(q.getAttribute("data-answer"));
+    var input = q.querySelector(".seq-input");
+    var feedback = q.querySelector(".seq-feedback");
+    var btn = q.querySelector(".seq-check");
+    function check() {
+      input.classList.remove("correct", "incorrect");
+      var f = makeFormula(input.value), ok = !!f;
+      for (var i = 0; ok && i < targets.length; i++) {
+        var v; try { v = f(i + 1); } catch (e) { ok = false; break; }
+        if (typeof v !== "number" || !isFinite(v) || Math.abs(v - targets[i]) > 1e-9) ok = false;
+      }
+      if (ok) {
         input.classList.add("correct");
         if (feedback) feedback.textContent = "✓ נכון!";
       } else {
@@ -604,7 +725,13 @@ window.Quarto = {
     <h2 id="toc-title">תוכן העניינים</h2>
    
   <ul>
-  <li><a href="#סדרות" id="toc-סדרות" class="nav-link active" data-scroll-target="#סדרות"><span class="header-section-number">7.1</span> סדרות</a></li>
+  <li><a href="#הגדרה-ודרכי-תיאור" id="toc-הגדרה-ודרכי-תיאור" class="nav-link active" data-scroll-target="#הגדרה-ודרכי-תיאור"><span class="header-section-number">7.1</span> הגדרה ודרכי תיאור</a>
+  <ul class="collapse">
+  <li><a href="#הדרך-הנאיבית" id="toc-הדרך-הנאיבית" class="nav-link" data-scroll-target="#הדרך-הנאיבית">הדרך ה״נאיבית״</a></li>
+  <li><a href="#נוסחה-סגורה" id="toc-נוסחה-סגורה" class="nav-link" data-scroll-target="#נוסחה-סגורה">נוסחה סגורה</a></li>
+  <li><a href="#רקורסיה" id="toc-רקורסיה" class="nav-link" data-scroll-target="#רקורסיה">רקורסיה</a></li>
+  <li><a href="#תרגילים" id="toc-תרגילים" class="nav-link" data-scroll-target="#תרגילים">תרגילים</a></li>
+  </ul></li>
   <li><a href="#גבול-של-סדרה" id="toc-גבול-של-סדרה" class="nav-link" data-scroll-target="#גבול-של-סדרה"><span class="header-section-number">7.2</span> גבול של סדרה</a></li>
   <li><a href="#דוגמאות" id="toc-דוגמאות" class="nav-link" data-scroll-target="#דוגמאות"><span class="header-section-number">7.3</span> דוגמאות</a>
   <ul class="collapse">
@@ -636,38 +763,86 @@ window.Quarto = {
 </header>
 
 
-<section id="סדרות" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="סדרות"><span class="header-section-number">7.1</span> סדרות</h2>
+<section id="הגדרה-ודרכי-תיאור" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="הגדרה-ודרכי-תיאור"><span class="header-section-number">7.1</span> הגדרה ודרכי תיאור</h2>
 <div id="box-def-sequence" class="thmbox thmbox-definition">
 <p><strong>הגדרה 7.1.1.</strong></p>
 <p><strong>סדרה (ממשית)</strong> היא אוסף <strong>אינסופי</strong> של מספרים ממשיים, שבו יש <strong>חשיבות לסדר</strong> ו<strong>חזרות מותרות</strong> (ראו את הדיון על ההבדל בין סדרה לקבוצה <a href="./06-sequences-intro.html">בפרק המבוא</a>): <span class="math display">\[a_1, a_2, a_3, \dots, a_n, \dots\]</span> <span class="math inline">\(a_n\)</span> הוא ה<strong>איבר</strong> שבמקום <span class="math inline">\(n\)</span>, ו-<span class="math inline">\(n\)</span> הוא ה<strong>אינדקס</strong> הרץ על המספרים הטבעיים. את הסדרה כולה נסמן בקיצור <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span>.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="ההגדרה הפורמלית: סדרה כפונקציה">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">הערה</span>ההגדרה הפורמלית: סדרה כפונקציה
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<div class="thmbox thmbox-remark" title="ההגדרה הפורמלית: סדרה כפונקציה">
+<p><strong>הערה 7.1.2 (ההגדרה הפורמלית: סדרה כפונקציה).</strong></p>
 <p>פורמלית, סדרה ממשית <span class="math inline">\(\{a_n\}_{n=1}^{\infty}\)</span> היא <strong>פונקציה</strong> <span class="math inline">\(a:\mathbb{N}\to\mathbb{R}\)</span> — לכל מספר טבעי <span class="math inline">\(n\)</span> מותאם ערך ממשי יחיד <span class="math inline">\(a_n = a(n)\)</span>. הצגה זו הופכת את ״הסדר״ ואת ״האינסופיות״ למדויקים. האינדקס רץ על המספרים הטבעיים <span class="math inline">\(\mathbb{N} = \{1, 2, 3, \dots\}\)</span>, ולכן סדרה מתחילה כברירת מחדל מ-<span class="math inline">\(a_1\)</span>; רק כאשר יצוין במפורש נתחיל את האינדקס במקום אחר (למשל <span class="math inline">\(a_0\)</span>).</p>
 </div>
-</div>
-</div>
-<p>הנה כמה דוגמאות:</p>
-<div id="box-exm-sequences" class="thmbox thmbox-example">
-<p><strong>דוגמה 7.1.2.</strong></p>
+<p>איך מתארים סדרה? עלינו לתאר במדויק איזה איבר נמצא במקום ה-<span class="math inline">\(n\)</span>, לכל <span class="math inline">\(n\in\mathbb{N}\)</span>. לכתוב את כל האיברים לפי הסדר — בלתי אפשרי, שכן יש אינסוף מהם. לכן נעזרים בכמה <strong>דרכים לתיאור סדרה</strong>; נציג שלוש דרכים נפוצות.</p>
+<section id="הדרך-הנאיבית" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="הדרך-הנאיבית">הדרך ה״נאיבית״</h3>
+<p>רושמים כמה מן האיברים הראשונים, מתוך הנחה ששאר האיברים ״ברורים מן ההקשר״. לדוגמה, <span class="math inline">\(1, 3, 5, 7, \dots\)</span> מתארת (כך אנו מקווים) את סדרת המספרים האי-זוגיים בסדר עולה. הדרך פשוטה ונוחה להמחשה, אך בעייתית משתי סיבות:</p>
 <ul>
-<li><span class="math inline">\(a_n = n\)</span> נותנת <span class="math inline">\(1, 2, 3, 4, \dots\)</span></li>
-<li><span class="math inline">\(a_n = (-1)^n\)</span> נותנת <span class="math inline">\(-1, 1, -1, 1, \dots\)</span></li>
-<li>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> נותנת <span class="math inline">\(8, 8, 8, 8, \dots\)</span></li>
-<li>אפשר להגדיר סדרה גם <a href="./05-induction.html#sec-recursive-definition"><strong>ברקורסיה</strong></a>: <span class="math inline">\(a_1 = 1\)</span> ו-<span class="math inline">\(a_{n+1} = (n+1)\,a_n\)</span> נותנת <span class="math inline">\(1, 2, 6, 24, \dots\)</span> . כלומר <span class="math inline">\(a_n = n!\)</span>.</li>
+<li><strong>הסדרה אינה מוגדרת היטב.</strong> ייתכנו כמה המשכים הגיוניים באותה מידה. כיצד, למשל, יש להמשיך את <span class="math inline">\(2, 4, 8, \dots\)</span>? אולי <span class="math inline">\(16\)</span> (חזקות של <span class="math inline">\(2\)</span>), ואולי <span class="math inline">\(14\)</span> (בהפרשים ההולכים וגדלים <span class="math inline">\(2, 4, 6, \dots\)</span>). אין דרך להכריע בין השתיים מן הרשימה בלבד.</li>
+<li><strong>אין גישה ישירה לאיבר.</strong> גם כשהכוונה ברורה, קשה לעיתים לומר מהו האיבר במקום מסוים בלי לכתוב את כל קודמיו — למשל, מהו האיבר ה-<span class="math inline">\(100\)</span>?</li>
+</ul>
+</section>
+<section id="נוסחה-סגורה" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="נוסחה-סגורה">נוסחה סגורה</h3>
+<p>הדרך השנייה: ביטוי המחשב את <span class="math inline">\(a_n\)</span> <strong>ישירות</strong> מתוך <span class="math inline">\(n\)</span>, בלי תלות באיברים הקודמים. יתרונה הגדול הוא הגישה הישירה — אפשר ״לקפוץ״ מיד לכל איבר שנרצה, גם ל-<span class="math inline">\(a_{100}\)</span>, בלי לחשב את קודמיו. כך, את סדרת המספרים האי-זוגיים נתאר בפשטות על ידי <span class="math inline">\(a_n = 2n - 1\)</span>.</p>
+<div id="box-exm-closed-form" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.3.</strong></p>
+<p>כמה סדרות המוגדרות בנוסחה סגורה:</p>
+<ul>
+<li><span class="math inline">\(a_n = n\)</span> נותנת <span class="math inline">\(1, 2, 3, 4, \dots\)</span>;</li>
+<li><span class="math inline">\(a_n = (-1)^n\)</span> נותנת <span class="math inline">\(-1, 1, -1, 1, \dots\)</span> — סדרה <strong>מתחלפת</strong>;</li>
+<li><span class="math inline">\(a_n = 2^n\)</span> נותנת <span class="math inline">\(2, 4, 8, 16, \dots\)</span> — <strong>חזקות</strong> של <span class="math inline">\(2\)</span>;</li>
+<li>הסדרה הקבועה <span class="math inline">\(a_n = 8\)</span> נותנת <span class="math inline">\(8, 8, 8, \dots\)</span>.</li>
 </ul>
 </div>
+</section>
+<section id="רקורסיה" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="רקורסיה">רקורסיה</h3>
+<p>לא לכל סדרה קל — ולעיתים אף לא ידוע — למצוא נוסחה סגורה. דרך טבעית אחרת היא <strong>רקורסיה</strong>: מגדירים במפורש כמה מן האיברים הראשונים, ונותנים <strong>כלל</strong> המחשב כל איבר חדש מתוך קודמיו. (בקורס נסתפק בכללים התלויים במספר <strong>סופי</strong> של איברים קודמים.) לרקורסיה יש חיסרון — כדי להגיע ל-<span class="math inline">\(a_{100}\)</span> יש לחשב תחילה את כל קודמיו — אך לעיתים היא הדרך הטבעית, ואף היחידה הפשוטה, לתאר סדרה. על מנת להתגבר על הבעיה של חישוב האיבר הכללי, מנסים להמיר את הנוסחה הרקורסיבית לנוסחה סגורה. באופן כללי, זו בעיה קשה ולא נתייחס למקרה הכללי בקורס. יחד עם זאת, לעיתים ניתן ל״נחש״ את הנוסחה ולהוכיח אותה בשיטות כמו אינדוקציה.</p>
+<p>שתי הסדרות המוכרות ביותר מבית הספר — ה<strong>חשבונית</strong> וה<strong>הנדסית</strong> — מוגדרות באופן טבעי ברקורסיה.</p>
+<div id="box-exm-arithmetic" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.4.</strong></p>
+<p><strong>סדרה חשבונית:</strong> מתחילים באיבר <span class="math inline">\(a_1\)</span>, ובכל צעד מוסיפים <strong>הפרש</strong> קבוע <span class="math inline">\(d\)</span>, כלומר <span class="math inline">\(a_{n+1} = a_n + d\)</span>. למשל, <span class="math inline">\(a_1 = 3\)</span> ו-<span class="math inline">\(d = 2\)</span> נותנות <span class="math inline">\(3, 5, 7, 9, \dots\)</span>. (יש לה גם נוסחה סגורה: <span class="math inline">\(a_n = a_1 + (n-1)\,d\)</span>.)</p>
+</div>
+<div id="box-exm-geometric" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.5.</strong></p>
+<p><strong>סדרה הנדסית:</strong> מתחילים באיבר <span class="math inline">\(a_1\)</span>, ובכל צעד מכפילים ב<strong>מנה</strong> קבועה <span class="math inline">\(q\)</span>, כלומר <span class="math inline">\(a_{n+1} = q\,a_n\)</span>. למשל, <span class="math inline">\(a_1 = 1\)</span> ו-<span class="math inline">\(q = 2\)</span> נותנות <span class="math inline">\(1, 2, 4, 8, \dots\)</span>. (וגם לה נוסחה סגורה: <span class="math inline">\(a_n = a_1\,q^{\,n-1}\)</span>.)</p>
+</div>
+<div id="box-exm-factorial" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.6.</strong></p>
+<p>ה<strong>עצרת</strong> <span class="math inline">\(n!\)</span>. אין ״פעולה חשבונית״ יחידה שמשמעותה ״מכפלת כל המספרים מ-<span class="math inline">\(1\)</span> עד <span class="math inline">\(n\)</span>״; העצרת מוגדרת מלכתחילה ברקורסיה: <span class="math display">\[,a_1 = 1 \qquad a_{n+1} = (n+1)\,a_n\]</span> ומתקבלת <span class="math inline">\(1, 2, 6, 24, 120, \dots\)</span>, כלומר <span class="math inline">\(a_n = n!\)</span>.</p>
+</div>
+<div id="box-exm-fibonacci" class="thmbox thmbox-example">
+<p><strong>דוגמה 7.1.7.</strong></p>
+<p>סדרת <strong>פיבונאצ׳י</strong>, שבה כל איבר הוא סכום שני קודמיו: <span class="math display">\[,a_1 = a_2 = 1 \qquad a_{n+1} = a_n + a_{n-1}\]</span> ומתקבלת <span class="math inline">\(1, 1, 2, 3, 5, 8, 13, 21, \dots\)</span>. זוהי אולי הסדרה הרקורסיבית המפורסמת ביותר, והיא צצה במקומות מפתיעים במתמטיקה ובטבע.</p>
+</div>
+<div class="extra" title="העשרה: פיבונאצ׳י, ארנבים ויחס הזהב">
+<div class="extra-title">
+העשרה: פיבונאצ׳י, ארנבים ויחס הזהב
+</div>
+<p>סדרת פיבונאצ׳י הופיעה לראשונה בספרו של לאונרדו מפיזה (המכונה ״פיבונאצ׳י״) בשנת <span class="math inline">\(1202\)</span>, כפתרון לחידה על <strong>התרבות ארנבים</strong>: מתחילים בזוג ארנבים אחד; כל זוג בוגר מוליד זוג חדש מדי חודש, וזוג טרי מבשיל תוך חודש. מספר זוגות הארנבים בחודש ה-<span class="math inline">\(n\)</span> הוא בדיוק <span class="math inline">\(a_n\)</span>.</p>
+<p>לסדרה יש גם <strong>נוסחה סגורה</strong> (״נוסחת בינה״), המערבת את <strong>יחס הזהב</strong> <span class="math inline">\(\varphi = \frac{1+\sqrt{5}}{2}\)</span>. אלא שהנוסחה הזו אינה ״מסבירה״ את הסדרה: היא נשענת על מספרים אי-רציונליים, למרות שכל איברי הסדרה שלמים, ורחוקה מלהיות מובנת מאליה. דווקא ה<strong>הגדרה הרקורסיבית</strong> חושפת את התכונה שבזכותה הסדרה חשובה — שכל איבר הוא סכום קודמיו.</p>
+<p>זו תופעה כללית: סדרות רבות שצצות בפועל — במדעי המחשב, ביולוגיה, פיסיקה, כלכלה ובתחומים רבים נוספים — מוגדרות באופן טבעי ברקורסיה, מפני שהן מתארות תהליכים שבהם המצב הבא תלוי במצב הנוכחי (או בכמה מצבים קודמים) ולאו דווקא במספר הצעד בתהליך. למשל, בחידת הארנבים מספר הזוגות בחודש הנוכחי הוא סכום הזוגות שכבר היו בחודש הקודם והזוגות החדשים שנולדו; ומספר הנולדים שווה למספר הזוגות הבוגרים — אלה שהיו כבר לפני חודשיים. כך כל איבר נקבע משני קודמיו, ללא תלות ישירה במספר החודש.</p>
+</div>
+<div class="extra" title="העשרה: רקורסיה מתקדמת">
+<div class="extra-title">
+העשרה: רקורסיה מתקדמת
+</div>
+<p>הכלל הרקורסיבי גמיש: הוא יכול להישען על איברים רחוקים מן האחרון, ואף להשתנות לפי צורת האינדקס. נגדיר, למשל, סדרה שכל איבר בה נשען על האיבר שבמקום <span class="math inline">\(\left\lfloor n/2 \right\rfloor\)</span>, בהתאם לזוגיות של <span class="math inline">\(n\)</span>: <span class="math display">\[a_n = \begin{cases} a_{n/2} &amp; \text{יגוז}\ n \\ a_{(n-1)/2} + 1 &amp; \text{יגוז-יא}\ n \end{cases}\]</span> (עם <span class="math inline">\(a_1 = 1\)</span>). מתקבלת הסדרה <span class="math inline">\(1, 1, 2, 1, 2, 2, 3, 1, \dots\)</span>, ומסתבר ש-<span class="math inline">\(a_n\)</span> הוא בדיוק מספר הספרות <span class="math inline">\(1\)</span> בייצוג הבינארי של <span class="math inline">\(n\)</span>.</p>
+</div>
+</section>
+<section id="תרגילים" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="תרגילים">תרגילים</h3>
+<p>בתרגילים המקוונים אפשר להקליד תשובה וללחוץ ״בדיקה״; בגרסה המודפסת הפתרונות מופיעים בהמשך. לשברים השתמשו ב-<code>/</code> (למשל <code>1/3</code>), ולחזקות ב-<code>^</code> (למשל <code>2^5</code>).</p>
+<p><strong>תרגיל 1.</strong> רשמו את חמשת האיברים הראשונים \(a_1,\dots,a_5\) של כל סדרה (מופרדים בפסיקים):</p>
+<div class="seq-quiz" data-answer="1/2, 4/9, 9/28, 16/65, 25/126"><span class="seq-label">(א) \(a_n = \dfrac{n^2}{n^3+1}\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="seq-quiz" data-answer="1/3, 8/9, 1, 64/81, 125/243"><span class="seq-label">(ב) \(a_n = \dfrac{n^3}{3^n}\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="seq-quiz" data-answer="4, -7, 10, -13, 16"><span class="seq-label">(ג) \(a_n = (-1)^{n+1}\big(4+(n-1)\cdot 3\big)\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<p><strong>תרגיל 2.</strong> נתונים איבריה הראשונים של כל סדרה; מצאו נוסחה סגורה \(a_n\) כפונקציה של \(n\):</p>
+<div class="formula-quiz" data-answer="1, 4, 9, 16, 25, 36"><span class="seq-label">(א) \(1,\ 4,\ 9,\ 16,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="formula-quiz" data-answer="5, 9/2, 17/4, 33/8, 65/16, 129/32"><span class="seq-label">(ב) \(5,\ 9/2,\ 17/4,\ 33/8,\ 65/16,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="formula-quiz" data-answer="1, -3, 5, -7, 9, -11"><span class="seq-label">(ג) \(1,\ -3,\ 5,\ -7,\ 9,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+</section>
 </section>
 <section id="גבול-של-סדרה" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="גבול-של-סדרה"><span class="header-section-number">7.2</span> גבול של סדרה</h2>
