@@ -93,10 +93,15 @@ process = function(blocks, in_optional)
         b.content = process(b.content, in_optional)
         b.classes = { "thmbox", "thmbox-remark" }
       elseif has_class(orig, "extra") then
-        -- Enrichment ("העשרה"): NOT foldable, and part of the running text. Its heading
-        -- stays a real numbered section (Quarto's makeSections merges the .extra div into
-        -- that <section>), and its boxes are numbered normally (in_optional = false) so
-        -- they keep the running theorem numbers. The gray "box" look is pure CSS on .extra.
+        -- Enrichment ("העשרה"): NOT foldable, part of the running text; inner boxes numbered
+        -- (in_optional = false). A `## heading` inside becomes the box's header bar (a real
+        -- numbered section, via makeSections). For a small aside with no heading, a `title=`
+        -- attribute is rendered instead as a (non-section) header bar. Box look is pure CSS.
+        local t = b.attributes and b.attributes.title
+        if t and t ~= "" and not (b.content[1] and b.content[1].t == "Header") then
+          table.insert(b.content, 1,
+            pandoc.Div({ pandoc.Plain({ pandoc.Str(t) }) }, pandoc.Attr("", { "extra-title" })))
+        end
         b.content = process(b.content, false)
         -- keep the .extra class for HTML/CSS
       elseif has_class(orig, "optional") then
