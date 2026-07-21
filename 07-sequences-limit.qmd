@@ -80,6 +80,10 @@
 <div class="formula-quiz" data-answer="1, 4, 9, 16, 25, 36"><span class="seq-label">(א) \(1,\ 4,\ 9,\ 16,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
 <div class="formula-quiz" data-answer="5, 9/2, 17/4, 33/8, 65/16, 129/32"><span class="seq-label">(ב) \(5,\ 9/2,\ 17/4,\ 33/8,\ 65/16,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
 <div class="formula-quiz" data-answer="1, -3, 5, -7, 9, -11"><span class="seq-label">(ג) \(1,\ -3,\ 5,\ -7,\ 9,\ \dots\)</span><input class="seq-input" type="text" placeholder="3*n^2+1 :למשל"><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<p><strong>תרגיל 3.</strong> רשמו את חמשת האיברים הראשונים של כל אחת מהסדרות המוגדרות ברקורסיה:</p>
+<div class="seq-quiz" data-answer="1, 7, 17, 31, 49"><span class="seq-label">(א) \(a_1 = 1,\ a_n = a_{n-1} + 4n - 2\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="seq-quiz" data-answer="1, 2, 4, 8, 16"><span class="seq-label">(ב) \(a_1 = 1,\ a_2 = 2,\ a_n = 2a_{n-2} + a_{n-1}\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
+<div class="seq-quiz" data-answer="1, 3, 15, 105, 945"><span class="seq-label">(ג) \(a_1 = 1,\ a_n = (2n-1)\,a_{n-1}\)</span><input class="seq-input" type="text" placeholder="לדוגמה: 1, 2/3, -4, ..."><button class="seq-check">בדיקה</button><span class="seq-feedback"></span></div>
 ```
 :::
 
@@ -88,10 +92,14 @@
 
 **תרגיל 2.** מצאו נוסחה סגורה $a_n$ לכל סדרה: (א) $1,\ 4,\ 9,\ 16,\ \dots$; (ב) $5,\ 9/2,\ 17/4,\ 33/8,\ 65/16,\ \dots$; (ג) $1,\ -3,\ 5,\ -7,\ 9,\ \dots$.
 
+**תרגיל 3.** רשמו את חמשת האיברים הראשונים של כל אחת מהסדרות המוגדרות ברקורסיה: (א) $a_1 = 1,\ a_n = a_{n-1} + 4n - 2$; (ב) $a_1 = 1,\ a_2 = 2,\ a_n = 2a_{n-2} + a_{n-1}$; (ג) $a_1 = 1,\ a_n = (2n-1)\,a_{n-1}$.
+
 ::: {.callout-tip title="פתרונות"}
 **תרגיל 1.** (א) $\dfrac{1}{2},\ \dfrac{4}{9},\ \dfrac{9}{28},\ \dfrac{16}{65},\ \dfrac{25}{126}$; (ב) $\dfrac{1}{3},\ \dfrac{8}{9},\ 1,\ \dfrac{64}{81},\ \dfrac{125}{243}$; (ג) $4,\ -7,\ 10,\ -13,\ 16$.
 
 **תרגיל 2.** (א) $a_n = n^2$; (ב) $a_n = 4 + 2^{\,1-n}$; (ג) $a_n = (-1)^{n+1}(2n-1)$.
+
+**תרגיל 3.** (א) $1,\ 7,\ 17,\ 31,\ 49$; (ב) $1,\ 2,\ 4,\ 8,\ 16$; (ג) $1,\ 3,\ 15,\ 105,\ 945$.
 :::
 ::::
 
